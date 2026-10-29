@@ -1,0 +1,2865 @@
+[
+  {
+    "id": 1,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You are building a speech processing solution in Microsoft Foundry for a customer support platform. The platform will transcribe live phone calls, so that supervisors at your company can view call transcripts and detect issues while the calls are in progress. The call audio will arrive as a continuous stream from the telephony system.\nYou need to ensure that the call transcripts appear within only a few seconds of the audio stream. What should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use text to speech by using a custom neural voice."
+      },
+      {
+        "id": "B",
+        "text": "Use speech translation to generate the transcripts into multiple languages."
+      },
+      {
+        "id": "C",
+        "text": "Run a batch transcription job on recorded audio files."
+      },
+      {
+        "id": "D",
+        "text": "Use real-time speech to text to process streaming audio input."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Real-time speech to text processes continuous streaming audio input with low latency (within seconds), whereas batch transcription is asynchronous and intended for pre-recorded audio files."
+  },
+  {
+    "id": 2,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry project that contains an agent.\nThe agent ingests scanned PDF vendor invoices that contain tables and embedded QR codes. The agent must preserve the PDF layout in the extracted output to ensure that downstream processing can reference sections and tables.\nYou plan to call Azure Content Understanding in Foundry Tools.\nYou need to extract content and layout elements and detect QR codes without requiring a language model deployment.\nWhich built-in analyzer should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "prebuilt-documentFieldSchema"
+      },
+      {
+        "id": "B",
+        "text": "prebuilt-read"
+      },
+      {
+        "id": "C",
+        "text": "prebuilt-documentSearch"
+      },
+      {
+        "id": "D",
+        "text": "prebuilt-layout"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "The `prebuilt-layout` analyzer in Azure Content Understanding extracts text, tables, selection marks, structure/layout elements, and barcodes/QR codes without requiring an LLM deployment."
+  },
+  {
+    "id": 3,
+    "type": "hotspot",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a Microsoft Foundry project that contains an agent.\nThe agent accepts user-uploaded screenshots and uses a multimodal chat model. Some screenshots contain potentially malicious embedded text.\nYou need to prevent a prompt injection attack and ensure that third-party content is treated as lower trust. How should you configure prompt shields for document attacks?",
+    "slots": [
+      {
+        "label": "Prompt shields action",
+        "options": [
+          "Disable the shield.",
+          "Set action to block.",
+          "Set action to annotate."
+        ],
+        "correct": "Set action to block."
+      },
+      {
+        "label": "Additional mitigation",
+        "options": [
+          "Enable Spotlighting.",
+          "Create a custom blocklist.",
+          "Use optical character recognition (OCR) to extract the text from the images first."
+        ],
+        "correct": "Enable Spotlighting."
+      }
+    ],
+    "explanation": "To defend against indirect prompt injection in uploaded documents/images, configure Prompt Shields for documents to **Block** malicious inputs and enable **Spotlighting** to mark third-party content as lower trust."
+  },
+  {
+    "id": 4,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You are building a web app named App1 that generates responses by using a model deployed to a Microsoft Foundry project named Project1. Before sending the prompts to the model, App1 must retrieve documents by using Azure AI Search. You need to integrate Project1 and App1.\nThe solution must meet the following requirements:\n• Multiple client applications must use the same search configuration.\n• A security policy must prevent key-based authentication.\n• Administrative effort must be minimized.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a custom HTTP connection in Foundry and manually configure Azure AI Search endpoints per application."
+      },
+      {
+        "id": "B",
+        "text": "Configure an Azure AI Search connection in Project1 and reference the connection in each application."
+      },
+      {
+        "id": "C",
+        "text": "Call Azure AI Search directly from each application by using Microsoft Entra authentication."
+      },
+      {
+        "id": "D",
+        "text": "Enable a managed identity for each application and call Azure AI Search directly."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Configuring an Azure AI Search connection inside the Microsoft Foundry project (`Project1`) using Microsoft Entra ID (managed identity) allows multiple client apps to reuse the connection centrally without keys."
+  },
+  {
+    "id": 5,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry project that contains a customer support agent. The agent calls an internal knowledge API tool before generating responses.\nUsers report the following issues:\n• Some requests take more than 15 seconds to complete.\n• Some responses are incorrect, even when the knowledge API returns the expected data.\nYou need to inspect individual agent runs to view the ordered sequence of large language model (LLM) calls, tool invocations, and timing information.\nWhich observability capability should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "token usage"
+      },
+      {
+        "id": "B",
+        "text": "monitoring"
+      },
+      {
+        "id": "C",
+        "text": "safety metrics"
+      },
+      {
+        "id": "D",
+        "text": "tracing"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "**Tracing** captures the detailed execution graph of individual agent runs, including the ordered sequence of LLM calls, tool invocations, inputs/outputs, and step-by-step latency."
+  },
+  {
+    "id": 6,
+    "type": "drag_drop",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You have a Microsoft Foundry project that contains an agent used by the financial analysts at your company. You need to optimize the agent workflow by providing additional data access and processing capabilities. The solution must meet the following requirements:\n• Ensure that the agent can perform calculations during conversations.\n• Ensure that the agent can access up-to-date information from public websites.\n• Ensure that the agent can retrieve information from documents uploaded directly to the agent.\nWhat should you use for each requirement? To answer, drag the appropriate tools to the correct requirements. Each tool may be used once, more than once, or not at all.",
+    "pool": [
+      "Code interpreter",
+      "Computer use",
+      "File search",
+      "Grounding with Bing Search",
+      "Microsoft Fabric"
+    ],
+    "slots": [
+      {
+        "label": "Access up-to-date information from public websites",
+        "options": [
+          "Code interpreter",
+          "Computer use",
+          "File search",
+          "Grounding with Bing Search",
+          "Microsoft Fabric"
+        ],
+        "correct": "Grounding with Bing Search"
+      },
+      {
+        "label": "Perform calculations during conversations",
+        "options": [
+          "Code interpreter",
+          "Computer use",
+          "File search",
+          "Grounding with Bing Search",
+          "Microsoft Fabric"
+        ],
+        "correct": "Code interpreter"
+      },
+      {
+        "label": "Retrieve information from documents uploaded directly to the agent",
+        "options": [
+          "Code interpreter",
+          "Computer use",
+          "File search",
+          "Grounding with Bing Search",
+          "Microsoft Fabric"
+        ],
+        "correct": "File search"
+      }
+    ],
+    "explanation": "**Grounding with Bing Search** retrieves real-time public web data; **Code interpreter** executes Python code for mathematical calculations; **File search** indexes documents uploaded directly to the agent."
+  },
+  {
+    "id": 7,
+    "type": "single_choice",
+    "domain": "Microsoft Foundry Agents, Tools & Workflows",
+    "stem": "You have a Microsoft Foundry project named Project1 that contains an agent. The agent uses an OpenAPI 3.0 specification to call an external weather service.\nThe weather service requires a key to be passed in an HTTP header. The key value is stored as a connection in Project1.\nYou need to ensure that the key value from the connection is included automatically whenever the OpenAPI tool is invoked.\nWhat should you configure in the OpenAPI specification?",
+    "options": [
+      {
+        "id": "A",
+        "text": "a header parameter defined for each operation"
+      },
+      {
+        "id": "B",
+        "text": "an Azure Key Vault connection"
+      },
+      {
+        "id": "C",
+        "text": "an API key security scheme"
+      },
+      {
+        "id": "D",
+        "text": "a Bearer token security scheme"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "When connecting an OpenAPI 3.0 tool to a Microsoft Foundry connection that passes a key in an HTTP header, define an **API key security scheme** (`type: apiKey`, `in: header`) in the OpenAPI spec."
+  },
+  {
+    "id": 8,
+    "type": "single_choice",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You have a Microsoft Foundry project that contains three agents as shown in the following table.\nName | Description\nTriageAgent | Classifies incoming customer requests\nPolicyAgent | Answers policy questions by searching internal content\nActionAgent | Creates or updates tickets by calling an HTTP API\n\nYou need to orchestrate the agents to ensure that the customer requests meet the following requirements:\n• Support a deterministic, step-based process that uses conditional branching and shared state across the agents.\n• Optionally trigger a ticket action based on the triage result.\n• The solution must minimize development effort.\nWhat should you include in the solution?",
+    "options": [
+      {
+        "id": "A",
+        "text": "a workflow"
+      },
+      {
+        "id": "B",
+        "text": "threads and runs without a workflow"
+      },
+      {
+        "id": "C",
+        "text": "a multi-agent group chat session"
+      },
+      {
+        "id": "D",
+        "text": "separate agent runs coordinated in the application code"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "A **workflow** in Microsoft Foundry orchestrates multiple agents deterministically using step-based execution, conditional branching, and shared state with minimal custom code."
+  },
+  {
+    "id": 9,
+    "type": "hotspot",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry project that contains a customer support agent. The agent is deployed by using a GitHub Actions workflow.\nThe organization has the following requirements:\n• Every deployment to the production environment must use the latest approved evaluation baseline.\n• Deployments must stop automatically if the current evaluation scores regress beyond the configured tolerance.\nHow should you configure the workflow?",
+    "slots": [
+      {
+        "label": "Evaluation comparison",
+        "options": [
+          "Compare against the latest approved baseline",
+          "Compare against the previous workflow run",
+          "Compare against the production deployment logs",
+          "Compare against the repository default branch"
+        ],
+        "correct": "Compare against the latest approved baseline"
+      },
+      {
+        "label": "If evaluation regression exceeds the configured tolerance",
+        "options": [
+          "Continue deployment and send an alert",
+          "Fail the workflow",
+          "Retry the evaluation automatically",
+          "Lock the target branch"
+        ],
+        "correct": "Fail the workflow"
+      }
+    ],
+    "explanation": "In CI/CD evaluation workflows, comparing against the **latest approved baseline** ensures production quality never degrades, and **failing the workflow** stops deployment automatically upon regression."
+  },
+  {
+    "id": 10,
+    "type": "hotspot",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "Your company is piloting a customer support agent in a Microsoft Foundry project named Project1. Project1 is connected to an existing Application Insights resource, and the company's support team reviews runs in the Traces tab.\nThe Foundry Agent Service is configured to perform the following actions:\n• Retrieve the Application Insights connection string by calling project_client.telemetry.get_application_insights_connection_string().\n• Call configure_azure_monitor(connection_string=...) to enable telemetry.\nA separate LangChain service is configured to use OpenTelemetry and has the following configurations: Uses AzureAIOpenTelemetryTracer(connection_string=..., enable_content_recording=False)\nPasses the tracer by using config= \"callbacks\":[azure_tracer] Company policy has the following requirements:\n• Telemetry from LangChain and OpenTelemetry must be distinguishable within the same Application Insights resource.\n• Sensitive user prompts and model responses must NOT be logged to Application Insights.\nFor each of the following statements, select Yes if the statement is true. Otherwise, select No.",
+    "slots": [
+      {
+        "label": "Statement 1: The Foundry Agent Service configuration prevents sensitive user prompts and responses from being recorded in Application Insights.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "No"
+      },
+      {
+        "label": "Statement 2: The LangChain service configuration prevents sensitive user prompts and responses from being recorded in Application Insights.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "Yes"
+      },
+      {
+        "label": "Statement 3: Both services require separate Application Insights resources to distinguish their telemetry.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "No"
+      }
+    ],
+    "explanation": "By default, `configure_azure_monitor()` records content unless disabled (Statement 1: No). `AzureAIOpenTelemetryTracer` has `enable_content_recording=False` (Statement 2: Yes). Both can share one Application Insights resource and be distinguished via service/tracer attributes (Statement 3: No)."
+  },
+  {
+    "id": 11,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry project that contains an agent and an image generation model deployment. The agent generates original images from user-supplied product photos.\nYou need to ensure that the generated images maintain the product identity and visual characteristics of the provided photo.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Set the input_fidelity parameter to high."
+      },
+      {
+        "id": "B",
+        "text": "Apply a groundedness detection filter."
+      },
+      {
+        "id": "C",
+        "text": "Include a prompt and input image in the request."
+      },
+      {
+        "id": "D",
+        "text": "Decrease the value of the temperature parameter."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Setting `input_fidelity` to `high` instructs the image generation model to closely preserve the visual identity, geometry, and attributes of the user-supplied product photo."
+  },
+  {
+    "id": 12,
+    "type": "single_choice",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You are developing a travel planning agent by using Microsoft Foundry Agent Service.\nThe solution must meet the following requirements:\n• Remember each user's preferred airline and hotel chain across future conversations.\n• Ensure that payment card details are discarded after the conversation ends.\n• Minimize custom development.\nWhich implementation should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Store both preferences and payment information in persistent agent memory."
+      },
+      {
+        "id": "B",
+        "text": "Store preferences in persistent agent memory and retain payment information only in orchestration- managed session context."
+      },
+      {
+        "id": "C",
+        "text": "Store both preferences and payment information in conversation history."
+      },
+      {
+        "id": "D",
+        "text": "Store payment information in Azure AI Search and preferences in session context."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Persistent agent memory retains long-term user preferences across sessions, while sensitive payment details should only live in ephemeral orchestration-managed session context so they are discarded when the session ends."
+  },
+  {
+    "id": 13,
+    "type": "hotspot",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry project that contains an agent. The agent uses tools to retrieve internal content and call external APIs. The agent is configured to let the model decide when to call the tools. You need to publish the agent for a compliance workflow.\nThe solution must meet the following requirements:\n• Each workflow run must include a retrieval step before generating a response.\n• Tool calls must authenticate by using the published agent's own identity.\n• Tool access must use an identity isolated from other project resources.\n• Tool access must use support audit tracing.\nWhat should you do?",
+    "slots": [
+      {
+        "label": "Set tool_choice to",
+        "options": [
+          "auto",
+          "none",
+          "required"
+        ],
+        "correct": "required"
+      },
+      {
+        "label": "Configure the tool to authenticate by",
+        "options": [
+          "Storing API keys in prompts",
+          "Using the shared project agent identity",
+          "Using a distinct agent identity bound to the client application"
+        ],
+        "correct": "Using a distinct agent identity bound to the client application"
+      }
+    ],
+    "explanation": "Setting `tool_choice` to `required` forces the agent to invoke a tool on every run. Binding a distinct agent identity to the published client application isolates permissions and supports audit tracing."
+  },
+  {
+    "id": 14,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a chat app in a Microsoft Foundry project and an Azure AI Search vectorized index. You need to connect to the index to meet the following requirements:\n• Complex questions must retrieve information from multiple chunks.\n• Multi-turn conversations must influence retrieval planning.\n• Retrievals must run in parallel to reduce latency.\nWhich retrieval approach should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "iterative retrieval"
+      },
+      {
+        "id": "B",
+        "text": "agentic Retrieval Augmented Generation (RAG)"
+      },
+      {
+        "id": "C",
+        "text": "chain of thought"
+      },
+      {
+        "id": "D",
+        "text": "classic Retrieval Augmented Generation (RAG)"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "**Agentic RAG** decomposes complex multi-turn queries, plans sub-queries informed by conversation history, and executes parallel retrievals across the vectorized index."
+  },
+  {
+    "id": 15,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry project that contains an agent.\nThe agent processes scanned employee identification cards from multiple countries.\nThe solution must meet the following requirements:\n• Extract structured fields such as employee ID, full name, and expiration date.\n• Return the extracted values as a structured schema instead of raw text.\n• Minimize custom post-processing.\nYou plan to call Azure Content Understanding in Foundry Tools.\nWhich built-in analyzer should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "prebuilt-layout"
+      },
+      {
+        "id": "B",
+        "text": "prebuilt-documentSearch"
+      },
+      {
+        "id": "C",
+        "text": "prebuilt-documentFieldSchema"
+      },
+      {
+        "id": "D",
+        "text": "prebuilt-read"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "`prebuilt-documentFieldSchema` extracts structured fields (such as ID number, full name, and expiration date) into a defined schema without custom post-processing."
+  },
+  {
+    "id": 16,
+    "type": "code_completion",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You have a Microsoft Foundry project that contains a deployed ticket-triage agent.\nYou discover that sometimes the agent responds without calling any tools, even when a tool is required. You need to ensure that the agent calls a tool during execution.\nHow should you complete the Python code?",
+    "code": "run_payload = {\n  \"assistant_id\": agent_id,\n  [Blank 1]: [Blank 2],\n  \"metadata\": { \"scenario\": \"ticket-triage\" }\n}",
+    "slots": [
+      {
+        "label": "Blank 1",
+        "options": [
+          "\"auto\"",
+          "\"required\"",
+          "\"response_format\"",
+          "\"tool_choice\"",
+          "\"tools\"",
+          "\"type\""
+        ],
+        "correct": "\"tool_choice\""
+      },
+      {
+        "label": "Blank 2",
+        "options": [
+          "\"auto\"",
+          "\"required\"",
+          "\"response_format\"",
+          "\"tool_choice\"",
+          "\"tools\"",
+          "\"type\""
+        ],
+        "correct": "\"required\""
+      }
+    ],
+    "explanation": "In the Foundry Agent Service run payload, setting `\"tool_choice\": \"required\"` guarantees that the assistant calls at least one registered tool during execution."
+  },
+  {
+    "id": 17,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a customer support agent built by using the Microsoft Foundry Agent Service. The agent calls an Azure OpenAI model deployment.\nDuring load testing, calls intermittently fail and return an HTTP 429 rate limit exceeded error. You need to handle throttling to reduce call failures and improve reliability under load. The solution must remain within the service and model limits.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a new thread and retry the calls immediately."
+      },
+      {
+        "id": "B",
+        "text": "Reduce the number of registered tools."
+      },
+      {
+        "id": "C",
+        "text": "Implement a retry policy that uses exponential backoff and jitter."
+      },
+      {
+        "id": "D",
+        "text": "Split uploaded content into smaller files."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "HTTP 429 indicates rate-limit throttling. Implementing a retry policy with **exponential backoff and jitter** spaces out retries and prevents thundering-herd failures while respecting service quotas."
+  },
+  {
+    "id": 18,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You are planning a Microsoft Foundry project named Project1 that will contain several prompt flow applications and agents.\nEach application must use the same Azure AI Foundry Model deployment hosted in another Azure resource. You need to recommend a solution that enables all applications in Project1 to reuse the model configuration without duplicating connection settings.\nWhat should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a connection to the model resource."
+      },
+      {
+        "id": "B",
+        "text": "Configure a managed private endpoint."
+      },
+      {
+        "id": "C",
+        "text": "Enable role-based access control (RBAC) on the model deployment."
+      },
+      {
+        "id": "D",
+        "text": "Configure diagnostic settings for the model deployment."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Creating a shared **connection** to the external Azure AI Foundry Model resource inside `Project1` enables all prompt flows and agents in the project to reuse the model configuration centrally."
+  },
+  {
+    "id": 19,
+    "type": "hotspot",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a Microsoft Foundry project that contains an agent that answers questions by using Retrieval- Augmented Generation (RAG).\nA GitHub Actions workflow automatically deploys updates whenever a pull request is approved. The organization has the following requirements:\n• Validate that responses remain grounded in the retrieved documents before deployment.\n• Prevent pull requests from being merged if the evaluation does not satisfy the required quality thresholds.",
+    "slots": [
+      {
+        "label": "Evaluation to execute",
+        "options": [
+          "Groundedness evaluation",
+          "Fluency evaluation",
+          "Similarity evaluation",
+          "Content Safety evaluation"
+        ],
+        "correct": "Groundedness evaluation"
+      },
+      {
+        "label": "Pull request policy",
+        "options": [
+          "Require the evaluation workflow to succeed before merging",
+          "Automatically rerun failed evaluations until they pass",
+          "Notify reviewers when evaluations fail",
+          "Allow the merge and run evaluations after deployment"
+        ],
+        "correct": "Require the evaluation workflow to succeed before merging"
+      }
+    ],
+    "explanation": "**Groundedness evaluation** verifies that RAG responses remain faithful to retrieved source documents. Requiring the evaluation workflow check to pass before merging enforces quality gates on pull requests."
+  },
+  {
+    "id": 20,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You are creating an image-processing workflow in a Microsoft Foundry project. The workflow must meet the following requirements:\n• Generate multiple alternative versions of an existing product image for marketing campaigns.\n• Preserve the overall composition, lighting, and subject.\n• Use the built-in image generation capabilities without training a custom model.\nYou need to configure the workflow to generate several stylistic alternatives from the original image. How should you configure the workflow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Enable image_variation mode and provide the original image as the input."
+      },
+      {
+        "id": "B",
+        "text": "Enable mask_inpainting and provide a mask that covers the entire image."
+      },
+      {
+        "id": "C",
+        "text": "Enable text_to_image mode and describe the original image in the prompt."
+      },
+      {
+        "id": "D",
+        "text": "Enable image_to_image mode with the strength parameter set to 1.0."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "`image_variation` mode takes an existing product image as input and generates multiple stylistic variations while preserving the subject, lighting, and overall composition."
+  },
+  {
+    "id": 21,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry project that contains an agent.\nThe agent uses a knowledge source built from documents stored in Azure Blob Storage. The documents include digitally scanned PDFs that contain multipage tables.\nYou have an ingestion job that extracts only plain text, causing loss of table structure, headings, and page- number metadata.\nUsers frequently ask questions that require the retrieval of specific table rows across the pages. You need to configure an ingestion job for a Retrieval Augmented Generation (RAG) pipeline that performs optical character recognition (OCR) on scanned PDFs, preserves tables and headings as structure-aware chunks, and stores page-number metadata with each chunk.\nHow should you configure the ingestion job?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use advanced data parsing to reingest the documents."
+      },
+      {
+        "id": "B",
+        "text": "Use OCR and page-level chunking."
+      },
+      {
+        "id": "C",
+        "text": "Use page-level OCR extraction and store each page as a single chunk."
+      },
+      {
+        "id": "D",
+        "text": "Extract only headings and store tables in a separate SQL database."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "**Advanced data parsing** in Foundry RAG ingestion performs OCR on scanned PDFs, preserves multipage tables and section headings as structure-aware chunks, and retains page-number metadata."
+  },
+  {
+    "id": 22,
+    "type": "single_choice",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "A Microsoft Foundry agent helps engineers troubleshoot production systems.\nThe solution must meet the following requirements:\n• Download diagnostic logs from an internal web application that does not expose APIs.\n• Analyze the downloaded log files to identify performance bottlenecks.\nWhich combination of tools should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Computer use and Code interpreter"
+      },
+      {
+        "id": "B",
+        "text": "File search and Microsoft Fabric"
+      },
+      {
+        "id": "C",
+        "text": "Grounding with Bing Search and Code interpreter"
+      },
+      {
+        "id": "D",
+        "text": "Computer use and File search"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "**Computer use** interacts with GUI/web applications that lack APIs to download logs, while **Code interpreter** runs Python scripts to parse and analyze the downloaded log files."
+  },
+  {
+    "id": 23,
+    "type": "hotspot",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry project that contains an internal Q&A agent.\nUsers report the following issues when they ask the agent questions:\n• An increase in the following response: \"No relevant information found\"\n• Periodic HTTP 429 rate limit exceeded errors during peak hours\nYou need to identify whether each issue is caused by model unavailability, resource limits, or inference failures.\nWhat should you do?",
+    "slots": [
+      {
+        "label": "Metrics to enable",
+        "options": [
+          "Model Availability Rate and Provisioned Utilization",
+          "Only Tokens Cache Match Rate",
+          "Only Total Requests filtered to status code 200",
+          "Time To Response and Total Tokens"
+        ],
+        "correct": "Model Availability Rate and Provisioned Utilization"
+      },
+      {
+        "label": "Diagnostic log to collect",
+        "options": [
+          "AllMetrics",
+          "audit",
+          "RequestResponse",
+          "trace"
+        ],
+        "correct": "RequestResponse"
+      }
+    ],
+    "explanation": "**Model Availability Rate and Provisioned Utilization** metrics identify whether 429 errors and empty responses stem from capacity exhaustion or service unavailability, while **RequestResponse** logs capture detailed inference payloads and status codes."
+  },
+  {
+    "id": 24,
+    "type": "multi_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a Microsoft Foundry project that contains a prompt agent used by a customer support web app. The agent is invoked from a Python service that does NOT run in the Foundry portal. You need to implement end-to-end tracing to capture latency breakdowns and exceptions across agent runs. Which two components can you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "a Log Analytics workspace"
+      },
+      {
+        "id": "B",
+        "text": "Application Insights"
+      },
+      {
+        "id": "C",
+        "text": "OpenTelemetry"
+      },
+      {
+        "id": "D",
+        "text": "the Azure Monitor Agent"
+      },
+      {
+        "id": "E",
+        "text": "Microsoft Sentinel"
+      }
+    ],
+    "correct": [
+      "B",
+      "C"
+    ],
+    "explanation": "To trace an external Python service calling a Foundry agent, instrument the code with **OpenTelemetry** and export telemetry to **Application Insights**."
+  },
+  {
+    "id": 25,
+    "type": "single_choice",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You have a Microsoft Foundry project that contains a customer support agent.\nThe agent uses multiple tools during execution. Users report that responses are delayed because the agent waits for several independent tool calls to complete.\nYou need to reduce the overall response time. The solution must be implemented in the application logic. What should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Execute independent tool calls in parallel before generating the response."
+      },
+      {
+        "id": "B",
+        "text": "Increase the maximum completion tokens."
+      },
+      {
+        "id": "C",
+        "text": "Replace the language model with a larger deployment."
+      },
+      {
+        "id": "D",
+        "text": "Enable persistent agent memory."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "When an agent makes multiple independent tool calls, executing those **tool calls in parallel** within the application/orchestration logic significantly reduces total wall-clock latency."
+  },
+  {
+    "id": 26,
+    "type": "drag_drop",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry project that contains a customer support agent grounded in internal documentation. After a recent update, users report the following issues:\n• Some answers are unsupported by retrieved documents.\n• A small number of responses are flagged for policy violations.\nYou need to evaluate each issue.\nWhich observability signals should you use for each issue?\nTo answer, drag the appropriate observability signals to the correct issues. Each observability signal may be used once, more than once, or not at all.",
+    "pool": [
+      "Groundedness evaluation metrics",
+      "Latency breakdown traces",
+      "Risk and safety metrics",
+      "Token usage analytics"
+    ],
+    "slots": [
+      {
+        "label": "Unsupported responses",
+        "options": [
+          "Groundedness evaluation metrics",
+          "Latency breakdown traces",
+          "Risk and safety metrics",
+          "Token usage analytics"
+        ],
+        "correct": "Groundedness evaluation metrics"
+      },
+      {
+        "label": "Policy violations",
+        "options": [
+          "Groundedness evaluation metrics",
+          "Latency breakdown traces",
+          "Risk and safety metrics",
+          "Token usage analytics"
+        ],
+        "correct": "Risk and safety metrics"
+      }
+    ],
+    "explanation": "**Groundedness evaluation metrics** detect hallucinations or claims unsupported by retrieved documents, whereas **Risk and safety metrics** monitor policy violations (hate, violence, self-harm, sexual content)."
+  },
+  {
+    "id": 27,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You are creating an image-editing workflow in a Microsoft Foundry project.\nThe workflow must meet the following requirements:\n• Ensure that background objects can be removed by applying a mask-based inpainting edit.\n• Preserve the original lighting and style of the edited images.\n• Use the built-in image editing controls, NOT a custom model.\nYou need to ensure that image edits apply exclusively inside the masked area.\nHow should you configure the workflow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Set generation mode to image_variation and provide the original image as a reference."
+      },
+      {
+        "id": "B",
+        "text": "Enable text_to_image mode and a prompt describing the desired background removal."
+      },
+      {
+        "id": "C",
+        "text": "Enable image_to_image mode and a high-strength value to regenerate the full image based on the prompt."
+      },
+      {
+        "id": "D",
+        "text": "Enable mask_inpainting and supply both the input image and a mask indicating which part of the image to modify."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Enabling `mask_inpainting` and providing both the source image and a binary mask restricts image modifications exclusively to the masked background region while preserving original lighting and style."
+  },
+  {
+    "id": 28,
+    "type": "single_choice",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You have a Microsoft Foundry project that contains an agent. The agent uses Azure AI Search in Foundry Tools to retrieve documents from a search index.\nThe application returns an error indicating that the specified index cannot be found.\nYou verify that the Azure AI Search service is reachable and authentication succeeds.\nYou need to configure the request to reference the correct search index.\nTo what should you set the index property?",
+    "options": [
+      {
+        "id": "A",
+        "text": "The Azure AI Search service name"
+      },
+      {
+        "id": "B",
+        "text": "The Azure AI Search endpoint URL"
+      },
+      {
+        "id": "C",
+        "text": "The Azure AI Search index name"
+      },
+      {
+        "id": "D",
+        "text": "The Microsoft Foundry project name"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The `index` property in the Azure AI Search tool configuration must be set to the specific **Azure AI Search index name** (not the service name or endpoint URL)."
+  },
+  {
+    "id": 29,
+    "type": "hotspot",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You need to recommend a plan to create a customer support agent by using the Microsoft Foundry Agent Service.\nThe agent must meet the following requirements:\n• Retain user preferences across multiple conversations.\n• Enable users to provide contextual grounding by directly uploading documents during a chat.\nWhich Foundry capability should you recommend for each requirement?",
+    "slots": [
+      {
+        "label": "To retain user preferences across conversations, use",
+        "options": [
+          "Agent memory that uses persistent storage",
+          "Conversation history",
+          "Orchestration-managed session context"
+        ],
+        "correct": "Agent memory that uses persistent storage"
+      },
+      {
+        "label": "To enable users to provide contextual grounding during chats, use the",
+        "options": [
+          "Azure AI Search tool",
+          "Code interpreter tool",
+          "File search tool"
+        ],
+        "correct": "File search tool"
+      }
+    ],
+    "explanation": "**Agent memory that uses persistent storage** retains user preferences across separate conversation threads, while the **File search tool** allows users to upload documents directly into a chat for grounding."
+  },
+  {
+    "id": 30,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You are developing an image-editing workflow in a Microsoft Foundry project.\nThe workflow must meet the following requirements:\n• Replace the sky in landscape photographs with a sunset.\n• Modify only the selected sky region.\n• Preserve all foreground objects without regeneration.\n• Use the built-in image editing capabilities.\nYou need to configure the workflow.\nHow should you configure the workflow?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Enable image_variation mode and provide the original image."
+      },
+      {
+        "id": "B",
+        "text": "Enable mask_inpainting and provide the original image together with a mask covering the sky."
+      },
+      {
+        "id": "C",
+        "text": "Enable text_to_image mode and describe the desired landscape."
+      },
+      {
+        "id": "D",
+        "text": "Enable image_to_image mode with a high-strength value."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "To replace only a specific region (the sky) while keeping foreground objects untouched, use `mask_inpainting` with the original photo and a mask covering the sky."
+  },
+  {
+    "id": 31,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You are planning a Microsoft Foundry project named Project1 that will contain multiple agents. Each agent will access the same Azure AI Search resource.\nYou need to recommend a solution to centrally manage the Azure AI Search credentials within Project1. The solution must be implemented across all the agents.\nWhat should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Enable role-based access control (RBAC) for the Azure AI Search resource."
+      },
+      {
+        "id": "B",
+        "text": "Disable key-based access control on the Azure AI Search resource."
+      },
+      {
+        "id": "C",
+        "text": "Add a connection to the Azure AI Search resource."
+      },
+      {
+        "id": "D",
+        "text": "Create a managed private endpoint that connects to the Azure AI Search resource."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Adding a **connection** to the Azure AI Search resource at the Microsoft Foundry project level centrally manages credentials and makes the search resource reusable across all agents in `Project1`."
+  },
+  {
+    "id": 32,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You are deploying a support agent that enables users to upload photos.\nYou need to automatically classify uploaded images for harmful content. The solution must block content based on severity levels.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Apply keyword scanning to optical character recognition (OCR) output by using Azure Vision in Foundry Tools."
+      },
+      {
+        "id": "B",
+        "text": "Enable prompt shields."
+      },
+      {
+        "id": "C",
+        "text": "Use blocklists."
+      },
+      {
+        "id": "D",
+        "text": "Implement image moderation."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "**Image moderation** in Azure AI Content Safety classifies uploaded user images across harm categories and blocks images exceeding configured severity thresholds."
+  },
+  {
+    "id": 33,
+    "type": "code_completion",
+    "domain": "Microsoft Foundry Agents, Tools & Workflows",
+    "stem": "You have a Microsoft Foundry project that contains an agent named PaymentAgent.\nPaymentAgent includes a function tool that issues customer refunds by using an external API. You are creating a workflow in YAML.\nYou need to ensure that the workflow pauses for human approval and continues with the refund step only after approval is granted.\nHow should you complete the workflow definition?",
+    "code": "steps:\n  - id: propose_refund\n    type: agent\n    agent: PaymentAgent\n  - id: approval\n    type: [Blank 1]\n  - id: execute_refund\n    type: agent\n    agent: PaymentAgent\n    condition: [Blank 2]",
+    "slots": [
+      {
+        "label": "Blank 1 (approval type)",
+        "options": [
+          "ask_question",
+          "basic_chat",
+          "data_transformation"
+        ],
+        "correct": "ask_question"
+      },
+      {
+        "label": "Blank 2 (condition)",
+        "options": [
+          "approval == \"approved\"",
+          "propose_refund.output != null",
+          "true"
+        ],
+        "correct": "approval == \"approved\""
+      }
+    ],
+    "explanation": "In a Foundry YAML workflow, the `ask_question` step pauses execution for human input/approval, and the conditional expression `approval == \"approved\"` gates the subsequent `execute_refund` agent step."
+  },
+  {
+    "id": 34,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry project that uses Azure AI Search to ground an agent in internal documentation. After a recent content update, users report that the agent's answers have become less accurate.\nYou need to identify whether the retrieved content is negatively influencing the model's generated responses. Which observability signal should you review?",
+    "options": [
+      {
+        "id": "A",
+        "text": "indexer status and failure history"
+      },
+      {
+        "id": "B",
+        "text": "latency breakdown traces"
+      },
+      {
+        "id": "C",
+        "text": "prediction drift metrics"
+      },
+      {
+        "id": "D",
+        "text": "groundedness evaluation metrics"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "**Groundedness evaluation metrics** measure how well the model's generated answers align with and are supported by the retrieved Azure AI Search documents."
+  },
+  {
+    "id": 35,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a Microsoft Foundry project that contains an agent used by a legal department. The agent generates answers by using documents retrieved from an Azure AI Search index.\nUsers report that some answers omit important clauses from lengthy legal documents.\nYou need to improve the completeness of responses. The solution must be implemented in the application logic without changing the search index or replacing the deployed model.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Increase the number of retrieved document chunks before constructing the prompt."
+      },
+      {
+        "id": "B",
+        "text": "Enable Prompt Shields for document attacks."
+      },
+      {
+        "id": "C",
+        "text": "Configure Content Safety to annotate responses."
+      },
+      {
+        "id": "D",
+        "text": "Use a lower temperature value."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "When lengthy legal documents have clauses omitted, **increasing the number of retrieved document chunks** (`top_k`) passed into the prompt ensures relevant clauses aren't truncated during retrieval."
+  },
+  {
+    "id": 36,
+    "type": "drag_drop",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry project that processes procurement documents submitted by suppliers. You need to implement two pipelines by using Azure Content Understanding in Foundry Tools. The solution must meet the following requirements:\n• Include a pipeline named Pipeline1 that supports cost-effective, high-volume processing of standalone PDF invoices.\n• Include a pipeline named Pipeline2 that supports cross-document validation by using multi-step reasoning and reference data.\nHow should you configure each pipeline?\nTo answer, drag the appropriate configurations to the correct pipelines. Each configuration may be used once, more than once, or not at all.",
+    "pool": [
+      "Multi-file task in pro mode",
+      "Multi-file task in standard mode",
+      "Single-file task in pro mode",
+      "Single-file task in standard mode"
+    ],
+    "slots": [
+      {
+        "label": "Pipeline1",
+        "options": [
+          "Multi-file task in pro mode",
+          "Multi-file task in standard mode",
+          "Single-file task in pro mode",
+          "Single-file task in standard mode"
+        ],
+        "correct": "Single-file task in standard mode"
+      },
+      {
+        "label": "Pipeline2",
+        "options": [
+          "Multi-file task in pro mode",
+          "Multi-file task in standard mode",
+          "Single-file task in pro mode",
+          "Single-file task in standard mode"
+        ],
+        "correct": "Multi-file task in pro mode"
+      }
+    ],
+    "explanation": "**Single-file task in standard mode** provides cost-effective, high-volume extraction for standalone invoices (`Pipeline1`), whereas **Multi-file task in pro mode** supports multi-step reasoning and cross-document validation across reference files (`Pipeline2`)."
+  },
+  {
+    "id": 37,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a multimodal AI generative model that accepts image uploads and uses extracted image text to generate responses.\nYou discover that users can upload unsafe images and embed hidden instructions into images to manipulate the model.\nYou need to implement controls to mitigate the risk.\nSolution: You configure a prompt shield for user prompts.\nDoes this meet the goal?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "A prompt shield for *user prompts* only scans direct text entered by the user; it does not scan text extracted from uploaded images/documents or block unsafe image content. Therefore, this does **No**t meet the goal."
+  },
+  {
+    "id": 38,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a multimodal AI generative model that accepts image uploads and uses extracted image text to generate responses.\nYou discover that users can upload unsafe images and embed hidden instructions into images to manipulate the model.\nYou need to implement controls to mitigate the risk.\nSolution: You configure image moderation to block unsafe content before processing the images.\nDoes this meet the goal?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Image moderation blocks harmful visual content, but it does **No**t prevent indirect prompt injection attacks hidden as text inside safe-looking images."
+  },
+  {
+    "id": 39,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a multimodal AI generative model that accepts image uploads and uses extracted image text to generate responses.\nYou discover that users can upload unsafe images and embed hidden instructions into images to manipulate the model.\nYou need to implement controls to mitigate the risk.\nSolution: You configure a prompt shield for documents.\nDoes this meet the goal?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Configuring a **prompt shield for documents** inspects untrusted third-party content (including OCR text extracted from uploaded images) for indirect prompt injection instructions. (**Yes**)"
+  },
+  {
+    "id": 40,
+    "type": "single_choice",
+    "domain": "Microsoft Foundry Agents, Tools & Workflows",
+    "stem": "You have a multimodal AI generative model that accepts image uploads and uses extracted image text to generate responses.\nYou discover that users can upload unsafe images and embed hidden instructions into images to manipulate the model.\nYou need to implement controls to mitigate the risk.\nSolution: You configure protected material detection.\nDoes this meet the goal?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Protected material detection checks for known copyrighted text or code; it does **No**t prevent unsafe image uploads or indirect prompt injection attacks."
+  },
+  {
+    "id": 41,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry project that ingests scanned PDF invoices stored in Azure Blob Storage. Each invoice contains printed line items and has a table-based layout.\nExtracted results are stored as structured JSON and used as grounding data for an agent in a Retrieval Augmented Generation (RAG) solution.\nYou need to create a single analyzer that meets the following requirements:\n• Extracts the invoice number, invoice date, vendor name, and total amount across varying templates\n• Returns confidence scores so that results with confidence below 0.80 can be routed for supervisor review\nWhat should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "a Foundry agent that has groundedness guardrails enabled to extract invoice fields and confidence scores"
+      },
+      {
+        "id": "B",
+        "text": "a custom Azure Content Understanding in Foundry Tools analyzer that defines the required fields as the extracted fields and the returned confidence scores for routing"
+      },
+      {
+        "id": "C",
+        "text": "the Azure Content Understanding prebuilt-read analyzer."
+      },
+      {
+        "id": "D",
+        "text": "the Azure Content Understanding prebuilt-layout analyzer."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "A **custom Azure Content Understanding analyzer** lets you define a custom field schema (invoice number, date, vendor, total) that generalizes across templates and outputs field-level confidence scores for routing."
+  },
+  {
+    "id": 42,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "A Microsoft Foundry agent retrieves content from external websites by using Grounding with Bing Search.\nSecurity administrators want to:\n• Detect indirect prompt injection attempts.\n• Review detections before deciding whether to block requests.\nWhich configuration should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Disable Prompt Shields."
+      },
+      {
+        "id": "B",
+        "text": "Configure Prompt Shields to Block."
+      },
+      {
+        "id": "C",
+        "text": "Configure Prompt Shields to Annotate and enable Spotlighting."
+      },
+      {
+        "id": "D",
+        "text": "Configure Content Safety to Block Hate content."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Setting Prompt Shields to **Annotate** logs/flags indirect prompt injection attempts for security review without immediately blocking requests, while **Spotlighting** isolates external web content."
+  },
+  {
+    "id": 43,
+    "type": "hotspot",
+    "domain": "Microsoft Foundry Agents, Tools & Workflows",
+    "stem": "You have a Microsoft Foundry project that contains a workflow for a customer support triage process. You have an Ask a question node that stores user responses in a local variable named Var01. You need to create the following Power Fx expressions:\n• An if/else condition expression that ensures that Var01 contains a value\n• A Send message expression that returns the stored user response in uppercase\nHow should you configure the expressions?",
+    "slots": [
+      {
+        "label": "If/else condition expression",
+        "options": [
+          "IsBlank(Local.Var01)",
+          "IsEmpty(Local.Var01)",
+          "Not(IsBlank(Local.Var01))"
+        ],
+        "correct": "Not(IsBlank(Local.Var01))"
+      },
+      {
+        "label": "Send message expression",
+        "options": [
+          "{Local.Var01}",
+          "{Upper(Local.Var01)}",
+          "{Upper(Var01)}"
+        ],
+        "correct": "{Upper(Local.Var01)}"
+      }
+    ],
+    "explanation": "In Power Fx within Foundry workflows, `Not(IsBlank(Local.Var01))` checks that local variable `Var01` has a value, and `{Upper(Local.Var01)}` interpolates the uppercase string in a Send message node."
+  },
+  {
+    "id": 44,
+    "type": "single_choice",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You have a customer support agent that uses the Microsoft Foundry Agent Service.\nSometimes, customers return to a session days later to continue the same support case, and the agent must resume with the full historical context.\nThe agent must provide the following:\n• Multi-turn continuity within the session Cross-session continuity for the same case\n• Access to the full interaction history, including user messages, agent messages, tool calls, and tool outputs\nYou need to ensure that the agent automatically reloads the complete history on each new turn. What should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create and reuse a conversation by storing the conversation's ID and supplying the ID on subsequent requests."
+      },
+      {
+        "id": "B",
+        "text": "Persist only the final model response stored in the client application and prepend the response to future prompts."
+      },
+      {
+        "id": "C",
+        "text": "Enable memory summarization on the agent definition to persist the context automatically."
+      },
+      {
+        "id": "D",
+        "text": "Store conversation summaries in Azure AI Search and query them on each turn."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Storing the **conversation's ID** and supplying it on subsequent requests allows the Foundry Agent Service to automatically reload the full multi-turn history, including tool calls and outputs."
+  },
+  {
+    "id": 45,
+    "type": "single_choice",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You have a Microsoft Foundry Agent Service project that contains an HR onboarding agent. Employees frequently pause conversations and continue them several days later.\nThe solution must meet the following requirements:\n• Resume the conversation exactly where it ended.\n• Ensure the agent can reference previous tool invocations and uploaded documents.\n• Avoid manually reconstructing conversation history.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a new thread for each user request and copy previous responses into the prompt."
+      },
+      {
+        "id": "B",
+        "text": "Persist the thread ID and continue subsequent requests by using the existing thread."
+      },
+      {
+        "id": "C",
+        "text": "Store conversation summaries in persistent memory and start a new thread for every session."
+      },
+      {
+        "id": "D",
+        "text": "Save only the final assistant response and include it as context in future requests."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "In the Foundry Agent Service, threads persist conversation state automatically. **Persisting the thread ID** and reusing it resumes the exact conversation with all prior tool invocations and uploaded files."
+  },
+  {
+    "id": 46,
+    "type": "drag_drop",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry project that processes regulatory compliance documents submitted by regional offices.\nYou need to implement two pipelines by using Content Understanding in Microsoft Foundry Tools. The solution must meet the following requirements:\n• Include a pipeline named Pipeline1 that extracts key compliance information from individual audit reports while minimizing processing costs.\n• Include a pipeline named Pipeline2 that analyzes multiple related audit reports together to identify inconsistencies across reporting periods by using advanced reasoning.\nHow should you configure each pipeline?\nTo answer, drag the appropriate configurations to the correct pipelines. Each configuration may be used once, more than once, or not at all.",
+    "pool": [
+      "Multi-file task in pro mode",
+      "Multi-file task in standard mode",
+      "Single-file task in pro mode",
+      "Single-file task in standard mode"
+    ],
+    "slots": [
+      {
+        "label": "Pipeline1",
+        "options": [
+          "Multi-file task in pro mode",
+          "Multi-file task in standard mode",
+          "Single-file task in pro mode",
+          "Single-file task in standard mode"
+        ],
+        "correct": "Single-file task in standard mode"
+      },
+      {
+        "label": "Pipeline2",
+        "options": [
+          "Multi-file task in pro mode",
+          "Multi-file task in standard mode",
+          "Single-file task in pro mode",
+          "Single-file task in standard mode"
+        ],
+        "correct": "Multi-file task in pro mode"
+      }
+    ],
+    "explanation": "**Single-file task in standard mode** minimizes cost for standalone audit reports (`Pipeline1`), while **Multi-file task in pro mode** enables cross-document reasoning to spot inconsistencies across multiple reports (`Pipeline2`)."
+  },
+  {
+    "id": 47,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry project that contains a high-traffic agent. After a recent update, operational costs increase significantly.\nMonitoring confirms that the volume of user traffic to the agent remains unchanged.\nYou suspect that changes to the request or response characteristics are causing the increase. You need to identify whether the additional costs are driven by the model input size, the model output size, or expanded tool usage.\nWhich observability capability should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "latency"
+      },
+      {
+        "id": "B",
+        "text": "evaluation metrics"
+      },
+      {
+        "id": "C",
+        "text": "run success rate"
+      },
+      {
+        "id": "D",
+        "text": "token usage"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "**Token usage** observability breaks down prompt (input) tokens versus completion (output) tokens and tool-call token overhead, pinpointing the driver of increased inference costs."
+  },
+  {
+    "id": 48,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a Microsoft Foundry project that contains an Azure Storage account used to store documents for Retrieval-Augmented Generation (RAG).\nThe agents authenticate by using managed identities.\nThe agents must be able to read blob data but must not upload, modify, or delete files.\nWhich role-based access control (RBAC) role should you assign to the managed identities?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Storage Blob Data Owner"
+      },
+      {
+        "id": "B",
+        "text": "Storage Blob Data Contributor"
+      },
+      {
+        "id": "C",
+        "text": "Storage Blob Data Reader"
+      },
+      {
+        "id": "D",
+        "text": "Contributor"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "**Storage Blob Data Reader** grants read-only access to blob data without permitting uploads, modifications, or deletions, adhering to the principle of least privilege."
+  },
+  {
+    "id": 49,
+    "type": "hotspot",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a Microsoft Foundry project that contains an agent.\nYou use a GitHub Actions workflow for CI/CD.\nYou need to configure the workflow to automatically evaluate the agent when a pull request (PR) is created and prevent branches from merging if the evaluation results do NOT meet the defined thresholds. How should you configure the workflow?",
+    "slots": [
+      {
+        "label": "Authentication method",
+        "options": [
+          "A personal access token (PAT)",
+          "A user-assigned managed identity",
+          "An Azure Login action that uses OpenID Connect (OIDC)"
+        ],
+        "correct": "An Azure Login action that uses OpenID Connect (OIDC)"
+      },
+      {
+        "label": "If the evaluation results are NOT met, configure the workflow to",
+        "options": [
+          "Lock the target branch",
+          "Send an alert",
+          "Fail"
+        ],
+        "correct": "Fail"
+      }
+    ],
+    "explanation": "Using the **Azure Login action with OpenID Connect (OIDC)** provides secure passwordless authentication in GitHub Actions, and configuring the workflow to **Fail** blocks PR merges when thresholds aren't met."
+  },
+  {
+    "id": 50,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry project that contains an agent. The agent uses Azure Speech in Foundry Tools. You fine-tune a baseline speech to text model for the en-us locale and publish the model. The agent calls the Speech to text REST API and returns an error message indicating that the project ID is invalid. You need to set the project property to the correct ID.\nTo what should you set the project property?",
+    "options": [
+      {
+        "id": "A",
+        "text": "the project URL"
+      },
+      {
+        "id": "B",
+        "text": "the custom speech project ID"
+      },
+      {
+        "id": "C",
+        "text": "the project ID"
+      },
+      {
+        "id": "D",
+        "text": "the custom speech endpoint URL"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "When calling the Speech-to-Text REST API with a fine-tuned model in Custom Speech, the `project` property must be set to the **custom speech project ID**."
+  },
+  {
+    "id": 51,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry project named Project1.\nProject1 contains an application that processes PDF vendor invoices.\nYou need to configure Azure Document Intelligence in Foundry Tools to generate a Markdown output that preserves the sections and table structure of the PDFs. The solution must minimize development effort. What should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure output=figures when you analyze the PDF."
+      },
+      {
+        "id": "B",
+        "text": "Configure content=markdown when you analyze the document."
+      },
+      {
+        "id": "C",
+        "text": "Increase the confidence threshold."
+      },
+      {
+        "id": "D",
+        "text": "Set the output_content_format=ContentFormat.MARKDOWN value."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "In Azure Document Intelligence, setting `output_content_format=ContentFormat.MARKDOWN` converts analyzed PDFs directly into structured Markdown that preserves headings, sections, and tables."
+  },
+  {
+    "id": 52,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "A legal research agent must satisfy the following requirements:\n• Search contracts uploaded by users during an active conversation.\n• Search millions of historical court decisions stored in a centralized enterprise index.\nWhich combination should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "File Search for both requirements"
+      },
+      {
+        "id": "B",
+        "text": "Azure AI Search for both requirements"
+      },
+      {
+        "id": "C",
+        "text": "File Search for uploaded contracts and Azure AI Search for historical court decisions"
+      },
+      {
+        "id": "D",
+        "text": "Microsoft Fabric for uploaded contracts and File Search for historical court decisions"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Use **File Search** for ad-hoc documents uploaded by users during an active conversation, and **Azure AI Search** for querying millions of documents in a centralized enterprise index."
+  },
+  {
+    "id": 53,
+    "type": "code_completion",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a Python application named App1 that integrates with a Microsoft Foundry project named Project1.\nYou need to ensure that App1 meets the following requirements:\n• Authenticates by using a Microsoft Entra managed identity\n• Sends prompts to a deployed model by using the Azure OpenAI Responses API\nHow should you complete the Python code?",
+    "code": "from azure.identity import DefaultAzureCredential\nfrom azure.ai.projects import AIProjectClient\n\ncredential = [Blank 1]()\nproject_client = AIProjectClient(\n    endpoint=\"https://contosoai.services.ai.azure.com/api/projects/project1\",\n    credential=credential,\n)\nwith project_client.get_openai_client() as openai_client:\n    response = openai_client.responses.[Blank 2](\n        model=\"trail-guide-chat\",\n        input=\"Create a 3-day hiking itinerary near Seattle.\",\n    )\n    print(response.output_text)",
+    "slots": [
+      {
+        "label": "Blank 1 (credential)",
+        "options": [
+          "AzureKeyCredential",
+          "ClientSecretCredential",
+          "DefaultAzureCredential"
+        ],
+        "correct": "DefaultAzureCredential"
+      },
+      {
+        "label": "Blank 2 (responses method)",
+        "options": [
+          "compact",
+          "create",
+          "retrieve"
+        ],
+        "correct": "create"
+      }
+    ],
+    "explanation": "`DefaultAzureCredential()` authenticates via Microsoft Entra managed identity, and `openai_client.responses.create(...)` sends prompts using the Azure OpenAI Responses API."
+  },
+  {
+    "id": 54,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry project that generates product marketing images from text prompts. After publishing several images, the legal team at your company identifies a competitor's logo on a sign in the background of an image.\nYou need to remove only the logo, while preserving the rest of the image.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Apply a mask-based inpainting edit to the part of the image that contains the logo."
+      },
+      {
+        "id": "B",
+        "text": "Increase the prompt guidance strength."
+      },
+      {
+        "id": "C",
+        "text": "Modify the original prompt to exclude brand names."
+      },
+      {
+        "id": "D",
+        "text": "Rerun the prompt by using a different random seed."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "A **mask-based inpainting edit** (`mask_inpainting`) targets only the masked area containing the competitor's logo while keeping the rest of the marketing image intact."
+  },
+  {
+    "id": 55,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry project that contains an agent.\nThe agent processes scanned maintenance reports that are uploaded by field technicians.\nThe solution must meet the following requirements:\n• Extract all readable text from each document.\n• Ignore the document layout, including tables and paragraph positions.\n• Do not identify key-value pairs or structured business fields.\n• Minimize processing costs and avoid using a language model deployment.\nYou plan to call Azure Content Understanding in Foundry Tools.\nWhich built-in analyzer should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "prebuilt-documentFieldSchema"
+      },
+      {
+        "id": "B",
+        "text": "prebuilt-layout"
+      },
+      {
+        "id": "C",
+        "text": "prebuilt-read"
+      },
+      {
+        "id": "D",
+        "text": "prebuilt-documentSearch"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "The `prebuilt-read` analyzer in Azure Content Understanding performs fast, low-cost OCR to extract all readable text without layout analysis, table reconstruction, or LLM field extraction."
+  },
+  {
+    "id": 56,
+    "type": "drag_drop",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry project that contains a sales assistant agent. The agent retrieves product information from an Azure AI Search index and generates responses by using a large language model. After deploying a new version of the agent, users report the following issues:\n• The average response time has increased significantly when users ask complex questions.\n• Monthly model inference costs have increased even though the number of user requests has remained unchanged.\nYou need to evaluate each issue.\nWhich observability signals should you use for each issue?\nTo answer, drag the appropriate observability signals to the correct issues. Each observability signal may be used once, more than once, or not at all.",
+    "pool": [
+      "Groundedness evaluation metrics",
+      "Latency breakdown traces",
+      "Risk and safety metrics",
+      "Token usage analytics"
+    ],
+    "slots": [
+      {
+        "label": "Increased response time",
+        "options": [
+          "Groundedness evaluation metrics",
+          "Latency breakdown traces",
+          "Risk and safety metrics",
+          "Token usage analytics"
+        ],
+        "correct": "Latency breakdown traces"
+      },
+      {
+        "label": "Increased inference costs",
+        "options": [
+          "Groundedness evaluation metrics",
+          "Latency breakdown traces",
+          "Risk and safety metrics",
+          "Token usage analytics"
+        ],
+        "correct": "Token usage analytics"
+      }
+    ],
+    "explanation": "**Latency breakdown traces** isolate slow steps during complex queries, while **Token usage analytics** explain why monthly inference costs rose despite flat request volume."
+  },
+  {
+    "id": 57,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have an application named App1 that uses Azure Speech in Foundry Tools to transcribe live calls. Transcript segments often contain both English and Spanish.\nApp1 sends each segment to Azure Translator in Foundry Tools to translate to another language. Sometimes, mixed-language segments result in incomplete or incorrect translations.\nYou need to reduce translation errors. The solution must ensure that the entire transcript is translated successfully.\nWhat should you do before sending the segments to Translator?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use document translation to translate the entire transcript as a single document."
+      },
+      {
+        "id": "B",
+        "text": "Split the mixed-language segments into single-language segments and translate each segment separately."
+      },
+      {
+        "id": "C",
+        "text": "Enable automatic language detection for the translation request."
+      },
+      {
+        "id": "D",
+        "text": "Specify English as the source language in the translation request for all the segments."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Azure Translator performs best when each input segment is in a single language. **Splitting mixed-language segments into single-language segments** before translation prevents incomplete or garbled output."
+  },
+  {
+    "id": 58,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry project that contains an agent used by a customer service application. Following a recent deployment, users report that responses take significantly longer to generate. Monitoring shows that the number of requests per minute has remained constant.\nYou need to determine whether the increased response time is caused by document retrieval, tool execution, or model inference.\nWhich observability capability should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Evaluation metrics"
+      },
+      {
+        "id": "B",
+        "text": "Latency"
+      },
+      {
+        "id": "C",
+        "text": "Run success rate"
+      },
+      {
+        "id": "D",
+        "text": "Token usage"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "The **Latency** observability capability provides time-taken breakdowns across document retrieval, tool execution, and model inference."
+  },
+  {
+    "id": 59,
+    "type": "hotspot",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a Microsoft Foundry project that processes engineering drawings stored in Azure Blob Storage.\nAzure AI Content Safety must retrieve images by using blob URLs to evaluate user-submitted images. The solution must meet the following requirements:\n• Follow the principle of least privilege.\n• Avoid using storage account keys or shared access signatures (SAS).\n• Allow Content Safety to read images stored in Azure Blob Storage.",
+    "slots": [
+      {
+        "label": "Authentication",
+        "options": [
+          "Storage account access keys",
+          "Shared Access Signature (SAS)",
+          "System-assigned managed identity",
+          "User-assigned managed identity"
+        ],
+        "correct": "System-assigned managed identity"
+      },
+      {
+        "label": "Azure RBAC role",
+        "options": [
+          "Storage Blob Data Reader",
+          "Storage Blob Data Contributor",
+          "Storage Queue Data Contributor",
+          "Owner"
+        ],
+        "correct": "Storage Blob Data Reader"
+      }
+    ],
+    "explanation": "Enabling a **System-assigned managed identity** on the Content Safety resource and assigning it the **Storage Blob Data Reader** role grants keyless, least-privilege read access to blob URLs."
+  },
+  {
+    "id": 60,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a Microsoft Foundry project that contains an agent and an image generation model deployment.\nThe agent creates lifestyle marketing images for clothing products.\nUsers provide a photograph of a jacket and request new scenes in different environments. The solution must ensure that the generated images continue to depict the same jacket while allowing the background, lighting, and setting to change.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Include the original image as a reference image in the generation request."
+      },
+      {
+        "id": "B",
+        "text": "Reduce the max_tokens parameter."
+      },
+      {
+        "id": "C",
+        "text": "Enable groundedness detection."
+      },
+      {
+        "id": "D",
+        "text": "Configure Content Safety to annotate the generated images."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Including the original jacket photo as a **reference image** in the image generation request preserves the product's visual appearance while allowing the scene, lighting, and background to vary."
+  },
+  {
+    "id": 61,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have an Azure Speech in Foundry Tools resource that hosts a custom speech to text model deployed to a custom endpoint. An agent uses the endpoint to perform real-time speech recognition. You are approaching the expiration date of the custom speech to text model.\nWhat is the expected behavior when the model expires?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Speech recognition requests will return a 4xx error until a new custom model is deployed."
+      },
+      {
+        "id": "B",
+        "text": "Speech recognition requests will continue to use the expired custom model until the model is removed manually."
+      },
+      {
+        "id": "C",
+        "text": "Speech recognition requests will fall back to the most recent base model for the same locale."
+      },
+      {
+        "id": "D",
+        "text": "The custom model will be deleted automatically when the model expires."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "When a deployed custom speech-to-text model reaches its expiration date, recognition requests **automatically fall back to the most recent base model** for the same locale."
+  },
+  {
+    "id": 62,
+    "type": "single_choice",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You have a technical support agent that uses the Microsoft Foundry Agent Service.\nCustomers often upload log files while troubleshooting issues. A support case can remain open for several weeks, and different support engineers may continue the conversation during that time.\nThe solution must meet the following requirements:\n• Maintain the complete conversation history across multiple sessions.\n• Preserve uploaded files, tool calls, tool outputs, and agent responses.\n• Minimize application code.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Store the thread ID after the initial conversation and provide the same thread ID when continuing the support case."
+      },
+      {
+        "id": "B",
+        "text": "Store the generated responses in Azure AI Search and prepend them to every new prompt."
+      },
+      {
+        "id": "C",
+        "text": "Enable persistent agent memory and allow the agent to reconstruct previous conversations automatically."
+      },
+      {
+        "id": "D",
+        "text": "Store conversation summaries in a database and include the summaries in each new request."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Persisting and reusing the **thread ID** in the Microsoft Foundry Agent Service preserves the full conversation history, uploaded log files, tool calls, and outputs across weeks and multiple engineers."
+  },
+  {
+    "id": 63,
+    "type": "hotspot",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a Microsoft Foundry project that contains a customer support agent built by using the Foundry Agent Service.\nThe agent uploads user-provided screenshots to Azure Storage through a ticketing tool and receives a blob URL for additional reasoning.\nYou need to use image moderation during agent runs and prevent harmful content from being returned during runs.\nAzure AI Content Safety must access the images by using the blob URL. The solution must follow the principle of least privilege.",
+    "slots": [
+      {
+        "label": "Guardrails",
+        "options": [
+          "Select Tool call and set Action to Block.",
+          "Select User input and Output and set Action to Annotate.",
+          "Select User input and Tool response and set Action to Annotate.",
+          "Select User input, Output, Tool response, and Tool call and set Action to Block."
+        ],
+        "correct": "Select User input, Output, Tool response, and Tool call and set Action to Block."
+      },
+      {
+        "label": "Storage access",
+        "options": [
+          "Storage account access keys",
+          "A user-assigned identity that is assigned the Storage Queue Data Contributor role",
+          "A system-assigned managed identity that is assigned the Storage Blob Data Reader role",
+          "Shared Access Signature (SAS) tokens"
+        ],
+        "correct": "A system-assigned managed identity that is assigned the Storage Blob Data Reader role"
+      }
+    ],
+    "explanation": "To block harmful content across all agent stages, select **User input, Output, Tool response, and Tool call and set Action to Block**. For keyless least-privilege blob access, use a **system-assigned managed identity with the Storage Blob Data Reader role**."
+  },
+  {
+    "id": 64,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry project that contains an agent. The agent generates summaries from retrieved policy documents.\nYou need to improve response completeness. The solution must be implemented in the logic of the application code before responses are returned.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add a retry evaluation before the responses are returned."
+      },
+      {
+        "id": "B",
+        "text": "Decrease the value of the max_tokens parameter."
+      },
+      {
+        "id": "C",
+        "text": "Switch to Retrieval Augmented Generation (RAG)."
+      },
+      {
+        "id": "D",
+        "text": "Replace the model with a smaller deployment."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Adding a **retry evaluation** (reflection/validation loop) in the application logic before returning responses checks summary completeness and triggers regeneration if required details are missing."
+  },
+  {
+    "id": 65,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have an app named App1 that uses a Microsoft Foundry chat model deployment.\nApp1 accepts free-form text entered directly by users.\nSome users intentionally submit prompts that attempt to bypass system instructions, reveal hidden prompts, or manipulate tool execution.\nYou need to detect these direct prompt injection attempts before the model processes the user's input. What should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Image moderation"
+      },
+      {
+        "id": "B",
+        "text": "Prompt Shields for documents"
+      },
+      {
+        "id": "C",
+        "text": "Protected material text"
+      },
+      {
+        "id": "D",
+        "text": "Prompt Shields for user prompts"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "**Prompt Shields for user prompts** detects direct prompt injection (jailbreak) attempts entered by users before the model processes the input."
+  },
+  {
+    "id": 66,
+    "type": "drag_drop",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry project that contains an agent that answers employee questions by using Retrieval-Augmented Generation (RAG).\nAfter deployment, users report the following issues:\n• The retrieved documents are relevant, but the generated answers do not address the user's question.\n• Responses generated by the agent are significantly longer than expected, increasing inference costs.\nYou need to determine which diagnostic capability to use for each issue.\nWhich diagnostic capability should you use?\nTo answer, drag the appropriate diagnostic capabilities to the correct issues. Each diagnostic capability may be used once, more than once, or not at all.",
+    "pool": [
+      "Relevance Evaluation",
+      "Completion token analytics",
+      "Groundedness evaluation",
+      "Prompt traces",
+      "Latency timeline"
+    ],
+    "slots": [
+      {
+        "label": "Answers do not address the user's question",
+        "options": [
+          "Relevance Evaluation",
+          "Completion token analytics",
+          "Groundedness evaluation",
+          "Prompt traces",
+          "Latency timeline"
+        ],
+        "correct": "Relevance Evaluation"
+      },
+      {
+        "label": "Responses are longer than expected",
+        "options": [
+          "Relevance Evaluation",
+          "Completion token analytics",
+          "Groundedness evaluation",
+          "Prompt traces",
+          "Latency timeline"
+        ],
+        "correct": "Completion token analytics"
+      }
+    ],
+    "explanation": "**Relevance Evaluation** measures whether generated answers actually address the user's question, while **Completion token analytics** tracks output length and token consumption."
+  },
+  {
+    "id": 67,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a Microsoft Foundry project named Project1 that contains the following:\n• An OpenAPI tool that calls an external API\n• A project connection named Connection1 that stores the API key of the external API\nWhen an agent calls the OpenAPI tool, the API returns a 401 unauthorized error, and traces show that the API key header is NOT being sent.\nYou need to ensure that the OpenAPI tool automatically includes the API key from Connection1 on all requests.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Enable identity passthrough so that the tool uses the Microsoft Entra token of the caller."
+      },
+      {
+        "id": "B",
+        "text": "Add the API key header manually to the OpenAPI specification."
+      },
+      {
+        "id": "C",
+        "text": "Configure the tool to use the default connection of Project1."
+      },
+      {
+        "id": "D",
+        "text": "Connect the tool to Connection1."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Even when an OpenAPI specification defines a security scheme and `Connection1` stores the key, you must explicitly **connect/associate the OpenAPI tool with `Connection1`** so the runtime injects the header."
+  },
+  {
+    "id": 68,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry project that contains a customer support agent.\nAfter deploying a new prompt template, administrators observe that Azure OpenAI costs have increased significantly, even though the number of user requests has remained constant.\nYou need to determine whether the prompt or generated responses are consuming more tokens than expected.\nWhich observability signal should you review?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Groundedness evaluation metrics"
+      },
+      {
+        "id": "B",
+        "text": "Retrieval evaluation metrics"
+      },
+      {
+        "id": "C",
+        "text": "Token usage analytics"
+      },
+      {
+        "id": "D",
+        "text": "Agent execution timeline"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "**Token usage analytics** tracks prompt tokens and completion tokens per request, revealing whether a new prompt template inflated input or output token counts."
+  },
+  {
+    "id": 69,
+    "type": "hotspot",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry project that contains a customer support agent. The agent uses Azure AI Search as a knowledge source to answer questions by using Retrieval-Augmented Generation (RAG). After a recent deployment, users report the following issues:\n• The agent occasionally generates responses that are not supported by the retrieved documents.\n• Support engineers want the agent to return a fallback response instead of generating an answer when insufficient grounding evidence is available.\nYou need to identify the evaluation metric and the recommended configuration to address the issues.",
+    "slots": [
+      {
+        "label": "Evaluation metric",
+        "options": [
+          "Coherence",
+          "Fluency",
+          "Groundedness",
+          "Similarity"
+        ],
+        "correct": "Groundedness"
+      },
+      {
+        "label": "Recommended configuration",
+        "options": [
+          "Increase the model temperature.",
+          "Reject responses that do not meet the groundedness threshold.",
+          "Increase the maximum completion tokens.",
+          "Fine-tune the model by using the retrieved documents."
+        ],
+        "correct": "Reject responses that do not meet the groundedness threshold."
+      }
+    ],
+    "explanation": "The **Groundedness** metric evaluates whether answers are supported by retrieved documents. Configuring the application to **reject responses that do not meet the groundedness threshold** and return a fallback prevents ungrounded answers."
+  },
+  {
+    "id": 70,
+    "type": "multi_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a Microsoft Foundry project that contains an agent.\nYour organization needs to detect suspicious sign-in activity, investigate security incidents, and correlate alerts generated from Microsoft Foundry, Microsoft Defender, and Microsoft Entra ID.\nThe solution must provide a centralized security operations platform.\nWhich two components should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Sentinel"
+      },
+      {
+        "id": "B",
+        "text": "Log Analytics workspace"
+      },
+      {
+        "id": "C",
+        "text": "Azure Monitor Agent"
+      },
+      {
+        "id": "D",
+        "text": "Application Insights"
+      },
+      {
+        "id": "E",
+        "text": "OpenTelemetry"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "**Microsoft Sentinel** (built on a **Log Analytics workspace**) provides centralized SIEM/SOAR capabilities to correlate security alerts across Microsoft Foundry, Microsoft Defender, and Microsoft Entra ID."
+  },
+  {
+    "id": 71,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a Microsoft Foundry project that contains a model deployment.\nYou have an application that calls the deployment by using the Azure OpenAI v1 API and\nDefaultAzureCredential. The developers at your company receive HTTP 403 errors when they send inference requests, even after running az login.\nYou need to ensure that the developers can perform model inference. The solution must follow the principle of least privilege.\nWhich role-based access control (RBAC) role should you assign to the developers?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Cognitive Services User"
+      },
+      {
+        "id": "B",
+        "text": "Cognitive Services OpenAI User"
+      },
+      {
+        "id": "C",
+        "text": "Contributor"
+      },
+      {
+        "id": "D",
+        "text": "Cognitive Services Data Reader"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "**Cognitive Services OpenAI User** is the least-privilege RBAC role that permits developers to run model inference calls against Azure OpenAI deployments without administrative permissions."
+  },
+  {
+    "id": 72,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have an app named App1 that uses a Microsoft Foundry multimodal model deployment.\nApp1 runs optical character recognition (OCR) on uploaded images and appends the OCR output to the prompt as additional context.\nSome uploaded images contain embedded text.\nYou need to prevent potentially malicious instructions from being processed by the model. What should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "image moderation"
+      },
+      {
+        "id": "B",
+        "text": "prompt shields for documents"
+      },
+      {
+        "id": "C",
+        "text": "protected material text"
+      },
+      {
+        "id": "D",
+        "text": "prompt shields for user prompts"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Because OCR text extracted from uploaded images comes from an untrusted external source, **prompt shields for documents** should be used to detect embedded indirect prompt injection attacks."
+  },
+  {
+    "id": 73,
+    "type": "hotspot",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You need to recommend a solution for a legal research agent by using the Microsoft Foundry Agent Service.\nThe solution must meet the following requirements:\n• Retain attorney preferences across multiple conversations.\n• Enable the agent to retrieve reference material from documents uploaded during a conversation.\nWhich Foundry capability should you recommend for each requirement?",
+    "slots": [
+      {
+        "label": "To retain attorney preferences across conversations, use",
+        "options": [
+          "Agent memory that uses persistent storage",
+          "Conversation history",
+          "Orchestration-managed session context",
+          "Prompt cache"
+        ],
+        "correct": "Agent memory that uses persistent storage"
+      },
+      {
+        "label": "To retrieve uploaded documents, use",
+        "options": [
+          "File search tool",
+          "Code interpreter tool",
+          "Computer use tool",
+          "Azure AI Translator"
+        ],
+        "correct": "File search tool"
+      }
+    ],
+    "explanation": "**Agent memory that uses persistent storage** retains attorney preferences across sessions, while the **File search tool** retrieves reference material from documents uploaded during a conversation."
+  },
+  {
+    "id": 74,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry project named Project1.\nProject1 contains an application that processes scanned engineering drawings.\nYou need to configure Azure Document Intelligence in Foundry Tools to extract the document content while preserving tables, headings, paragraphs, and reading order. The extracted content will be passed directly to a large language model for summarization.\nThe solution must minimize custom post-processing.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure output=figures when analyzing the document."
+      },
+      {
+        "id": "B",
+        "text": "Set output_content_format=ContentFormat.MARKDOWN."
+      },
+      {
+        "id": "C",
+        "text": "Configure string_index_type=UnicodeCodePoint."
+      },
+      {
+        "id": "D",
+        "text": "Increase the OCR resolution before processing."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Setting `output_content_format=ContentFormat.MARKDOWN` in Azure Document Intelligence preserves tables, headings, paragraphs, and reading order in an LLM-ready format with minimal post-processing."
+  },
+  {
+    "id": 75,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a Microsoft Foundry project that contains an Azure AI Search resource used to ground multiple agents.\nDevelopers at your company use Microsoft Entra ID authentication to query the search index from a custom application. They receive HTTP 403 (Forbidden) errors when executing search queries.\nYou need to grant the minimum permissions required for developers to query the search index. Which role-based access control (RBAC) role should you assign?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Search Service Contributor"
+      },
+      {
+        "id": "B",
+        "text": "Search Index Data Reader"
+      },
+      {
+        "id": "C",
+        "text": "Contributor"
+      },
+      {
+        "id": "D",
+        "text": "Reader"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "**Search Index Data Reader** grants read-only permission to query an Azure AI Search index using Microsoft Entra ID authentication, following least privilege."
+  },
+  {
+    "id": 76,
+    "type": "drag_drop",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You have a Microsoft Foundry project that contains an agent used by an insurance company. You need to enhance the agent by using built-in tools. The solution must meet the following requirements:\n• Allow the agent to analyze claim spreadsheets uploaded during conversations and generate charts.\n• Allow the agent to interact with a legacy claims management website that does not expose APIs.\n• Allow the agent to answer questions by using policy documents uploaded directly to the current conversation.\nWhat should you use for each requirement?\nTo answer, drag the appropriate tools to the correct requirements. Each tool may be used once, more than once, or not at all.",
+    "pool": [
+      "Code Interpreter",
+      "Computer Use",
+      "File Search",
+      "Grounding with Bing Search",
+      "Microsoft Fabric"
+    ],
+    "slots": [
+      {
+        "label": "Analyze uploaded spreadsheets and generate charts",
+        "options": [
+          "Code Interpreter",
+          "Computer Use",
+          "File Search",
+          "Grounding with Bing Search",
+          "Microsoft Fabric"
+        ],
+        "correct": "Code Interpreter"
+      },
+      {
+        "label": "Interact with the legacy claims management website",
+        "options": [
+          "Code Interpreter",
+          "Computer Use",
+          "File Search",
+          "Grounding with Bing Search",
+          "Microsoft Fabric"
+        ],
+        "correct": "Computer Use"
+      },
+      {
+        "label": "Retrieve information from uploaded policy documents",
+        "options": [
+          "Code Interpreter",
+          "Computer Use",
+          "File Search",
+          "Grounding with Bing Search",
+          "Microsoft Fabric"
+        ],
+        "correct": "File Search"
+      }
+    ],
+    "explanation": "**Code Interpreter** analyzes uploaded spreadsheets and generates charts; **Computer Use** automates browser interactions with legacy websites lacking APIs; **File Search** answers questions from uploaded policy PDFs."
+  },
+  {
+    "id": 77,
+    "type": "single_choice",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You have a Microsoft Foundry project that contains an agent. The agent has a Model Context Protocol (MCP) tool that queries a knowledge base stored in Azure AI Search.\nSome agent runs return answers from the base model without invoking the knowledge base, which results in responses without grounded citations.\nYou are provided with the following code snippet that runs the agent.\nrun = project_client.agents.runs.create_and_process(\nthread_id=thread.id,\nagent_id=agent.id\n)\nYou need to add the correct tool _choice parameter to the code to deterministically force the agent to invoke the MCP tool on each run.\nWhat should you add?",
+    "options": [
+      {
+        "id": "A",
+        "text": "tool_choice= \"required\""
+      },
+      {
+        "id": "B",
+        "text": "tool_choice= \"auto\""
+      },
+      {
+        "id": "C",
+        "text": "tool_choice= \"type\":\"knowledge_base\""
+      },
+      {
+        "id": "D",
+        "text": "tool_choice = \"type\":\"mcp\""
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "To deterministically force the agent to invoke a Model Context Protocol (MCP) tool on every run, pass `tool_choice={\"type\": \"mcp\"}` (represented as `tool_choice = \"type\":\"mcp\"`)."
+  },
+  {
+    "id": 78,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "A Microsoft Foundry agent invokes three custom tools.\nAdministrators report that users occasionally experience response delays.\nThey need to determine which tool contributes the most to the total response time.\nWhich diagnostic capability should they review?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Token usage analytics"
+      },
+      {
+        "id": "B",
+        "text": "Tool execution traces"
+      },
+      {
+        "id": "C",
+        "text": "Groundedness evaluation"
+      },
+      {
+        "id": "D",
+        "text": "Conversation history"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "**Tool execution traces** record the start time, duration, and status of each individual tool invocation within an agent run, identifying which custom tool causes delays."
+  },
+  {
+    "id": 79,
+    "type": "hotspot",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You need to recommend a solution for a customer service agent by using the Microsoft Foundry Agent Service.\nThe agent must meet the following requirements:\n• Execute Python code to analyze spreadsheets uploaded by users during conversations.\n• Access current weather conditions from public websites without requiring users to upload documents.\nWhich Foundry capability should you recommend for each requirement?",
+    "slots": [
+      {
+        "label": "To analyze uploaded spreadsheets, use",
+        "options": [
+          "Code Interpreter Tool",
+          "File Search Tool",
+          "Computer Use Tool",
+          "Azure AI Search Tool"
+        ],
+        "correct": "Code Interpreter Tool"
+      },
+      {
+        "label": "To retrieve current weather information, use",
+        "options": [
+          "Grounding with Bing Search",
+          "File Search Tool",
+          "Computer Use Tool",
+          "Microsoft Fabric tool"
+        ],
+        "correct": "Grounding with Bing Search"
+      }
+    ],
+    "explanation": "Use the **Code Interpreter Tool** to execute Python code on uploaded spreadsheets, and **Grounding with Bing Search** to fetch live weather conditions from the public web."
+  },
+  {
+    "id": 80,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry project that contains an agent used by an internal HR application. Following a prompt update, administrators notice that users are reporting more incomplete and unsupported answers. The application continues to process requests successfully, and response times remain unchanged. You need to determine whether the quality of the generated responses has degraded.\nWhich observability capability should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Token usage"
+      },
+      {
+        "id": "B",
+        "text": "Latency"
+      },
+      {
+        "id": "C",
+        "text": "Evaluation metrics"
+      },
+      {
+        "id": "D",
+        "text": "Run success rate"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "**Evaluation metrics** (such as groundedness, completeness, and relevance) quantify whether response quality has degraded following a prompt change when latency and error rates are normal."
+  },
+  {
+    "id": 81,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry project that serves a high-volume chat app. Most requests are simple FAQs, but some require advanced reasoning.\nYou need to reduce costs and latency for common queries, without degrading the quality of the responses to complex questions.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Route all the requests to a smaller model."
+      },
+      {
+        "id": "B",
+        "text": "Use a model cascade that routes the requests to different models."
+      },
+      {
+        "id": "C",
+        "text": "Increase the value of the max_tokens parameter for all the requests."
+      },
+      {
+        "id": "D",
+        "text": "Route all the requests to the most capable model."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "A **model cascade** routes simple FAQ queries to a fast, low-cost small language model (SLM) and escalates complex queries to a larger reasoning model, optimizing cost and latency."
+  },
+  {
+    "id": 82,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "A financial reporting application generates JSON that is consumed by downstream automation. Occasionally, responses contain unexpected fields that cause processing failures.\nWhich approach should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Lower the model temperature."
+      },
+      {
+        "id": "B",
+        "text": "Use structured outputs with a JSON schema."
+      },
+      {
+        "id": "C",
+        "text": "Increase the maximum completion tokens."
+      },
+      {
+        "id": "D",
+        "text": "Fine-tune the model."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Using **structured outputs with a JSON schema** (`response_format` with `json_schema` and `strict: true`) guarantees that model responses strictly conform to the required schema without unexpected fields."
+  },
+  {
+    "id": 83,
+    "type": "hotspot",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You need to recommend a solution for a procurement agent by using the Microsoft Foundry Agent Service.\nThe solution must meet the following requirements:\n• Answer questions by using supplier contracts uploaded by users during conversations.\n• Generate charts that summarize purchasing trends from uploaded Excel workbooks.\nWhich Foundry capability should you recommend for each requirement?",
+    "slots": [
+      {
+        "label": "To answer questions from uploaded contracts, use",
+        "options": [
+          "File Search Tool",
+          "Code Interpreter Tool",
+          "Grounding with Bing Search",
+          "Computer Use Tool"
+        ],
+        "correct": "File Search Tool"
+      },
+      {
+        "label": "To generate charts from Excel workbooks, use",
+        "options": [
+          "Code Interpreter Tool",
+          "File Search Tool",
+          "Azure AI Search Tool",
+          "Microsoft Fabric Tool"
+        ],
+        "correct": "Code Interpreter Tool"
+      }
+    ],
+    "explanation": "Use the **File Search Tool** to answer questions from uploaded supplier contracts, and the **Code Interpreter Tool** to process Excel workbooks and generate summary charts."
+  },
+  {
+    "id": 84,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry project that contains an agent.\nYou need to process mixed-format documents that contain scanned text, tables, and multicolumn layouts. The extracted content must preserve the document structure and be converted into the Markdown format for downstream reasoning.\nWhat should you configure first?",
+    "options": [
+      {
+        "id": "A",
+        "text": "an Azure Language in Foundry Tools text analysis model deployment"
+      },
+      {
+        "id": "B",
+        "text": "a generative chat completion request"
+      },
+      {
+        "id": "C",
+        "text": "an Azure OpenAI Responses API call that uses a multimodal model"
+      },
+      {
+        "id": "D",
+        "text": "an Azure Content Understanding in Foundry Tools analyzer"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Configuring an **Azure Content Understanding in Foundry Tools analyzer** extracts scanned text, tables, and multicolumn layouts into structured Markdown for downstream agent reasoning."
+  },
+  {
+    "id": 85,
+    "type": "single_choice",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You have a Microsoft Foundry project.\nYou plan to build a customer support solution that contains an agent. The solution must meet the following requirements:\n• Provide accurate, context-aware responses grounded in internal product documentation stored in Azure AI Search.\n• Require deep, multi-step reasoning across long contexts.\n• Generate detailed natural language responses.\nWhich type of model should you use to power the agent?",
+    "options": [
+      {
+        "id": "A",
+        "text": "a multimodal model"
+      },
+      {
+        "id": "B",
+        "text": "a small language model (SLM)"
+      },
+      {
+        "id": "C",
+        "text": "a key phrase extraction model"
+      },
+      {
+        "id": "D",
+        "text": "a large language model (LLM)"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "A **large language model (LLM)** is required when the workload demands deep, multi-step reasoning across long contexts and detailed natural language synthesis."
+  },
+  {
+    "id": 86,
+    "type": "drag_drop",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You have a Microsoft Foundry project that contains a legal research agent.\nThe solution must meet the following requirements:\n• Research recently published court decisions available on public websites.\n• Search contracts that attorneys upload during a conversation.\n• Log in to a third-party compliance portal and download supporting evidence for the current case.\nWhat should you use for each requirement?\nTo answer, drag the appropriate tools to the correct requirements. Each tool may be used once, more than once, or not at all.",
+    "pool": [
+      "Code Interpreter",
+      "Computer Use",
+      "File Search",
+      "Grounding with Bing Search",
+      "Microsoft Fabric"
+    ],
+    "slots": [
+      {
+        "label": "Research recent court decisions",
+        "options": [
+          "Code Interpreter",
+          "Computer Use",
+          "File Search",
+          "Grounding with Bing Search",
+          "Microsoft Fabric"
+        ],
+        "correct": "Grounding with Bing Search"
+      },
+      {
+        "label": "Search uploaded contracts",
+        "options": [
+          "Code Interpreter",
+          "Computer Use",
+          "File Search",
+          "Grounding with Bing Search",
+          "Microsoft Fabric"
+        ],
+        "correct": "File Search"
+      },
+      {
+        "label": "Download evidence from the compliance portal",
+        "options": [
+          "Code Interpreter",
+          "Computer Use",
+          "File Search",
+          "Grounding with Bing Search",
+          "Microsoft Fabric"
+        ],
+        "correct": "Computer Use"
+      }
+    ],
+    "explanation": "**Grounding with Bing Search** finds recent court decisions on public websites; **File Search** queries uploaded contracts; **Computer Use** logs into the third-party web portal to download evidence."
+  },
+  {
+    "id": 87,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry project that contains an agent.\nThe knowledge source for the agent is a set of scanned PDF troubleshooting guides stored in Azure Blob Storage. The guide pages contain two-column layouts and tables.\nYou use Azure Content Understanding in Foundry Tools to process the PDFs.\nYou plan to ingest the processed content into an index for Retrieval Augmented Generation (RAG) and store extracted fields for downstream automation.\nStakeholders must be able to verify where each extracted field value came from in the original PDF and route low-reliability extractions for manual review.\nYou need to ensure that the Content Understanding document analyzer output includes a per-field confidence score and source grounding to locations within the source document.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Set enableSegment to true."
+      },
+      {
+        "id": "B",
+        "text": "Provide labeled samples."
+      },
+      {
+        "id": "C",
+        "text": "Enable estimateFieldSourceAndConfidence."
+      },
+      {
+        "id": "D",
+        "text": "Configure the analyzer to use standard mode without field schemas."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Enabling `estimateFieldSourceAndConfidence` in Azure Content Understanding outputs both a per-field confidence score (for human review routing) and source grounding (bounding regions/page locations)."
+  },
+  {
+    "id": 88,
+    "type": "single_choice",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "A Microsoft Foundry agent answers questions from an Azure AI Search index.\nAdministrators observe the following:\n• Average prompt size has doubled.\n• Azure OpenAI costs have increased significantly.\n• Response quality remains unchanged.\nWhich action should you recommend first?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Replace the model with GPT-4.1."
+      },
+      {
+        "id": "B",
+        "text": "Retrieve fewer document chunks before constructing the prompt."
+      },
+      {
+        "id": "C",
+        "text": "Increase the chunk overlap during indexing."
+      },
+      {
+        "id": "D",
+        "text": "Increase the model context window."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "When average prompt size doubles and costs spike without any quality gain, **retrieving fewer document chunks** (`top_k`) before constructing the prompt immediately reduces input token count and cost."
+  },
+  {
+    "id": 89,
+    "type": "hotspot",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a Microsoft Foundry project that contains an agent deployed to multiple environments. The organization has adopted a passwordless authentication strategy.\nYou need to configure the GitHub Actions workflow to meet the following requirements:\n• Eliminate long-lived credentials.\n• Authenticate securely to Azure resources.\nHow should you configure the workflow?",
+    "slots": [
+      {
+        "label": "Authentication method",
+        "options": [
+          "Azure Login action that uses OpenID Connect (OIDC)",
+          "Personal access token (PAT)",
+          "Storage account access key",
+          "Publish Profile"
+        ],
+        "correct": "Azure Login action that uses OpenID Connect (OIDC)"
+      },
+      {
+        "label": "Credential management",
+        "options": [
+          "Store credentials as GitHub repository secrets",
+          "Configure workload identity federation",
+          "Rotate PAT every 30 days",
+          "Use a shared administrator account"
+        ],
+        "correct": "Configure workload identity federation"
+      }
+    ],
+    "explanation": "Using the **Azure Login action with OpenID Connect (OIDC)** combined with **workload identity federation** eliminates stored secrets and long-lived credentials in GitHub Actions."
+  },
+  {
+    "id": 90,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have an application that processes scanned PDF invoices. The invoices have varied layouts and include multipage tables.\nYou have a pipeline that uses optical character recognition (OCR) and extracts totals and invoice numbers. The results are often incorrect because the document structure is ignored.\nYou need to implement a solution that provides OCR, layout analysis, and template-generalizing field extraction. The solution must NOT require training a custom model. The solution must minimize administrative effort.\nWhat should you include in the solution?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Language in Foundry Tools"
+      },
+      {
+        "id": "B",
+        "text": "Azure Content Understanding in Foundry Tools"
+      },
+      {
+        "id": "C",
+        "text": "an Azure Machine Learning model"
+      },
+      {
+        "id": "D",
+        "text": "Azure AI Translator in Foundry Tools"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "**Azure Content Understanding in Foundry Tools** provides built-in OCR, layout analysis, and zero-shot/template-generalizing field extraction across varied invoice layouts without training a custom model."
+  },
+  {
+    "id": 91,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You are creating an agent workflow in a Microsoft Foundry project to support natural voice interactions. The agent must receive continuous audio input, convert the input into text for reasoning, and then return spoken responses to a user.\nThe workflow must meet the following requirements:\n• Support turn-taking dynamics, where the agent begins to generate the speech output before the user\nfinishes speaking.\n• Operate with low latency to maintain conversational experience.\nYou need to enable both speech to text and text to speech in a real-time agent interaction. What should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use batch transcription to convert the audio input and return text responses from the agent."
+      },
+      {
+        "id": "B",
+        "text": "Use real-time speech to text for incoming audio and text to speech for agent responses."
+      },
+      {
+        "id": "C",
+        "text": "Use an embeddings model to encode the audio, and then decode the audio into text and speech."
+      },
+      {
+        "id": "D",
+        "text": "Use speech translation to convert the audio into multiple target languages."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Combining **real-time speech to text** for incoming streaming audio with **text to speech** for streaming agent responses enables low-latency, natural turn-taking voice conversations."
+  },
+  {
+    "id": 92,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry project that processes purchase orders stored in Azure Blob Storage. Each purchase order has a different layout depending on the supplier.\nThe extracted information will be stored as structured JSON and used by a procurement agent. You need to create a single analyzer that meets the following requirements:\n• Extract the purchase order number, supplier name, requested delivery date, and total value from all supported layouts.\n• Return confidence scores for each extracted field.\n• Minimize post-processing in the application.\nWhat should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A custom Azure Content Understanding analyzer in Foundry Tools that defines the required fields as extracted fields."
+      },
+      {
+        "id": "B",
+        "text": "The Azure Content Understanding prebuilt-read analyzer."
+      },
+      {
+        "id": "C",
+        "text": "The Azure Content Understanding prebuilt-layout analyzer."
+      },
+      {
+        "id": "D",
+        "text": "Azure AI Search with vector search enabled."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "A **custom Azure Content Understanding analyzer** in Foundry Tools allows you to define the target field schema (PO number, supplier, delivery date, total) and returns per-field confidence scores across varied supplier layouts."
+  },
+  {
+    "id": 93,
+    "type": "code_completion",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a Microsoft Foundry project that contains a deployed chat model.\nYou have a Python service that sends API requests to the model. The service is integrated with an automated validation system that compares generated outputs against approved response patterns.\nStakeholders report that small wording differences are causing validation mismatches.\nYou need to update the request parameters to improve output stability. The solution must maximize reasoning quality.\nHow should you complete the Python code?",
+    "code": "message = client.messages.create(\n    model=\"deployment-name\",\n    messages=[{\"role\": \"user\", \"content\": \"Summarize the release notes in 3 bullet points.\"}],\n    max_tokens=800,\n    temperature=[Blank 1],\n    thinking={\"type\": \"enabled\"},\n    output_config={\"effort\": [Blank 2]}\n)",
+    "slots": [
+      {
+        "label": "Blank 1 (temperature)",
+        "options": [
+          "0",
+          "1",
+          "2"
+        ],
+        "correct": "0"
+      },
+      {
+        "label": "Blank 2 (effort)",
+        "options": [
+          "\"high\"",
+          "\"low\"",
+          "\"medium\""
+        ],
+        "correct": "\"high\""
+      }
+    ],
+    "explanation": "Setting `temperature=0` maximizes determinism/output stability to prevent wording drift, while setting `output_config={\"effort\": \"high\"}` maximizes reasoning quality."
+  },
+  {
+    "id": 94,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry project that contains an agent. The agent uses Azure AI Search as the retriever.\nYou plan to ingest PDF into an Azure AI Search index to ensure that the agent can ground responses in texts in both documents and embedded images.\nUsers require citations that link to the source files.\nYou need to ensure that during indexing, the images are extracted into a structure that can be used as input for the built-in optical character recognition (OCR) skill.\nWhich indexing approach should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "an indexer to extract image data into a normalized_images collection"
+      },
+      {
+        "id": "B",
+        "text": "a Shaper skill to restructure the OCR input"
+      },
+      {
+        "id": "C",
+        "text": "a skillset to run the OCR skill directly against the content field of the index"
+      },
+      {
+        "id": "D",
+        "text": "the outputFieldMappings parameter to write image data to a searchable field"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Configuring **an indexer to extract image data into a `normalized_images` collection** (`imageAction: generateNormalizedImages`) prepares embedded PDF images as input for the built-in OCR skill."
+  },
+  {
+    "id": 95,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry project that generates real estate marketing images from text prompts. After publishing several images, you discover that one image contains a vehicle parked in the driveway. The property owner requests that only the vehicle be removed while preserving the house, landscaping, lighting, and shadows.\nYou need to update the image.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Apply a mask-based inpainting edit to the area containing the vehicle."
+      },
+      {
+        "id": "B",
+        "text": "Regenerate the image by using a lower temperature value."
+      },
+      {
+        "id": "C",
+        "text": "Modify the original prompt to specify an empty driveway and generate a new image."
+      },
+      {
+        "id": "D",
+        "text": "Create an image variation from the original image."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Applying a **mask-based inpainting edit** (`mask_inpainting`) to the driveway area removes only the parked vehicle while preserving the house, landscaping, lighting, and shadows."
+  },
+  {
+    "id": 96,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a Microsoft Foundry project that contains a customer support agent.\nThe agent invokes several tools to retrieve order information, customer profiles, and shipping status before generating a response.\nUsers report that response times have increased significantly after a recent deployment. You need to identify which stage of the agent execution is contributing most to the increased response time. Which observability signal should you review?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Groundedness evaluation metrics"
+      },
+      {
+        "id": "B",
+        "text": "Latency breakdown traces"
+      },
+      {
+        "id": "C",
+        "text": "Content Safety metrics"
+      },
+      {
+        "id": "D",
+        "text": "Relevance evaluation metrics"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "**Latency breakdown traces** show the exact duration of each stage in an agent run (order tool, profile tool, shipping tool, and LLM inference), pinpointing the bottleneck."
+  },
+  {
+    "id": 97,
+    "type": "single_choice",
+    "domain": "Microsoft Foundry Agents, Tools & Workflows",
+    "stem": "You have a Microsoft Foundry project that contains an agent. The agent generates summaries from retrieved policy documents.\nUsers report that some responses omit required regulatory clauses, even when the clauses are present in the retrieved content.\nYou need to improve response completeness.\nSolution: You increase the value of the max_tokens parameter.\nDoes this meet the goal?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "If summaries omit clauses because the output is being cut off by token limits, **increasing `max_tokens`** allows the model to generate complete summaries. (**Yes**)"
+  },
+  {
+    "id": 98,
+    "type": "single_choice",
+    "domain": "Microsoft Foundry Agents, Tools & Workflows",
+    "stem": "You have a Microsoft Foundry project that contains an agent. The agent generates summaries from retrieved policy documents.\nUsers report that some responses omit required regulatory clauses, even when the clauses are present in the retrieved content.\nYou need to improve response completeness.\nSolution: You add a reflection pass that regenerates the response if the required clauses are missing. Does this meet the goal?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Adding a **reflection pass** that checks the draft summary for required regulatory clauses and regenerates the response if any are missing directly improves response completeness. (**Yes**)"
+  },
+  {
+    "id": 99,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry project that contains an agent. The agent generates summaries from retrieved policy documents.\nUsers report that some responses omit required regulatory clauses, even when the clauses are present in the retrieved content.\nYou need to improve response completeness.\nSolution: You increase the value of the temperature parameter.\nDoes this meet the goal?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Increasing `temperature` increases randomness and creativity, which makes omissions and hallucinations more likely rather than improving regulatory completeness. (**No**)"
+  },
+  {
+    "id": 100,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry project that contains an agent. The agent generates summaries from retrieved policy documents.\nUsers report that some responses omit required regulatory clauses, even when the clauses are present in the retrieved content.\nYou need to improve response completeness.\nSolution: You run an evaluation flow that scores responses for completeness and blocks responses that fall below a defined threshold.\nDoes this meet the goal?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Yes"
+      },
+      {
+        "id": "B",
+        "text": "No"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Running an evaluation flow that *blocks* incomplete responses prevents bad outputs from reaching users, but it does **No**t improve the completeness of the generated summaries themselves (unlike regeneration/reflection)."
+  }
+]
