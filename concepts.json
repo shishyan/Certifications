@@ -1,0 +1,352 @@
+[
+  {
+    "id": 1,
+    "deck": "Set 1: Foundry Architecture & Model Deployments",
+    "term": "Microsoft Foundry Hub vs. Foundry Project",
+    "definition": "A **Foundry Hub** governs shared enterprise security, VNet/Private Link isolation, compute, and shared resource connections. A **Foundry Project** is a child workspace where teams build, evaluate, and deploy agents, workflows, and prompt flows.",
+    "examTip": "Create shared connections (Azure AI Search, external models) in the Project so multiple client apps and agents reuse them without duplicating credentials."
+  },
+  {
+    "id": 2,
+    "deck": "Set 1: Foundry Architecture & Model Deployments",
+    "term": "Deployment Types: Global Standard vs. Data Zone vs. Provisioned vs. Batch",
+    "definition": "• **Global Standard**: Pay-as-you-go; routes inference globally.\n• **Data Zone Standard**: Pay-as-you-go; keeps inference strictly within a geographic data zone (e.g., EU or US).\n• **Data Zone / Global Provisioned (PTU)**: Reserved throughput for high-volume workloads needing predictable low latency variance.\n• **Data Zone / Global Batch**: Asynchronous 24-hour processing of `.jsonl` files (linked via `custom_id`) at 50% lower cost.",
+    "examTip": "EU high-volume shopping agent → Data Zone Provisioned; EU nightly catalog job → Data Zone Batch."
+  },
+  {
+    "id": 3,
+    "deck": "Set 1: Foundry Architecture & Model Deployments",
+    "term": "Model Router & Model Cascade",
+    "definition": "• **Model Router Deployment**: Routes requests across a custom subset of approved models (e.g., `gpt-4.1-mini` and `gpt-4.1`) with automatic failover.\n• **Model Cascade**: Routes simple FAQs to a fast, low-cost SLM and escalates complex reasoning queries to a larger LLM.",
+    "examTip": "Use a custom subset in the Model Router to block unapproved catalog models while preserving failover."
+  },
+  {
+    "id": 4,
+    "deck": "Set 1: Foundry Architecture & Model Deployments",
+    "term": "Model Version Policy & OpenAI v1 Targeting",
+    "definition": "Setting version policy to **Upgrade once the new default version becomes available** automatically updates deployments like `Deployment1` (`gpt-4o`). Applications using the OpenAI v1 API target it via **`model=\"Deployment1\"`**.",
+    "examTip": "Pair `Global Standard` with `Upgrade once the new default version becomes available` and `model=\"Deployment1\"`."
+  },
+  {
+    "id": 5,
+    "deck": "Set 1: Foundry Architecture & Model Deployments",
+    "term": "Catalog Model Selection: Codestral-2501 vs. Phi-4-multimodal-instruct",
+    "definition": "• **Codestral-2501**: Specialized code generation model accepting text inputs up to **250,000+ tokens** without tool calling.\n• **Phi-4-multimodal-instruct**: Accepts **text, image, and audio** inputs and generates text summaries.",
+    "examTip": "250K-token bug-fix pipeline → `Codestral-2501`; text+image+audio field report summarization → `Phi-4-multimodal-instruct`."
+  },
+  {
+    "id": 6,
+    "deck": "Set 1: Foundry Architecture & Model Deployments",
+    "term": "Azure OpenAI Responses API & Deterministic Effort",
+    "definition": "• **Responses API**: `openai_client.responses.create(model=..., input=...)` via `DefaultAzureCredential()`.\n• **Output Stability**: Set **`temperature=0`** to eliminate wording drift in validation pipelines, and set **`output_config={\"effort\": \"high\"}`** with `thinking={\"type\": \"enabled\"}` to maximize reasoning quality.",
+    "examTip": "Never increase `temperature` to improve completeness; use `temperature=0` for consistent outputs."
+  },
+  {
+    "id": 7,
+    "deck": "Set 2: Foundry Agent Service, Tools & Memory",
+    "term": "Built-in Agent Tools: Code Interpreter vs. File Search vs. Bing vs. Computer Use",
+    "definition": "• **Code Interpreter**: Executes Python code for calculations, analyzing uploaded Excel/CSV spreadsheets, and generating charts.\n• **File Search**: Searches documents (contracts/PDFs) uploaded directly during a conversation.\n• **Grounding with Bing Search**: Fetches live public web information (weather, news, court decisions).\n• **Computer Use**: GUI/browser automation to interact with legacy web portals that do not expose APIs.",
+    "examTip": "Uploaded spreadsheets/charts = Code Interpreter; legacy portal without APIs = Computer Use; uploaded contracts = File Search."
+  },
+  {
+    "id": 8,
+    "deck": "Set 2: Foundry Agent Service, Tools & Memory",
+    "term": "Agent Memory vs. Threads vs. Ephemeral Session Context",
+    "definition": "• **Persistent Agent Memory**: Retains user preferences (airline, hotel, attorney preferences) across conversations, isolated per authenticated user.\n• **Threads (`thread_id` / `conversation_id`)**: Preserves full multi-session case history including messages, uploaded log files, tool calls, and tool outputs.\n• **Orchestration-Managed Session Context**: Ephemeral state discarded when the conversation ends (used for payment card details).",
+    "examTip": "Reuse `thread_id` to resume multi-week support cases without manually reconstructing history."
+  },
+  {
+    "id": 9,
+    "deck": "Set 2: Foundry Agent Service, Tools & Memory",
+    "term": "Deterministic Tool Invocation (`tool_choice`)",
+    "definition": "• `\"auto\"`: Model decides whether to invoke tools.\n• `\"required\"`: Forces the agent to call a tool on every run.\n• `{\"type\": \"mcp\"}`: Deterministically forces invocation of a Model Context Protocol (MCP) tool.",
+    "examTip": "If an agent responds without calling required tools, set `\"tool_choice\": \"required\"` in `run_payload`."
+  },
+  {
+    "id": 10,
+    "deck": "Set 2: Foundry Agent Service, Tools & Memory",
+    "term": "OpenAPI 3.0 Tools, Connections & Multi-Tenant Inputs",
+    "definition": "• Define an **API key security scheme** in the OpenAPI 3.0 spec and **connect the tool to the Project Connection (`Connection1`)** to avoid 401 errors.\n• For multi-tenant agents requiring a runtime `customer_id`, add a **required structured input bound to the OpenAPI tool argument** and a **structured output JSON schema**.",
+    "examTip": "Add custom functions or OpenAPI tools when agents must schedule meetings or call external APIs."
+  },
+  {
+    "id": 11,
+    "deck": "Set 2: Foundry Agent Service, Tools & Memory",
+    "term": "Structured Outputs (`json_schema`)",
+    "definition": "Configuring **Structured Outputs with a JSON schema** guarantees that model responses strictly match required fields (e.g., `customer`, `product`, `location`, `topics`) and eliminates narrative prose or unexpected fields.",
+    "examTip": "Always prefer Structured Outputs with a JSON schema over temperature tuning when downstream JSON parsers fail."
+  },
+  {
+    "id": 12,
+    "deck": "Set 2: Foundry Agent Service, Tools & Memory",
+    "term": "Parallel Tool Execution & Retry Backoff",
+    "definition": "• **Parallel Tool Calls**: Execute independent tool calls in parallel in application logic to reduce total response latency.\n• **Exponential Backoff and Jitter**: Mitigates intermittent HTTP 429 rate-limit exceeded errors during load spikes.",
+    "examTip": "Do not create new threads or retry immediately on HTTP 429; always use exponential backoff + jitter."
+  },
+  {
+    "id": 13,
+    "deck": "Set 3: Multi-Agent Orchestration & Workflows",
+    "term": "Foundry Workflows vs. Group Chat vs. Custom Code",
+    "definition": "A **Foundry Workflow** orchestrates multiple specialized agents (`TriageAgent`, `PolicyAgent`, `ActionAgent`) using a deterministic, step-based process with conditional branching and shared state while minimizing development effort.",
+    "examTip": "Choose a **workflow** whenever deterministic step-based branching and shared state are required."
+  },
+  {
+    "id": 14,
+    "deck": "Set 3: Multi-Agent Orchestration & Workflows",
+    "term": "Microsoft Agent Framework Patterns: Concurrent vs. Handoff",
+    "definition": "• **Concurrent Orchestration**: Sends the same input (e.g., company profile for due diligence) to multiple agents simultaneously and collects their independent outputs.\n• **Handoff Orchestration**: Lets a triage agent transfer conversation control to a single specialist agent based on context.",
+    "examTip": "Use **Semantic Kernel** or **Microsoft Agent Framework** to orchestrate multi-agent workflows integrated with Azure resources."
+  },
+  {
+    "id": 15,
+    "deck": "Set 3: Multi-Agent Orchestration & Workflows",
+    "term": "YAML Workflow Human Approval (`ask_question`)",
+    "definition": "In a Foundry YAML workflow, pause execution for human approval before a sensitive action (like `PaymentAgent` issuing a refund) by setting the approval step `type` to **`ask_question`** and the execution step `condition` to **`approval == \"approved\"`**.",
+    "examTip": "`type: ask_question` + `condition: approval == \"approved\"`."
+  },
+  {
+    "id": 16,
+    "deck": "Set 3: Multi-Agent Orchestration & Workflows",
+    "term": "Power Fx Expressions in Workflows (`Local.Var01`)",
+    "definition": "• Validate that local variable `Var01` from an Ask a question node is non-empty: **`Not(IsBlank(Local.Var01))`**\n• Output `Var01` in uppercase in a Send message node: **`{Upper(Local.Var01)}`**",
+    "examTip": "Remember the `Local.` scope prefix and curly braces `{...}` for string interpolation in Send message."
+  },
+  {
+    "id": 17,
+    "deck": "Set 3: Multi-Agent Orchestration & Workflows",
+    "term": "Multi-Agent Staging Contract Tests",
+    "definition": "When independently versioned agents in GitHub Actions fail handoffs due to incompatible message schemas, **add a deployment graph and staging contract tests for dependent agents** to block incompatible promotions to production.",
+    "examTip": "Contract tests validate input/output schemas between dependent agents before production rollout."
+  },
+  {
+    "id": 18,
+    "deck": "Set 4: Knowledge Grounding, RAG & Azure AI Search",
+    "term": "Agentic RAG vs. Classic RAG",
+    "definition": "**Agentic RAG** uses multi-turn conversation history to plan retrieval, breaks complex questions into sub-queries, retrieves information across multiple chunks, and runs retrievals in parallel to reduce latency.",
+    "examTip": "Multi-turn retrieval planning + parallel multi-chunk queries = **Agentic RAG**."
+  },
+  {
+    "id": 19,
+    "deck": "Set 4: Knowledge Grounding, RAG & Azure AI Search",
+    "term": "Foundry IQ Knowledge Base & Remote SharePoint Source",
+    "definition": "For HR agents grounded in frequently updated SharePoint libraries with Microsoft Purview sensitivity labels and M365 Copilot licenses, use a **Remote SharePoint knowledge source** in Foundry IQ to return live content while preserving user-level ACL permissions without index maintenance.",
+    "examTip": "Pair **Foundry Agent Service memory** (user context) with **Foundry IQ knowledge bases** (governed docs)."
+  },
+  {
+    "id": 20,
+    "deck": "Set 4: Knowledge Grounding, RAG & Azure AI Search",
+    "term": "Advanced Data Parsing for Scanned Multipage Tables",
+    "definition": "**Advanced data parsing** re-ingests scanned PDFs with OCR, preserves multipage tables and headings as structure-aware chunks, and stores page-number metadata with each chunk.",
+    "examTip": "Plain-text or single-page chunking loses multipage table row context."
+  },
+  {
+    "id": 21,
+    "deck": "Set 4: Knowledge Grounding, RAG & Azure AI Search",
+    "term": "RAG Retrieval Tuning: Chunk Count (`top_k`) & `strictness`",
+    "definition": "• **Omitted clauses from lengthy legal docs**: Increase the number of retrieved document chunks.\n• **Doubled prompt size & high cost with unchanged quality**: Retrieve fewer document chunks.\n• **Prioritize only the most relevant documents**: Set **`strictness`** to a higher value.",
+    "examTip": "To include source citations (`title`, `url`), query Azure AI Search for chunks + metadata fields and inject both into the prompt."
+  },
+  {
+    "id": 22,
+    "deck": "Set 4: Knowledge Grounding, RAG & Azure AI Search",
+    "term": "Indexing Embedded PDF Images (`generateNormalizedImages` & OCR Skill)",
+    "definition": "Configure the Azure AI Search indexer with **`imageAction: generateNormalizedImages`** to populate `/document/normalized_images/*`, add the built-in **OCR skill** targeting `/document/normalized_images/*`, and map `text` and `layoutText` outputs.",
+    "examTip": "The `index` property in the Foundry Search tool must be set to the **Azure AI Search index name**."
+  },
+  {
+    "id": 23,
+    "deck": "Set 4: Knowledge Grounding, RAG & Azure AI Search",
+    "term": "AI Enrichment: Entity Linking Skill & Knowledge Store",
+    "definition": "• **`Microsoft.Skills.Text.V3.EntityLinkingSkill`**: Enriches indexed text with links to Wikipedia articles.\n• **Knowledge Store**: Data structure in Azure Storage that stores enriched and indexed skillset output for downstream apps.",
+    "examTip": "Wikipedia links = `EntityLinkingSkill`; storing enriched output for downstream apps = `knowledge store`."
+  },
+  {
+    "id": 24,
+    "deck": "Set 5: Content Understanding & Document Intelligence",
+    "term": "Content Understanding Built-in Analyzers (`prebuilt-*`)",
+    "definition": "• **`prebuilt-read`**: Extracts all readable text via OCR at lowest cost without layout, tables, or LLM deployment.\n• **`prebuilt-layout`**: Preserves PDF layout, sections, tables, and detects **QR codes** without requiring an LLM deployment.\n• **`prebuilt-documentFieldSchema`**: Extracts structured fields (e.g., employee ID, full name, expiration date) into a structured schema.\n• **Custom Analyzer**: Extracts custom fields (invoice/PO number, vendor, total) across varying templates and returns **confidence scores** for routing (<0.80).",
+    "examTip": "Enable **`estimateFieldSourceAndConfidence`** to get per-field confidence scores and source bounding-box locations."
+  },
+  {
+    "id": 25,
+    "deck": "Set 5: Content Understanding & Document Intelligence",
+    "term": "Content Understanding Task Modes: Standard vs. Pro",
+    "definition": "• **Single-file task in Standard mode**: Cost-effective, high-volume processing of standalone PDF invoices, individual audit reports, or single video files.\n• **Multi-file task in Pro mode**: Cross-document validation and multi-step reasoning across multiple related reports or reference data.",
+    "examTip": "Standalone single file (PDF or video) = **Single-file task in Standard mode**; multi-document reasoning = **Multi-file task in Pro mode**."
+  },
+  {
+    "id": 26,
+    "deck": "Set 5: Content Understanding & Document Intelligence",
+    "term": "Document Intelligence Markdown Output (`ContentFormat.MARKDOWN`)",
+    "definition": "Setting **`output_content_format=ContentFormat.MARKDOWN`** in Azure Document Intelligence extracts scanned engineering drawings and vendor invoices into structured Markdown preserving tables, headings, paragraphs, and reading order for LLM summarization.",
+    "examTip": "Minimizes custom post-processing before passing document content to an LLM."
+  },
+  {
+    "id": 27,
+    "deck": "Set 5: Content Understanding & Document Intelligence",
+    "term": "Document Intelligence Models: General, Prebuilt & Custom Classification",
+    "definition": "• **General document model (`prebuilt-document`)**: Extracts key-value pairs, selection marks, and tables in Document Intelligence Studio.\n• **Prebuilt Models**: `Health Insurance Card`, `ID Document`, and `Invoice` (`prebuilt-invoice`).\n• **Custom Classification Model**: Classifies incoming documents into predefined categories before field extraction.",
+    "examTip": "The Layout model can extract tables from JPEG/PNG/TIFF photos without training via **SDK**, **REST API**, or **Document Intelligence Studio**."
+  },
+  {
+    "id": 28,
+    "deck": "Set 6: Speech, Voice Live & Translation",
+    "term": "Azure Speech: Real-Time vs. Batch vs. Custom Speech",
+    "definition": "• **Real-time Speech-to-Text**: Processes streaming telephony audio with transcripts appearing within seconds; paired with **Text-to-Speech** for low-latency conversational turn-taking.\n• **Custom Speech**: Trains on audio samples + reference transcripts in Speech Studio to recognize proprietary product codes and regional accents. Uses the **custom speech project ID**.\n• **Model Expiration**: When a custom speech model expires, requests **fall back to the most recent base model for the same locale**.",
+    "examTip": "Expired custom speech models do NOT fail with 4xx errors—they fall back to the base locale model."
+  },
+  {
+    "id": 29,
+    "deck": "Set 6: Speech, Voice Live & Translation",
+    "term": "Azure Speech MCP Server Configuration",
+    "definition": "• **Tool authentication**: `Foundry resource key`\n• **Minimum Blob SAS permissions**: `Container read/write; file read`\n• **Synthesizing speech from an agent**: Call the **Responses API with an `agent_reference` to `Agent1`** and ask `Agent1` to synthesize `reply_text`.",
+    "examTip": "Speech MCP Server needs container read/write to write output files and file read to read input audio blobs."
+  },
+  {
+    "id": 30,
+    "deck": "Set 6: Speech, Voice Live & Translation",
+    "term": "Voice Live API Session Configuration",
+    "definition": "For a Python client streaming microphone input and playing audio responses locally in multilingual conversations, configure:\n• **Session modalities**: `Text and audio`\n• **Audio handling**: `Multilingual VAD and echo cancellation`",
+    "examTip": "Echo cancellation prevents local speaker playback from triggering false voice activity detection."
+  },
+  {
+    "id": 31,
+    "deck": "Set 6: Speech, Voice Live & Translation",
+    "term": "Azure Translator: Mixed-Language Calls & Batch Document Translation",
+    "definition": "• **Mixed-language live call segments (English + Spanish)**: **Split the mixed-language segments into single-language segments** and translate each separately.\n• **Hundreds of Word/PowerPoint manuals in Blob Storage**: Use **Azure Translator asynchronous batch document translation** to preserve layout and write directly to a target container.",
+    "examTip": "Batch document translation preserves `.docx` and `.pptx` formatting automatically."
+  },
+  {
+    "id": 32,
+    "deck": "Set 6: Speech, Voice Live & Translation",
+    "term": "Azure Language: PII Detection & Custom QnA Synonyms",
+    "definition": "• **PII Detection**: Use category **`Person`** to flag staff member names.\n• **Custom Question Answering API**: Remove special characters (such as `#` in `\"#diagnostic\"`) from synonym `alterations` so the API call succeeds.",
+    "examTip": "Special characters like `#` and `&` cause validation errors in Custom QnA and Video Indexer language training."
+  },
+  {
+    "id": 33,
+    "deck": "Set 7: Vision, Video Indexer & Generative Media",
+    "term": "Generative Image Editing: `mask_inpainting` vs. `image_variation` vs. `input_fidelity`",
+    "definition": "• **`mask_inpainting`**: Supplies the input image + mask to edit *exclusively* inside the masked region (removing a competitor logo, removing a parked vehicle, or replacing a sky with a sunset).\n• **`image_variation`**: Generates stylistic alternatives from an original product image while preserving composition and subject.\n• **`input_fidelity=\"high\"` / Reference Image**: Maintains product identity (e.g., a jacket photo) across new backgrounds and scenes.",
+    "examTip": "Mask-based regional edit = `mask_inpainting`; whole-image stylistic alternatives = `image_variation`."
+  },
+  {
+    "id": 34,
+    "deck": "Set 7: Vision, Video Indexer & Generative Media",
+    "term": "Conversational Image Agent & DALL-E REST Properties",
+    "definition": "• **Conversational Banner Agent**: Use **`gpt-4o` (`model-01`)** for the agent definition deployment and **`gpt-image-1` (`model-02`)** for the image generation tool deployment.\n• **DALL-E 3 REST API**: Include **`prompt`** in the HTTP request body and read generated image URLs from the **`result`** element.",
+    "examTip": "Do not use embedding models (`text-embedding-3-large`) as agent or image tool deployments."
+  },
+  {
+    "id": 35,
+    "deck": "Set 7: Vision, Video Indexer & Generative Media",
+    "term": "Sora 2 Video Generation, Reference Media & Remixing",
+    "definition": "• **Python SDK Polling**: Create job with **`client.videos.create(model=\"sora-2\", prompt=prompt)`** and poll with **`client.videos.retrieve(video.id)`**.\n• **8-Second Landscape Teaser with Reference Image**: `model=\"Deployment1\", size=\"1280x720\", seconds=8, input_reference=Image1.png`.\n• **Preserve Structure & Change Color**: Set **`remix_video_id`** to `video_123`.",
+    "examTip": "`remix_video_id` preserves camera motion, framing, and timing of an existing video."
+  },
+  {
+    "id": 36,
+    "deck": "Set 7: Vision, Video Indexer & Generative Media",
+    "term": "Azure Vision: Spatial Analysis, OCR & Image Analysis API",
+    "definition": "• **Spatial Analysis**: Detects the presence and movement of people in live video feeds.\n• **OCR**: Extracts handwritten and printed text from scanned images.\n• **`imageanalysis:analyze?features=read,description`**: Returns visible text in the image and a natural-language description of the image content.",
+    "examTip": "People detection in live video streams = **Spatial Analysis**."
+  },
+  {
+    "id": 37,
+    "deck": "Set 7: Vision, Video Indexer & Generative Media",
+    "term": "Azure AI Video Indexer: Training Rules & Multi-Language Detection",
+    "definition": "• **Multilingual videos**: Set `sourceLanguage` to **`multi-language detection`**.\n• **Custom Language model training practices**: (1) Include multiple examples of spoken sentences, (2) Provide multiple adaptation options, (3) Put only one sentence per line, and (4) **Remove `&` characters** so sentences aren't discarded.",
+    "examTip": "Memorize the 3 training practices and removing `&` from `\"Azure & the cloud\"`."
+  },
+  {
+    "id": 38,
+    "deck": "Set 7: Vision, Video Indexer & Generative Media",
+    "term": "Accessibility Metadata for Charts (`isDecorative: false`)",
+    "definition": "For a bar chart supporting report text (`North America: $4.2M, Europe: $3.1M, Asia-Pacific: $2.4M`), output:\n• `\"altText\": \"Bar chart showing Q3 revenue by region.\"`\n• `\"isDecorative\": false`\n• `\"extendedDescription\": \"North America revenue is $4.2 million, Europe revenue is $3.1 million, and Asia-Pacific revenue is $2.4 million.\"`",
+    "examTip": "Data charts are never decorative (`isDecorative: false`)."
+  },
+  {
+    "id": 39,
+    "deck": "Set 8: Content Safety, Prompt Shields & Guardrails",
+    "term": "Prompt Shields (User Prompts vs. Documents) & Spotlighting",
+    "definition": "• **Prompt Shields for User Prompts**: Detects direct jailbreak attempts entered by users.\n• **Prompt Shields for Documents**: Detects indirect prompt injection hidden in uploaded documents, external web pages, or OCR text extracted from uploaded screenshots.\n• **Spotlighting**: Marks third-party content as lower trust.\n• **Block vs. Annotate**: Use **Block** to stop attacks immediately; use **Annotate** when security admins want to review detections before deciding to block.",
+    "examTip": "Image moderation alone does NOT stop text-based prompt injections hidden inside images—use **Prompt Shields for Documents**."
+  },
+  {
+    "id": 40,
+    "deck": "Set 8: Content Safety, Prompt Shields & Guardrails",
+    "term": "Image Moderation & Custom Output Severity Filters",
+    "definition": "• **Image Moderation**: Classifies user-uploaded photos for harmful visual content and blocks based on severity.\n• **Custom Image Generation Filter**: To apply policy *only after image generation*, allow Safe/Low Violence, and allow only Safe Hate, configure **`Filter stage: Output filters`** with Blocked severities **`Violence: Medium and High; Hate: Low, Medium, and High`**.",
+    "examTip": "To protect all stages of an agent run, select **User input, Output, Tool response, and Tool call** and set Action to **Block**."
+  },
+  {
+    "id": 41,
+    "deck": "Set 8: Content Safety, Prompt Shields & Guardrails",
+    "term": "Input Manipulation vs. Response Verification Controls",
+    "definition": "• **Input manipulation control** (blocking attempts to override system instructions in user inputs and retrieved articles): **`Prompt Shields`**\n• **Response verification control** (identifying ungrounded responses before they reach customers): **`Groundedness detection`**",
+    "examTip": "Reject responses that do not meet the groundedness threshold and return a fallback response."
+  },
+  {
+    "id": 42,
+    "deck": "Set 8: Content Safety, Prompt Shields & Guardrails",
+    "term": "Responsible AI Supported Agent Scenarios",
+    "definition": "Approved Microsoft Foundry Agent scenarios include:\n1. Categorizing municipal service requests and compiling status updates.\n2. Collating hospital SOPs and shift policies into nurse orientations.\n3. Recommending retail gift options based on stated customer needs and past purchases.",
+    "examTip": "Agents must align with Responsible AI principles—transparent, assistive, and human-governed."
+  },
+  {
+    "id": 43,
+    "deck": "Set 9: Identity, RBAC & Network Security",
+    "term": "Least-Privilege Azure RBAC Roles Cheat Sheet",
+    "definition": "• **Azure OpenAI Model Inference (fixes HTTP 403 after `az login`)**: `Cognitive Services OpenAI User`\n• **Read-only Blob Storage access (RAG agents & Content Safety image URLs)**: `Storage Blob Data Reader` with a **System-assigned managed identity**\n• **Querying an Azure AI Search Index (fixes HTTP 403)**: `Search Index Data Reader`",
+    "examTip": "Never use Storage Account Keys, SAS tokens, or `Owner`/`Contributor` when a Managed Identity + Reader role satisfies the requirement."
+  },
+  {
+    "id": 44,
+    "deck": "Set 9: Identity, RBAC & Network Security",
+    "term": "Network Security: Private Endpoints vs. VNet Service Endpoints",
+    "definition": "• **Restrict Azure OpenAI resource to apps in your subscription only**: Set network security to **`Disabled, and allow a private endpoint connection to establish access`**.\n• **Allow an Azure VM to access Custom Vision / AI Services with firewall enabled via service endpoint**: **`Grant access to a specific virtual network`**.",
+    "examTip": "Private Endpoint disables public network access completely; Service Endpoint grants access to a specific VNet."
+  },
+  {
+    "id": 45,
+    "deck": "Set 9: Identity, RBAC & Network Security",
+    "term": "Centralized SIEM Security Operations (`Microsoft Sentinel`)",
+    "definition": "To detect suspicious sign-in activity, investigate security incidents, and correlate alerts across **Microsoft Foundry, Microsoft Defender, and Microsoft Entra ID**, deploy **Microsoft Sentinel** backed by a **Log Analytics workspace**.",
+    "examTip": "Application Insights and OpenTelemetry are for application performance tracing, whereas Sentinel + Log Analytics is for SIEM security correlation."
+  },
+  {
+    "id": 46,
+    "deck": "Set 9: Identity, RBAC & Network Security",
+    "term": "Centralized Credential Management in Foundry Projects",
+    "definition": "To allow multiple client apps or multiple agents in `Project1` to share the same Azure AI Search resource or external Foundry Model deployment without key-based auth or duplicate settings, **create a Connection in `Project1` and reference the connection** across apps/agents.",
+    "examTip": "Project Connections centralize Entra ID / keyless authentication and endpoint configuration."
+  },
+  {
+    "id": 47,
+    "deck": "Set 10: Observability, Tracing, Evaluation & CI/CD",
+    "term": "Observability Signals Matrix",
+    "definition": "• **Tracing / Latency Breakdown Traces / Tool Execution Traces**: Ordered sequence of LLM calls, tool invocations, intermediate steps, and stage timing.\n• **Token Usage / Completion Token Analytics**: Diagnoses cost spikes caused by larger prompts, longer responses, or expanded tool usage.\n• **Groundedness Evaluation Metrics**: Detects claims unsupported by retrieved RAG documents.\n• **Relevance Evaluation**: Detects answers that fail to address the user's question despite relevant retrieved docs.",
+    "examTip": "External Python services use **OpenTelemetry** + **Application Insights** for end-to-end tracing."
+  },
+  {
+    "id": 48,
+    "deck": "Set 10: Observability, Tracing, Evaluation & CI/CD",
+    "term": "Telemetry Privacy (`enable_content_recording=False`)",
+    "definition": "• `configure_azure_monitor(connection_string=...)` records prompt/completion content unless explicitly disabled.\n• `AzureAIOpenTelemetryTracer(..., enable_content_recording=False)` **prevents sensitive user prompts and model responses from being logged** to Application Insights.\n• Multiple services (Foundry Agent Service and LangChain) can share a **single Application Insights resource** and be distinguished via telemetry attributes.",
+    "examTip": "Covers all 3 Yes/No statements in Q10 (`No`, `Yes`, `No`)."
+  },
+  {
+    "id": 49,
+    "deck": "Set 10: Observability, Tracing, Evaluation & CI/CD",
+    "term": "Diagnostic Logging & 429 Capacity Diagnostics",
+    "definition": "• **Diagnostic Logging Prerequisites**: Requires a **Log Analytics workspace** and/or an **Azure Storage account**.\n• **Diagnosing 429 Errors & 'No relevant information found'**: Enable **`Model Availability Rate and Provisioned Utilization`** metrics and collect **`RequestResponse`** diagnostic logs.\n• **RAG Pipeline Dashboard**: Track **`Validation failure rate over time`** (ingestion quality) and **`Retrieval evaluation score on a labeled query set`** (relevance).",
+    "examTip": "`RequestResponse` logs + `Model Availability Rate and Provisioned Utilization` pinpoint capacity vs. availability failures."
+  },
+  {
+    "id": 50,
+    "deck": "Set 10: Observability, Tracing, Evaluation & CI/CD",
+    "term": "GitHub Actions CI/CD: OIDC & Evaluation Quality Gates",
+    "definition": "• **Passwordless Auth**: Authenticate using the **Azure Login action with OpenID Connect (OIDC)** and **workload identity federation**.\n• **PR & Production Quality Gates**: Run **Groundedness evaluation**, **compare against the latest approved baseline**, **require the evaluation workflow to succeed before merging**, and **fail the workflow** if regression exceeds tolerance.\n• **Post-Release Monitoring**: Use **Scheduled Foundry evaluations with Azure Monitor alert rules** to detect regressions after catalog updates.",
+    "examTip": "Never use long-lived PATs or storage keys in GitHub Actions—always use OIDC + workload identity federation."
+  }
+]

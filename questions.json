@@ -25,7 +25,8 @@
     "correct": [
       "D"
     ],
-    "explanation": "Real-time speech to text processes continuous streaming audio input with low latency (within seconds), whereas batch transcription is asynchronous and intended for pre-recorded audio files."
+    "explanation": "Real-time speech to text processes continuous streaming audio input with low latency (within seconds), whereas batch transcription is asynchronous and intended for pre-recorded audio files.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 2,
@@ -53,7 +54,8 @@
     "correct": [
       "D"
     ],
-    "explanation": "The `prebuilt-layout` analyzer in Azure Content Understanding extracts text, tables, selection marks, structure/layout elements, and barcodes/QR codes without requiring an LLM deployment."
+    "explanation": "The `prebuilt-layout` analyzer in Azure Content Understanding extracts text, tables, selection marks, structure/layout elements, and barcodes/QR codes without requiring an LLM deployment.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 3,
@@ -80,7 +82,8 @@
         "correct": "Enable Spotlighting."
       }
     ],
-    "explanation": "To defend against indirect prompt injection in uploaded documents/images, configure Prompt Shields for documents to **Block** malicious inputs and enable **Spotlighting** to mark third-party content as lower trust."
+    "explanation": "To defend against indirect prompt injection in uploaded documents/images, configure Prompt Shields for documents to **Block** malicious inputs and enable **Spotlighting** to mark third-party content as lower trust.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 4,
@@ -108,7 +111,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "Configuring an Azure AI Search connection inside the Microsoft Foundry project (`Project1`) using Microsoft Entra ID (managed identity) allows multiple client apps to reuse the connection centrally without keys."
+    "explanation": "Configuring an Azure AI Search connection inside the Microsoft Foundry project (`Project1`) using Microsoft Entra ID (managed identity) allows multiple client apps to reuse the connection centrally without keys.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 5,
@@ -136,7 +140,8 @@
     "correct": [
       "D"
     ],
-    "explanation": "**Tracing** captures the detailed execution graph of individual agent runs, including the ordered sequence of LLM calls, tool invocations, inputs/outputs, and step-by-step latency."
+    "explanation": "**Tracing** captures the detailed execution graph of individual agent runs, including the ordered sequence of LLM calls, tool invocations, inputs/outputs, and step-by-step latency.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 6,
@@ -185,7 +190,8 @@
         "correct": "File search"
       }
     ],
-    "explanation": "**Grounding with Bing Search** retrieves real-time public web data; **Code interpreter** executes Python code for mathematical calculations; **File search** indexes documents uploaded directly to the agent."
+    "explanation": "**Grounding with Bing Search** retrieves real-time public web data; **Code interpreter** executes Python code for mathematical calculations; **File search** indexes documents uploaded directly to the agent.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 7,
@@ -213,7 +219,8 @@
     "correct": [
       "C"
     ],
-    "explanation": "When connecting an OpenAPI 3.0 tool to a Microsoft Foundry connection that passes a key in an HTTP header, define an **API key security scheme** (`type: apiKey`, `in: header`) in the OpenAPI spec."
+    "explanation": "When connecting an OpenAPI 3.0 tool to a Microsoft Foundry connection that passes a key in an HTTP header, define an **API key security scheme** (`type: apiKey`, `in: header`) in the OpenAPI spec.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 8,
@@ -241,7 +248,8 @@
     "correct": [
       "A"
     ],
-    "explanation": "A **workflow** in Microsoft Foundry orchestrates multiple agents deterministically using step-based execution, conditional branching, and shared state with minimal custom code."
+    "explanation": "A **workflow** in Microsoft Foundry orchestrates multiple agents deterministically using step-based execution, conditional branching, and shared state with minimal custom code.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 9,
@@ -270,7 +278,8 @@
         "correct": "Fail the workflow"
       }
     ],
-    "explanation": "In CI/CD evaluation workflows, comparing against the **latest approved baseline** ensures production quality never degrades, and **failing the workflow** stops deployment automatically upon regression."
+    "explanation": "In CI/CD evaluation workflows, comparing against the **latest approved baseline** ensures production quality never degrades, and **failing the workflow** stops deployment automatically upon regression.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 10,
@@ -303,7 +312,8 @@
         "correct": "No"
       }
     ],
-    "explanation": "By default, `configure_azure_monitor()` records content unless disabled (Statement 1: No). `AzureAIOpenTelemetryTracer` has `enable_content_recording=False` (Statement 2: Yes). Both can share one Application Insights resource and be distinguished via service/tracer attributes (Statement 3: No)."
+    "explanation": "By default, `configure_azure_monitor()` records content unless disabled (Statement 1: No). `AzureAIOpenTelemetryTracer` has `enable_content_recording=False` (Statement 2: Yes). Both can share one Application Insights resource and be distinguished via service/tracer attributes (Statement 3: No).",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 11,
@@ -331,7 +341,8 @@
     "correct": [
       "A"
     ],
-    "explanation": "Setting `input_fidelity` to `high` instructs the image generation model to closely preserve the visual identity, geometry, and attributes of the user-supplied product photo."
+    "explanation": "Setting `input_fidelity` to `high` instructs the image generation model to closely preserve the visual identity, geometry, and attributes of the user-supplied product photo.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 12,
@@ -359,7 +370,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "Persistent agent memory retains long-term user preferences across sessions, while sensitive payment details should only live in ephemeral orchestration-managed session context so they are discarded when the session ends."
+    "explanation": "Persistent agent memory retains long-term user preferences across sessions, while sensitive payment details should only live in ephemeral orchestration-managed session context so they are discarded when the session ends.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 13,
@@ -386,7 +398,8 @@
         "correct": "Using a distinct agent identity bound to the client application"
       }
     ],
-    "explanation": "Setting `tool_choice` to `required` forces the agent to invoke a tool on every run. Binding a distinct agent identity to the published client application isolates permissions and supports audit tracing."
+    "explanation": "Setting `tool_choice` to `required` forces the agent to invoke a tool on every run. Binding a distinct agent identity to the published client application isolates permissions and supports audit tracing.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 14,
@@ -414,7 +427,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "**Agentic RAG** decomposes complex multi-turn queries, plans sub-queries informed by conversation history, and executes parallel retrievals across the vectorized index."
+    "explanation": "**Agentic RAG** decomposes complex multi-turn queries, plans sub-queries informed by conversation history, and executes parallel retrievals across the vectorized index.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 15,
@@ -442,7 +456,8 @@
     "correct": [
       "C"
     ],
-    "explanation": "`prebuilt-documentFieldSchema` extracts structured fields (such as ID number, full name, and expiration date) into a defined schema without custom post-processing."
+    "explanation": "`prebuilt-documentFieldSchema` extracts structured fields (such as ID number, full name, and expiration date) into a defined schema without custom post-processing.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 16,
@@ -476,7 +491,8 @@
         "correct": "\"required\""
       }
     ],
-    "explanation": "In the Foundry Agent Service run payload, setting `\"tool_choice\": \"required\"` guarantees that the assistant calls at least one registered tool during execution."
+    "explanation": "In the Foundry Agent Service run payload, setting `\"tool_choice\": \"required\"` guarantees that the assistant calls at least one registered tool during execution.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 17,
@@ -504,7 +520,8 @@
     "correct": [
       "C"
     ],
-    "explanation": "HTTP 429 indicates rate-limit throttling. Implementing a retry policy with **exponential backoff and jitter** spaces out retries and prevents thundering-herd failures while respecting service quotas."
+    "explanation": "HTTP 429 indicates rate-limit throttling. Implementing a retry policy with **exponential backoff and jitter** spaces out retries and prevents thundering-herd failures while respecting service quotas.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 18,
@@ -532,7 +549,8 @@
     "correct": [
       "A"
     ],
-    "explanation": "Creating a shared **connection** to the external Azure AI Foundry Model resource inside `Project1` enables all prompt flows and agents in the project to reuse the model configuration centrally."
+    "explanation": "Creating a shared **connection** to the external Azure AI Foundry Model resource inside `Project1` enables all prompt flows and agents in the project to reuse the model configuration centrally.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 19,
@@ -561,7 +579,8 @@
         "correct": "Require the evaluation workflow to succeed before merging"
       }
     ],
-    "explanation": "**Groundedness evaluation** verifies that RAG responses remain faithful to retrieved source documents. Requiring the evaluation workflow check to pass before merging enforces quality gates on pull requests."
+    "explanation": "**Groundedness evaluation** verifies that RAG responses remain faithful to retrieved source documents. Requiring the evaluation workflow check to pass before merging enforces quality gates on pull requests.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 20,
@@ -589,7 +608,8 @@
     "correct": [
       "A"
     ],
-    "explanation": "`image_variation` mode takes an existing product image as input and generates multiple stylistic variations while preserving the subject, lighting, and overall composition."
+    "explanation": "`image_variation` mode takes an existing product image as input and generates multiple stylistic variations while preserving the subject, lighting, and overall composition.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 21,
@@ -617,7 +637,8 @@
     "correct": [
       "A"
     ],
-    "explanation": "**Advanced data parsing** in Foundry RAG ingestion performs OCR on scanned PDFs, preserves multipage tables and section headings as structure-aware chunks, and retains page-number metadata."
+    "explanation": "**Advanced data parsing** in Foundry RAG ingestion performs OCR on scanned PDFs, preserves multipage tables and section headings as structure-aware chunks, and retains page-number metadata.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 22,
@@ -645,7 +666,8 @@
     "correct": [
       "A"
     ],
-    "explanation": "**Computer use** interacts with GUI/web applications that lack APIs to download logs, while **Code interpreter** runs Python scripts to parse and analyze the downloaded log files."
+    "explanation": "**Computer use** interacts with GUI/web applications that lack APIs to download logs, while **Code interpreter** runs Python scripts to parse and analyze the downloaded log files.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 23,
@@ -674,7 +696,8 @@
         "correct": "RequestResponse"
       }
     ],
-    "explanation": "**Model Availability Rate and Provisioned Utilization** metrics identify whether 429 errors and empty responses stem from capacity exhaustion or service unavailability, while **RequestResponse** logs capture detailed inference payloads and status codes."
+    "explanation": "**Model Availability Rate and Provisioned Utilization** metrics identify whether 429 errors and empty responses stem from capacity exhaustion or service unavailability, while **RequestResponse** logs capture detailed inference payloads and status codes.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 24,
@@ -707,7 +730,8 @@
       "B",
       "C"
     ],
-    "explanation": "To trace an external Python service calling a Foundry agent, instrument the code with **OpenTelemetry** and export telemetry to **Application Insights**."
+    "explanation": "To trace an external Python service calling a Foundry agent, instrument the code with **OpenTelemetry** and export telemetry to **Application Insights**.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 25,
@@ -735,7 +759,8 @@
     "correct": [
       "A"
     ],
-    "explanation": "When an agent makes multiple independent tool calls, executing those **tool calls in parallel** within the application/orchestration logic significantly reduces total wall-clock latency."
+    "explanation": "When an agent makes multiple independent tool calls, executing those **tool calls in parallel** within the application/orchestration logic significantly reduces total wall-clock latency.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 26,
@@ -770,7 +795,8 @@
         "correct": "Risk and safety metrics"
       }
     ],
-    "explanation": "**Groundedness evaluation metrics** detect hallucinations or claims unsupported by retrieved documents, whereas **Risk and safety metrics** monitor policy violations (hate, violence, self-harm, sexual content)."
+    "explanation": "**Groundedness evaluation metrics** detect hallucinations or claims unsupported by retrieved documents, whereas **Risk and safety metrics** monitor policy violations (hate, violence, self-harm, sexual content).",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 27,
@@ -798,7 +824,8 @@
     "correct": [
       "D"
     ],
-    "explanation": "Enabling `mask_inpainting` and providing both the source image and a binary mask restricts image modifications exclusively to the masked background region while preserving original lighting and style."
+    "explanation": "Enabling `mask_inpainting` and providing both the source image and a binary mask restricts image modifications exclusively to the masked background region while preserving original lighting and style.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 28,
@@ -826,7 +853,8 @@
     "correct": [
       "C"
     ],
-    "explanation": "The `index` property in the Azure AI Search tool configuration must be set to the specific **Azure AI Search index name** (not the service name or endpoint URL)."
+    "explanation": "The `index` property in the Azure AI Search tool configuration must be set to the specific **Azure AI Search index name** (not the service name or endpoint URL).",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 29,
@@ -853,7 +881,8 @@
         "correct": "File search tool"
       }
     ],
-    "explanation": "**Agent memory that uses persistent storage** retains user preferences across separate conversation threads, while the **File search tool** allows users to upload documents directly into a chat for grounding."
+    "explanation": "**Agent memory that uses persistent storage** retains user preferences across separate conversation threads, while the **File search tool** allows users to upload documents directly into a chat for grounding.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 30,
@@ -881,7 +910,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "To replace only a specific region (the sky) while keeping foreground objects untouched, use `mask_inpainting` with the original photo and a mask covering the sky."
+    "explanation": "To replace only a specific region (the sky) while keeping foreground objects untouched, use `mask_inpainting` with the original photo and a mask covering the sky.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 31,
@@ -909,7 +939,8 @@
     "correct": [
       "C"
     ],
-    "explanation": "Adding a **connection** to the Azure AI Search resource at the Microsoft Foundry project level centrally manages credentials and makes the search resource reusable across all agents in `Project1`."
+    "explanation": "Adding a **connection** to the Azure AI Search resource at the Microsoft Foundry project level centrally manages credentials and makes the search resource reusable across all agents in `Project1`.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 32,
@@ -937,7 +968,8 @@
     "correct": [
       "D"
     ],
-    "explanation": "**Image moderation** in Azure AI Content Safety classifies uploaded user images across harm categories and blocks images exceeding configured severity thresholds."
+    "explanation": "**Image moderation** in Azure AI Content Safety classifies uploaded user images across harm categories and blocks images exceeding configured severity thresholds.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 33,
@@ -965,7 +997,8 @@
         "correct": "approval == \"approved\""
       }
     ],
-    "explanation": "In a Foundry YAML workflow, the `ask_question` step pauses execution for human input/approval, and the conditional expression `approval == \"approved\"` gates the subsequent `execute_refund` agent step."
+    "explanation": "In a Foundry YAML workflow, the `ask_question` step pauses execution for human input/approval, and the conditional expression `approval == \"approved\"` gates the subsequent `execute_refund` agent step.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 34,
@@ -993,7 +1026,8 @@
     "correct": [
       "D"
     ],
-    "explanation": "**Groundedness evaluation metrics** measure how well the model's generated answers align with and are supported by the retrieved Azure AI Search documents."
+    "explanation": "**Groundedness evaluation metrics** measure how well the model's generated answers align with and are supported by the retrieved Azure AI Search documents.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 35,
@@ -1021,7 +1055,8 @@
     "correct": [
       "A"
     ],
-    "explanation": "When lengthy legal documents have clauses omitted, **increasing the number of retrieved document chunks** (`top_k`) passed into the prompt ensures relevant clauses aren't truncated during retrieval."
+    "explanation": "When lengthy legal documents have clauses omitted, **increasing the number of retrieved document chunks** (`top_k`) passed into the prompt ensures relevant clauses aren't truncated during retrieval.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 36,
@@ -1056,7 +1091,8 @@
         "correct": "Multi-file task in pro mode"
       }
     ],
-    "explanation": "**Single-file task in standard mode** provides cost-effective, high-volume extraction for standalone invoices (`Pipeline1`), whereas **Multi-file task in pro mode** supports multi-step reasoning and cross-document validation across reference files (`Pipeline2`)."
+    "explanation": "**Single-file task in standard mode** provides cost-effective, high-volume extraction for standalone invoices (`Pipeline1`), whereas **Multi-file task in pro mode** supports multi-step reasoning and cross-document validation across reference files (`Pipeline2`).",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 37,
@@ -1076,7 +1112,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "A prompt shield for *user prompts* only scans direct text entered by the user; it does not scan text extracted from uploaded images/documents or block unsafe image content. Therefore, this does **No**t meet the goal."
+    "explanation": "A prompt shield for *user prompts* only scans direct text entered by the user; it does not scan text extracted from uploaded images/documents or block unsafe image content. Therefore, this does **No**t meet the goal.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 38,
@@ -1096,7 +1133,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "Image moderation blocks harmful visual content, but it does **No**t prevent indirect prompt injection attacks hidden as text inside safe-looking images."
+    "explanation": "Image moderation blocks harmful visual content, but it does **No**t prevent indirect prompt injection attacks hidden as text inside safe-looking images.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 39,
@@ -1116,7 +1154,8 @@
     "correct": [
       "A"
     ],
-    "explanation": "Configuring a **prompt shield for documents** inspects untrusted third-party content (including OCR text extracted from uploaded images) for indirect prompt injection instructions. (**Yes**)"
+    "explanation": "Configuring a **prompt shield for documents** inspects untrusted third-party content (including OCR text extracted from uploaded images) for indirect prompt injection instructions. (**Yes**)",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 40,
@@ -1136,7 +1175,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "Protected material detection checks for known copyrighted text or code; it does **No**t prevent unsafe image uploads or indirect prompt injection attacks."
+    "explanation": "Protected material detection checks for known copyrighted text or code; it does **No**t prevent unsafe image uploads or indirect prompt injection attacks.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 41,
@@ -1164,7 +1204,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "A **custom Azure Content Understanding analyzer** lets you define a custom field schema (invoice number, date, vendor, total) that generalizes across templates and outputs field-level confidence scores for routing."
+    "explanation": "A **custom Azure Content Understanding analyzer** lets you define a custom field schema (invoice number, date, vendor, total) that generalizes across templates and outputs field-level confidence scores for routing.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 42,
@@ -1192,7 +1233,8 @@
     "correct": [
       "C"
     ],
-    "explanation": "Setting Prompt Shields to **Annotate** logs/flags indirect prompt injection attempts for security review without immediately blocking requests, while **Spotlighting** isolates external web content."
+    "explanation": "Setting Prompt Shields to **Annotate** logs/flags indirect prompt injection attempts for security review without immediately blocking requests, while **Spotlighting** isolates external web content.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 43,
@@ -1219,7 +1261,8 @@
         "correct": "{Upper(Local.Var01)}"
       }
     ],
-    "explanation": "In Power Fx within Foundry workflows, `Not(IsBlank(Local.Var01))` checks that local variable `Var01` has a value, and `{Upper(Local.Var01)}` interpolates the uppercase string in a Send message node."
+    "explanation": "In Power Fx within Foundry workflows, `Not(IsBlank(Local.Var01))` checks that local variable `Var01` has a value, and `{Upper(Local.Var01)}` interpolates the uppercase string in a Send message node.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 44,
@@ -1247,7 +1290,8 @@
     "correct": [
       "A"
     ],
-    "explanation": "Storing the **conversation's ID** and supplying it on subsequent requests allows the Foundry Agent Service to automatically reload the full multi-turn history, including tool calls and outputs."
+    "explanation": "Storing the **conversation's ID** and supplying it on subsequent requests allows the Foundry Agent Service to automatically reload the full multi-turn history, including tool calls and outputs.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 45,
@@ -1275,7 +1319,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "In the Foundry Agent Service, threads persist conversation state automatically. **Persisting the thread ID** and reusing it resumes the exact conversation with all prior tool invocations and uploaded files."
+    "explanation": "In the Foundry Agent Service, threads persist conversation state automatically. **Persisting the thread ID** and reusing it resumes the exact conversation with all prior tool invocations and uploaded files.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 46,
@@ -1310,7 +1355,8 @@
         "correct": "Multi-file task in pro mode"
       }
     ],
-    "explanation": "**Single-file task in standard mode** minimizes cost for standalone audit reports (`Pipeline1`), while **Multi-file task in pro mode** enables cross-document reasoning to spot inconsistencies across multiple reports (`Pipeline2`)."
+    "explanation": "**Single-file task in standard mode** minimizes cost for standalone audit reports (`Pipeline1`), while **Multi-file task in pro mode** enables cross-document reasoning to spot inconsistencies across multiple reports (`Pipeline2`).",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 47,
@@ -1338,7 +1384,8 @@
     "correct": [
       "D"
     ],
-    "explanation": "**Token usage** observability breaks down prompt (input) tokens versus completion (output) tokens and tool-call token overhead, pinpointing the driver of increased inference costs."
+    "explanation": "**Token usage** observability breaks down prompt (input) tokens versus completion (output) tokens and tool-call token overhead, pinpointing the driver of increased inference costs.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 48,
@@ -1366,7 +1413,8 @@
     "correct": [
       "C"
     ],
-    "explanation": "**Storage Blob Data Reader** grants read-only access to blob data without permitting uploads, modifications, or deletions, adhering to the principle of least privilege."
+    "explanation": "**Storage Blob Data Reader** grants read-only access to blob data without permitting uploads, modifications, or deletions, adhering to the principle of least privilege.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 49,
@@ -1393,7 +1441,8 @@
         "correct": "Fail"
       }
     ],
-    "explanation": "Using the **Azure Login action with OpenID Connect (OIDC)** provides secure passwordless authentication in GitHub Actions, and configuring the workflow to **Fail** blocks PR merges when thresholds aren't met."
+    "explanation": "Using the **Azure Login action with OpenID Connect (OIDC)** provides secure passwordless authentication in GitHub Actions, and configuring the workflow to **Fail** blocks PR merges when thresholds aren't met.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 50,
@@ -1421,7 +1470,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "When calling the Speech-to-Text REST API with a fine-tuned model in Custom Speech, the `project` property must be set to the **custom speech project ID**."
+    "explanation": "When calling the Speech-to-Text REST API with a fine-tuned model in Custom Speech, the `project` property must be set to the **custom speech project ID**.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 51,
@@ -1449,7 +1499,8 @@
     "correct": [
       "D"
     ],
-    "explanation": "In Azure Document Intelligence, setting `output_content_format=ContentFormat.MARKDOWN` converts analyzed PDFs directly into structured Markdown that preserves headings, sections, and tables."
+    "explanation": "In Azure Document Intelligence, setting `output_content_format=ContentFormat.MARKDOWN` converts analyzed PDFs directly into structured Markdown that preserves headings, sections, and tables.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 52,
@@ -1477,7 +1528,8 @@
     "correct": [
       "C"
     ],
-    "explanation": "Use **File Search** for ad-hoc documents uploaded by users during an active conversation, and **Azure AI Search** for querying millions of documents in a centralized enterprise index."
+    "explanation": "Use **File Search** for ad-hoc documents uploaded by users during an active conversation, and **Azure AI Search** for querying millions of documents in a centralized enterprise index.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 53,
@@ -1505,7 +1557,8 @@
         "correct": "create"
       }
     ],
-    "explanation": "`DefaultAzureCredential()` authenticates via Microsoft Entra managed identity, and `openai_client.responses.create(...)` sends prompts using the Azure OpenAI Responses API."
+    "explanation": "`DefaultAzureCredential()` authenticates via Microsoft Entra managed identity, and `openai_client.responses.create(...)` sends prompts using the Azure OpenAI Responses API.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 54,
@@ -1533,7 +1586,8 @@
     "correct": [
       "A"
     ],
-    "explanation": "A **mask-based inpainting edit** (`mask_inpainting`) targets only the masked area containing the competitor's logo while keeping the rest of the marketing image intact."
+    "explanation": "A **mask-based inpainting edit** (`mask_inpainting`) targets only the masked area containing the competitor's logo while keeping the rest of the marketing image intact.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 55,
@@ -1561,7 +1615,8 @@
     "correct": [
       "C"
     ],
-    "explanation": "The `prebuilt-read` analyzer in Azure Content Understanding performs fast, low-cost OCR to extract all readable text without layout analysis, table reconstruction, or LLM field extraction."
+    "explanation": "The `prebuilt-read` analyzer in Azure Content Understanding performs fast, low-cost OCR to extract all readable text without layout analysis, table reconstruction, or LLM field extraction.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 56,
@@ -1596,7 +1651,8 @@
         "correct": "Token usage analytics"
       }
     ],
-    "explanation": "**Latency breakdown traces** isolate slow steps during complex queries, while **Token usage analytics** explain why monthly inference costs rose despite flat request volume."
+    "explanation": "**Latency breakdown traces** isolate slow steps during complex queries, while **Token usage analytics** explain why monthly inference costs rose despite flat request volume.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 57,
@@ -1624,7 +1680,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "Azure Translator performs best when each input segment is in a single language. **Splitting mixed-language segments into single-language segments** before translation prevents incomplete or garbled output."
+    "explanation": "Azure Translator performs best when each input segment is in a single language. **Splitting mixed-language segments into single-language segments** before translation prevents incomplete or garbled output.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 58,
@@ -1652,7 +1709,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "The **Latency** observability capability provides time-taken breakdowns across document retrieval, tool execution, and model inference."
+    "explanation": "The **Latency** observability capability provides time-taken breakdowns across document retrieval, tool execution, and model inference.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 59,
@@ -1681,7 +1739,8 @@
         "correct": "Storage Blob Data Reader"
       }
     ],
-    "explanation": "Enabling a **System-assigned managed identity** on the Content Safety resource and assigning it the **Storage Blob Data Reader** role grants keyless, least-privilege read access to blob URLs."
+    "explanation": "Enabling a **System-assigned managed identity** on the Content Safety resource and assigning it the **Storage Blob Data Reader** role grants keyless, least-privilege read access to blob URLs.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 60,
@@ -1709,7 +1768,8 @@
     "correct": [
       "A"
     ],
-    "explanation": "Including the original jacket photo as a **reference image** in the image generation request preserves the product's visual appearance while allowing the scene, lighting, and background to vary."
+    "explanation": "Including the original jacket photo as a **reference image** in the image generation request preserves the product's visual appearance while allowing the scene, lighting, and background to vary.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 61,
@@ -1737,7 +1797,8 @@
     "correct": [
       "C"
     ],
-    "explanation": "When a deployed custom speech-to-text model reaches its expiration date, recognition requests **automatically fall back to the most recent base model** for the same locale."
+    "explanation": "When a deployed custom speech-to-text model reaches its expiration date, recognition requests **automatically fall back to the most recent base model** for the same locale.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 62,
@@ -1765,7 +1826,8 @@
     "correct": [
       "A"
     ],
-    "explanation": "Persisting and reusing the **thread ID** in the Microsoft Foundry Agent Service preserves the full conversation history, uploaded log files, tool calls, and outputs across weeks and multiple engineers."
+    "explanation": "Persisting and reusing the **thread ID** in the Microsoft Foundry Agent Service preserves the full conversation history, uploaded log files, tool calls, and outputs across weeks and multiple engineers.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 63,
@@ -1794,7 +1856,8 @@
         "correct": "A system-assigned managed identity that is assigned the Storage Blob Data Reader role"
       }
     ],
-    "explanation": "To block harmful content across all agent stages, select **User input, Output, Tool response, and Tool call and set Action to Block**. For keyless least-privilege blob access, use a **system-assigned managed identity with the Storage Blob Data Reader role**."
+    "explanation": "To block harmful content across all agent stages, select **User input, Output, Tool response, and Tool call and set Action to Block**. For keyless least-privilege blob access, use a **system-assigned managed identity with the Storage Blob Data Reader role**.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 64,
@@ -1822,7 +1885,8 @@
     "correct": [
       "A"
     ],
-    "explanation": "Adding a **retry evaluation** (reflection/validation loop) in the application logic before returning responses checks summary completeness and triggers regeneration if required details are missing."
+    "explanation": "Adding a **retry evaluation** (reflection/validation loop) in the application logic before returning responses checks summary completeness and triggers regeneration if required details are missing.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 65,
@@ -1850,7 +1914,8 @@
     "correct": [
       "D"
     ],
-    "explanation": "**Prompt Shields for user prompts** detects direct prompt injection (jailbreak) attempts entered by users before the model processes the input."
+    "explanation": "**Prompt Shields for user prompts** detects direct prompt injection (jailbreak) attempts entered by users before the model processes the input.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 66,
@@ -1888,7 +1953,8 @@
         "correct": "Completion token analytics"
       }
     ],
-    "explanation": "**Relevance Evaluation** measures whether generated answers actually address the user's question, while **Completion token analytics** tracks output length and token consumption."
+    "explanation": "**Relevance Evaluation** measures whether generated answers actually address the user's question, while **Completion token analytics** tracks output length and token consumption.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 67,
@@ -1916,7 +1982,8 @@
     "correct": [
       "D"
     ],
-    "explanation": "Even when an OpenAPI specification defines a security scheme and `Connection1` stores the key, you must explicitly **connect/associate the OpenAPI tool with `Connection1`** so the runtime injects the header."
+    "explanation": "Even when an OpenAPI specification defines a security scheme and `Connection1` stores the key, you must explicitly **connect/associate the OpenAPI tool with `Connection1`** so the runtime injects the header.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 68,
@@ -1944,7 +2011,8 @@
     "correct": [
       "C"
     ],
-    "explanation": "**Token usage analytics** tracks prompt tokens and completion tokens per request, revealing whether a new prompt template inflated input or output token counts."
+    "explanation": "**Token usage analytics** tracks prompt tokens and completion tokens per request, revealing whether a new prompt template inflated input or output token counts.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 69,
@@ -1973,7 +2041,8 @@
         "correct": "Reject responses that do not meet the groundedness threshold."
       }
     ],
-    "explanation": "The **Groundedness** metric evaluates whether answers are supported by retrieved documents. Configuring the application to **reject responses that do not meet the groundedness threshold** and return a fallback prevents ungrounded answers."
+    "explanation": "The **Groundedness** metric evaluates whether answers are supported by retrieved documents. Configuring the application to **reject responses that do not meet the groundedness threshold** and return a fallback prevents ungrounded answers.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 70,
@@ -2006,7 +2075,8 @@
       "A",
       "B"
     ],
-    "explanation": "**Microsoft Sentinel** (built on a **Log Analytics workspace**) provides centralized SIEM/SOAR capabilities to correlate security alerts across Microsoft Foundry, Microsoft Defender, and Microsoft Entra ID."
+    "explanation": "**Microsoft Sentinel** (built on a **Log Analytics workspace**) provides centralized SIEM/SOAR capabilities to correlate security alerts across Microsoft Foundry, Microsoft Defender, and Microsoft Entra ID.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 71,
@@ -2034,7 +2104,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "**Cognitive Services OpenAI User** is the least-privilege RBAC role that permits developers to run model inference calls against Azure OpenAI deployments without administrative permissions."
+    "explanation": "**Cognitive Services OpenAI User** is the least-privilege RBAC role that permits developers to run model inference calls against Azure OpenAI deployments without administrative permissions.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 72,
@@ -2062,7 +2133,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "Because OCR text extracted from uploaded images comes from an untrusted external source, **prompt shields for documents** should be used to detect embedded indirect prompt injection attacks."
+    "explanation": "Because OCR text extracted from uploaded images comes from an untrusted external source, **prompt shields for documents** should be used to detect embedded indirect prompt injection attacks.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 73,
@@ -2091,7 +2163,8 @@
         "correct": "File search tool"
       }
     ],
-    "explanation": "**Agent memory that uses persistent storage** retains attorney preferences across sessions, while the **File search tool** retrieves reference material from documents uploaded during a conversation."
+    "explanation": "**Agent memory that uses persistent storage** retains attorney preferences across sessions, while the **File search tool** retrieves reference material from documents uploaded during a conversation.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 74,
@@ -2119,7 +2192,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "Setting `output_content_format=ContentFormat.MARKDOWN` in Azure Document Intelligence preserves tables, headings, paragraphs, and reading order in an LLM-ready format with minimal post-processing."
+    "explanation": "Setting `output_content_format=ContentFormat.MARKDOWN` in Azure Document Intelligence preserves tables, headings, paragraphs, and reading order in an LLM-ready format with minimal post-processing.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 75,
@@ -2147,7 +2221,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "**Search Index Data Reader** grants read-only permission to query an Azure AI Search index using Microsoft Entra ID authentication, following least privilege."
+    "explanation": "**Search Index Data Reader** grants read-only permission to query an Azure AI Search index using Microsoft Entra ID authentication, following least privilege.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 76,
@@ -2196,7 +2271,8 @@
         "correct": "File Search"
       }
     ],
-    "explanation": "**Code Interpreter** analyzes uploaded spreadsheets and generates charts; **Computer Use** automates browser interactions with legacy websites lacking APIs; **File Search** answers questions from uploaded policy PDFs."
+    "explanation": "**Code Interpreter** analyzes uploaded spreadsheets and generates charts; **Computer Use** automates browser interactions with legacy websites lacking APIs; **File Search** answers questions from uploaded policy PDFs.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 77,
@@ -2224,7 +2300,8 @@
     "correct": [
       "D"
     ],
-    "explanation": "To deterministically force the agent to invoke a Model Context Protocol (MCP) tool on every run, pass `tool_choice={\"type\": \"mcp\"}` (represented as `tool_choice = \"type\":\"mcp\"`)."
+    "explanation": "To deterministically force the agent to invoke a Model Context Protocol (MCP) tool on every run, pass `tool_choice={\"type\": \"mcp\"}` (represented as `tool_choice = \"type\":\"mcp\"`).",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 78,
@@ -2252,7 +2329,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "**Tool execution traces** record the start time, duration, and status of each individual tool invocation within an agent run, identifying which custom tool causes delays."
+    "explanation": "**Tool execution traces** record the start time, duration, and status of each individual tool invocation within an agent run, identifying which custom tool causes delays.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 79,
@@ -2281,7 +2359,8 @@
         "correct": "Grounding with Bing Search"
       }
     ],
-    "explanation": "Use the **Code Interpreter Tool** to execute Python code on uploaded spreadsheets, and **Grounding with Bing Search** to fetch live weather conditions from the public web."
+    "explanation": "Use the **Code Interpreter Tool** to execute Python code on uploaded spreadsheets, and **Grounding with Bing Search** to fetch live weather conditions from the public web.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 80,
@@ -2309,7 +2388,8 @@
     "correct": [
       "C"
     ],
-    "explanation": "**Evaluation metrics** (such as groundedness, completeness, and relevance) quantify whether response quality has degraded following a prompt change when latency and error rates are normal."
+    "explanation": "**Evaluation metrics** (such as groundedness, completeness, and relevance) quantify whether response quality has degraded following a prompt change when latency and error rates are normal.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 81,
@@ -2337,7 +2417,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "A **model cascade** routes simple FAQ queries to a fast, low-cost small language model (SLM) and escalates complex queries to a larger reasoning model, optimizing cost and latency."
+    "explanation": "A **model cascade** routes simple FAQ queries to a fast, low-cost small language model (SLM) and escalates complex queries to a larger reasoning model, optimizing cost and latency.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 82,
@@ -2365,7 +2446,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "Using **structured outputs with a JSON schema** (`response_format` with `json_schema` and `strict: true`) guarantees that model responses strictly conform to the required schema without unexpected fields."
+    "explanation": "Using **structured outputs with a JSON schema** (`response_format` with `json_schema` and `strict: true`) guarantees that model responses strictly conform to the required schema without unexpected fields.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 83,
@@ -2394,7 +2476,8 @@
         "correct": "Code Interpreter Tool"
       }
     ],
-    "explanation": "Use the **File Search Tool** to answer questions from uploaded supplier contracts, and the **Code Interpreter Tool** to process Excel workbooks and generate summary charts."
+    "explanation": "Use the **File Search Tool** to answer questions from uploaded supplier contracts, and the **Code Interpreter Tool** to process Excel workbooks and generate summary charts.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 84,
@@ -2422,7 +2505,8 @@
     "correct": [
       "D"
     ],
-    "explanation": "Configuring an **Azure Content Understanding in Foundry Tools analyzer** extracts scanned text, tables, and multicolumn layouts into structured Markdown for downstream agent reasoning."
+    "explanation": "Configuring an **Azure Content Understanding in Foundry Tools analyzer** extracts scanned text, tables, and multicolumn layouts into structured Markdown for downstream agent reasoning.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 85,
@@ -2450,7 +2534,8 @@
     "correct": [
       "D"
     ],
-    "explanation": "A **large language model (LLM)** is required when the workload demands deep, multi-step reasoning across long contexts and detailed natural language synthesis."
+    "explanation": "A **large language model (LLM)** is required when the workload demands deep, multi-step reasoning across long contexts and detailed natural language synthesis.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 86,
@@ -2499,7 +2584,8 @@
         "correct": "Computer Use"
       }
     ],
-    "explanation": "**Grounding with Bing Search** finds recent court decisions on public websites; **File Search** queries uploaded contracts; **Computer Use** logs into the third-party web portal to download evidence."
+    "explanation": "**Grounding with Bing Search** finds recent court decisions on public websites; **File Search** queries uploaded contracts; **Computer Use** logs into the third-party web portal to download evidence.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 87,
@@ -2527,7 +2613,8 @@
     "correct": [
       "C"
     ],
-    "explanation": "Enabling `estimateFieldSourceAndConfidence` in Azure Content Understanding outputs both a per-field confidence score (for human review routing) and source grounding (bounding regions/page locations)."
+    "explanation": "Enabling `estimateFieldSourceAndConfidence` in Azure Content Understanding outputs both a per-field confidence score (for human review routing) and source grounding (bounding regions/page locations).",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 88,
@@ -2555,7 +2642,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "When average prompt size doubles and costs spike without any quality gain, **retrieving fewer document chunks** (`top_k`) before constructing the prompt immediately reduces input token count and cost."
+    "explanation": "When average prompt size doubles and costs spike without any quality gain, **retrieving fewer document chunks** (`top_k`) before constructing the prompt immediately reduces input token count and cost.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 89,
@@ -2584,7 +2672,8 @@
         "correct": "Configure workload identity federation"
       }
     ],
-    "explanation": "Using the **Azure Login action with OpenID Connect (OIDC)** combined with **workload identity federation** eliminates stored secrets and long-lived credentials in GitHub Actions."
+    "explanation": "Using the **Azure Login action with OpenID Connect (OIDC)** combined with **workload identity federation** eliminates stored secrets and long-lived credentials in GitHub Actions.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 90,
@@ -2612,7 +2701,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "**Azure Content Understanding in Foundry Tools** provides built-in OCR, layout analysis, and zero-shot/template-generalizing field extraction across varied invoice layouts without training a custom model."
+    "explanation": "**Azure Content Understanding in Foundry Tools** provides built-in OCR, layout analysis, and zero-shot/template-generalizing field extraction across varied invoice layouts without training a custom model.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 91,
@@ -2640,7 +2730,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "Combining **real-time speech to text** for incoming streaming audio with **text to speech** for streaming agent responses enables low-latency, natural turn-taking voice conversations."
+    "explanation": "Combining **real-time speech to text** for incoming streaming audio with **text to speech** for streaming agent responses enables low-latency, natural turn-taking voice conversations.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 92,
@@ -2668,7 +2759,8 @@
     "correct": [
       "A"
     ],
-    "explanation": "A **custom Azure Content Understanding analyzer** in Foundry Tools allows you to define the target field schema (PO number, supplier, delivery date, total) and returns per-field confidence scores across varied supplier layouts."
+    "explanation": "A **custom Azure Content Understanding analyzer** in Foundry Tools allows you to define the target field schema (PO number, supplier, delivery date, total) and returns per-field confidence scores across varied supplier layouts.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 93,
@@ -2696,7 +2788,8 @@
         "correct": "\"high\""
       }
     ],
-    "explanation": "Setting `temperature=0` maximizes determinism/output stability to prevent wording drift, while setting `output_config={\"effort\": \"high\"}` maximizes reasoning quality."
+    "explanation": "Setting `temperature=0` maximizes determinism/output stability to prevent wording drift, while setting `output_config={\"effort\": \"high\"}` maximizes reasoning quality.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 94,
@@ -2724,7 +2817,8 @@
     "correct": [
       "A"
     ],
-    "explanation": "Configuring **an indexer to extract image data into a `normalized_images` collection** (`imageAction: generateNormalizedImages`) prepares embedded PDF images as input for the built-in OCR skill."
+    "explanation": "Configuring **an indexer to extract image data into a `normalized_images` collection** (`imageAction: generateNormalizedImages`) prepares embedded PDF images as input for the built-in OCR skill.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 95,
@@ -2752,7 +2846,8 @@
     "correct": [
       "A"
     ],
-    "explanation": "Applying a **mask-based inpainting edit** (`mask_inpainting`) to the driveway area removes only the parked vehicle while preserving the house, landscaping, lighting, and shadows."
+    "explanation": "Applying a **mask-based inpainting edit** (`mask_inpainting`) to the driveway area removes only the parked vehicle while preserving the house, landscaping, lighting, and shadows.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 96,
@@ -2780,7 +2875,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "**Latency breakdown traces** show the exact duration of each stage in an agent run (order tool, profile tool, shipping tool, and LLM inference), pinpointing the bottleneck."
+    "explanation": "**Latency breakdown traces** show the exact duration of each stage in an agent run (order tool, profile tool, shipping tool, and LLM inference), pinpointing the bottleneck.",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 97,
@@ -2800,7 +2896,8 @@
     "correct": [
       "A"
     ],
-    "explanation": "If summaries omit clauses because the output is being cut off by token limits, **increasing `max_tokens`** allows the model to generate complete summaries. (**Yes**)"
+    "explanation": "If summaries omit clauses because the output is being cut off by token limits, **increasing `max_tokens`** allows the model to generate complete summaries. (**Yes**)",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 98,
@@ -2820,7 +2917,8 @@
     "correct": [
       "A"
     ],
-    "explanation": "Adding a **reflection pass** that checks the draft summary for required regulatory clauses and regenerates the response if any are missing directly improves response completeness. (**Yes**)"
+    "explanation": "Adding a **reflection pass** that checks the draft summary for required regulatory clauses and regenerates the response if any are missing directly improves response completeness. (**Yes**)",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 99,
@@ -2840,7 +2938,8 @@
     "correct": [
       "B"
     ],
-    "explanation": "Increasing `temperature` increases randomness and creativity, which makes omissions and hallucinations more likely rather than improving regulatory completeness. (**No**)"
+    "explanation": "Increasing `temperature` increases randomness and creativity, which makes omissions and hallucinations more likely rather than improving regulatory completeness. (**No**)",
+    "set": "Set 1: Core Bank (Q1–Q100)"
   },
   {
     "id": 100,
@@ -2860,6 +2959,1821 @@
     "correct": [
       "B"
     ],
-    "explanation": "Running an evaluation flow that *blocks* incomplete responses prevents bad outputs from reaching users, but it does **No**t improve the completeness of the generated summaries themselves (unlike regeneration/reflection)."
+    "explanation": "Running an evaluation flow that *blocks* incomplete responses prevents bad outputs from reaching users, but it does **No**t improve the completeness of the generated summaries themselves (unlike regeneration/reflection).",
+    "set": "Set 1: Core Bank (Q1–Q100)"
+  },
+  {
+    "id": 101,
+    "type": "hotspot",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry resource that supports MCP tools and an agent that uses a tool-capable model.\nA private Azure Blob Storage container stores user audio files. You plan to add the Azure Speech MCP Server so the agent can transcribe audio files submitted as links in the agent playground.\nYou need to configure authentication and blob access for the Speech MCP Server. The solution must use the minimum documented SAS permissions for the container and submitted audio files.\nWhich values should you configure?",
+    "slots": [
+      {
+        "label": "Tool authentication",
+        "options": [
+          "Foundry resource key",
+          "Anonymous access",
+          "Personal access token (PAT)",
+          "Storage account access key"
+        ],
+        "correct": "Foundry resource key"
+      },
+      {
+        "label": "Blob access",
+        "options": [
+          "Container read/write; file read",
+          "Container full control; file delete",
+          "Container list only; file write",
+          "Public anonymous blob access"
+        ],
+        "correct": "Container read/write; file read"
+      }
+    ],
+    "explanation": "The Azure Speech MCP Server authenticates using the **Foundry resource key** and requires **Container read/write** (to write transcription outputs) and **file read** SAS permissions on the submitted audio blobs.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 102,
+    "type": "single_choice",
+    "domain": "Microsoft Foundry Agents, Tools & Workflows",
+    "stem": "You have a Microsoft Foundry customer support solution that uses a Foundry Agent Service agent.\nOnly gpt-4.1, gpt-4.1-mini, gpt-5, and o4-mini are approved for the workload.\nYou plan to use a model router deployment for the agent.\nYou need to prevent routing to unapproved models while preserving automatic failover.\nWhich configuration should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a model router deployment that uses a custom subset containing gpt-4.1-mini and gpt-4.1."
+      },
+      {
+        "id": "B",
+        "text": "Use the default model router configuration with all catalog models enabled."
+      },
+      {
+        "id": "C",
+        "text": "Deploy only a single gpt-4.1 model without a model router."
+      },
+      {
+        "id": "D",
+        "text": "Configure a content filter to block unapproved model names in user prompts."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Creating a **model router deployment with a custom subset** containing only approved models (`gpt-4.1-mini` and `gpt-4.1`) prevents routing to unapproved models while preserving intelligent routing and automatic failover.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 103,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "Your company processes various forms, including health insurance cards and identity documents, and requires accurate extraction of specific fields.\nYou need to recommend a solution using Azure Document Intelligence in Foundry Tools for extracting structured data from these forms.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use the prebuilt Read model and write custom regular expressions for each field."
+      },
+      {
+        "id": "B",
+        "text": "Use prebuilt models for Health Insurance Card and ID Document."
+      },
+      {
+        "id": "C",
+        "text": "Train a custom neural model from scratch for every identity document."
+      },
+      {
+        "id": "D",
+        "text": "Use Azure AI Translator to convert the forms into plain text."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Azure Document Intelligence provides specialized **prebuilt models for Health Insurance Card (`prebuilt-healthInsuranceCard.us`) and ID Document (`prebuilt-idDocument`)** that extract structured fields out of the box without training.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 104,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "Your company receives incoming documents that need to be classified into predefined categories before extracting specific data fields.\nYou need to implement a solution that accurately classifies documents and supports subsequent data extraction.\nWhich solution should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Custom classification model in Azure Document Intelligence in Foundry Tools"
+      },
+      {
+        "id": "B",
+        "text": "Prebuilt receipt model in Azure Document Intelligence"
+      },
+      {
+        "id": "C",
+        "text": "Azure Speech batch transcription"
+      },
+      {
+        "id": "D",
+        "text": "Azure Vision Spatial Analysis"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "A **Custom classification model in Azure Document Intelligence** identifies document types/categories across multi-page or incoming files so each document can be routed to the appropriate extraction model.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 105,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have an Azure Document Intelligence in Foundry Tools resource.\nYou need to use the resource in the Document Intelligence Studio to extract key-value pairs, selection marks, and tables from documents.\nWhat should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "the general document model"
+      },
+      {
+        "id": "B",
+        "text": "the prebuilt Read model"
+      },
+      {
+        "id": "C",
+        "text": "the custom classification model"
+      },
+      {
+        "id": "D",
+        "text": "the prebuilt US Tax W-2 model"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The **general document model (`prebuilt-document`)** in Document Intelligence Studio extracts key-value pairs, selection marks, entities, and tables without requiring custom training.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 106,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You are building an app that will use Azure Vision in Foundry Tools to detect the presence of people in a video feed.\nWhich Azure Vision in Foundry Tools feature should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Optical Character Recognition (OCR)"
+      },
+      {
+        "id": "B",
+        "text": "Spatial Analysis"
+      },
+      {
+        "id": "C",
+        "text": "Custom Vision Object Detection on static thumbnails only"
+      },
+      {
+        "id": "D",
+        "text": "Document Intelligence Layout"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "**Spatial Analysis** in Azure Vision analyzes real-time streaming video feeds to detect people, track movement, count occupancy, and monitor zone entry/exit.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 107,
+    "type": "multi_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You are building a video processing app that will use Azure AI Video Indexer.\nYou need to configure the training and learning phases for the app. The solution must train the model based on the probability of specific word combinations by using a custom Language model.\nWhich three practices should be followed for the training data? Each correct answer presents a complete solution.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Include multiple examples of spoken sentences."
+      },
+      {
+        "id": "B",
+        "text": "Provide multiple adaptation options."
+      },
+      {
+        "id": "C",
+        "text": "Put only one sentence per line."
+      },
+      {
+        "id": "D",
+        "text": "Include special symbols like '&' and '#' in every sentence."
+      },
+      {
+        "id": "E",
+        "text": "Put the entire transcript on a single line without line breaks."
+      }
+    ],
+    "correct": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "When training a custom Language model in Azure AI Video Indexer, best practices require **putting one sentence per line**, **including multiple natural examples of spoken sentences**, and **providing multiple adaptation options**.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 108,
+    "type": "hotspot",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a Microsoft Foundry project that contains an image-generation model deployment.\nYou need to create a custom content filter for generated images. The solution must meet the following requirements:\n• Apply the policy only after image generation.\n• For violence, allow only safe and low severity content.\n• For hate, allow only safe content.\n• Preserve existing prompt filtering.\nWhich filter stage and blocked severities should you configure?",
+    "slots": [
+      {
+        "label": "Filter stage",
+        "options": [
+          "Output filters",
+          "Input filters",
+          "Prompt Shields only",
+          "Protected material filters"
+        ],
+        "correct": "Output filters"
+      },
+      {
+        "label": "Blocked severities",
+        "options": [
+          "Violence: Medium and High; Hate: Low, Medium, and High",
+          "Violence: Low, Medium, and High; Hate: Medium and High",
+          "Violence: High only; Hate: High only",
+          "Violence: Safe and Low; Hate: Safe only"
+        ],
+        "correct": "Violence: Medium and High; Hate: Low, Medium, and High"
+      }
+    ],
+    "explanation": "To apply filtering after image generation while preserving prompt filters, configure **Output filters**. Allowing safe and low violence means blocking **Medium and High**; allowing only safe hate content means blocking **Low, Medium, and High**.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 109,
+    "type": "hotspot",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry project with the following model deployments:\n• model-01: gpt-4o\n• model-02: gpt-image-1\n• model-03: text-embedding-3-large\nApproved campaign mockups are uploaded to the project and can be passed as image file IDs.\nYou need to configure a conversational agent that generates new banner images from approved mockups.\nWhich deployments should you use?",
+    "slots": [
+      {
+        "label": "Agent definition deployment",
+        "options": [
+          "model-01 (gpt-4o)",
+          "model-02 (gpt-image-1)",
+          "model-03 (text-embedding-3-large)"
+        ],
+        "correct": "model-01 (gpt-4o)"
+      },
+      {
+        "label": "Image generation tool deployment",
+        "options": [
+          "model-01 (gpt-4o)",
+          "model-02 (gpt-image-1)",
+          "model-03 (text-embedding-3-large)"
+        ],
+        "correct": "model-02 (gpt-image-1)"
+      }
+    ],
+    "explanation": "The conversational agent requires a chat/reasoning model (`model-01: gpt-4o`) for its **agent definition deployment**, and delegates image creation to the **image generation tool deployment** (`model-02: gpt-image-1`).",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 110,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry workflow that generates accessibility metadata for images.\nA content management system (CMS) stores and renders the metadata by using the following fields:\n• altText: rendered as the image alt attribute\n• isDecorative: when true, renders alt=\"\" and suppresses extendedDescription\n• extendedDescription: rendered after the image\nA report page includes a bar chart that supports the sentence, \"Q3 revenue increased in all regions.\" The chart shows:\n• North America: $4.2 million\n• Europe: $3.1 million\n• Asia-Pacific: $2.4 million\nYou need to configure the metadata for the chart according to accessibility guidance.\nWhich output should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "{\"altText\": \"Bar chart showing Q3 revenue by region.\", \"isDecorative\": false, \"extendedDescription\": \"North America revenue is $4.2 million, Europe revenue is $3.1 million, and Asia-Pacific revenue is $2.4 million.\"}"
+      },
+      {
+        "id": "B",
+        "text": "{\"altText\": \"\", \"isDecorative\": true, \"extendedDescription\": \"Bar chart showing Q3 revenue by region.\"}"
+      },
+      {
+        "id": "C",
+        "text": "{\"altText\": \"Chart\", \"isDecorative\": false, \"extendedDescription\": \"\"}"
+      },
+      {
+        "id": "D",
+        "text": "{\"altText\": \"North America $4.2M, Europe $3.1M, Asia-Pacific $2.4M\", \"isDecorative\": true, \"extendedDescription\": \"\"}"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "For informative charts, WCAG accessibility guidance requires `isDecorative: false`, a concise `altText` summarizing the chart's purpose, and an `extendedDescription` providing the specific data values.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 111,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You are building a video processing app that will use Azure AI Video Indexer to extract insights from videos that contain multi-language content.\nYou need to configure the API calls to enable multilingual identification.\nWhich value should you set for the sourceLanguage parameter?",
+    "options": [
+      {
+        "id": "A",
+        "text": "multi-language detection"
+      },
+      {
+        "id": "B",
+        "text": "en-US"
+      },
+      {
+        "id": "C",
+        "text": "auto-translate"
+      },
+      {
+        "id": "D",
+        "text": "all-locales"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "In Azure AI Video Indexer, setting the `sourceLanguage` parameter to **multi-language detection** (`Multi`) enables automatic identification and transcription of multiple spoken languages within the same video.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 112,
+    "type": "drag_drop",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You have a customer support generative AI application in Microsoft Foundry. The application sends user input and retrieved support articles to an Azure OpenAI chat model before returning responses to external customers.\nYou plan to add safety controls.\nYou need to configure controls that meet the following requirements:\n• Block attempts to manipulate system instructions in user input and retrieved documents before response generation.\n• Identify generated responses that are not grounded in the retrieved support articles before the responses reach customers.\nWhich capabilities should you configure?",
+    "pool": [
+      "Prompt Shields",
+      "Groundedness detection",
+      "Protected material detection",
+      "Custom blocklists"
+    ],
+    "slots": [
+      {
+        "label": "Input manipulation control",
+        "options": [
+          "Prompt Shields",
+          "Groundedness detection",
+          "Protected material detection",
+          "Custom blocklists"
+        ],
+        "correct": "Prompt Shields"
+      },
+      {
+        "label": "Response verification control",
+        "options": [
+          "Prompt Shields",
+          "Groundedness detection",
+          "Protected material detection",
+          "Custom blocklists"
+        ],
+        "correct": "Groundedness detection"
+      }
+    ],
+    "explanation": "**Prompt Shields** block direct user jailbreaks and indirect document prompt injection attacks prior to generation, while **Groundedness detection** verifies that model outputs are supported by the retrieved source articles.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 113,
+    "type": "multi_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry Service resource.\nYou need to enable diagnostic logging.\nWhat are two prerequisites for diagnostic logging? Each correct answer presents a complete solution.",
+    "options": [
+      {
+        "id": "A",
+        "text": "a Log Analytics workspace"
+      },
+      {
+        "id": "B",
+        "text": "an Azure Storage account"
+      },
+      {
+        "id": "C",
+        "text": "an Azure AI Search index"
+      },
+      {
+        "id": "D",
+        "text": "a Custom Vision project"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "Azure Monitor diagnostic settings for a Microsoft Foundry resource require a destination sink such as **a Log Analytics workspace** or **an Azure Storage account** (or Event Hubs).",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 114,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry customer support agent that uses an Azure AI Search index for grounding.\nThe agent is evaluated before each release by using a fixed test dataset that includes expected answers and task-completion checks.\nAfter product catalog updates, the agent shows regressions on previously validated questions and tasks.\nYou need to detect these regressions and alert the operations team while minimizing manual review of production conversations.\nWhich configuration should you implement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Scheduled Foundry evaluations with Azure Monitor alert rules"
+      },
+      {
+        "id": "B",
+        "text": "Manual review of daily conversation transcripts"
+      },
+      {
+        "id": "C",
+        "text": "One-time evaluation only during initial model deployment"
+      },
+      {
+        "id": "D",
+        "text": "Disabling Azure AI Search index updates"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "**Scheduled Foundry evaluations with Azure Monitor alert rules** automatically run the validation dataset on a recurring schedule to catch post-update regressions and notify operations.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 115,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You are building an app that will use Azure AI Custom Vision. The app will be deployed to a virtual machine in Azure.\nYou enable firewall rules for your Azure AI Services account.\nYou need to ensure that the app can access the service through a service endpoint.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Grant access to a specific virtual network."
+      },
+      {
+        "id": "B",
+        "text": "Allow public access from all networks."
+      },
+      {
+        "id": "C",
+        "text": "Disable the virtual network service endpoint."
+      },
+      {
+        "id": "D",
+        "text": "Generate a new subscription key every hour."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "When firewall rules are enabled on an Azure AI Services account and you use a Virtual Network service endpoint, you must configure the networking rules to **grant access to the specific virtual network** (and subnet) hosting the VM.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 116,
+    "type": "hotspot",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You plan to deploy the gpt-4o model with a deployment name of Deployment1. An application will call the deployment by using an OpenAI v1-compatible API.\nYou need to configure the deployment type, model version policy, and application request to meet the following requirements:\n• Use pay-as-you-go throughput and allow inference data to be processed in any Azure region.\n• Automatically move to the platform's new default model version when it is released, and ensure the application request targets the deployment.\nHow should you configure the deployment and request?",
+    "slots": [
+      {
+        "label": "Deployment type",
+        "options": [
+          "Global Standard",
+          "Data Zone Standard",
+          "Global Provisioned",
+          "Global Batch"
+        ],
+        "correct": "Global Standard"
+      },
+      {
+        "label": "Version policy and request parameter",
+        "options": [
+          "Upgrade once the new default version becomes available; use model=\"Deployment1\".",
+          "No auto-upgrade (pin version); use model=\"gpt-4o\".",
+          "Upgrade when current version expires; use deployment_id=\"gpt-4o\".",
+          "Auto-upgrade to preview versions; use engine=\"default\"."
+        ],
+        "correct": "Upgrade once the new default version becomes available; use model=\"Deployment1\"."
+      }
+    ],
+    "explanation": "**Global Standard** provides pay-as-you-go throughput processed across any global Azure region. Setting the version policy to **Upgrade once the new default version becomes available** and passing `model=\"Deployment1\"` satisfies the version and targeting requirements.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 117,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry agent that answers support questions and calls tools during multi-step conversations.\nA user reports that the agent gave an incorrect answer after calling a tool. You need to review the request path, tool usage, and execution details for the agent run.\nWhich information is captured by Microsoft Foundry tracing?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Prompt data, inputs and outputs, tool calls, intermediate steps, and execution metadata"
+      },
+      {
+        "id": "B",
+        "text": "Only HTTP status codes and monthly billing totals"
+      },
+      {
+        "id": "C",
+        "text": "Only the final assistant message without tool parameters"
+      },
+      {
+        "id": "D",
+        "text": "Only Microsoft Entra sign-in audit logs"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Microsoft Foundry **tracing** captures the complete execution graph: **prompt data, inputs and outputs, tool calls, intermediate reasoning steps, and execution metadata** (latency, tokens, status).",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 118,
+    "type": "drag_drop",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a retrieval-augmented generation (RAG) application that answers product support questions.\nThe retrieval pipeline ingests PDF and HTML files, chunks the content, stores the chunks with metadata, and updates Azure AI Search indexes. A labeled retrieval evaluation set runs after each pipeline release.\nYou need to create a monitoring dashboard for the retrieval pipeline. The dashboard must track the following:\n• Data ingestion quality.\n• Relevance performance.\nWhich signals should you add to each dashboard section?",
+    "pool": [
+      "Validation failure rate over time",
+      "Retrieval evaluation score on a labeled query set",
+      "Audio transcription word error rate",
+      "Image generation token count"
+    ],
+    "slots": [
+      {
+        "label": "Data ingestion quality",
+        "options": [
+          "Validation failure rate over time",
+          "Retrieval evaluation score on a labeled query set",
+          "Audio transcription word error rate",
+          "Image generation token count"
+        ],
+        "correct": "Validation failure rate over time"
+      },
+      {
+        "label": "Relevance performance",
+        "options": [
+          "Validation failure rate over time",
+          "Retrieval evaluation score on a labeled query set",
+          "Audio transcription word error rate",
+          "Image generation token count"
+        ],
+        "correct": "Retrieval evaluation score on a labeled query set"
+      }
+    ],
+    "explanation": "**Validation failure rate over time** tracks whether ingested PDF/HTML chunks are failing parsing or schema validation, while **Retrieval evaluation score on a labeled query set** measures search relevance performance across releases.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 119,
+    "type": "multi_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a set of JPEG, PNG, and TIFF files that contain photos of documents. The documents contain structured data in tables.\nYou plan to use the layout model in Azure Document Intelligence in Foundry Tools to extract the tables from the files.\nYou need to extract the tables from the files by using the layout model. The solution must NOT require model training.\nWhich three methods can you use? Each correct answer presents a complete solution.",
+    "options": [
+      {
+        "id": "A",
+        "text": "a client library SDK"
+      },
+      {
+        "id": "B",
+        "text": "a REST API"
+      },
+      {
+        "id": "C",
+        "text": "the Document Intelligence Studio"
+      },
+      {
+        "id": "D",
+        "text": "Azure Speech Studio"
+      },
+      {
+        "id": "E",
+        "text": "Azure AI Video Indexer"
+      }
+    ],
+    "correct": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "You can invoke the prebuilt `prebuilt-layout` model in Azure Document Intelligence without any model training using **a client library SDK**, **a REST API**, or **the Document Intelligence Studio**.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 120,
+    "type": "single_choice",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You have an Azure AI Search indexer that processes blob documents with embedded images. The indexer creates a /document/normalized_images/* collection.\nYou need to enrich the index so text that appears in the embedded images can be searched.\nWhich built-in skill should you add to the skillset?",
+    "options": [
+      {
+        "id": "A",
+        "text": "OCR skill"
+      },
+      {
+        "id": "B",
+        "text": "Sentiment skill"
+      },
+      {
+        "id": "C",
+        "text": "Entity Recognition skill"
+      },
+      {
+        "id": "D",
+        "text": "Shaper skill"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The built-in **OCR skill (`#Microsoft.Skills.Vision.OcrSkill`)** extracts printed and handwritten text from `/document/normalized_images/*` so embedded image text becomes searchable.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 121,
+    "type": "single_choice",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You have an Azure AI Search indexer that ingests PDF manuals from Azure Blob Storage. The PDFs include scanned pages and embedded images that contain part numbers.\nThe search index has text and layoutText fields of type Collection(Edm.String).\nYou need to make image text searchable and store text-location data for each normalized image.\nWhich configuration should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Set imageAction to generateNormalizedImages, add an OCR skill for /document/normalized_images/*, and map text and layoutText outputs."
+      },
+      {
+        "id": "B",
+        "text": "Set imageAction to none and run the Key Phrase Extraction skill on the PDF file name."
+      },
+      {
+        "id": "C",
+        "text": "Use only the Text Split skill without extracting normalized images."
+      },
+      {
+        "id": "D",
+        "text": "Set imageAction to generateNormalizedImagePerPage and disable skillsets."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Setting `imageAction` to `generateNormalizedImages` extracts the embedded images, running the **OCR skill** over `/document/normalized_images/*` extracts both `text` and `layoutText` (bounding boxes/locations), and output field mappings store them in the index.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 122,
+    "type": "single_choice",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You are building a knowledge mining solution that uses Azure AI Search.\nYou need to apply AI enrichment to your indexer pipeline to generate links to Wikipedia articles.\nWhich skill should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft.Skills.Text.V3.EntityLinkingSkill"
+      },
+      {
+        "id": "B",
+        "text": "Microsoft.Skills.Text.V3.EntityRecognitionSkill"
+      },
+      {
+        "id": "C",
+        "text": "Microsoft.Skills.Text.KeyPhraseExtractionSkill"
+      },
+      {
+        "id": "D",
+        "text": "Microsoft.Skills.Vision.OcrSkill"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "**`Microsoft.Skills.Text.V3.EntityLinkingSkill`** disambiguates entities found in text and generates direct links (`url`, `wikipediaId`) to their corresponding Wikipedia articles.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 123,
+    "type": "single_choice",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You are building a knowledge mining solution that will use AI enrichment and Azure AI Search.\nYou need to create a data structure that will be used to store the enriched and indexed output for downstream apps.\nWhat should you create?",
+    "options": [
+      {
+        "id": "A",
+        "text": "a knowledge store"
+      },
+      {
+        "id": "B",
+        "text": "a custom speech project"
+      },
+      {
+        "id": "C",
+        "text": "a synonym map"
+      },
+      {
+        "id": "D",
+        "text": "a scoring profile"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "In Azure AI Search, **a knowledge store** persists enriched skillset output into Azure Storage (tables, objects, and files/blobs) for downstream analytics, Power BI, or data science apps.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 124,
+    "type": "multi_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "An organization manually processes a high volume of invoices daily, leading to errors in data extraction.\nYou need to use Microsoft Azure Document Intelligence in Foundry Tools to automate invoice data extraction and integration.\nEach correct answer presents part of the solution. Which two actions should you take?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use the prebuilt Invoice model for data extraction"
+      },
+      {
+        "id": "B",
+        "text": "Integrate the extracted data with an organization's database"
+      },
+      {
+        "id": "C",
+        "text": "Use Azure Speech to transcribe the PDF invoices"
+      },
+      {
+        "id": "D",
+        "text": "Manually re-type every extracted field into a spreadsheet"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "Automating invoice processing with Azure Document Intelligence involves **using the prebuilt Invoice model (`prebuilt-invoice`)** to extract structured fields and **integrating the extracted output with the organization's database**.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 125,
+    "type": "single_choice",
+    "domain": "Microsoft Foundry Agents, Tools & Workflows",
+    "stem": "You have a Microsoft Foundry project.\nYou plan to build an employee-support agent that will answer questions by using enterprise policy content and create service requests by calling an approved HR API. A Foundry IQ knowledge base is already connected to the enterprise content.\nYou need to recommend a service that can orchestrate conversations, use the knowledge base for retrieval, and invoke the HR API through agent tools.\nWhich service should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Foundry Agent Service"
+      },
+      {
+        "id": "B",
+        "text": "Azure AI Translator"
+      },
+      {
+        "id": "C",
+        "text": "Azure Vision Spatial Analysis"
+      },
+      {
+        "id": "D",
+        "text": "Azure Document Intelligence Studio"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "**Microsoft Foundry Agent Service** provides managed conversation orchestration, native integration with Foundry IQ knowledge bases for grounded retrieval, and tool invocation for external APIs.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 126,
+    "type": "single_choice",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You have a Microsoft Foundry agent that answers employee HR questions. HR documents are stored in SharePoint document libraries.\nThe documents use existing SharePoint permissions and Microsoft Purview sensitivity labels, and are updated several times each business day.\nAll users have Microsoft 365 Copilot licenses.\nYou plan to ground the agent by using a Foundry IQ knowledge base.\nYou need to recommend a retrieval method for the knowledge source. The solution must meet the following requirements:\n• Return current SharePoint content while preserving existing user-level access controls.\n• Minimize index maintenance and avoid custom enrichment.\nWhich retrieval method should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Remote SharePoint knowledge source"
+      },
+      {
+        "id": "B",
+        "text": "Export SharePoint files nightly to a public Azure Blob Storage container"
+      },
+      {
+        "id": "C",
+        "text": "Upload static PDF copies directly into each user's chat prompt"
+      },
+      {
+        "id": "D",
+        "text": "Fine-tune the base LLM on the SharePoint documents weekly"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Using a **Remote SharePoint knowledge source** in a Foundry IQ knowledge base queries live SharePoint content in place while automatically honoring SharePoint ACL permissions and Microsoft Purview sensitivity labels for users with Microsoft 365 Copilot licenses.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 127,
+    "type": "drag_drop",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry project for an EU-based retailer.\nYou need to recommend deployment types for the following workloads:\n• An online shopping agent has sustained high request volume and requires low latency variance.\n• A nightly product-content enrichment job submits a large batch of asynchronous requests and must finish within 24 hours at the lowest cost.\nInference data for both workloads must be processed only within the EU data zone.\nWhich deployment types should you choose?",
+    "pool": [
+      "Data Zone Provisioned",
+      "Data Zone Batch",
+      "Global Standard",
+      "Global Provisioned"
+    ],
+    "slots": [
+      {
+        "label": "Online shopping assistant",
+        "options": [
+          "Data Zone Provisioned",
+          "Data Zone Batch",
+          "Global Standard",
+          "Global Provisioned"
+        ],
+        "correct": "Data Zone Provisioned"
+      },
+      {
+        "label": "Product-content enrichment",
+        "options": [
+          "Data Zone Provisioned",
+          "Data Zone Batch",
+          "Global Standard",
+          "Global Provisioned"
+        ],
+        "correct": "Data Zone Batch"
+      }
+    ],
+    "explanation": "To keep inference data strictly within the EU data zone: **Data Zone Provisioned** provides reserved throughput with predictable low latency for high-volume real-time shopping, while **Data Zone Batch** processes large asynchronous jobs within 24 hours at 50% lower cost.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 128,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Microsoft Foundry project for a multi-agent customer-support system. The code and infrastructure definitions are stored in GitHub.\nYou plan to use GitHub Actions to promote agent versions from staging to production. Agents are versioned independently, and incompatible message schemas have caused failed handoffs between agents in staging.\nYou need to block production promotion when a changed agent is incompatible with a dependent agent.\nWhich pipeline control should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add a deployment graph and staging contract tests for dependent agents."
+      },
+      {
+        "id": "B",
+        "text": "Deploy all agents directly to production without staging."
+      },
+      {
+        "id": "C",
+        "text": "Disable schema validation between agents."
+      },
+      {
+        "id": "D",
+        "text": "Increase the model temperature in production."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Adding **a deployment graph and staging contract tests for dependent agents** in the GitHub Actions CI/CD pipeline verifies message schema compatibility across agent handoffs before promoting an independently versioned agent to production.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 129,
+    "type": "hotspot",
+    "domain": "Microsoft Foundry Agents, Tools & Workflows",
+    "stem": "You have a Microsoft Foundry project that hosts a customer support agent.\nYou plan to add integrations for user context, knowledge access, and ticket creation.\nYou need to configure the integrations to meet the following requirements:\n• Persist user preferences across sessions and devices, and isolate the preferences by authenticated user.\n• Use governed product documentation for grounded answers, and invoke an external ITSM API only through approved agent integration endpoints.\nWhat should you configure?",
+    "slots": [
+      {
+        "label": "User context integration",
+        "options": [
+          "Foundry Agent Service memory",
+          "In-memory local Python dictionary",
+          "Public Azure Blob container",
+          "System prompt hardcoding"
+        ],
+        "correct": "Foundry Agent Service memory"
+      },
+      {
+        "label": "Knowledge and action integration",
+        "options": [
+          "Foundry IQ knowledge bases and Foundry Agent Service tools",
+          "Grounding with Bing Search only",
+          "Direct unauthenticated HTTP calls from client browser",
+          "Custom Speech and Video Indexer"
+        ],
+        "correct": "Foundry IQ knowledge bases and Foundry Agent Service tools"
+      }
+    ],
+    "explanation": "**Foundry Agent Service memory** persists user preferences across sessions isolated per authenticated user, while **Foundry IQ knowledge bases and Foundry Agent Service tools** provide governed RAG grounding and approved ITSM API invocation.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 130,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You are provisioning an Azure OpenAI in Foundry Models service resource.\nYou need to ensure that the resource is only available to applications that are hosted in your Azure subscription.\nWhich network security setting should you configure?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Disabled, and allow a private endpoint connection to establish access"
+      },
+      {
+        "id": "B",
+        "text": "Enabled from all networks"
+      },
+      {
+        "id": "C",
+        "text": "Enabled from public internet IP addresses only"
+      },
+      {
+        "id": "D",
+        "text": "Disable Microsoft Entra authentication"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Setting public network access to **Disabled** and configuring a **private endpoint connection** ensures the Azure OpenAI resource is accessible exclusively from within your Azure virtual network.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 131,
+    "type": "multi_choice",
+    "domain": "Microsoft Foundry Agents, Tools & Workflows",
+    "stem": "Your organization is using Microsoft Foundry Agent Service to automate customer support workflows.\nYou need to configure an agent to interact with external APIs and use real-time data for responses.\nEach correct answer presents part of the solution. Which three actions should you perform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Define tools for API access"
+      },
+      {
+        "id": "B",
+        "text": "Deploy the agent using Azure SDK"
+      },
+      {
+        "id": "C",
+        "text": "Configure the Bing Search tool"
+      },
+      {
+        "id": "D",
+        "text": "Disable all network connectivity for the agent"
+      },
+      {
+        "id": "E",
+        "text": "Use only offline batch transcription"
+      }
+    ],
+    "correct": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "To build an agent that calls external APIs and accesses real-time web data, **define tools for API access**, **configure the Bing Search tool** for real-time grounding, and **deploy the agent using the Azure SDK**.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 132,
+    "type": "multi_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You develop AI agents for your company by using the Microsoft Foundry Agent Service. The agents use tools to connect to external systems, APIs, and services.\nThe company requires that all agents align with Microsoft Responsible AI principles and operate within approved business and customer-support scenarios.\nYou need to identify intended and supported use cases for the agents.\nWhich three scenarios represent appropriate use cases? Each correct answer presents part of the solution.",
+    "options": [
+      {
+        "id": "A",
+        "text": "A city clerk uses an agent to categorize incoming service requests, assign them to the right department, and compile simple status updates."
+      },
+      {
+        "id": "B",
+        "text": "A hospital administrative assistant deploys an agent to collate standard operational procedures, staff directories, and shift policies into concise orientations for new nurses."
+      },
+      {
+        "id": "C",
+        "text": "A local boutique owner deploys an agent that recommends gift options based on a customer's stated needs and past purchases, guiding shoppers responsibly through complex product catalogs."
+      },
+      {
+        "id": "D",
+        "text": "An autonomous agent makes legally binding high-stakes judicial sentencing decisions without human oversight."
+      },
+      {
+        "id": "E",
+        "text": "An agent generates deceptive social engineering messages to harvest employee credentials."
+      }
+    ],
+    "correct": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "Categorizing municipal service requests (**A**), collating administrative onboarding procedures (**B**), and providing retail product recommendations (**C**) are all intended, responsible business and customer-support use cases for Microsoft Foundry Agent Service.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 133,
+    "type": "single_choice",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "Your company is integrating Azure OpenAI in Foundry Models into its internal knowledge base system to provide intelligent query responses.\nYou need to ensure that the most relevant documents are prioritized during data retrieval.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Set strictness to a higher value."
+      },
+      {
+        "id": "B",
+        "text": "Increase the model temperature to 2.0."
+      },
+      {
+        "id": "C",
+        "text": "Disable vector search and semantic ranking."
+      },
+      {
+        "id": "D",
+        "text": "Reduce the search index size to a single document."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "In Azure OpenAI On Your Data / Azure AI Search integration, **setting `strictness` to a higher value** raises the relevance similarity threshold, filtering out loosely related documents and prioritizing only highly relevant chunks.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 134,
+    "type": "single_choice",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You have a Microsoft Foundry project for an internal HR application that uses an Azure OpenAI chat model.\nCompany policy documents are stored in Azure Blob Storage and indexed in Azure AI Search by using vector embeddings. The index includes fields for document titles and URLs.\nUsers report that answers include outdated policy details and do not include source citations. The application currently sends only the user's question and a system message to the model.\nYou need to modify the application so that answers are grounded in relevant indexed policy content and can include source citations.\nWhich flow should you implement?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Query the Azure AI Search index for relevant chunks, add the chunks and source metadata fields to the prompt, and call the chat model."
+      },
+      {
+        "id": "B",
+        "text": "Increase the max_tokens parameter without querying Azure AI Search."
+      },
+      {
+        "id": "C",
+        "text": "Enable image moderation on the chat model."
+      },
+      {
+        "id": "D",
+        "text": "Switch to a smaller language model without changing the prompt."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Implementing the RAG pattern requires **querying the Azure AI Search index for relevant chunks, injecting those chunks along with source metadata fields (`title`, `url`) into the prompt**, and then calling the chat model.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 135,
+    "type": "drag_drop",
+    "domain": "Microsoft Foundry Agents, Tools & Workflows",
+    "stem": "You have a Microsoft Foundry application that uses Microsoft Agent Framework.\nYou need to select an orchestration pattern for each request type:\n• Company due diligence must send the same company profile to multiple agents at the same time and collect their independent results.\n• Customer support escalation must let a triage agent transfer control to one specialist agent based on the conversation context.\nWhich orchestration patterns should you use?",
+    "pool": [
+      "Concurrent orchestration",
+      "Handoff orchestration",
+      "Sequential orchestration",
+      "Single-agent loop"
+    ],
+    "slots": [
+      {
+        "label": "Company due diligence",
+        "options": [
+          "Concurrent orchestration",
+          "Handoff orchestration",
+          "Sequential orchestration",
+          "Single-agent loop"
+        ],
+        "correct": "Concurrent orchestration"
+      },
+      {
+        "label": "Customer support escalation",
+        "options": [
+          "Concurrent orchestration",
+          "Handoff orchestration",
+          "Sequential orchestration",
+          "Single-agent loop"
+        ],
+        "correct": "Handoff orchestration"
+      }
+    ],
+    "explanation": "**Concurrent orchestration** broadcasts the same input to multiple agents in parallel and aggregates their independent analyses, whereas **Handoff orchestration** allows a triage agent to dynamically transfer conversation control to a specialist agent.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 136,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "Your company uses an Azure OpenAI Foundry Models service to generate code snippets for software development.\nYou need to ensure the generated code adheres to your organization's coding standards.\nWhat action should you take to achieve this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Provide standard-compliant examples in prompts."
+      },
+      {
+        "id": "B",
+        "text": "Increase the temperature parameter to maximum."
+      },
+      {
+        "id": "C",
+        "text": "Disable system instructions."
+      },
+      {
+        "id": "D",
+        "text": "Use an audio transcription model instead."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Using few-shot prompting—**providing standard-compliant code examples in the prompt**—guides the model to match your organization's naming conventions, structure, and coding standards.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 137,
+    "type": "single_choice",
+    "domain": "Microsoft Foundry Agents, Tools & Workflows",
+    "stem": "Your organization is developing an AI agent for customer support inquiries that must integrate with Azure resources.\nYou need to select a framework that supports AI orchestration and multi-agent workflows.\nWhat should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Semantic Kernel framework"
+      },
+      {
+        "id": "B",
+        "text": "Azure Blob Storage static website"
+      },
+      {
+        "id": "C",
+        "text": "Azure DNS"
+      },
+      {
+        "id": "D",
+        "text": "Custom Vision Object Detection"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The **Semantic Kernel framework** (along with Microsoft Agent Framework) is Microsoft's enterprise SDK for AI orchestration, plugin/tool integration with Azure resources, and multi-agent workflows.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 138,
+    "type": "multi_choice",
+    "domain": "Microsoft Foundry Agents, Tools & Workflows",
+    "stem": "Your organization plans to deploy a generative AI solution using Azure OpenAI in Foundry Models with GPT-4 for natural language responses.\nYou need to ensure GPT-4 is available for inferencing via an endpoint.\nWhich three actions should you perform to achieve this goal? Each correct answer presents part of the solution.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Provision a Microsoft Foundry resource"
+      },
+      {
+        "id": "B",
+        "text": "Select GPT-4 from the catalog"
+      },
+      {
+        "id": "C",
+        "text": "Deploy a GPT-4 model"
+      },
+      {
+        "id": "D",
+        "text": "Train a custom speech acoustic model"
+      },
+      {
+        "id": "E",
+        "text": "Create an Azure AI Video Indexer account"
+      }
+    ],
+    "correct": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "Making GPT-4 available for endpoint inference requires **provisioning a Microsoft Foundry resource**, **selecting GPT-4 from the model catalog**, and **deploying the GPT-4 model**.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 139,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You are creating an application that references the Azure OpenAI REST API for a DALL-E model.\nYou plan to use thumbnails of the images that DALL-E generates and display them in a table on a webpage.\nYou need to find the image URLs in the JSON response.\nWhich element should you review?",
+    "options": [
+      {
+        "id": "A",
+        "text": "the result element"
+      },
+      {
+        "id": "B",
+        "text": "the usage.prompt_tokens element"
+      },
+      {
+        "id": "C",
+        "text": "the system_fingerprint element"
+      },
+      {
+        "id": "D",
+        "text": "the tool_calls element"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "In the Azure OpenAI DALL-E REST API response JSON, generated image data and URLs (`data[].url`) are returned inside **the `result` element** (or `data` array within the result payload).",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 140,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "Your organization is using an Azure OpenAI in Foundry Models service for document summarization across various document types.\nYou need to ensure the AI generates summaries that meet organizational requirements.\nWhat action should you take to achieve this?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Refine prompts to specify key details."
+      },
+      {
+        "id": "B",
+        "text": "Remove all system instructions from the request."
+      },
+      {
+        "id": "C",
+        "text": "Set max_tokens to 5."
+      },
+      {
+        "id": "D",
+        "text": "Disable HTTPS on the endpoint."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "**Refining prompts to specify key details** (desired format, tone, required sections, and length constraints) ensures generated summaries consistently meet organizational requirements.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 141,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You are building a web app that will generate images based on user prompts. The app will use the DALL-E 3 Azure OpenAI model.\nYou need to ensure that HTTP requests against the Azure OpenAI API successfully generate images.\nWhich HTTP body property should you include?",
+    "options": [
+      {
+        "id": "A",
+        "text": "the prompt"
+      },
+      {
+        "id": "B",
+        "text": "the messages array"
+      },
+      {
+        "id": "C",
+        "text": "the audio_stream property"
+      },
+      {
+        "id": "D",
+        "text": "the top_logprobs property"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Image generation requests to the DALL-E 3 REST API (`/images/generations`) require **the `prompt` property** in the JSON request body describing the image to generate.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 142,
+    "type": "single_choice",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "Your organization plans to implement a generative AI solution to assist the customer success team by summarizing customer complaints and questions.\nYou need to ensure the model provides accurate summaries while reducing costs.\nWhat action should you take?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use Retrieval-Augmented Generation (RAG) with Azure AI Search for grounding data."
+      },
+      {
+        "id": "B",
+        "text": "Continuously retrain a foundational LLM from scratch after every ticket."
+      },
+      {
+        "id": "C",
+        "text": "Pass the entire company database in every single prompt."
+      },
+      {
+        "id": "D",
+        "text": "Set temperature to 2.0."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Using **Retrieval-Augmented Generation (RAG) with Azure AI Search** retrieves only the relevant context for each query, grounding the summary accurately while keeping prompt token costs low.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 143,
+    "type": "drag_drop",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry project for an engineering support application.\nYou plan to add the following pipelines:\n• A bug-fix suggestion pipeline that accepts text inputs of up to 250,000 tokens and returns text.\n• A field report summarization pipeline that accepts text, image, and audio inputs and returns text.\nYou need to select one model deployment for each pipeline. The selected models must not support tool calling.\nWhich model deployments should you select?",
+    "pool": [
+      "Codestral-2501",
+      "Phi-4-multimodal-instruct",
+      "text-embedding-3-small",
+      "dall-e-3"
+    ],
+    "slots": [
+      {
+        "label": "Bug-fix suggestion",
+        "options": [
+          "Codestral-2501",
+          "Phi-4-multimodal-instruct",
+          "text-embedding-3-small",
+          "dall-e-3"
+        ],
+        "correct": "Codestral-2501"
+      },
+      {
+        "label": "Field report summarization",
+        "options": [
+          "Codestral-2501",
+          "Phi-4-multimodal-instruct",
+          "text-embedding-3-small",
+          "dall-e-3"
+        ],
+        "correct": "Phi-4-multimodal-instruct"
+      }
+    ],
+    "explanation": "**Codestral-2501** is a specialized code model supporting a 256K token context window for bug-fix generation, while **Phi-4-multimodal-instruct** accepts text, image, and audio inputs to generate text summaries.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 144,
+    "type": "single_choice",
+    "domain": "Microsoft Foundry Agents, Tools & Workflows",
+    "stem": "Your team is deploying an agent using the Microsoft Foundry Agent Service to perform actions based on user requests, such as scheduling meetings and sending notifications.\nYou need to integrate the AI agent with tools that enable it to perform these actions programmatically.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add custom functions."
+      },
+      {
+        "id": "B",
+        "text": "Use only the File Search tool."
+      },
+      {
+        "id": "C",
+        "text": "Disable tool calling on the agent."
+      },
+      {
+        "id": "D",
+        "text": "Use an embeddings model instead of an agent."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "**Adding custom functions** (or OpenAPI/Logic Apps tools) to a Microsoft Foundry agent enables it to execute programmatic actions such as scheduling meetings and sending notifications.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 145,
+    "type": "multi_choice",
+    "domain": "Microsoft Foundry Agents, Tools & Workflows",
+    "stem": "You have a Microsoft Foundry Agent Service agent named Agent1. Agent1 uses an OpenAPI tool to call an external order management API.\nSeveral tenant applications use the same agent version. The required customer identifier varies by tenant and is known at invocation time.\nAgent1 sometimes calls the tool without the customer identifier and sometimes returns prose instead of the JSON object required by a downstream workflow.\nYou need to update the agent definition. The solution must ensure that:\n• The customer identifier is required for each invocation.\n• The customer identifier is passed to the OpenAPI tool at run time.\n• The agent response matches the required JSON schema.\nWhich two definitions should you add to the agent definition?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A structured output that specifies the required response JSON schema"
+      },
+      {
+        "id": "B",
+        "text": "A required structured input for the customer identifier that is bound to the OpenAPI tool argument"
+      },
+      {
+        "id": "C",
+        "text": "A hardcoded customer identifier inside the OpenAPI specification file"
+      },
+      {
+        "id": "D",
+        "text": "A higher temperature setting to encourage prose responses"
+      }
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "explanation": "Defining **a required structured input bound to the OpenAPI tool argument** guarantees the tenant's customer ID is passed at runtime, and configuring **a structured output JSON schema** forces the agent to return strictly valid JSON instead of prose.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 146,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You are building an app named App1 that uses the Image Analysis API.\nYou are evaluating analyzing images by using the following request:\nhttps://*.cognitiveservices.azure.com/computervision/imageanalysis:analyze?features=read,description\nWhich results will the request return?",
+    "options": [
+      {
+        "id": "A",
+        "text": "the visible text in the image and a description of the image content"
+      },
+      {
+        "id": "B",
+        "text": "only bounding boxes for people without any text"
+      },
+      {
+        "id": "C",
+        "text": "an audio file narrating the image"
+      },
+      {
+        "id": "D",
+        "text": "a translated PDF document"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "In the Azure Vision Image Analysis API, specifying `features=read,description` (or `caption`) returns **the visible text extracted via OCR (`read`) and a natural language description of the image content (`description`)**.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 147,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have an Azure OpenAI resource with a deployed Sora 2 model in Microsoft Foundry. A generated video has the ID video_123.\nThe video's camera motion, framing, and timing are approved.\nYou need to create a new video that changes the product color while preserving the existing video structure.\nWhich parameter should you include?",
+    "options": [
+      {
+        "id": "A",
+        "text": "remix_video_id set to video_123"
+      },
+      {
+        "id": "B",
+        "text": "input_fidelity set to low"
+      },
+      {
+        "id": "C",
+        "text": "mask_inpainting set to true"
+      },
+      {
+        "id": "D",
+        "text": "sourceLanguage set to multi"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "In Sora 2 video generation, passing **`remix_video_id` set to `video_123`** applies targeted modifications (such as changing product color) while preserving the original video's camera motion, framing, and timing.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 148,
+    "type": "code_completion",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You need to complete the code to create a video-generation job, poll the job until it reaches a terminal state, and save the completed MP4 file as output.mp4.\nHow should you complete the Python code?",
+    "code": "video = [Blank 1]\nwhile video.status not in [\"completed\", \"failed\", \"cancelled\"]:\n    time.sleep(5)\n    video = [Blank 2]\n\nif video.status == \"completed\":\n    content = client.videos.download_content(video.id)\n    content.write_to_file(\"output.mp4\")",
+    "slots": [
+      {
+        "label": "Blank 1 (start job)",
+        "options": [
+          "client.videos.create(model=\"sora-2\", prompt=prompt)",
+          "client.videos.retrieve(video.id)",
+          "client.images.generate(model=\"sora-2\", prompt=prompt)",
+          "client.chat.completions.create(model=\"sora-2\")"
+        ],
+        "correct": "client.videos.create(model=\"sora-2\", prompt=prompt)"
+      },
+      {
+        "label": "Blank 2 (poll job)",
+        "options": [
+          "client.videos.retrieve(video.id)",
+          "client.videos.create(model=\"sora-2\", prompt=prompt)",
+          "client.videos.delete(video.id)",
+          "client.videos.list()"
+        ],
+        "correct": "client.videos.retrieve(video.id)"
+      }
+    ],
+    "explanation": "Use **`client.videos.create(model=\"sora-2\", prompt=prompt)`** to initiate the asynchronous Sora 2 video-generation job, and poll **`client.videos.retrieve(video.id)`** until the job status reaches `completed`.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 149,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You are using a custom Language content model in an Azure AI Video Indexer solution.\nDuring testing, you upload a text file that includes the following sentence: \"Kubernetes is a new feature in Azure & the cloud.\"\nThe sentence is discarded.\nYou need to ensure that the model retains the sentence.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Remove the \"&\" character from the text file."
+      },
+      {
+        "id": "B",
+        "text": "Convert the text file into a binary MP4 file."
+      },
+      {
+        "id": "C",
+        "text": "Add more special characters such as '#' and '@'."
+      },
+      {
+        "id": "D",
+        "text": "Put all sentences on a single line."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Azure AI Video Indexer custom Language model training files discard lines containing special characters such as `&`, `#`, or `@`. **Removing the `\"&\"` character** (or replacing it with the word `and`) ensures the sentence is retained.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 150,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You are building an app that will use Azure Vision in Foundry Tools to extract text from scanned images of handwritten text.\nWhich Azure Vision in Foundry Tools feature should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "optical character recognition (OCR)"
+      },
+      {
+        "id": "B",
+        "text": "Spatial Analysis"
+      },
+      {
+        "id": "C",
+        "text": "Face detection"
+      },
+      {
+        "id": "D",
+        "text": "Image variation"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "The **Optical Character Recognition (OCR)** / Read feature in Azure Vision extracts both printed and handwritten text from scanned images.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 151,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have an Azure OpenAI resource with a Sora 2 deployment named Deployment1.\nYou need to generate an 8-second landscape product teaser from a text prompt and use a 1280x720 PNG file named Image1.png as reference media for visual continuity.\nWhich request configuration should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "model=\"Deployment1\", size=\"1280x720\", seconds=8, and input_reference=Image1.png"
+      },
+      {
+        "id": "B",
+        "text": "model=\"sora-2\", resolution=\"720x1280\", duration=60, and mask=Image1.png"
+      },
+      {
+        "id": "C",
+        "text": "model=\"Deployment1\", size=\"1024x1024\", max_tokens=8, and image_url=Image1.png"
+      },
+      {
+        "id": "D",
+        "text": "model=\"Deployment1\", aspect_ratio=\"portrait\", and remix_video_id=Image1.png"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "To generate an 8-second 1280x720 landscape video with a reference image in Sora 2, pass **`model=\"Deployment1\"`, `size=\"1280x720\"`, `seconds=8`, and `input_reference=Image1.png`**.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 152,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have an Azure OpenAI resource in Microsoft Foundry that includes a Global Batch deployment named Deployment1.\nYou have a catalog export that contains 100,000 product rows. Each row includes a productId and a public HTTPS image URL. Batch results include the custom_id value from each input record.\nYou need to configure the nightly batch input to generate detailed captions for the product images. The solution must ensure that completed responses can be joined back to the catalog rows by productId.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create one JSONL record per image, set custom_id to productId, and send the caption request to Deployment1."
+      },
+      {
+        "id": "B",
+        "text": "Send all 100,000 images in a single synchronous HTTP request without custom_id."
+      },
+      {
+        "id": "C",
+        "text": "Upload a CSV file directly to the real-time chat completions endpoint."
+      },
+      {
+        "id": "D",
+        "text": "Set custom_id to the same constant string for all 100,000 records."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Azure OpenAI Global Batch deployments accept `.jsonl` files where each line is a request object containing a unique `custom_id`. **Setting `custom_id` to `productId` in each JSONL record** allows asynchronous batch outputs to be joined back to the catalog.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 153,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry project that uses Content Understanding.\nYou need to extract structured fields from one video file at a time. The solution must identify specified objects or regions in each video and does not require cross-file analysis.\nWhich task type should you create?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A single-file task in Standard mode"
+      },
+      {
+        "id": "B",
+        "text": "A multi-file task in Pro mode"
+      },
+      {
+        "id": "C",
+        "text": "A batch translation job"
+      },
+      {
+        "id": "D",
+        "text": "A custom speech acoustic model"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Because the workload processes one video file at a time and does not require multi-document/cross-file reasoning, **a single-file task in Standard mode** is the most appropriate and cost-effective Content Understanding configuration.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 154,
+    "type": "single_choice",
+    "domain": "Security, Governance & Content Safety",
+    "stem": "You are building an app that will flag documents that contain the names of staff members by using the Azure Language in Foundry Tools Personally Identifiable Information (PII) detection feature.\nYou need to configure the PII detection feature.\nWhich category should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Person"
+      },
+      {
+        "id": "B",
+        "text": "Organization"
+      },
+      {
+        "id": "C",
+        "text": "CreditCardNumber"
+      },
+      {
+        "id": "D",
+        "text": "IPAddress"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "In Azure Language PII detection, the **`Person`** entity category identifies names of individuals (such as staff members or customers).",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 155,
+    "type": "single_choice",
+    "domain": "Knowledge Grounding, RAG & Memory",
+    "stem": "You are configuring a custom question answering solution in Azure Language in Foundry Tools Service.\nYou execute the following API call and receive an error:\n\"synonyms\": [ { \"alterations\": [ \"fix problems\", \"troubleshoot\", \"#diagnostic\" ] } ]\nYou need to ensure that the API call executes successfully.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Remove any special characters from the call."
+      },
+      {
+        "id": "B",
+        "text": "Add more hashtags to every alteration."
+      },
+      {
+        "id": "C",
+        "text": "Delete the alterations array completely."
+      },
+      {
+        "id": "D",
+        "text": "Switch to the Azure Speech REST API."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Custom question answering synonym alterations only allow alphanumeric characters and spaces; special characters like `#` in `\"#diagnostic\"` cause validation errors, so **removing special characters** resolves the error.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 156,
+    "type": "hotspot",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Python client application that uses the Voice Live API for a Microsoft Foundry agent.\nThe client streams microphone input, plays audio responses locally, and handles conversation events.\nYou need to configure the session for spoken interaction. The solution must support multilingual conversations and reduce speaker feedback from local audio playback.\nWhich session settings should you configure?",
+    "slots": [
+      {
+        "label": "Session modalities",
+        "options": [
+          "Text and audio",
+          "Text only",
+          "Image and video only",
+          "Embeddings only"
+        ],
+        "correct": "Text and audio"
+      },
+      {
+        "label": "Audio handling",
+        "options": [
+          "Multilingual VAD and echo cancellation",
+          "Batch transcription without VAD",
+          "Disable microphone input during playback",
+          "Single-locale DTMF tones only"
+        ],
+        "correct": "Multilingual VAD and echo cancellation"
+      }
+    ],
+    "explanation": "For interactive spoken sessions with the Voice Live API, enable **Text and audio** modalities and configure **Multilingual VAD (voice activity detection) and echo cancellation** to support multiple languages and prevent local speaker feedback.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 157,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have an application that uses Azure Speech to transcribe live support calls and stored call recordings.\nThe recordings include proprietary product codes and English (United States) speakers with regional accents. The default speech recognition model frequently substitutes common words for the product codes.\nYou have organizational audio samples and reference transcripts.\nYou need to improve transcription accuracy for both live calls and stored recordings.\nWhich Speech Studio project type should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Custom speech"
+      },
+      {
+        "id": "B",
+        "text": "Custom voice"
+      },
+      {
+        "id": "C",
+        "text": "Audio Content Creation"
+      },
+      {
+        "id": "D",
+        "text": "Pronunciation assessment"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "A **Custom speech** project in Speech Studio lets you train a custom speech-to-text model using organizational audio samples and reference transcripts to recognize domain-specific product codes and regional accents.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 158,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have a Microsoft Foundry agent named Agent1. Agent1 is connected to the Azure Speech MCP Server.\nA Python application stores each generated text reply in a variable named reply_text.\nYou need to update the application so the configured agent handles text-to-speech and returns the generated audio file link.\nWhat should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Call the Responses API with an agent_reference to Agent1 and ask Agent1 to synthesize reply_text."
+      },
+      {
+        "id": "B",
+        "text": "Call the Azure AI Search indexer API with reply_text."
+      },
+      {
+        "id": "C",
+        "text": "Use Document Intelligence prebuilt-read on reply_text."
+      },
+      {
+        "id": "D",
+        "text": "Delete the Azure Speech MCP Server connection from Agent1."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Because `Agent1` is already connected to the Azure Speech MCP Server, **calling the Responses API with an `agent_reference` to `Agent1` and instructing it to synthesize `reply_text`** invokes the MCP TTS tool and returns the audio link.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 159,
+    "type": "single_choice",
+    "domain": "Observability, Evaluation & CI/CD Ops",
+    "stem": "You have a Python application in Microsoft Foundry that sends customer support tickets to a deployed language model.\nA downstream workflow accepts only JSON with the following fields:\n• customer\n• product\n• location\n• topics\nThe prototype sometimes returns narrative text or extra fields.\nYou need to make the model response parseable for each ticket. The solution must use the ticket text provided at runtime and include only the accepted fields.\nWhat should you configure?",
+    "options": [
+      {
+        "id": "A",
+        "text": "A prompt that requests valid JSON and a structured output schema with the accepted fields"
+      },
+      {
+        "id": "B",
+        "text": "A higher temperature value without a JSON schema"
+      },
+      {
+        "id": "C",
+        "text": "Prompt Shields for documents"
+      },
+      {
+        "id": "D",
+        "text": "Custom Speech acoustic adaptation"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Combining **a prompt that requests valid JSON with a structured output schema (`response_format` with `json_schema` and `strict: true`)** guarantees the output is parseable JSON containing only the specified fields.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
+  },
+  {
+    "id": 160,
+    "type": "single_choice",
+    "domain": "Multimodal, Speech, Vision & Content Understanding",
+    "stem": "You have product manuals stored in Azure Blob Storage as Microsoft Word and Microsoft PowerPoint files.\nYou need to translate several hundred new manuals into multiple languages each night. The solution must preserve the original layout and write the translated files to a target storage container.\nWhich translation approach should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Translator asynchronous batch document translation"
+      },
+      {
+        "id": "B",
+        "text": "Real-time text translation REST API line by line"
+      },
+      {
+        "id": "C",
+        "text": "Azure Speech real-time speech translation"
+      },
+      {
+        "id": "D",
+        "text": "Azure Document Intelligence prebuilt-layout"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "**Azure Translator asynchronous batch document translation** translates large volumes of Word (`.docx`), PowerPoint (`.pptx`), and PDF files directly between Azure Blob Storage containers while preserving original document formatting and layout.",
+    "set": "Set 2: Practice Test (Q101–Q160)"
   }
 ]
