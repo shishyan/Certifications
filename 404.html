@@ -3,106 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Proctored Exam Environment | Claude Certified Architect (CCAR-F & CCAR-P) & Microsoft AI-103</title>
+  <title>Certification Exam Suite | Claude Certified Architect (CCAR-F & CCAR-P) & Microsoft AI-103</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <style>
     :root {
-      --bg-app: #f3f4f6;
-      --bg-pane: #ffffff;
-      --bg-pane-alt: #f8fafc;
-      --bg-header: #0f2537;
-      --bg-subbar: #1e3a52;
-      --bg-footer: #0f2537;
-      --text-main: #111827;
-      --text-muted: #4b5563;
-      --border-color: #cbd5e1;
-      --accent-blue: #005fb8;
-      --accent-hover: #004c94;
-      --splitter-bg: #e2e8f0;
+      --bg-main: #fafafa;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border-line: #e2e8f0;
+      --hover-tint: rgba(13, 148, 136, 0.05);
+      --selected-tint: rgba(8, 145, 178, 0.08);
+      --brand-gradient: linear-gradient(135deg, #10b981 0%, #0d9488 50%, #0284c7 100%);
+      --brand-teal: #0d9488;
+      --brand-blue: #0284c7;
     }
     html.dark {
-      --bg-app: #0b0f17;
-      --bg-pane: #111827;
-      --bg-pane-alt: #0f172a;
-      --bg-header: #09131c;
-      --bg-subbar: #132332;
-      --bg-footer: #09131c;
+      --bg-main: #0b111a;
       --text-main: #f1f5f9;
       --text-muted: #94a3b8;
-      --border-color: #1e293b;
-      --accent-blue: #2563eb;
-      --accent-hover: #1d4ed8;
-      --splitter-bg: #1e293b;
+      --border-line: #1e293b;
+      --hover-tint: rgba(20, 184, 166, 0.08);
+      --selected-tint: rgba(14, 165, 233, 0.14);
     }
     * {
       box-sizing: border-box;
     }
-    body {
+    html, body {
       margin: 0;
-      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg-app);
-      color: var(--text-main);
+      padding: 0;
+      width: 100vw;
       height: 100vh;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
+      background: var(--bg-main);
+      color: var(--text-main);
+      font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    }
+    .brand-grad-bg {
+      background: var(--brand-gradient);
+    }
+    .brand-grad-text {
+      background: var(--brand-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .strike-option {
       text-decoration: line-through;
-      opacity: 0.45;
+      opacity: 0.4;
     }
-    /* Custom Scrollbars */
+    /* Minimal Scrollbars */
     ::-webkit-scrollbar {
-      width: 7px;
-      height: 7px;
+      width: 6px;
+      height: 6px;
     }
     ::-webkit-scrollbar-track {
       background: transparent;
     }
     ::-webkit-scrollbar-thumb {
-      background: rgba(148, 163, 184, 0.45);
+      background: rgba(148, 163, 184, 0.35);
       border-radius: 3px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: rgba(148, 163, 184, 0.7);
+      background: rgba(13, 148, 136, 0.6);
     }
-    /* Splitter Handle */
+    /* Draggable Center Divider */
     #pane-splitter {
-      width: 8px;
-      background: var(--splitter-bg);
+      width: 5px;
       cursor: col-resize;
+      background: transparent;
+      border-left: 1px solid var(--border-line);
+      position: relative;
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    #pane-splitter:hover, #pane-splitter.dragging {
+      background: var(--brand-gradient);
+      border-left-color: transparent;
+    }
+    /* Left Rail Buttons */
+    .rail-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      user-select: none;
-      transition: background 0.15s;
-      border-left: 1px solid var(--border-color);
-      border-right: 1px solid var(--border-color);
-      flex-shrink: 0;
+      color: var(--text-muted);
+      transition: all 0.15s ease;
+      position: relative;
     }
-    #pane-splitter:hover, #pane-splitter.dragging {
-      background: var(--accent-blue);
+    .rail-btn:hover {
+      color: #0d9488;
+      background: var(--hover-tint);
     }
-    #pane-splitter .dots {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
-    #pane-splitter .dots span {
-      width: 3px;
-      height: 3px;
-      border-radius: 999px;
-      background: #64748b;
-    }
-    #pane-splitter:hover .dots span, #pane-splitter.dragging .dots span {
-      background: #ffffff;
+    .rail-btn.active {
+      background: var(--brand-gradient);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(13, 148, 136, 0.28);
     }
     @media (max-width: 1023px) {
-      body {
-        height: auto;
-        min-height: 100vh;
+      html, body {
         overflow: auto;
+        height: auto;
       }
       #pane-splitter {
         display: none;
@@ -115,299 +117,297 @@
     }
   </style>
 </head>
-<body>
+<body class="flex w-screen h-screen overflow-hidden">
 
-  <!-- ==================== TOP PEARSON VUE / KRYTERION EXAM BAR ==================== -->
-  <header style="background: var(--bg-header);" class="text-white h-12 px-4 flex items-center justify-between select-none shrink-0 border-b border-slate-700/80 z-30">
-    <!-- Left: Exam Selector & Current Item -->
-    <div class="flex items-center gap-3 min-w-0">
-      <div class="flex items-center gap-1.5 bg-slate-800/90 border border-slate-600/80 rounded px-2 py-1">
-        <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-300 hidden sm:inline">Exam:</span>
-        <select id="cert-track-select" onchange="switchCert(this.value)" class="bg-transparent text-white text-xs sm:text-sm font-bold focus:outline-none cursor-pointer pr-1">
-          <option value="claude" class="bg-slate-900 text-white">Anthropic Claude Certified Architect (CCAR-F &amp; CCAR-P — 531 Qs)</option>
-          <option value="ai103" class="bg-slate-900 text-white">Microsoft Certified: AI-103 Foundry (160 Qs)</option>
+  <!-- ==================== SHELL-LEVEL LEFT STRIP SIDEBAR (NAVIGATION RAIL) ==================== -->
+  <aside style="background: var(--bg-main); border-color: var(--border-line);" class="w-14 h-full border-r flex flex-col items-center justify-between py-3 select-none shrink-0 z-40">
+    <!-- Top: Track Switcher Badge + Primary Views -->
+    <div class="flex flex-col items-center gap-2.5">
+      <!-- Track Switcher Icon (Claude vs AI-103) -->
+      <button onclick="toggleCertTrack()" id="rail-track-btn" title="Switch Certification Track (Claude Architect 531 Qs / Microsoft AI-103 160 Qs)" class="w-10 h-10 rounded-xl brand-grad-bg text-white font-extrabold text-xs tracking-tight flex items-center justify-center shadow-sm hover:opacity-90 transition">
+        CC
+      </button>
+
+      <div class="w-6 h-[1px] my-0.5" style="background: var(--border-line);"></div>
+
+      <!-- 1. Exam Workspace (Active 2-Column Split View) -->
+      <button onclick="closeAllModals()" id="rail-btn-exam" title="2-Column Exam Workspace" class="rail-btn active">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      </button>
+
+      <!-- 2. Item Review Navigator Grid -->
+      <button onclick="openReviewGridModal()" id="rail-btn-grid" title="Question Navigator & Review Grid" class="rail-btn">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+      </button>
+
+      <!-- 3. Filters, Domains & Timed Mock Exam Drawer -->
+      <button onclick="toggleMenuDrawer()" id="rail-btn-filters" title="Filters, Domains & Timed Mock Exam" class="rail-btn">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>
+      </button>
+
+      <!-- 4. Core Concepts (50 Reference Cards) -->
+      <button onclick="openConceptsModal()" id="rail-btn-concepts" title="50 Core Architecture Concepts" class="rail-btn">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+      </button>
+
+      <!-- 5. Search Question Bank -->
+      <button onclick="openSearchModal()" id="rail-btn-search" title="Search All Questions & Explanations" class="rail-btn">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      </button>
+    </div>
+
+    <!-- Bottom: Auto-Reveal Toggle, Shuffle, Theme -->
+    <div class="flex flex-col items-center gap-2">
+      <!-- Auto-Reveal Right Column Toggle -->
+      <button onclick="toggleAlwaysReveal()" id="rail-btn-autoreveal" title="Toggle Auto-Reveal Answer in Right Pane" class="rail-btn">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+      </button>
+
+      <!-- Shuffle Current Set -->
+      <button onclick="shuffleCurrentPool()" title="Shuffle Current Question Pool" class="rail-btn">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+      </button>
+
+      <!-- Light/Dark Theme Toggle -->
+      <button onclick="toggleTheme()" title="Switch Light (#fafafa) / Dark Theme" class="rail-btn">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==================== FULL-SCREEN EXAM SHELL AREA ==================== -->
+  <div class="flex-1 flex flex-col h-full min-w-0 overflow-hidden" style="background: var(--bg-main);">
+
+    <!-- Thin Top Accent Gradient Line (Teal -> Green -> Blue) -->
+    <div class="h-1 w-full brand-grad-bg shrink-0"></div>
+
+    <!-- Clean Minimal Exam Status Header -->
+    <header style="border-color: var(--border-line);" class="h-11 px-5 border-b flex items-center justify-between gap-4 shrink-0 select-none">
+      <!-- Left: Track Selector + Set Selector + Domain Breadcrumb -->
+      <div class="flex items-center gap-3 min-w-0">
+        <select id="cert-track-select" onchange="switchCert(this.value)" class="bg-transparent font-bold text-xs sm:text-sm focus:outline-none cursor-pointer brand-grad-text">
+          <option value="claude" class="text-slate-900">Claude Certified Architect (531 Qs)</option>
+          <option value="ai103" class="text-slate-900">Microsoft AI-103 Foundry (160 Qs)</option>
         </select>
+
+        <span style="color: var(--border-line);">/</span>
+
+        <select id="top-set-select" onchange="onTopFilterChange()" style="color: var(--text-main);" class="bg-transparent text-xs font-semibold focus:outline-none cursor-pointer"></select>
+
+        <span class="hidden md:inline" style="color: var(--border-line);">/</span>
+
+        <span id="subbar-domain" style="color: var(--text-muted);" class="text-xs truncate hidden md:inline"></span>
       </div>
 
-      <div class="h-4 w-[1px] bg-slate-600 hidden sm:block"></div>
+      <!-- Center: Item Progress & Mark for Review -->
+      <div class="flex items-center gap-4 shrink-0">
+        <div class="text-xs sm:text-sm font-bold tracking-tight">
+          Item <span id="top-q-index" class="text-teal-600 dark:text-teal-400">1</span> of <span id="top-q-total">531</span>
+        </div>
 
-      <!-- Set Quick Filter right in the Exam Bar -->
-      <select id="top-set-select" onchange="onTopFilterChange()" class="bg-slate-800/80 text-slate-100 border border-slate-600/70 rounded px-2.5 py-1 text-xs font-medium focus:outline-none cursor-pointer hidden md:block"></select>
-    </div>
-
-    <!-- Center: Question X of Y + Mark for Review -->
-    <div class="flex items-center gap-3">
-      <div class="text-xs sm:text-sm font-bold tracking-wide bg-slate-900/70 px-3 py-1 rounded border border-slate-700">
-        Question <span id="top-q-index">1</span> of <span id="top-q-total">531</span>
+        <label class="flex items-center gap-1.5 text-xs font-medium cursor-pointer hover:text-teal-600 transition" style="color: var(--text-muted);">
+          <input type="checkbox" id="mark-review-checkbox" onchange="toggleBookmarkCurrent()" class="w-3.5 h-3.5 accent-teal-600 cursor-pointer" />
+          <span>Mark for Review</span>
+        </label>
       </div>
 
-      <label class="flex items-center gap-1.5 text-xs font-semibold cursor-pointer bg-slate-800/70 hover:bg-slate-700/80 px-2.5 py-1 rounded border border-slate-600 transition">
-        <input type="checkbox" id="mark-review-checkbox" onchange="toggleBookmarkCurrent()" class="w-3.5 h-3.5 accent-amber-400 cursor-pointer" />
-        <span class="text-amber-300">⚑</span>
-        <span class="hidden sm:inline">Mark for Review</span>
-      </label>
-    </div>
+      <!-- Right: Live Score & Timer -->
+      <div class="hidden sm:flex items-center gap-4 text-xs shrink-0" style="color: var(--text-muted);">
+        <span>Mastered <strong id="subbar-mastered" class="text-emerald-600 dark:text-emerald-400">0</strong></span>
+        <span>Missed <strong id="subbar-missed" class="text-rose-600 dark:text-rose-400">0</strong></span>
+        <span>Score <strong id="subbar-score" class="text-sky-600 dark:text-sky-400">0/1000</strong></span>
+        <button onclick="toggleTimerPause()" title="Click to Pause/Resume Timer" class="font-mono font-semibold hover:text-teal-600 transition" id="top-timer-text">00:00</button>
+      </div>
+    </header>
 
-    <!-- Right: Timer, Auto-Reveal Toggle, Theme & Menu Drawer Button -->
-    <div class="flex items-center gap-2">
-      <!-- Timer Pill -->
-      <button onclick="toggleTimerPause()" title="Click to Pause/Resume Timer" class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-900/80 border border-slate-700 text-xs font-mono font-semibold text-slate-200 hover:border-slate-500">
-        <svg class="w-3.5 h-3.5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span id="top-timer-text">00:00</span>
-      </button>
+    <!-- ==================== 2-COLUMN FULL-SCREEN SPLIT CONTAINER ==================== -->
+    <main id="split-container" class="flex-1 flex flex-col lg:flex-row overflow-hidden w-full" style="background: var(--bg-main);">
 
-      <!-- Always Reveal Right Pane Toggle -->
-      <button onclick="toggleAlwaysReveal()" id="btn-always-reveal" title="Automatically keep the right Answer & Explanation pane revealed as you browse" class="px-2.5 py-1 rounded text-xs font-semibold border transition flex items-center gap-1.5 bg-slate-800/80 text-slate-200 border-slate-600 hover:bg-slate-700">
-        <span id="always-reveal-dot" class="w-2 h-2 rounded-full bg-slate-400"></span>
-        <span class="hidden lg:inline">Auto-Reveal Right</span>
-      </button>
+      <!-- COLUMN 1 (LEFT): QUESTION & OPTIONS -->
+      <section id="left-pane" style="width: 55%; background: var(--bg-main);" class="h-full overflow-y-auto px-6 sm:px-10 py-6 flex flex-col justify-between">
+        <div class="space-y-5">
+          <!-- Question Tag & Format Header -->
+          <div class="flex items-center justify-between pb-2.5 border-b" style="border-color: var(--border-line);">
+            <div class="flex items-center gap-2.5">
+              <span id="subbar-code-tag" class="px-2.5 py-0.5 rounded-md brand-grad-bg text-white font-mono font-bold text-xs shadow-sm">CCAR-F #1</span>
+              <span id="subbar-format-badge" class="text-xs font-semibold" style="color: var(--text-muted);">Single-Choice</span>
+            </div>
+            <span class="text-[11px]" style="color: var(--text-muted);">Right-click option to strike out</span>
+          </div>
 
-      <!-- Theme Toggle -->
-      <button onclick="toggleTheme()" title="Switch Light / Dark Exam Theme" class="p-1.5 rounded bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-200 transition">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-      </button>
+          <!-- Question Stem -->
+          <div id="question-stem-box" class="space-y-3 text-[15px] leading-relaxed"></div>
 
-      <!-- Tools & Filters Drawer Button -->
-      <button onclick="toggleMenuDrawer()" class="px-3 py-1 rounded bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold flex items-center gap-1.5 shadow-sm transition">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        <span>Menu &amp; Filters</span>
-      </button>
-    </div>
-  </header>
+          <!-- Options / Interactive Slots -->
+          <div id="question-options-box" class="pt-1 space-y-2"></div>
+        </div>
 
-  <!-- ==================== SUB-BAR: BREADCRUMB & QUICK STATS ==================== -->
-  <div style="background: var(--bg-subbar);" class="text-slate-200 h-8 px-4 flex items-center justify-between text-xs border-b border-slate-700/80 shrink-0 select-none">
-    <div class="flex items-center gap-2 truncate">
-      <span id="subbar-code-tag" class="px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-400/30 font-mono font-bold text-[11px]">CCAR-F #1</span>
-      <span id="subbar-format-badge" class="px-2 py-0.5 rounded bg-slate-700/80 text-slate-200 font-semibold text-[11px]">Single-Choice</span>
-      <span class="text-slate-400 hidden sm:inline">•</span>
-      <span id="subbar-domain" class="text-slate-300 truncate hidden sm:inline">Domain</span>
-    </div>
+        <!-- Clean Bottom Navigation Bar inside Left Column -->
+        <div class="pt-5 mt-8 border-t flex flex-wrap items-center justify-between gap-3 select-none" style="border-color: var(--border-line);">
+          <div class="flex items-center gap-2">
+            <button onclick="prevQuestion()" class="px-3.5 py-1.5 rounded-lg border text-xs font-semibold hover:border-teal-500 transition" style="border-color: var(--border-line);">
+              &larr; Previous
+            </button>
+            <button onclick="nextQuestion()" class="px-4 py-1.5 rounded-lg brand-grad-bg text-white text-xs font-bold shadow-sm hover:opacity-95 transition">
+              Next &rarr;
+            </button>
+          </div>
 
-    <div class="flex items-center gap-4 shrink-0 text-[11px]">
-      <span>Mastered: <strong id="subbar-mastered" class="text-emerald-400">0</strong></span>
-      <span>Missed: <strong id="subbar-missed" class="text-rose-400">0</strong></span>
-      <span>Flagged: <strong id="subbar-flagged" class="text-amber-300">0</strong></span>
-      <span class="hidden md:inline">Scaled Score: <strong id="subbar-score" class="text-sky-300">0 / 1000</strong></span>
-    </div>
+          <div class="flex items-center gap-2">
+            <button onclick="clearCurrentSelection()" class="px-3 py-1.5 rounded-lg border text-xs font-medium hover:opacity-80 transition" style="border-color: var(--border-line); color: var(--text-muted);">
+              Reset
+            </button>
+            <button onclick="revealCurrentAnswer()" id="btn-reveal-answer" class="px-4 py-1.5 rounded-lg border border-teal-600/40 text-teal-700 dark:text-teal-300 text-xs font-bold hover:bg-teal-500/10 transition">
+              Reveal Answer (Enter)
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- DRAGGABLE SPLIT DIVIDER -->
+      <div id="pane-splitter" title="Drag to resize Question and Answer columns"></div>
+
+      <!-- COLUMN 2 (RIGHT): VERIFIED ANSWER & ARCHITECTURAL EXPLANATION -->
+      <aside id="right-pane" style="width: 45%; background: var(--bg-main);" class="h-full overflow-y-auto px-6 sm:px-10 py-6 flex flex-col justify-between">
+        <div id="right-answer-content" class="space-y-5"></div>
+
+        <!-- Minimal Quick Item Strip at Bottom of Right Column -->
+        <div class="pt-4 mt-8 border-t space-y-2 select-none" style="border-color: var(--border-line);">
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-semibold" style="color: var(--text-muted);">Item Strip (<span id="strip-total-count">531</span>)</span>
+            <div class="flex items-center gap-3">
+              <button onclick="toggleAlwaysReveal()" id="inline-autoreveal-label" class="text-xs font-semibold text-teal-600 dark:text-teal-400 hover:underline">
+                Auto-Reveal: Off
+              </button>
+              <button onclick="openReviewGridModal()" class="text-xs font-bold brand-grad-text hover:underline">
+                All Items Grid &rarr;
+              </button>
+            </div>
+          </div>
+          <div id="mini-nav-strip" class="flex items-center gap-1 overflow-x-auto pb-1"></div>
+        </div>
+      </aside>
+
+    </main>
   </div>
 
-  <!-- ==================== MAIN 2-COLUMN SPLIT EXAM CONTAINER ==================== -->
-  <main id="split-container" class="flex-1 flex flex-col lg:flex-row overflow-hidden relative">
-
-    <!-- LEFT COLUMN: QUESTION STEM + INTERACTIVE OPTIONS -->
-    <section id="left-pane" style="width: 56%; background: var(--bg-pane);" class="h-full overflow-y-auto p-5 sm:p-7 flex flex-col justify-between">
-      <div class="space-y-6 max-w-4xl">
-        <!-- Exam Scenario Instruction Banner -->
-        <div class="text-xs leading-relaxed pb-3 border-b" style="color: var(--text-muted); border-color: var(--border-color);">
-          <span id="exam-instruction-line">Read the scenario and question carefully. Select the best response(s) below, or click <strong>Reveal Answer</strong> to inspect the verified solution in the right pane.</span>
-        </div>
-
-        <!-- Question Stem -->
-        <div id="question-stem-box" class="space-y-3 text-sm sm:text-[15px] leading-relaxed font-normal"></div>
-
-        <!-- Interactive Answer Area -->
-        <div id="question-options-box" class="pt-2 space-y-2.5"></div>
-      </div>
-
-      <!-- Inline Action Strip inside Left Column -->
-      <div class="pt-6 mt-8 border-t flex flex-wrap items-center justify-between gap-3" style="border-color: var(--border-color);">
-        <div class="flex items-center gap-2">
-          <button onclick="revealCurrentAnswer()" id="btn-reveal-answer" class="px-4 py-2 rounded font-bold text-xs sm:text-sm text-white shadow-sm transition" style="background: var(--accent-blue);">
-            Reveal Answer &amp; Explanation (Enter)
-          </button>
-          <button onclick="clearCurrentSelection()" class="px-3 py-2 rounded border text-xs font-semibold hover:opacity-80 transition" style="border-color: var(--border-color); color: var(--text-muted);">
-            Reset Selection
-          </button>
-        </div>
-        <div class="text-[11px]" style="color: var(--text-muted);">
-          Right-click any option to strike out • Keys: <kbd class="px-1 py-0.5 border rounded text-[10px]">1-6</kbd> Select, <kbd class="px-1 py-0.5 border rounded text-[10px]">Enter</kbd> Reveal, <kbd class="px-1 py-0.5 border rounded text-[10px]">←/→</kbd> Nav
-        </div>
-      </div>
-    </section>
-
-    <!-- DRAGGABLE SPLIT BAR (Just like Pearson VUE!) -->
-    <div id="pane-splitter" title="Drag split bar to resize Question and Answer panes">
-      <div class="dots">
-        <span></span><span></span><span></span><span></span><span></span>
-      </div>
-    </div>
-
-    <!-- RIGHT COLUMN: ANSWER & ARCHITECTURAL RATIONALE PANE -->
-    <aside id="right-pane" style="width: 44%; background: var(--bg-pane-alt);" class="h-full overflow-y-auto p-5 sm:p-7 flex flex-col justify-between border-t lg:border-t-0" style="border-color: var(--border-color);">
-      <div id="right-answer-content" class="space-y-5"></div>
-
-      <!-- Bottom Quick Navigator Strip inside Right Pane -->
-      <div class="pt-5 mt-6 border-t space-y-2.5" style="border-color: var(--border-color);">
-        <div class="flex items-center justify-between text-xs">
-          <span class="font-bold uppercase tracking-wider" style="color: var(--text-muted);">Quick Item Strip</span>
-          <button onclick="openReviewGridModal()" class="text-xs font-bold text-sky-600 dark:text-sky-400 hover:underline">
-            Open Full Review Screen (<span id="strip-total-count">531</span> Items) &rarr;
-          </button>
-        </div>
-        <div id="mini-nav-strip" class="flex items-center gap-1.5 overflow-x-auto pb-1"></div>
-      </div>
-    </aside>
-
-  </main>
-
-  <!-- ==================== BOTTOM OFFICIAL EXAM FOOTER BAR ==================== -->
-  <footer style="background: var(--bg-footer);" class="text-white h-12 px-4 flex items-center justify-between select-none shrink-0 border-t border-slate-700 z-30">
-    <!-- Left Footer: Review Screen & Core Concepts & Search -->
-    <div class="flex items-center gap-2">
-      <button onclick="openReviewGridModal()" class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 border border-slate-600 text-xs font-bold flex items-center gap-1.5 transition">
-        <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
-        <span>Review Screen</span>
-      </button>
-
-      <button onclick="openConceptsModal()" class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 border border-slate-600 text-xs font-semibold hidden sm:flex items-center gap-1.5 transition">
-        <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-        <span>Core Concepts (50)</span>
-      </button>
-
-      <button onclick="openSearchModal()" class="px-3 py-1.5 rounded bg-slate-800 hover:bg-slate-700 border border-slate-600 text-xs font-semibold hidden md:flex items-center gap-1.5 transition">
-        <svg class="w-3.5 h-3.5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-        <span>Search Bank</span>
-      </button>
-    </div>
-
-    <!-- Right Footer: Previous / Reveal / Next Exam Buttons -->
-    <div class="flex items-center gap-2">
-      <button onclick="prevQuestion()" class="px-4 py-1.5 rounded bg-slate-800 hover:bg-slate-700 border border-slate-600 text-xs font-bold flex items-center gap-1 transition">
-        <span>&larr; Previous</span>
-      </button>
-
-      <button onclick="revealCurrentAnswer()" id="footer-reveal-btn" class="px-4 py-1.5 rounded bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition">
-        Reveal Answer
-      </button>
-
-      <button onclick="nextQuestion()" class="px-5 py-1.5 rounded bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold flex items-center gap-1 shadow-sm transition">
-        <span>Next &rarr;</span>
-      </button>
-    </div>
-  </footer>
-
-  <!-- ==================== SLIDE-OVER MENU & FILTERS DRAWER ==================== -->
-  <div id="menu-drawer-backdrop" onclick="toggleMenuDrawer()" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
-  <aside id="menu-drawer" style="background: var(--bg-pane); border-color: var(--border-color);" class="fixed top-0 right-0 h-full w-80 sm:w-96 border-l z-50 transform translate-x-full transition-transform duration-200 flex flex-col justify-between p-5 overflow-y-auto shadow-2xl">
+  <!-- ==================== SLIDE-OVER FILTERS & TIMED EXAM DRAWER (LEFT RAIL TRIGGERED) ==================== -->
+  <div id="menu-drawer-backdrop" onclick="toggleMenuDrawer()" class="fixed inset-0 bg-black/30 z-40 hidden"></div>
+  <aside id="menu-drawer" style="background: var(--bg-main); border-color: var(--border-line);" class="fixed top-0 left-14 h-full w-80 sm:w-96 border-r z-50 hidden flex-col justify-between p-6 overflow-y-auto shadow-xl">
     <div class="space-y-5">
-      <div class="flex items-center justify-between border-b pb-3" style="border-color: var(--border-color);">
+      <div class="flex items-center justify-between border-b pb-3" style="border-color: var(--border-line);">
         <div>
-          <h3 class="font-bold text-base">Exam Menu &amp; Filters</h3>
-          <p class="text-xs" style="color: var(--text-muted);">Customize question pool, domain, or launch timed exam</p>
+          <h3 class="font-bold text-base brand-grad-text">Filters &amp; Exam Configuration</h3>
+          <p class="text-xs" style="color: var(--text-muted);">Filter by set, domain, format, or status</p>
         </div>
-        <button onclick="toggleMenuDrawer()" class="p-1.5 rounded border hover:opacity-80" style="border-color: var(--border-color);">✕</button>
+        <button onclick="toggleMenuDrawer()" class="p-1 rounded hover:opacity-75 text-sm">✕</button>
       </div>
 
-      <!-- Filter Controls -->
       <div class="space-y-3">
         <div>
-          <label class="block text-xs font-bold uppercase mb-1" style="color: var(--text-muted);">Question Set</label>
-          <select id="drawer-set-filter" onchange="applyFiltersFromDrawer()" class="w-full rounded border px-3 py-2 text-xs font-medium" style="background: var(--bg-pane-alt); border-color: var(--border-color); color: var(--text-main);"></select>
+          <label class="block text-[11px] font-bold uppercase mb-1" style="color: var(--text-muted);">Question Set</label>
+          <select id="drawer-set-filter" onchange="applyFiltersFromDrawer()" class="w-full rounded-lg border px-3 py-2 text-xs font-medium bg-transparent" style="border-color: var(--border-line); color: var(--text-main);"></select>
         </div>
 
         <div>
-          <label class="block text-xs font-bold uppercase mb-1" style="color: var(--text-muted);">Exam Domain</label>
-          <select id="drawer-domain-filter" onchange="applyFiltersFromDrawer()" class="w-full rounded border px-3 py-2 text-xs font-medium" style="background: var(--bg-pane-alt); border-color: var(--border-color); color: var(--text-main);"></select>
+          <label class="block text-[11px] font-bold uppercase mb-1" style="color: var(--text-muted);">Exam Domain</label>
+          <select id="drawer-domain-filter" onchange="applyFiltersFromDrawer()" class="w-full rounded-lg border px-3 py-2 text-xs font-medium bg-transparent" style="border-color: var(--border-line); color: var(--text-main);"></select>
         </div>
 
         <div>
-          <label class="block text-xs font-bold uppercase mb-1" style="color: var(--text-muted);">Question Format</label>
-          <select id="drawer-type-filter" onchange="applyFiltersFromDrawer()" class="w-full rounded border px-3 py-2 text-xs font-medium" style="background: var(--bg-pane-alt); border-color: var(--border-color); color: var(--text-main);"></select>
+          <label class="block text-[11px] font-bold uppercase mb-1" style="color: var(--text-muted);">Question Format</label>
+          <select id="drawer-type-filter" onchange="applyFiltersFromDrawer()" class="w-full rounded-lg border px-3 py-2 text-xs font-medium bg-transparent" style="border-color: var(--border-line); color: var(--text-main);"></select>
         </div>
 
         <div>
-          <label class="block text-xs font-bold uppercase mb-1" style="color: var(--text-muted);">Status Filter</label>
-          <select id="drawer-status-filter" onchange="applyFiltersFromDrawer()" class="w-full rounded border px-3 py-2 text-xs font-medium" style="background: var(--bg-pane-alt); border-color: var(--border-color); color: var(--text-main);">
+          <label class="block text-[11px] font-bold uppercase mb-1" style="color: var(--text-muted);">Mastery Status</label>
+          <select id="drawer-status-filter" onchange="applyFiltersFromDrawer()" class="w-full rounded-lg border px-3 py-2 text-xs font-medium bg-transparent" style="border-color: var(--border-line); color: var(--text-main);">
             <option value="all">All Questions</option>
             <option value="unanswered">Unanswered Only</option>
             <option value="missed">Missed / Needs Review</option>
             <option value="mastered">Mastered Only</option>
-            <option value="bookmarked">Marked for Review (Flagged)</option>
+            <option value="bookmarked">Marked for Review</option>
           </select>
         </div>
       </div>
 
-      <!-- Quick Actions -->
-      <div class="grid grid-cols-2 gap-2 pt-2">
-        <button onclick="shuffleCurrentPool(); toggleMenuDrawer();" class="px-3 py-2 rounded border text-xs font-bold hover:opacity-80 transition" style="background: var(--bg-pane-alt); border-color: var(--border-color);">
-          🔀 Shuffle Pool
+      <div class="grid grid-cols-2 gap-2 pt-1">
+        <button onclick="shuffleCurrentPool(); toggleMenuDrawer();" class="px-3 py-2 rounded-lg border text-xs font-semibold hover:border-teal-500 transition" style="border-color: var(--border-line);">
+          Shuffle Pool
         </button>
-        <button onclick="resetAllFilters(); toggleMenuDrawer();" class="px-3 py-2 rounded border text-xs font-bold hover:opacity-80 transition" style="background: var(--bg-pane-alt); border-color: var(--border-color);">
-          ↺ Reset Filters
+        <button onclick="resetAllFilters(); toggleMenuDrawer();" class="px-3 py-2 rounded-lg border text-xs font-semibold hover:border-teal-500 transition" style="border-color: var(--border-line);">
+          Reset Filters
         </button>
-        <button onclick="startTimedMockPreset(63); toggleMenuDrawer();" class="col-span-2 px-3 py-2.5 rounded bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition">
-          ⏱ Start Official 63-Question Timed Exam (120m)
+        <button onclick="startTimedMockPreset(63); toggleMenuDrawer();" class="col-span-2 py-2.5 rounded-lg brand-grad-bg text-white text-xs font-bold shadow-sm hover:opacity-95 transition">
+          Start 63-Question Timed Exam (120m)
         </button>
       </div>
 
-      <!-- Domain Mastery Breakdown inside Drawer -->
-      <div class="pt-3 border-t space-y-2.5" style="border-color: var(--border-color);">
+      <!-- Domain Competency Bars -->
+      <div class="pt-4 border-t space-y-2.5" style="border-color: var(--border-line);">
         <div class="flex items-center justify-between">
-          <span class="text-xs font-bold uppercase" style="color: var(--text-muted);">Domain Mastery</span>
-          <button onclick="resetAllProgress()" class="text-[11px] text-rose-500 hover:underline font-semibold">Reset Stats</button>
+          <span class="text-[11px] font-bold uppercase" style="color: var(--text-muted);">Domain Competency</span>
+          <button onclick="resetAllProgress()" class="text-[11px] text-rose-600 hover:underline font-semibold">Reset Progress</button>
         </div>
-        <div id="drawer-domain-bars" class="space-y-2"></div>
+        <div id="drawer-domain-bars" class="space-y-2.5"></div>
       </div>
     </div>
 
-    <div class="pt-4 border-t text-[11px] flex items-center justify-between" style="border-color: var(--border-color); color: var(--text-muted);">
-      <span>Proctored Split-Pane UI v3</span>
-      <span>Passing Score: <strong id="drawer-pass-score">720/1000</strong></span>
+    <div class="pt-4 border-t text-[11px] flex items-center justify-between" style="border-color: var(--border-line); color: var(--text-muted);">
+      <span>Cut Score: <strong id="drawer-pass-score">720/1000</strong></span>
+      <span>Flagged: <strong id="subbar-flagged">0</strong></span>
     </div>
   </aside>
 
-  <!-- ==================== MODAL 1: OFFICIAL ITEM REVIEW SCREEN ==================== -->
-  <div id="modal-review-screen" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
-    <div style="background: var(--bg-pane); border-color: var(--border-color);" class="w-full max-w-5xl max-h-[88vh] rounded-xl border shadow-2xl flex flex-col overflow-hidden">
-      <div style="background: var(--bg-header);" class="text-white px-5 py-3.5 flex items-center justify-between">
+  <!-- ==================== MODAL 1: ITEM REVIEW GRID ==================== -->
+  <div id="modal-review-screen" class="fixed inset-0 bg-black/40 z-50 hidden flex items-center justify-center p-4">
+    <div style="background: var(--bg-main); border-color: var(--border-line);" class="w-full max-w-5xl max-h-[88vh] rounded-xl border shadow-2xl flex flex-col overflow-hidden">
+      <div class="h-1 w-full brand-grad-bg"></div>
+      <div class="px-6 py-4 border-b flex items-center justify-between" style="border-color: var(--border-line);">
         <div>
-          <h3 class="font-bold text-base">Exam Item Review Screen</h3>
-          <p class="text-xs text-slate-300">Click any question number to jump directly to it. Green = Mastered, Red = Missed, Amber Flag = Marked for Review.</p>
+          <h3 class="font-bold text-base">Item Review Grid</h3>
+          <p class="text-xs" style="color: var(--text-muted);">Click any item number to jump directly to it</p>
         </div>
-        <button onclick="closeReviewGridModal()" class="px-3 py-1 rounded bg-slate-700 hover:bg-slate-600 text-xs font-bold">Close (Esc)</button>
+        <button onclick="closeReviewGridModal()" class="px-3 py-1 rounded-lg border text-xs font-semibold" style="border-color: var(--border-line);">Close (Esc)</button>
       </div>
-
-      <div class="p-5 overflow-y-auto grid grid-cols-5 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-2" id="full-review-grid"></div>
+      <div class="p-6 overflow-y-auto grid grid-cols-5 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-2" id="full-review-grid"></div>
     </div>
   </div>
 
-  <!-- ==================== MODAL 2: CORE CONCEPTS (50 MASTER CARDS) ==================== -->
-  <div id="modal-concepts" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
-    <div style="background: var(--bg-pane); border-color: var(--border-color);" class="w-full max-w-5xl max-h-[88vh] rounded-xl border shadow-2xl flex flex-col overflow-hidden">
-      <div style="background: var(--bg-header);" class="text-white px-5 py-3.5 flex items-center justify-between gap-4">
+  <!-- ==================== MODAL 2: CORE CONCEPTS (50 CARDS) ==================== -->
+  <div id="modal-concepts" class="fixed inset-0 bg-black/40 z-50 hidden flex items-center justify-center p-4">
+    <div style="background: var(--bg-main); border-color: var(--border-line);" class="w-full max-w-5xl max-h-[88vh] rounded-xl border shadow-2xl flex flex-col overflow-hidden">
+      <div class="h-1 w-full brand-grad-bg"></div>
+      <div class="px-6 py-4 border-b flex items-center justify-between gap-4" style="border-color: var(--border-line);">
         <div>
-          <h3 id="concepts-modal-title" class="font-bold text-base">Core Concepts &amp; Architecture Reference (50 Cards)</h3>
-          <p class="text-xs text-slate-300">High-yield architectural rules, formulas, and exam tips</p>
+          <h3 class="font-bold text-base">Core Concepts &amp; Architecture Reference (50 Cards)</h3>
+          <p class="text-xs" style="color: var(--text-muted);">High-yield architectural patterns, trade-offs, and exam tips</p>
         </div>
-        <button onclick="closeConceptsModal()" class="px-3 py-1 rounded bg-slate-700 hover:bg-slate-600 text-xs font-bold shrink-0">Close (Esc)</button>
+        <button onclick="closeConceptsModal()" class="px-3 py-1 rounded-lg border text-xs font-semibold shrink-0" style="border-color: var(--border-line);">Close (Esc)</button>
       </div>
-
-      <div class="p-4 border-b flex flex-col sm:flex-row gap-3" style="background: var(--bg-pane-alt); border-color: var(--border-color);">
-        <input type="text" id="concepts-search-input" oninput="renderConceptsModal()" placeholder="Search 50 core concepts (e.g., MCP, cache_control, subagent, CLAUDE.md, Batch API)..." class="flex-1 rounded border px-3 py-1.5 text-xs sm:text-sm" style="background: var(--bg-pane); border-color: var(--border-color); color: var(--text-main);" />
-        <select id="concepts-deck-filter" onchange="renderConceptsModal()" class="rounded border px-3 py-1.5 text-xs font-medium" style="background: var(--bg-pane); border-color: var(--border-color); color: var(--text-main);"></select>
+      <div class="px-6 py-3 border-b flex flex-col sm:flex-row gap-3" style="border-color: var(--border-line);">
+        <input type="text" id="concepts-search-input" oninput="renderConceptsModal()" placeholder="Search 50 core concepts (e.g., MCP, cache_control, subagent, CLAUDE.md, Batch API)..." class="flex-1 rounded-lg border px-3 py-1.5 text-xs sm:text-sm bg-transparent" style="border-color: var(--border-line); color: var(--text-main);" />
+        <select id="concepts-deck-filter" onchange="renderConceptsModal()" class="rounded-lg border px-3 py-1.5 text-xs font-medium bg-transparent" style="border-color: var(--border-line); color: var(--text-main);"></select>
       </div>
-
-      <div id="concepts-modal-list" class="p-5 overflow-y-auto grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      <div id="concepts-modal-list" class="p-6 overflow-y-auto grid grid-cols-1 md:grid-cols-2 gap-4"></div>
     </div>
   </div>
 
-  <!-- ==================== MODAL 3: FULL-TEXT QUESTION BANK SEARCH ==================== -->
-  <div id="modal-search" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
-    <div style="background: var(--bg-pane); border-color: var(--border-color);" class="w-full max-w-5xl max-h-[88vh] rounded-xl border shadow-2xl flex flex-col overflow-hidden">
-      <div style="background: var(--bg-header);" class="text-white px-5 py-3.5 flex items-center justify-between gap-4">
+  <!-- ==================== MODAL 3: FULL-TEXT SEARCH ==================== -->
+  <div id="modal-search" class="fixed inset-0 bg-black/40 z-50 hidden flex items-center justify-center p-4">
+    <div style="background: var(--bg-main); border-color: var(--border-line);" class="w-full max-w-5xl max-h-[88vh] rounded-xl border shadow-2xl flex flex-col overflow-hidden">
+      <div class="h-1 w-full brand-grad-bg"></div>
+      <div class="px-6 py-4 border-b flex items-center justify-between gap-4" style="border-color: var(--border-line);">
         <div>
           <h3 class="font-bold text-base">Search Question Bank</h3>
-          <p class="text-xs text-slate-300">Instant keyword search across all questions, options, and explanations</p>
+          <p class="text-xs" style="color: var(--text-muted);">Instant full-text search across all stems, options, and explanations</p>
         </div>
-        <button onclick="closeSearchModal()" class="px-3 py-1 rounded bg-slate-700 hover:bg-slate-600 text-xs font-bold shrink-0">Close (Esc)</button>
+        <button onclick="closeSearchModal()" class="px-3 py-1 rounded-lg border text-xs font-semibold shrink-0" style="border-color: var(--border-line);">Close (Esc)</button>
       </div>
-
-      <div class="p-4 border-b flex items-center gap-3" style="background: var(--bg-pane-alt); border-color: var(--border-color);">
-        <input type="text" id="bank-search-input" oninput="renderSearchModal()" placeholder="Type keyword (e.g., defer_loading, pause_turn, CLAUDE.md, hybrid, HIPAA, Sora 2)..." class="flex-1 rounded border px-3 py-2 text-sm" style="background: var(--bg-pane); border-color: var(--border-color); color: var(--text-main);" />
+      <div class="px-6 py-3 border-b" style="border-color: var(--border-line);">
+        <input type="text" id="bank-search-input" oninput="renderSearchModal()" placeholder="Type keyword (e.g., defer_loading, pause_turn, CLAUDE.md, hybrid, HIPAA, Sora 2)..." class="w-full rounded-lg border px-3 py-2 text-sm bg-transparent" style="border-color: var(--border-line); color: var(--text-main);" />
       </div>
-
-      <div id="bank-search-results" class="p-5 overflow-y-auto space-y-3"></div>
+      <div id="bank-search-results" class="p-6 overflow-y-auto space-y-3"></div>
     </div>
   </div>
 
@@ -420,6 +420,7 @@
     const CERT_CONFIGS = {
       claude: {
         id: 'claude',
+        badge: 'CC',
         storageKey: 'claude_cert_suite_state_v1',
         passScore: 720,
         sets: [
@@ -439,6 +440,7 @@
       },
       ai103: {
         id: 'ai103',
+        badge: 'AI',
         storageKey: 'ai103_cert_suite_state_v2',
         passScore: 700,
         sets: [
@@ -476,7 +478,6 @@
     let strikeouts = {};
     let alwaysRevealRight = localStorage.getItem('exam_always_reveal_right') === 'true';
 
-    // Elapsed or Countdown Timer
     let timerSeconds = 0;
     let timerCountdownMode = false;
     let timerPaused = false;
@@ -497,9 +498,7 @@
           userState = Object.assign(userState, JSON.parse(raw));
         }
         tempAnswers = Object.assign({}, userState.savedAnswers || {});
-      } catch (e) {
-        console.warn('Could not load state', e);
-      }
+      } catch (e) {}
     }
 
     function saveState() {
@@ -519,12 +518,11 @@
 
     function formatBoldMarkdown(text) {
       return escapeHtml(text)
-        .replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-sky-600 dark:text-sky-400">$1</strong>')
-        .replace(/`(.+?)`/g, '<code class="px-1.5 py-0.5 rounded bg-slate-200/70 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 font-mono text-xs">$1</code>');
+        .replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-teal-700 dark:text-teal-300">$1</strong>')
+        .replace(/`(.+?)`/g, '<code class="px-1.5 py-0.5 rounded border font-mono text-xs" style="border-color: var(--border-line);">$1</code>');
     }
 
     function formatStemHtml(stem) {
-      // Strip leading [CCAR-...] tag from stem body since it is already shown in the subbar badge
       const cleanStem = stem.replace(/^\[(?:CCAR-[^\]]+)\]\s*/, '');
       const lines = cleanStem.split('\n');
       let html = '';
@@ -540,7 +538,7 @@
           html += `<li>${escapeHtml(trimmed.replace(/^[•·\-]\s*/, ''))}</li>`;
         } else if (trimmed.includes(' | ') && !trimmed.includes('[')) {
           if (inList) { html += '</ul>'; inList = false; }
-          const cells = trimmed.split('|').map(c => `<td class="border px-3 py-1.5 text-xs font-mono" style="border-color: var(--border-color);">${escapeHtml(c.trim())}</td>`).join('');
+          const cells = trimmed.split('|').map(c => `<td class="border px-3 py-1.5 text-xs font-mono" style="border-color: var(--border-line);">${escapeHtml(c.trim())}</td>`).join('');
           html += `<table class="w-full border-collapse my-1"><tr>${cells}</tr></table>`;
         } else {
           if (inList) { html += '</ul>'; inList = false; }
@@ -557,12 +555,16 @@
         return `Multiple-Select (Choose ${count})`;
       }
       const map = {
-        single_choice: 'Single-Choice MCQ',
-        hotspot: 'Hot Area / Statement Evaluation',
+        single_choice: 'Single-Choice',
+        hotspot: 'Statement Evaluation (Yes / No)',
         drag_drop: 'Classification / Matching',
         code_completion: 'Code / YAML Completion'
       };
       return map[q.type] || q.type;
+    }
+
+    function toggleCertTrack() {
+      switchCert(activeCertId === 'claude' ? 'ai103' : 'claude');
     }
 
     function switchCert(certId) {
@@ -580,6 +582,7 @@
       timerSeconds = 0;
       timerCountdownMode = false;
 
+      document.getElementById('rail-track-btn').textContent = cfg.badge;
       loadState();
       populateFilterDropdowns();
       renderExamScreen();
@@ -590,6 +593,7 @@
       const total = QUESTION_BANK.length;
 
       document.getElementById('cert-track-select').value = activeCertId;
+      document.getElementById('rail-track-btn').textContent = cfg.badge;
 
       const setOpts = `<option value="all">All Sets (${total} Qs)</option>` +
         cfg.sets.map(s => `<option value="${escapeHtml(s.name)}">${escapeHtml(s.name)}</option>`).join('');
@@ -606,11 +610,11 @@
       const allTypes = [
         { type: 'single_choice', label: 'Single-Choice MCQ' },
         { type: 'multi_choice', label: 'Multi-Select (Choose 2/3)' },
-        { type: 'hotspot', label: 'Hot Area / Yes-No Statements' },
-        { type: 'drag_drop', label: 'Drag & Drop / Classification' },
+        { type: 'hotspot', label: 'Statement Evaluation (Yes/No)' },
+        { type: 'drag_drop', label: 'Classification / Matching' },
         { type: 'code_completion', label: 'Code Completion' }
       ];
-      document.getElementById('drawer-type-filter').innerHTML = `<option value="all">All Question Formats</option>` +
+      document.getElementById('drawer-type-filter').innerHTML = `<option value="all">All Formats</option>` +
         allTypes.map(t => {
           const cnt = QUESTION_BANK.filter(q => q.type === t.type).length;
           return cnt > 0 ? `<option value="${t.type}">${escapeHtml(t.label)} (${cnt})</option>` : '';
@@ -618,7 +622,6 @@
 
       document.getElementById('drawer-pass-score').textContent = `${cfg.passScore}/1000`;
 
-      // Concepts modal filter
       const decks = [...new Set(CORE_CONCEPTS.map(c => c.deck))];
       document.getElementById('concepts-deck-filter').innerHTML =
         `<option value="all">All 10 Concept Sets (${CORE_CONCEPTS.length})</option>` +
@@ -698,14 +701,14 @@
     }
 
     function syncAlwaysRevealButton() {
-      const btn = document.getElementById('btn-always-reveal');
-      const dot = document.getElementById('always-reveal-dot');
+      const railBtn = document.getElementById('rail-btn-autoreveal');
+      const inlineLbl = document.getElementById('inline-autoreveal-label');
       if (alwaysRevealRight) {
-        btn.className = 'px-2.5 py-1 rounded text-xs font-bold border transition flex items-center gap-1.5 bg-emerald-600/30 text-emerald-200 border-emerald-400/50';
-        dot.className = 'w-2 h-2 rounded-full bg-emerald-400';
+        railBtn.classList.add('active');
+        if (inlineLbl) inlineLbl.textContent = 'Auto-Reveal: On';
       } else {
-        btn.className = 'px-2.5 py-1 rounded text-xs font-semibold border transition flex items-center gap-1.5 bg-slate-800/80 text-slate-200 border-slate-600 hover:bg-slate-700';
-        dot.className = 'w-2 h-2 rounded-full bg-slate-400';
+        railBtn.classList.remove('active');
+        if (inlineLbl) inlineLbl.textContent = 'Auto-Reveal: Off';
       }
     }
 
@@ -716,9 +719,9 @@
         document.getElementById('top-q-index').textContent = '0';
         document.getElementById('top-q-total').textContent = '0';
         document.getElementById('question-stem-box').innerHTML = `
-          <div class="p-8 text-center space-y-3 border rounded-lg" style="border-color: var(--border-color);">
-            <div class="font-bold text-base">No questions match your current filter criteria.</div>
-            <button onclick="resetAllFilters()" class="px-4 py-2 rounded bg-sky-600 text-white text-xs font-bold">Reset Filters to All ${QUESTION_BANK.length} Questions</button>
+          <div class="py-12 text-center space-y-3 border-b" style="border-color: var(--border-line);">
+            <div class="font-bold text-base">No questions match the current filter.</div>
+            <button onclick="resetAllFilters()" class="px-4 py-2 rounded-lg brand-grad-bg text-white text-xs font-bold">Show All ${QUESTION_BANK.length} Questions</button>
           </div>
         `;
         document.getElementById('question-options-box').innerHTML = '';
@@ -731,7 +734,6 @@
       const isRevealed = alwaysRevealRight || !!revealedById[q.id];
       const currentAns = tempAnswers[q.id];
 
-      // Top bar & Subbar metadata
       document.getElementById('top-q-index').textContent = currentIndex + 1;
       document.getElementById('top-q-total').textContent = activeList.length;
       document.getElementById('strip-total-count').textContent = activeList.length;
@@ -739,23 +741,13 @@
 
       document.getElementById('subbar-code-tag').textContent = q.code_tag || `Q${q.id}`;
       document.getElementById('subbar-format-badge').textContent = getFormatLabel(q);
-      document.getElementById('subbar-domain').textContent = `${q.set}  •  ${q.domain}`;
+      document.getElementById('subbar-domain').textContent = q.domain;
 
-      // Render Question Stem in Left Column
       document.getElementById('question-stem-box').innerHTML = formatStemHtml(q.stem);
-
-      // Render Options / Slots in Left Column
       renderLeftOptions(q, currentAns, isRevealed);
 
-      // Update Reveal Buttons text
-      const revLabel = isRevealed ? 'Hide Answer (Enter)' : 'Reveal Answer & Explanation (Enter)';
-      document.getElementById('btn-reveal-answer').textContent = revLabel;
-      document.getElementById('footer-reveal-btn').textContent = isRevealed ? 'Hide Answer' : 'Reveal Answer';
-
-      // Render Right Answer & Explanation Column
+      document.getElementById('btn-reveal-answer').textContent = isRevealed ? 'Hide Answer (Enter)' : 'Reveal Answer (Enter)';
       renderRightAnswerPane(q, currentAns, isRevealed);
-
-      // Render Mini Navigator Strip (window of 15 items around currentIndex)
       renderMiniNavStrip();
     }
 
@@ -768,27 +760,27 @@
         const selectedArr = Array.isArray(currentAns) ? currentAns : (currentAns ? [currentAns] : []);
 
         box.innerHTML = `
-          <div class="text-xs font-bold uppercase tracking-wider mb-2" style="color: var(--text-muted);">
-            ${isMulti ? `Select ${reqCount} options:` : 'Select one option:'}
+          <div class="text-[11px] font-bold uppercase tracking-wider pb-1" style="color: var(--text-muted);">
+            ${isMulti ? `Choose ${reqCount} options:` : 'Choose one option:'}
           </div>
           ${q.options.map(opt => {
             const isSelected = selectedArr.includes(opt.id);
             const isCorrectOpt = q.correct.includes(opt.id);
             const isStruck = !!strikeouts[`${q.id}_${opt.id}`];
 
-            let borderStyle = 'border-color: var(--border-color); background: var(--bg-pane);';
-            let indicatorBadge = '';
+            let rowStyle = 'border-color: var(--border-line); background: transparent;';
+            let badgeHtml = '';
 
             if (isSelected) {
-              borderStyle = 'border-color: #0284c7; background: rgba(2, 132, 199, 0.08);';
+              rowStyle = 'border-color: #0d9488; background: var(--selected-tint);';
             }
             if (isRevealed) {
               if (isCorrectOpt) {
-                borderStyle = 'border-color: #10b981; background: rgba(16, 185, 129, 0.10);';
-                indicatorBadge = '<span class="ml-auto pl-2 text-xs font-bold text-emerald-600 dark:text-emerald-400 shrink-0">✓ Correct</span>';
+                rowStyle = 'border-color: #10b981; background: rgba(16, 185, 129, 0.07);';
+                badgeHtml = '<span class="ml-auto pl-2 text-xs font-bold text-emerald-600 dark:text-emerald-400 shrink-0">✓ Correct</span>';
               } else if (isSelected && !isCorrectOpt) {
-                borderStyle = 'border-color: #f43f5e; background: rgba(244, 63, 94, 0.10);';
-                indicatorBadge = '<span class="ml-auto pl-2 text-xs font-bold text-rose-600 dark:text-rose-400 shrink-0">✗ Incorrect</span>';
+                rowStyle = 'border-color: #f43f5e; background: rgba(244, 63, 94, 0.07);';
+                badgeHtml = '<span class="ml-auto pl-2 text-xs font-bold text-rose-600 dark:text-rose-400 shrink-0">✗ Incorrect</span>';
               }
             }
 
@@ -796,20 +788,20 @@
               <div
                 onclick="selectOption(${q.id}, '${opt.id}')"
                 oncontextmenu="event.preventDefault(); toggleStrike(${q.id}, '${opt.id}');"
-                style="${borderStyle}"
-                class="p-3.5 rounded-lg border-2 cursor-pointer transition flex items-start gap-3 hover:border-sky-500/70"
+                style="${rowStyle}"
+                class="p-3 rounded-lg border cursor-pointer transition flex items-start gap-3 hover:border-teal-500"
               >
                 <input
                   type="${isMulti ? 'checkbox' : 'radio'}"
                   name="q_opt_${q.id}"
                   ${isSelected ? 'checked' : ''}
                   onclick="event.stopPropagation(); selectOption(${q.id}, '${opt.id}');"
-                  class="mt-1 w-4 h-4 accent-sky-600 cursor-pointer shrink-0"
+                  class="mt-1 w-4 h-4 accent-teal-600 cursor-pointer shrink-0"
                 />
                 <div class="flex-1 text-sm leading-relaxed ${isStruck ? 'strike-option' : ''}">
                   <strong class="font-bold mr-1.5">${escapeHtml(opt.id)}.</strong>${escapeHtml(opt.text)}
                 </div>
-                ${indicatorBadge}
+                ${badgeHtml}
               </div>
             `;
           }).join('')}
@@ -820,19 +812,19 @@
 
         if (q.type === 'code_completion' && q.code) {
           headerHtml = `
-            <div class="bg-slate-900 text-slate-100 rounded-lg p-4 font-mono text-xs overflow-x-auto leading-relaxed mb-3 border border-slate-700">
+            <div class="rounded-lg p-4 font-mono text-xs overflow-x-auto leading-relaxed mb-3 border" style="border-color: var(--border-line);">
               <pre>${escapeHtml(q.code)
-                .replace('[Blank 1]', '<span class="px-1.5 py-0.5 rounded bg-sky-500/30 text-sky-300 border border-sky-400/40 font-bold">[Blank 1]</span>')
-                .replace('[Blank 2]', '<span class="px-1.5 py-0.5 rounded bg-amber-500/30 text-amber-300 border border-amber-400/40 font-bold">[Blank 2]</span>')
+                .replace('[Blank 1]', '<span class="px-1.5 py-0.5 rounded text-teal-600 border border-teal-500 font-bold">[Blank 1]</span>')
+                .replace('[Blank 2]', '<span class="px-1.5 py-0.5 rounded text-sky-600 border border-sky-500 font-bold">[Blank 2]</span>')
               }</pre>
             </div>
           `;
         } else if (q.type === 'drag_drop' && q.pool) {
           headerHtml = `
-            <div class="p-3 rounded-lg border mb-3" style="background: var(--bg-pane-alt); border-color: var(--border-color);">
-              <div class="text-[11px] font-bold uppercase mb-1.5" style="color: var(--text-muted);">Available Categories / Source Items:</div>
+            <div class="pb-3 mb-2 border-b" style="border-color: var(--border-line);">
+              <div class="text-[11px] font-bold uppercase mb-1.5" style="color: var(--text-muted);">Available Target Categories:</div>
               <div class="flex flex-wrap gap-1.5">
-                ${q.pool.map(item => `<span class="px-2.5 py-1 rounded border text-xs font-semibold" style="background: var(--bg-pane); border-color: var(--border-color);">${escapeHtml(item)}</span>`).join('')}
+                ${q.pool.map(item => `<span class="px-2.5 py-0.5 rounded border text-xs font-medium" style="border-color: var(--border-line);">${escapeHtml(item)}</span>`).join('')}
               </div>
             </div>
           `;
@@ -840,28 +832,26 @@
 
         box.innerHTML = `
           ${headerHtml}
-          <div class="space-y-3">
+          <div class="space-y-2.5">
             ${q.slots.map((slot, sIdx) => {
               const userVal = slotAnswers[sIdx] || '';
               const isSlotCorrect = userVal === slot.correct;
-              let borderStyle = 'border-color: var(--border-color); background: var(--bg-pane);';
+              let borderStyle = 'border-color: var(--border-line);';
               if (isRevealed) {
-                borderStyle = isSlotCorrect
-                  ? 'border-color: #10b981; background: rgba(16, 185, 129, 0.08);'
-                  : 'border-color: #f43f5e; background: rgba(244, 63, 94, 0.08);';
+                borderStyle = isSlotCorrect ? 'border-color: #10b981;' : 'border-color: #f43f5e;';
               }
               return `
-                <div style="${borderStyle}" class="p-3.5 rounded-lg border-2 space-y-2">
+                <div style="${borderStyle}" class="p-3 rounded-lg border space-y-1.5">
                   <div class="flex items-center justify-between gap-2">
-                    <label class="text-xs sm:text-sm font-semibold">${escapeHtml(slot.label)}</label>
+                    <label class="text-xs sm:text-sm font-medium">${escapeHtml(slot.label)}</label>
                     ${isRevealed ? (isSlotCorrect
-                      ? '<span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 shrink-0">✓ Correct</span>'
-                      : `<span class="text-xs font-bold text-rose-600 dark:text-rose-400 shrink-0">✗ Correct: ${escapeHtml(slot.correct)}</span>`) : ''}
+                      ? '<span class="text-xs font-bold text-emerald-600 shrink-0">✓ Correct</span>'
+                      : `<span class="text-xs font-bold text-rose-600 shrink-0">✗ ${escapeHtml(slot.correct)}</span>`) : ''}
                   </div>
                   <select
                     onchange="selectSlot(${q.id}, ${sIdx}, this.value)"
-                    style="background: var(--bg-pane-alt); border-color: var(--border-color); color: var(--text-main);"
-                    class="w-full rounded border px-3 py-2 text-xs sm:text-sm font-medium focus:outline-none"
+                    style="border-color: var(--border-line); color: var(--text-main);"
+                    class="w-full rounded border px-2.5 py-1.5 text-xs sm:text-sm bg-transparent focus:outline-none focus:border-teal-600"
                   >
                     <option value="">-- Select Answer --</option>
                     ${slot.options.map(opt => `<option value="${escapeHtml(opt)}" ${userVal === opt ? 'selected' : ''}>${escapeHtml(opt)}</option>`).join('')}
@@ -879,22 +869,20 @@
 
       if (!isRevealed) {
         container.innerHTML = `
-          <div class="h-full min-h-[280px] rounded-xl border-2 border-dashed p-8 flex flex-col items-center justify-center text-center space-y-4" style="border-color: var(--border-color);">
-            <div class="w-12 h-12 rounded-full bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-500 font-bold text-lg">
-              ?
-            </div>
-            <div class="space-y-1 max-w-sm">
-              <h3 class="font-bold text-base">Answer &amp; Architectural Rationale Hidden</h3>
-              <p class="text-xs leading-relaxed" style="color: var(--text-muted);">
-                Select an answer on the left to automatically grade and reveal the solution here, or click <strong>Reveal Answer</strong> below (or enable <em>Auto-Reveal Right</em> in the top bar).
-              </p>
-            </div>
+          <div class="pb-2.5 border-b flex items-center justify-between" style="border-color: var(--border-line);">
+            <span class="text-xs font-bold uppercase tracking-wider brand-grad-text">Answer &amp; Rationale Pane</span>
+            <span class="text-[11px]" style="color: var(--text-muted);">Hidden until revealed</span>
+          </div>
+          <div class="py-16 flex flex-col items-start space-y-3">
+            <p class="text-sm leading-relaxed" style="color: var(--text-muted);">
+              Select an option on the left to automatically grade and reveal the verified answer here, or press <kbd class="px-1.5 py-0.5 border rounded text-xs">Enter</kbd>.
+            </p>
             <div class="flex items-center gap-2 pt-1">
-              <button onclick="revealCurrentAnswer()" class="px-4 py-2 rounded bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold shadow-sm transition">
-                Reveal Answer Now (Enter)
+              <button onclick="revealCurrentAnswer()" class="px-4 py-1.5 rounded-lg brand-grad-bg text-white text-xs font-bold shadow-sm hover:opacity-95 transition">
+                Reveal Solution
               </button>
-              <button onclick="toggleAlwaysReveal()" class="px-3 py-2 rounded border text-xs font-semibold hover:opacity-80 transition" style="border-color: var(--border-color);">
-                Always Keep Revealed
+              <button onclick="toggleAlwaysReveal()" class="px-3 py-1.5 rounded-lg border text-xs font-semibold hover:border-teal-500 transition" style="border-color: var(--border-line);">
+                Always Reveal Right Pane
               </button>
             </div>
           </div>
@@ -906,45 +894,32 @@
         (Array.isArray(currentAns) ? currentAns.length > 0 : (typeof currentAns === 'object' ? Object.keys(currentAns).length > 0 : String(currentAns).length > 0));
       const isCorrect = hasUserSelection && evaluateCorrectness(q, currentAns);
 
-      let statusBanner = '';
+      let statusText = 'VERIFIED ANSWER';
+      let statusCls = 'text-teal-700 dark:text-teal-400';
       if (hasUserSelection) {
-        statusBanner = isCorrect
-          ? `<div class="px-4 py-2.5 rounded-lg bg-emerald-500/15 border border-emerald-500/40 text-emerald-700 dark:text-emerald-300 text-xs font-bold flex items-center justify-between">
-               <span>✓ YOUR SELECTION IS CORRECT</span>
-               <span class="font-mono">Marked Mastered</span>
-             </div>`
-          : `<div class="px-4 py-2.5 rounded-lg bg-rose-500/15 border border-rose-500/40 text-rose-700 dark:text-rose-300 text-xs font-bold flex items-center justify-between">
-               <span>✗ YOUR SELECTION WAS INCORRECT</span>
-               <span class="font-mono">Added to Review List</span>
-             </div>`;
-      } else {
-        statusBanner = `
-          <div class="px-4 py-2 rounded-lg bg-sky-500/10 border border-sky-500/30 text-sky-700 dark:text-sky-300 text-xs font-bold flex items-center justify-between">
-            <span>VERIFIED EXAM SOLUTION</span>
-            <span class="font-mono">${escapeHtml(q.code_tag || 'Q' + q.id)}</span>
-          </div>
-        `;
+        statusText = isCorrect ? '✓ CORRECT SELECTION' : '✗ INCORRECT SELECTION';
+        statusCls = isCorrect ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400';
       }
 
-      let correctBoxHtml = '';
+      let correctHtml = '';
       if (q.type === 'single_choice' || q.type === 'multi_choice') {
-        correctBoxHtml = q.correct.map(cid => {
+        correctHtml = q.correct.map(cid => {
           const opt = q.options.find(o => o.id === cid);
           return `
-            <div class="p-3.5 rounded-lg bg-emerald-500/10 border-2 border-emerald-500/40 text-sm leading-relaxed">
-              <div class="text-[11px] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 mb-1">Correct Option ${escapeHtml(cid)}</div>
-              <div class="font-semibold"><strong class="mr-1.5">${escapeHtml(cid)}.</strong>${escapeHtml(opt ? opt.text : '')}</div>
+            <div class="pl-3.5 border-l-4 border-teal-500 py-1 space-y-0.5">
+              <div class="text-[11px] font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">Correct Answer (${escapeHtml(cid)})</div>
+              <div class="text-sm sm:text-[15px] font-semibold leading-relaxed"><strong class="mr-1.5">${escapeHtml(cid)}.</strong>${escapeHtml(opt ? opt.text : '')}</div>
             </div>
           `;
         }).join('');
       } else if (q.slots) {
-        correctBoxHtml = `
-          <div class="p-3.5 rounded-lg bg-emerald-500/10 border-2 border-emerald-500/40 space-y-2">
-            <div class="text-[11px] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">Verified Slot Selections</div>
+        correctHtml = `
+          <div class="pl-3.5 border-l-4 border-teal-500 py-1 space-y-1.5">
+            <div class="text-[11px] font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">Verified Mappings</div>
             ${q.slots.map(s => `
-              <div class="text-xs sm:text-sm flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b pb-1.5 last:border-b-0 last:pb-0" style="border-color: rgba(16,185,129,0.25);">
-                <span class="opacity-90">${escapeHtml(s.label)}</span>
-                <strong class="font-bold text-emerald-700 dark:text-emerald-300 shrink-0">&rarr; ${escapeHtml(s.correct)}</strong>
+              <div class="text-xs sm:text-sm flex items-baseline justify-between gap-3 py-1 border-b last:border-b-0" style="border-color: var(--border-line);">
+                <span>${escapeHtml(s.label)}</span>
+                <strong class="font-bold text-teal-700 dark:text-teal-300 shrink-0">&rarr; ${escapeHtml(s.correct)}</strong>
               </div>
             `).join('')}
           </div>
@@ -952,30 +927,25 @@
       }
 
       container.innerHTML = `
-        ${statusBanner}
-
-        <div class="space-y-2.5">
-          ${correctBoxHtml}
+        <div class="pb-2.5 border-b flex items-center justify-between" style="border-color: var(--border-line);">
+          <span class="text-xs font-bold uppercase tracking-wider ${statusCls}">${statusText}</span>
+          <div class="flex items-center gap-2 text-xs">
+            <button onclick="setQuestionStatus(${q.id}, 'mastered')" class="text-emerald-600 hover:underline font-semibold">✓ Mastered</button>
+            <span style="color: var(--border-line);">|</span>
+            <button onclick="setQuestionStatus(${q.id}, 'missed')" class="text-rose-600 hover:underline font-semibold">✗ Review</button>
+          </div>
         </div>
 
-        <div class="p-4 rounded-xl border space-y-2" style="background: var(--bg-pane); border-color: var(--border-color);">
-          <div class="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">
-            Architectural Rationale &amp; Exam Explanation
+        <div class="space-y-3">
+          ${correctHtml}
+        </div>
+
+        <div class="pt-3 border-t space-y-2" style="border-color: var(--border-line);">
+          <div class="text-xs font-bold uppercase tracking-wider brand-grad-text">
+            Architectural Explanation
           </div>
-          <div class="text-sm leading-relaxed space-y-2">
+          <div class="text-sm sm:text-[15px] leading-relaxed">
             ${formatBoldMarkdown(q.explanation)}
-          </div>
-        </div>
-
-        <div class="p-3.5 rounded-lg border flex items-center justify-between text-xs" style="background: var(--bg-pane); border-color: var(--border-color);">
-          <span class="font-semibold" style="color: var(--text-muted);">Self-Grade Override:</span>
-          <div class="flex items-center gap-2">
-            <button onclick="setQuestionStatus(${q.id}, 'mastered')" class="px-2.5 py-1 rounded bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 font-bold">
-              ✓ Mark Mastered
-            </button>
-            <button onclick="setQuestionStatus(${q.id}, 'missed')" class="px-2.5 py-1 rounded bg-rose-500/15 hover:bg-rose-500/25 text-rose-600 dark:text-rose-400 border border-rose-500/30 font-bold">
-              ✗ Mark Needs Review
-            </button>
           </div>
         </div>
       `;
@@ -984,10 +954,10 @@
     function renderMiniNavStrip() {
       const strip = document.getElementById('mini-nav-strip');
       const total = activeList.length;
-      const half = 7;
+      const half = 8;
       let start = Math.max(0, currentIndex - half);
-      let end = Math.min(total, start + 15);
-      if (end - start < 15) start = Math.max(0, end - 15);
+      let end = Math.min(total, start + 17);
+      if (end - start < 17) start = Math.max(0, end - 17);
 
       let html = '';
       for (let idx = start; idx < end; idx++) {
@@ -996,22 +966,22 @@
         const bm = userState.bookmarks[item.id];
         const isCurr = idx === currentIndex;
 
-        let cls = 'border text-xs font-mono px-2.5 py-1 rounded transition shrink-0 relative ';
+        let style = 'border-color: var(--border-line);';
+        let cls = 'border text-xs font-mono px-2 py-0.5 rounded transition shrink-0 relative ';
         if (st === 'mastered') {
-          cls += 'bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border-emerald-500/40 ';
+          cls += 'text-emerald-700 dark:text-emerald-400 border-emerald-500/50 ';
         } else if (st === 'missed') {
-          cls += 'bg-rose-500/20 text-rose-700 dark:text-rose-300 border-rose-500/40 ';
-        } else {
-          cls += 'border-slate-300 dark:border-slate-700 ';
+          cls += 'text-rose-600 dark:text-rose-400 border-rose-500/50 ';
         }
         if (isCurr) {
-          cls += 'ring-2 ring-sky-500 font-bold';
+          cls += 'brand-grad-bg text-white font-bold border-transparent ';
+          style = '';
         }
 
         html += `
-          <button onclick="jumpToIndex(${idx})" class="${cls}">
+          <button onclick="jumpToIndex(${idx})" style="${style}" class="${cls}">
             ${idx + 1}
-            ${bm ? '<span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-amber-400"></span>' : ''}
+            ${bm ? '<span class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-amber-500"></span>' : ''}
           </button>
         `;
       }
@@ -1151,9 +1121,8 @@
       document.getElementById('subbar-mastered').textContent = mastered;
       document.getElementById('subbar-missed').textContent = missed;
       document.getElementById('subbar-flagged').textContent = flagged;
-      document.getElementById('subbar-score').textContent = `${scaled} / 1000`;
+      document.getElementById('subbar-score').textContent = `${scaled}/1000`;
 
-      // Also update domain bars in drawer
       const cfg = getActiveConfig();
       const domBars = document.getElementById('drawer-domain-bars');
       if (domBars) {
@@ -1167,8 +1136,8 @@
                 <span class="truncate pr-2">${escapeHtml(d)}</span>
                 <span class="font-mono shrink-0">${m}/${items.length} (${pct}%)</span>
               </div>
-              <div class="w-full h-1.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
-                <div class="bg-sky-500 h-full" style="width:${pct}%"></div>
+              <div class="w-full h-1.5 rounded-full overflow-hidden border" style="border-color: var(--border-line);">
+                <div class="brand-grad-bg h-full" style="width:${pct}%"></div>
               </div>
             </div>
           `;
@@ -1177,7 +1146,7 @@
     }
 
     function resetAllProgress() {
-      if (!confirm(`Reset all saved mastery progress and flags for ${getActiveConfig().id.toUpperCase()}?`)) return;
+      if (!confirm(`Reset all saved progress for ${getActiveConfig().id.toUpperCase()}?`)) return;
       userState = { statusById: {}, bookmarks: {}, savedAnswers: {} };
       tempAnswers = {};
       revealedById = {};
@@ -1196,20 +1165,28 @@
       }
     }
 
+    function closeAllModals() {
+      document.getElementById('menu-drawer').classList.add('hidden');
+      document.getElementById('menu-drawer-backdrop').classList.add('hidden');
+      closeReviewGridModal();
+      closeConceptsModal();
+      closeSearchModal();
+    }
+
     function toggleMenuDrawer() {
       const drawer = document.getElementById('menu-drawer');
       const backdrop = document.getElementById('menu-drawer-backdrop');
-      const isOpen = !drawer.classList.contains('translate-x-full');
-      if (isOpen) {
-        drawer.classList.add('translate-x-full');
-        backdrop.classList.add('hidden');
-      } else {
-        drawer.classList.remove('translate-x-full');
+      const isHidden = drawer.classList.contains('hidden');
+      closeAllModals();
+      if (isHidden) {
+        drawer.classList.remove('hidden');
+        drawer.classList.add('flex');
         backdrop.classList.remove('hidden');
       }
     }
 
     function openReviewGridModal() {
+      closeAllModals();
       const modal = document.getElementById('modal-review-screen');
       const grid = document.getElementById('full-review-grid');
       modal.classList.remove('hidden');
@@ -1218,20 +1195,24 @@
         const st = userState.statusById[q.id];
         const bm = userState.bookmarks[q.id];
         const isCurr = idx === currentIndex;
-        let cls = 'p-2.5 rounded-lg border text-xs font-mono font-bold flex flex-col items-center gap-0.5 transition ';
+        let cls = 'p-2 rounded-lg border text-xs font-mono font-bold flex flex-col items-center gap-0.5 transition ';
+        let style = 'border-color: var(--border-line);';
         if (st === 'mastered') {
-          cls += 'bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border-emerald-500/40';
+          cls += 'text-emerald-700 dark:text-emerald-400 border-emerald-500/50';
+          style = '';
         } else if (st === 'missed') {
-          cls += 'bg-rose-500/20 text-rose-700 dark:text-rose-300 border-rose-500/40';
-        } else {
-          cls += 'border-slate-300 dark:border-slate-700 opacity-85';
+          cls += 'text-rose-600 dark:text-rose-400 border-rose-500/50';
+          style = '';
         }
-        if (isCurr) cls += ' ring-2 ring-sky-500';
+        if (isCurr) {
+          cls += ' brand-grad-bg text-white border-transparent';
+          style = '';
+        }
 
         return `
-          <button onclick="jumpToIndex(${idx}); closeReviewGridModal();" class="${cls}">
+          <button onclick="jumpToIndex(${idx}); closeReviewGridModal();" style="${style}" class="${cls}">
             <span>#${idx + 1}</span>
-            <span class="text-[10px] font-sans font-normal opacity-80">${bm ? '⚑ Flagged' : (st || 'Unseen')}</span>
+            <span class="text-[10px] font-sans font-normal opacity-80">${bm ? '⚑ Flag' : (st || '—')}</span>
           </button>
         `;
       }).join('');
@@ -1242,6 +1223,7 @@
     }
 
     function openConceptsModal() {
+      closeAllModals();
       document.getElementById('modal-concepts').classList.remove('hidden');
       renderConceptsModal();
     }
@@ -1260,23 +1242,24 @@
       });
 
       document.getElementById('concepts-modal-list').innerHTML = list.map(c => `
-        <div class="p-4 rounded-xl border space-y-2.5 flex flex-col justify-between" style="background: var(--bg-pane-alt); border-color: var(--border-color);">
+        <div class="p-4 rounded-xl border space-y-2.5 flex flex-col justify-between" style="border-color: var(--border-line);">
           <div class="space-y-1.5">
             <div class="flex items-center justify-between text-[11px]" style="color: var(--text-muted);">
-              <span class="font-mono font-bold text-emerald-600 dark:text-emerald-400">Concept #${c.id}</span>
+              <span class="font-mono font-bold text-teal-600 dark:text-teal-400">Concept #${c.id}</span>
               <span>${escapeHtml(c.deck)}</span>
             </div>
             <h4 class="font-bold text-sm sm:text-base">${escapeHtml(c.term)}</h4>
             <div class="text-xs sm:text-sm leading-relaxed whitespace-pre-line">${formatBoldMarkdown(c.definition)}</div>
           </div>
-          <div class="p-2.5 rounded-lg bg-sky-500/10 border border-sky-500/30 text-xs">
-            <strong class="text-sky-600 dark:text-sky-400 uppercase mr-1">Exam Tip:</strong>${formatBoldMarkdown(c.examTip)}
+          <div class="pt-2 border-t text-xs" style="border-color: var(--border-line);">
+            <strong class="text-teal-600 dark:text-teal-400 uppercase mr-1">Exam Tip:</strong>${formatBoldMarkdown(c.examTip)}
           </div>
         </div>
       `).join('');
     }
 
     function openSearchModal() {
+      closeAllModals();
       document.getElementById('modal-search').classList.remove('hidden');
       document.getElementById('bank-search-input').focus();
       renderSearchModal();
@@ -1294,15 +1277,15 @@
       }).slice(0, 60);
 
       document.getElementById('bank-search-results').innerHTML = matched.map(q => `
-        <div class="p-4 rounded-lg border space-y-2" style="background: var(--bg-pane-alt); border-color: var(--border-color);">
+        <div class="p-4 rounded-lg border space-y-2" style="border-color: var(--border-line);">
           <div class="flex items-center justify-between gap-2">
             <div class="flex items-center gap-2 text-xs">
-              <span class="px-2 py-0.5 rounded bg-sky-600 text-white font-mono font-bold">Q${q.id}</span>
+              <span class="px-2 py-0.5 rounded brand-grad-bg text-white font-mono font-bold">Q${q.id}</span>
               <span class="font-mono font-semibold">${escapeHtml(q.code_tag || '')}</span>
               <span style="color: var(--text-muted);">${escapeHtml(q.domain)}</span>
             </div>
-            <button onclick="jumpToQuestionId(${q.id}); closeSearchModal();" class="px-3 py-1 rounded bg-sky-600 text-white text-xs font-bold">
-              Load Question &rarr;
+            <button onclick="jumpToQuestionId(${q.id}); closeSearchModal();" class="px-3 py-1 rounded-lg brand-grad-bg text-white text-xs font-bold">
+              Open &rarr;
             </button>
           </div>
           <div class="text-xs sm:text-sm line-clamp-2">${escapeHtml(q.stem)}</div>
@@ -1340,7 +1323,7 @@
       timerPaused = !timerPaused;
     }
 
-    // Draggable Split Bar Logic
+    // Draggable Split Bar
     (() => {
       const splitter = document.getElementById('pane-splitter');
       const leftPane = document.getElementById('left-pane');
@@ -1377,9 +1360,7 @@
     // Keyboard Shortcuts
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        closeReviewGridModal();
-        closeConceptsModal();
-        closeSearchModal();
+        closeAllModals();
         return;
       }
       if (['INPUT', 'SELECT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
@@ -1398,7 +1379,6 @@
       }
     });
 
-    // Initialize
     loadState();
     syncAlwaysRevealButton();
     populateFilterDropdowns();
