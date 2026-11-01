@@ -1,0 +1,5115 @@
+[
+  {
+    "id": 1,
+    "code_tag": "AB-100 #1",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "A company has Microsoft Foundry agents that generate responses by using Azure OpenAI resources. The agents are deployed to both the United States and Europe. A company mandate states that the agents and their grounding data must adhere to data residency and movement regulations. You need to recommend a governance solution for the agents. What should you include in the recommendation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Defender for Cloud"
+      },
+      {
+        "id": "B",
+        "text": "Azure Policy"
+      },
+      {
+        "id": "C",
+        "text": "Azure Monitor"
+      },
+      {
+        "id": "D",
+        "text": "Microsoft Purview"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "**Microsoft Purview** (specifically Purview Data Governance and AI Hub for Azure AI Foundry) provides data residency compliance, cross-region data movement governance, sensitivity labeling, and grounding data compliance for AI agents across multi-region deployments.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 2,
+    "code_tag": "AB-100 #2",
+    "type": "multi_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "Which two components in the custom AI agent design should the CFO evaluate in the quarterly agent analysis? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.",
+    "options": [
+      {
+        "id": "A",
+        "text": "the GPT models used for the agent"
+      },
+      {
+        "id": "B",
+        "text": "the average characters in a chat message"
+      },
+      {
+        "id": "C",
+        "text": "the agent orchestration method"
+      },
+      {
+        "id": "D",
+        "text": "the average session time per agent"
+      }
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "explanation": "In a CFO's quarterly financial and architectural ROI review, **the GPT models used for the agent** (token/PTU pricing tier) and **the agent orchestration method** (classic deterministic vs. generative multi-step/multi-agent orchestration, which multiplies reasoning turns and message consumption) are the two core design components that govern ongoing operational cost.",
+    "set": "AB-100: Case Studies & Core Exam Bank"
+  },
+  {
+    "id": 3,
+    "code_tag": "AB-100 #3",
+    "type": "single_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "[CASE STUDY - Fabrikam] Which framework should you use for the infrastructure migration?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Cloud Adoption Framework for Azure"
+      },
+      {
+        "id": "B",
+        "text": "Success by Design"
+      },
+      {
+        "id": "C",
+        "text": "Microsoft Power Platform Center of Excellence (CoE)"
+      },
+      {
+        "id": "D",
+        "text": "Microsoft Power Platform Project Setup Wizard"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Microsoft Cloud Adoption Framework for Azure**.",
+    "set": "AB-100: Case Studies & Core Exam Bank"
+  },
+  {
+    "id": 4,
+    "code_tag": "AB-100 #4",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "[CASE STUDY - Fabrikam] Which template should you use for the AI agent to meet the requirements for the sales executives?",
+    "options": [
+      {
+        "id": "A",
+        "text": "IT Helpdesk in Microsoft Copilot Studio"
+      },
+      {
+        "id": "B",
+        "text": "AI agents in Microsoft Foundry"
+      },
+      {
+        "id": "C",
+        "text": "Voice in Microsoft Copilot Studio"
+      },
+      {
+        "id": "D",
+        "text": "AI chat in Microsoft Foundry"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Voice in Microsoft Copilot Studio**.",
+    "set": "AB-100: Case Studies & Core Exam Bank"
+  },
+  {
+    "id": 5,
+    "code_tag": "AB-100 #5",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "[CASE STUDY - Fabrikam] Which tool should you use for the prospect communication requirements in Dynamics 365 Sales?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure AI Search"
+      },
+      {
+        "id": "B",
+        "text": "Copilot email assist"
+      },
+      {
+        "id": "C",
+        "text": "the Voice template Microsoft Copilot Studio"
+      },
+      {
+        "id": "D",
+        "text": "Deep Research in Microsoft Foundry Agent Service"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. Copilot email assist**.",
+    "set": "AB-100: Case Studies & Core Exam Bank"
+  },
+  {
+    "id": 6,
+    "code_tag": "AB-100 #6",
+    "type": "hotspot",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "[CASE STUDY - Fabrikam] Which components should you use to meet the sales cycle enablement requirements? To answer, select the appropriate options in the answer area",
+    "pool": null,
+    "slots": [
+      {
+        "label": "For AI agent creation",
+        "options": [
+          "Microsoft Copilot Studio",
+          "a fallback topic",
+          "Microsoft Foundry",
+          "Microsoft Purview",
+          "Azure AI Search"
+        ],
+        "correct": "Microsoft Copilot Studio"
+      },
+      {
+        "label": "For unexpected AI agent actions",
+        "options": [
+          "Microsoft Copilot Studio",
+          "a fallback topic",
+          "Microsoft Foundry",
+          "Microsoft Purview",
+          "Azure AI Search"
+        ],
+        "correct": "a fallback topic"
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **For AI agent creation** → **Microsoft Copilot Studio**\n• **For unexpected AI agent actions** → **a fallback topic**",
+    "set": "AB-100: Case Studies & Core Exam Bank"
+  },
+  {
+    "id": 7,
+    "code_tag": "AB-100 #7",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "[CASE STUDY - Fabrikam] Which tool should you recommend to address the sensitive information concerns in the sales process?",
+    "options": [
+      {
+        "id": "A",
+        "text": "the Analytics tab in Microsoft Copilot Studio"
+      },
+      {
+        "id": "B",
+        "text": "Model Context Protocol (MCP)"
+      },
+      {
+        "id": "C",
+        "text": "Application Insights"
+      },
+      {
+        "id": "D",
+        "text": "Microsoft Foundry Tracing UI"
+      },
+      {
+        "id": "E",
+        "text": "Monitoring in Microsoft Foundry"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Application Insights**.",
+    "set": "AB-100: Case Studies & Core Exam Bank"
+  },
+  {
+    "id": 8,
+    "code_tag": "AB-100 #8",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "[CASE STUDY - Fabrikam] Which tool should you recommend to help secure funding for future AI agent development?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Evaluations in Microsoft Foundry"
+      },
+      {
+        "id": "B",
+        "text": "the Azure Cost Optimization workbook"
+      },
+      {
+        "id": "C",
+        "text": "Azure Operator Insights"
+      },
+      {
+        "id": "D",
+        "text": "the Analytics tab in Microsoft Copilot Studio"
+      },
+      {
+        "id": "E",
+        "text": "Direct Preference Optimization (DPO)"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. the Analytics tab in Microsoft Copilot Studio**.",
+    "set": "AB-100: Case Studies & Core Exam Bank"
+  },
+  {
+    "id": 9,
+    "code_tag": "AB-100 #9",
+    "type": "single_choice",
+    "domain": "Azure AI Foundry & Multi-Agent Architecture",
+    "stem": "[CASE STUDY - Contoso] What should you configure for the custom AI agent?",
+    "options": [
+      {
+        "id": "A",
+        "text": "AI-assisted evaluators"
+      },
+      {
+        "id": "B",
+        "text": "classic orchestration"
+      },
+      {
+        "id": "C",
+        "text": "generative orchestration"
+      },
+      {
+        "id": "D",
+        "text": "Azure OpenAI reasoning models"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. generative orchestration**.",
+    "set": "AB-100: Case Studies & Core Exam Bank"
+  },
+  {
+    "id": 10,
+    "code_tag": "AB-100 #10",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "[CASE STUDY - Contoso] What should you recommend to assist the CTO with the prebuilt agent selection process?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Agent management"
+      },
+      {
+        "id": "B",
+        "text": "Copilot Studio"
+      },
+      {
+        "id": "C",
+        "text": "Lifecycle Services (LCS)"
+      },
+      {
+        "id": "D",
+        "text": "Immersive Home"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Agent management**.",
+    "set": "AB-100: Case Studies & Core Exam Bank"
+  },
+  {
+    "id": 11,
+    "code_tag": "AB-100 #11",
+    "type": "hotspot",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "[CASE STUDY - Contoso] What should you include in the custom AI agent design to meet the R&D product specifications and the compliance information requirements? To answer, select the appropriate options in the answer area.",
+    "pool": null,
+    "slots": [
+      {
+        "label": "To expose the data to the agent, create",
+        "options": [
+          "a custom connector",
+          "a tool",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview"
+        ],
+        "correct": "a custom connector"
+      },
+      {
+        "label": "Add to the agent",
+        "options": [
+          "a custom connector",
+          "a tool",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview"
+        ],
+        "correct": "a tool"
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **To expose the data to the agent, create** → **a custom connector**\n• **Add to the agent** → **a tool**",
+    "set": "AB-100: Case Studies & Core Exam Bank"
+  },
+  {
+    "id": 12,
+    "code_tag": "AB-100 #12",
+    "type": "multi_choice",
+    "domain": "Azure AI Foundry & Multi-Agent Architecture",
+    "stem": "[CASE STUDY - Contoso] Which two components for the custom AI agent should you include in the application lifecycle management (AIM) process? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.",
+    "options": [
+      {
+        "id": "A",
+        "text": "an Azure package"
+      },
+      {
+        "id": "B",
+        "text": "a ZIP package"
+      },
+      {
+        "id": "C",
+        "text": "a Microsoft Power Platform solution"
+      },
+      {
+        "id": "D",
+        "text": "a Cloud Scale Unit (CSU) package"
+      },
+      {
+        "id": "E",
+        "text": "an X++model"
+      }
+    ],
+    "correct": [
+      "C",
+      "E"
+    ],
+    "explanation": "E. an X++model",
+    "set": "AB-100: Case Studies & Core Exam Bank"
+  },
+  {
+    "id": 13,
+    "code_tag": "AB-100 #13",
+    "type": "drag_drop",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "[CASE STUDY - Contoso] Which tools should you recommend to assist the CISO and the CIO with their specific responsibilities? A.) Azure blob storage B.) Azure resource graph explorer C.) Copilot studio D.) Microsoft purview 1.) CISO 2.) CIO",
+    "pool": [
+      ") Azure blob storage",
+      ") Azure resource graph explorer",
+      ") Copilot studio",
+      ") Microsoft purview"
+    ],
+    "slots": [
+      {
+        "label": ") CISO",
+        "options": [
+          ") Azure blob storage",
+          ") Azure resource graph explorer",
+          ") Copilot studio",
+          ") Microsoft purview",
+          "Microsoft Copilot Studio"
+        ],
+        "correct": ") Microsoft purview"
+      },
+      {
+        "label": ") CIO",
+        "options": [
+          ") Azure blob storage",
+          ") Azure resource graph explorer",
+          ") Copilot studio",
+          ") Microsoft purview",
+          "Microsoft Copilot Studio"
+        ],
+        "correct": ") Microsoft purview"
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **) CISO** → **) Microsoft purview**\n• **) CIO** → **) Microsoft purview**",
+    "set": "AB-100: Case Studies & Core Exam Bank"
+  },
+  {
+    "id": 14,
+    "code_tag": "AB-100 #14",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "[CASE STUDY - Contoso] What should you recommend to assist the CEO with their specific responsibilities?",
+    "options": [
+      {
+        "id": "A",
+        "text": "the Microsoft Service Trust Portal"
+      },
+      {
+        "id": "B",
+        "text": "Microsoft Foundry Tools"
+      },
+      {
+        "id": "C",
+        "text": "Microsoft Purview"
+      },
+      {
+        "id": "D",
+        "text": "the Responsible AI dashboard"
+      },
+      {
+        "id": "E",
+        "text": "Compliance Center"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. the Responsible AI dashboard**.",
+    "set": "AB-100: Case Studies & Core Exam Bank"
+  },
+  {
+    "id": 15,
+    "code_tag": "AB-100 #15",
+    "type": "drag_drop",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "[CASE STUDY - Contoso] Which Copilot Studio analytics metrics should you recommend to assist the executives with their specific responsibilities? A.) Effectiveness B.) Tool use C.) Satisfaction D.) Use 1.) CFO concerns about Copilot studio credit usage 2.) CTO concerns about poor feedback on AI agent responses",
+    "pool": [
+      ") Effectiveness",
+      ") Tool use",
+      ") Satisfaction",
+      ") Use"
+    ],
+    "slots": [
+      {
+        "label": ") CFO concerns about Copilot studio credit usage",
+        "options": [
+          ") Effectiveness",
+          ") Tool use",
+          ") Satisfaction",
+          ") Use",
+          "Microsoft Copilot Studio"
+        ],
+        "correct": ") Effectiveness"
+      },
+      {
+        "label": ") CTO concerns about poor feedback on AI agent responses",
+        "options": [
+          ") Effectiveness",
+          ") Tool use",
+          ") Satisfaction",
+          ") Use",
+          "Microsoft Copilot Studio"
+        ],
+        "correct": ") Satisfaction"
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **) CFO concerns about Copilot studio credit usage** → **) Effectiveness**\n• **) CTO concerns about poor feedback on AI agent responses** → **) Satisfaction**",
+    "set": "AB-100: Case Studies & Core Exam Bank"
+  },
+  {
+    "id": 16,
+    "code_tag": "AB-100 #16",
+    "type": "single_choice",
+    "domain": "Dynamics 365 & Dataverse AI Integration",
+    "stem": "A company uses Microsoft Dynamics 365 Sales to manage leads that are stored in a Microsoft Dataverse table named Lead and use non-standard terminology and custom columns. You need to configure business terms in the Lead table so that Microsoft Copilot controls can summarize the leads efficiently. The solution must minimize administrative effort. How should you configure the business terms?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Combine all the fields into one custom field."
+      },
+      {
+        "id": "B",
+        "text": "Map the field display names as business terms."
+      },
+      {
+        "id": "C",
+        "text": "Add the schema names as business terms."
+      },
+      {
+        "id": "D",
+        "text": "Create new business terms for each field."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. Map the field display names as business terms.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 17,
+    "code_tag": "AB-100 #17",
+    "type": "drag_drop",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "DRAG DROP - You are designing two Microsoft Copilot Studio agents named Agent1 and Agent2. Each agent must meet the following requirements: Each agent must use a standard model. Each agent must NOT use generative orchestration. Agent1 must support simple and short phrases for a given topic. Agent2 must integrate with Microsoft Dynamics 365 Contact Center voice channel. You need to recommend language models for the agents. What should you recommend for each agent? A.) Azure Language in Foundry Tools B.) Azure OpenAI C.) Conversational language understanding (CLU) D.) Natural language understanding (NLU) E.) Natural language understanding + (NLU+) 1.) Agent 1 2.) Agent 2",
+    "pool": [
+      ") Azure Language in Foundry Tools",
+      ") Azure OpenAI",
+      ") Conversational language understanding (CLU)",
+      ") Natural language understanding (NLU)",
+      ") Natural language understanding + (NLU+)"
+    ],
+    "slots": [
+      {
+        "label": ") Agent 1",
+        "options": [
+          ") Azure Language in Foundry Tools",
+          ") Azure OpenAI",
+          ") Conversational language understanding (CLU)",
+          ") Natural language understanding (NLU)",
+          ") Natural language understanding + (NLU+)"
+        ],
+        "correct": ") Natural language understanding (NLU)"
+      },
+      {
+        "label": ") Agent 2",
+        "options": [
+          ") Azure Language in Foundry Tools",
+          ") Azure OpenAI",
+          ") Conversational language understanding (CLU)",
+          ") Natural language understanding (NLU)",
+          ") Natural language understanding + (NLU+)"
+        ],
+        "correct": ") Natural language understanding + (NLU+)"
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **) Agent 1** → **) Natural language understanding (NLU)**\n• **) Agent 2** → **) Natural language understanding + (NLU+)**",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 18,
+    "code_tag": "AB-100 #18",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "A company uses Microsoft Dynamics 365 finance and operations apps. The company plans to use Microsoft Copilot in-app help and guidance to generate responses for internal business processes. You need to add an additional knowledge source for the business processes. The solution must NOT add new topics to the Copilot agent for the finance and operations apps. Which knowledge source should you add?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Dataverse"
+      },
+      {
+        "id": "B",
+        "text": "a public website"
+      },
+      {
+        "id": "C",
+        "text": "Azure AI Search"
+      },
+      {
+        "id": "D",
+        "text": "a file upload"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. a file upload**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 19,
+    "code_tag": "AB-100 #19",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "A company has an AI business solution. You need to extend the solution so that Microsoft 365 Copilot can invoke external logic hosted in Azure services. What should you include in the solution?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Copilot Studio skills"
+      },
+      {
+        "id": "B",
+        "text": "Microsoft Power Platform connectors"
+      },
+      {
+        "id": "C",
+        "text": "custom engine agents"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. Microsoft Power Platform connectors**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 20,
+    "code_tag": "AB-100 #20",
+    "type": "drag_drop",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "DRAG DROP - A company has a Microsoft Foundry project that uses a single agent and a single prompt to complete a series of tasks. The agent encounters the following issues: It frequently produces incomplete results. It struggles with domain-specific reasoning. Agent response times are remarkably slow. You need to recommend a solution to improve the overall performance and accuracy of the agent. What should you include in the recommendation? A.) Add a grounding data source B.) Add a prebuilt connector C.) Move to a multi-agent architecture D.) Upgrade to a larger generative AI model 1.) To improve performance 2.) To improve accuracy",
+    "pool": [
+      ") Add a grounding data source",
+      ") Add a prebuilt connector",
+      ") Move to a multi-agent architecture",
+      ") Upgrade to a larger generative AI model"
+    ],
+    "slots": [
+      {
+        "label": ") To improve performance",
+        "options": [
+          ") Add a grounding data source",
+          ") Add a prebuilt connector",
+          ") Move to a multi-agent architecture",
+          ") Upgrade to a larger generative AI model",
+          "Microsoft Copilot Studio"
+        ],
+        "correct": ") Move to a multi-agent architecture"
+      },
+      {
+        "label": ") To improve accuracy",
+        "options": [
+          ") Add a grounding data source",
+          ") Add a prebuilt connector",
+          ") Move to a multi-agent architecture",
+          ") Upgrade to a larger generative AI model",
+          "Microsoft Copilot Studio"
+        ],
+        "correct": ") Add a grounding data source"
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **) To improve performance** → **) Move to a multi-agent architecture**\n• **) To improve accuracy** → **) Add a grounding data source**",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 21,
+    "code_tag": "AB-100 #21",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "A financial services company uses Microsoft Dynamics 365 Finance. Currently, the company's support staff manually reviews customer transaction histories to detect potential fraud cases before escalating the cases. You need to recommend an automation solution for the review process. The solution must ensure that escalations reach a human analyst for final decision making. What should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Deploy an autonomous agent that closes non-fraud cases automatically."
+      },
+      {
+        "id": "B",
+        "text": "Use Microsoft 365 Copilot in Word to automatically finalize fraud detection policies."
+      },
+      {
+        "id": "C",
+        "text": "Configure a task agent to generate fraud risk scores for the human analyst to review."
+      },
+      {
+        "id": "D",
+        "text": "Export the data to a data lake for analysis in Microsoft Power BI."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Configure a task agent to generate fraud risk scores for the human analyst to review.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 22,
+    "code_tag": "AB-100 #22",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "A company plans to deploy a Microsoft Copilot Studio agent that will analyze historical business data to predict customer behavior. The data is currently stored in an Azure SQL database, flat files, APIs, and logs. You need to organize the data into a format that can be used as a knowledge source in Copilot Studio. What should you include in the solution?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure AI Search"
+      },
+      {
+        "id": "B",
+        "text": "Azure Data Lake Storage"
+      },
+      {
+        "id": "C",
+        "text": "Azure Cosmos DB"
+      },
+      {
+        "id": "D",
+        "text": "Azure Translator in Foundry Tools"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Azure AI Search**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 23,
+    "code_tag": "AB-100 #23",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "A retail company plans to deploy Microsoft Copilot Studio agents to support: Microsoft Dynamics 365 Commerce scenarios. A Microsoft Power Apps inventory management solution. You need to recommend a solution to organize product catalog data as a consistent source for multiple AI systems. What should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Let each agent scrape product details from Microsoft SharePoint Online libraries."
+      },
+      {
+        "id": "B",
+        "text": "Store the product catalog data in a separate custom table for each agent."
+      },
+      {
+        "id": "C",
+        "text": "Configure prompts to pull product details from the PDFs of external vendors."
+      },
+      {
+        "id": "D",
+        "text": "Centralize the product catalog data in Microsoft Dataverse and expose the data to both agents."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. Centralize the product catalog data in Microsoft Dataverse and expose the data to both agents.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 24,
+    "code_tag": "AB-100 #24",
+    "type": "single_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "A company has a portfolio of AI initiatives at different stages of development. You need to recommend a structured approach to evaluating the return on AI investment (ROAI) across all the initiatives. The solution must balance immediate results with long-term values and strategic innovations. What should you include in the recommendation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "a simple cost and benefit analysis"
+      },
+      {
+        "id": "B",
+        "text": "a horizon-based framework"
+      },
+      {
+        "id": "C",
+        "text": "the internal rate of return (IRR) function"
+      },
+      {
+        "id": "D",
+        "text": "a prioritization grid"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. a horizon-based framework**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 25,
+    "code_tag": "AB-100 #25",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "You need to recommend a Microsoft Power Platform business solution that consolidates data from multiple internal and external data sources. The solution must meet the following requirements: Provide the data as a centralized source for multiple AI systems, including Microsoft Copilot Studio agents, Dynamics 365 applications, and external AI models. Support built-in data classification and protection policies. Provide data for grounding and analytics. What should you include in the recommendation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Dataverse"
+      },
+      {
+        "id": "B",
+        "text": "Azure Data Lake Storage"
+      },
+      {
+        "id": "C",
+        "text": "a Microsoft Power BI semantic model"
+      },
+      {
+        "id": "D",
+        "text": "Azure Cosmos DB"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Microsoft Dataverse**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 26,
+    "code_tag": "AB-100 #26",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "A company plans to deploy an AI-based customer service app that will autonomously manage interactions, escalate complex cases, and learn from historical ticket data. You need to perform a return on AI investment (ROAI) analysis of the app deployment. The solution must ensure that the analysis is accurate. What should you do first?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Establish the AI performance metrics."
+      },
+      {
+        "id": "B",
+        "text": "Conduct an AI market benchmarking study."
+      },
+      {
+        "id": "C",
+        "text": "Model the customer experience."
+      },
+      {
+        "id": "D",
+        "text": "Identify and quantify all the development, deployment, and operating costs."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. Identify and quantify all the development, deployment, and operating costs.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 27,
+    "code_tag": "AB-100 #27",
+    "type": "drag_drop",
+    "domain": "Dynamics 365 & Dataverse AI Integration",
+    "stem": "DRAG DROP You are designing end-to-end test scenarios for a business solution that uses Microsoft Dynamics 365 Sales and Dynamics 365 Finance. You need to ensure that the business solution meets the following test requirements: • Properly exchanges data between the Dynamics 365 apps • Aligns with defined user workflows and business processes Which type of testing should you use for each requirement? A.) Drift B.) Exploratory C.) Integration D.) Performance E.) User Acceptance 1.) Properly exchanges data b/w the Dynamics 365 apps 2.) Aligns with defined user workflows and business processes",
+    "pool": [
+      ") Drift",
+      ") Exploratory",
+      ") Integration",
+      ") Performance",
+      ") User Acceptance"
+    ],
+    "slots": [
+      {
+        "label": ") Properly exchanges data b/w the Dynamics 365 apps",
+        "options": [
+          ") Drift",
+          ") Exploratory",
+          ") Integration",
+          ") Performance",
+          ") User Acceptance",
+          ") User acceptance"
+        ],
+        "correct": ") Integration"
+      },
+      {
+        "label": ") Aligns with defined user workflows and business processes",
+        "options": [
+          ") Drift",
+          ") Exploratory",
+          ") Integration",
+          ") Performance",
+          ") User Acceptance",
+          ") User acceptance"
+        ],
+        "correct": ") User acceptance"
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **) Properly exchanges data b/w the Dynamics 365 apps** → **) Integration**\n• **) Aligns with defined user workflows and business processes** → **) User acceptance**",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 28,
+    "code_tag": "AB-100 #28",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "A company has a Microsoft 365 tenant in Canada and multiple Microsoft Power Platform environments in Canada and the United States. The company plans to deploy a Microsoft Copilot Studio agent to the Canadian environment that will use: • Microsoft Dataverse data stored in Canada • A connector that connects to an Azure OpenAI instance in the United States You need to ensure that the agent adheres to data residency and data movement policies before being deployed. What should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Ensure that the data processed by Azure OpenAI is stored in the United States."
+      },
+      {
+        "id": "B",
+        "text": "From the Microsoft Purview portal, validate the Data loss prevention settings."
+      },
+      {
+        "id": "C",
+        "text": "Migrate the tenant to the United States."
+      },
+      {
+        "id": "D",
+        "text": "Ensure that cross-region data movement is enabled for the Canadian environment and connector dependencies"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. Ensure that cross-region data movement is enabled for the Canadian environment and connector dependencies**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 29,
+    "code_tag": "AB-100 #29",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "A company has two Microsoft Power Platform environments named Dev1 and Prod1. A Microsoft Copilot Studio agent named Agent1 is built into a solution in the Dev1 environment. You plan to deploy Agent1 to Prod1. You need to make Agent1 available to the users in Prod1. The solution must minimize administrative effort. What should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Share Agent1 with the users in Prod1."
+      },
+      {
+        "id": "B",
+        "text": "Export the solution as an unmanaged solution and import the solution into Prod1."
+      },
+      {
+        "id": "C",
+        "text": "Export the solution as a managed solution and import the solution into Prod1."
+      },
+      {
+        "id": "D",
+        "text": "Create a new Copilot Studio agent in Prod1 by replicating the configuration of Agent1."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Export the solution as a managed solution and import the solution into Prod1.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 30,
+    "code_tag": "AB-100 #30",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "A company has a Microsoft Power Platform environment that contains Microsoft Dataverse data. You create a Microsoft Copilot Studio agent named Agent1 that processes the Dataverse data. You discover that Agent1 fails to return relevant or accurate results. You need to improve the quality and reliability of data grounding. What should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Retrain Agent1."
+      },
+      {
+        "id": "B",
+        "text": "Verify and cleanse the Dataverse data."
+      },
+      {
+        "id": "C",
+        "text": "Use an adaptive card in Agent1."
+      },
+      {
+        "id": "D",
+        "text": "Add example user inputs to the training data of Agent1."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. Verify and cleanse the Dataverse data.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 31,
+    "code_tag": "AB-100 #31",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "A company plans to deploy a Microsoft Copilot Studio agent to enhance customer support. The company stores customer data across ServiceNow, Microsoft Dynamics 365 Finance, Dynamics 365 Supply Chain Management, and Excel files in SharePoint Online. You need to recommend a solution to ensure that the agent can deliver accurate and timely responses. What should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Implement a model router for query handling."
+      },
+      {
+        "id": "B",
+        "text": "Create custom prompts."
+      },
+      {
+        "id": "C",
+        "text": "Implement Microsoft Power Platform connectors."
+      },
+      {
+        "id": "D",
+        "text": "Enable incremental indexing in Azure AI Search."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Implement Microsoft Power Platform connectors.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 32,
+    "code_tag": "AB-100 #32",
+    "type": "single_choice",
+    "domain": "Azure AI Foundry & Multi-Agent Architecture",
+    "stem": "A manufacturing company wants to deploy an agent that will automate supplier invoice processing. You are designing a solution to evaluate the financial implications of the deployment. The company is especially concerned about budget overruns. You need to ensure that the solution considers the total cost of ownership (TCO), the expected savings from using automation, and whether to extend the existing AI capabilities. What should you include in the design?",
+    "options": [
+      {
+        "id": "A",
+        "text": "a break-even analysis only"
+      },
+      {
+        "id": "B",
+        "text": "adopting prebuilt agents to reduce the deployment time"
+      },
+      {
+        "id": "C",
+        "text": "training a custom model"
+      },
+      {
+        "id": "D",
+        "text": "a return on AI investment (ROAI) analysis"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. a return on AI investment (ROAI) analysis**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 33,
+    "code_tag": "AB-100 #33",
+    "type": "single_choice",
+    "domain": "Dynamics 365 & Dataverse AI Integration",
+    "stem": "A company has a Microsoft Power Platform solution that contains the following components: • Microsoft Dataverse tables • A Microsoft Power BI workspace named WS1 • A canvas app named App1 that uses Dataverse • A Power BI semantic model that connects to Dataverse by using DirectQuery You plan to use generative AI to provide answers to queries based on a subset of corporate data. You need to ensure that the data is available as a grounding data source for AI systems. What should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Populate a Dataverse table."
+      },
+      {
+        "id": "B",
+        "text": "Share WS1."
+      },
+      {
+        "id": "C",
+        "text": "Endorse the semantic model."
+      },
+      {
+        "id": "D",
+        "text": "Export the semantic model"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Endorse the semantic model.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 34,
+    "code_tag": "AB-100 #34",
+    "type": "single_choice",
+    "domain": "Azure AI Foundry & Multi-Agent Architecture",
+    "stem": "A company is designing a Microsoft Power Platform solution to reduce the manual steps of a business process by deploying an existing AI model. You need to calculate the return on AI investment (ROAI) by identifying the metadata and telemetry of the solution. What should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Power Platform admin center"
+      },
+      {
+        "id": "B",
+        "text": "Success by Design"
+      },
+      {
+        "id": "C",
+        "text": "the Business value toolkit"
+      },
+      {
+        "id": "D",
+        "text": "Microsoft Cloud Adoption Framework for Azure"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. the Business value toolkit**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 35,
+    "code_tag": "AB-100 #35",
+    "type": "hotspot",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "HOTSPOT A company has a Microsoft Power Platform environment. You need to build two agents named Agent1 and Agent2. The solution must meet the following requirements: • Agent1 must be extendable by using the Semantic Kernel and must connect to multiple business apps and APIs. • Agent2 must connect directly to data stored in Microsoft Dataverse and must be embeddable in a Microsoft Power Apps canvas app. What should you use to build each agent?",
+    "pool": null,
+    "slots": [
+      {
+        "label": "Agent 1",
+        "options": [
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview",
+          "Azure AI Search",
+          "a custom connector"
+        ],
+        "correct": "Microsoft Copilot Studio"
+      },
+      {
+        "label": "Agent 2",
+        "options": [
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview",
+          "Azure AI Search",
+          "a custom connector"
+        ],
+        "correct": "Microsoft Copilot Studio"
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **Agent 1** → **Microsoft Copilot Studio**\n• **Agent 2** → **Microsoft Copilot Studio**",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 36,
+    "code_tag": "AB-100 #36",
+    "type": "single_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "A company has an Azure environment that supports multiple business units. The company plans to implement an AI solution that will perform sentiment analysis on customer product reviews. You need to evaluate the potential cost of the solution to support return on AI investment (ROAI) analysis. What should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Cost Management + Billing"
+      },
+      {
+        "id": "B",
+        "text": "Microsoft Fabric SKU Estimator"
+      },
+      {
+        "id": "C",
+        "text": "Total Cost of Ownership (TCO) Calculator"
+      },
+      {
+        "id": "D",
+        "text": "Azure Reservations"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Total Cost of Ownership (TCO) Calculator**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 37,
+    "code_tag": "AB-100 #37",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "A company has an AI agent that automates the review of customer feedback stored in a cloud database. You plan to generate monthly reports from the agent's output to provide insights into customer sentiment and guide product development and marketing. You need to ensure that the data ingested by the agent is clean and suitable for the intended use. What should you do to prepare the data?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Identify and address missing or inconsistent data."
+      },
+      {
+        "id": "B",
+        "text": "Sort the database by customer last name."
+      },
+      {
+        "id": "C",
+        "text": "Ensure that the size of the database does not exceed 100 GB."
+      },
+      {
+        "id": "D",
+        "text": "Verify data privacy and security compliance."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Identify and address missing or inconsistent data.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 38,
+    "code_tag": "AB-100 #38",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "A company uses multiple Microsoft Copilot Studio agents across different channels. You need to recommend a monitoring solution that provides comprehensive telemetry data and performance insights for the agents. What should you include in the recommendation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "the Analytics tab in Copilot Studio"
+      },
+      {
+        "id": "B",
+        "text": "Azure Advisor"
+      },
+      {
+        "id": "C",
+        "text": "Log Analytics"
+      },
+      {
+        "id": "D",
+        "text": "Microsoft Purview"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. the Analytics tab in Copilot Studio**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 39,
+    "code_tag": "AB-100 #39",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "You need to design a Microsoft 365 Copilot solution to optimize employee productivity. The solution must meet the following requirements: Ensure that the employees can query content stored in a subset of Microsoft SharePoint Online sites and in Teams by using natural languagebased prompt actions. Ensure that employees receive contextually relevant responses in Microsoft 365 Copilot. What should you include in the design?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Build a Microsoft Power Automate desktop flow to read the SharePoint content and post the responses to Teams."
+      },
+      {
+        "id": "B",
+        "text": "Modify SharePoint settings."
+      },
+      {
+        "id": "C",
+        "text": "Create a custom REST API that crawls the SharePoint content."
+      },
+      {
+        "id": "D",
+        "text": "Configure Microsoft Graph access."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. Configure Microsoft Graph access.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 40,
+    "code_tag": "AB-100 #40",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "A company uses Microsoft Dynamics 365 Finance to manage accounts payable. You are designing an AI invoice processing solution. You need to recommend the prerequisites to configure a prebuilt copilot for accounts payable. What should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "From Microsoft Copilot Studio, create an accounts payable agent."
+      },
+      {
+        "id": "B",
+        "text": "Extend Microsoft 365 Copilot for Sales to an accounts payable agent."
+      },
+      {
+        "id": "C",
+        "text": "Build an AI tool in Microsoft Foundry."
+      },
+      {
+        "id": "D",
+        "text": "From the Power Platform admin center, assign the Finance and Operations AI security role to users."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. From the Power Platform admin center, assign the Finance and Operations AI security role to users.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 41,
+    "code_tag": "AB-100 #41",
+    "type": "multi_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "A company plans to deploy a Microsoft Dynamics 365 Contact Center agent. You need to ensure that the agent can transfer the conversation to a live customer service representative. Which two components should you include in the solution? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Foundry"
+      },
+      {
+        "id": "B",
+        "text": "Microsoft Copilot Studio"
+      },
+      {
+        "id": "C",
+        "text": "Microsoft 365 Agents Toolkit"
+      },
+      {
+        "id": "D",
+        "text": "an Azure AI Bot Service skill"
+      },
+      {
+        "id": "E",
+        "text": "Customer engagement hub"
+      }
+    ],
+    "correct": [
+      "B",
+      "E"
+    ],
+    "explanation": "E. Customer engagement hub",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 42,
+    "code_tag": "AB-100 #42",
+    "type": "hotspot",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "HOTSPOT - A company has a Microsoft 365 E5 subscription and uses Microsoft Copilot Studio. The company has a Microsoft SharePoint Online library that contains 10,000 policy PDFs from various departments. The library contains a populated column named Department for each PDF. You need to design a Copilot Studio agent that will use the SharePoint library as a knowledge source. The solution must meet the following requirements: Enable the agent to answer user questions about company policies. Ensure that the agent can identify which departments and policies are connected. What should you include in the design for each requirement?",
+    "pool": null,
+    "slots": [
+      {
+        "label": "Enable the agent to answer questions about company policies",
+        "options": [
+          "From Copilot Studio, add SharePoint as a knowledge source",
+          "From Copilot Studio, configure the SharePoint tool.",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview"
+        ],
+        "correct": "From Copilot Studio, add SharePoint as a knowledge source"
+      },
+      {
+        "label": "Identify which departments and policies are connected",
+        "options": [
+          "From Copilot Studio, add SharePoint as a knowledge source",
+          "From Copilot Studio, configure the SharePoint tool.",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview"
+        ],
+        "correct": "From Copilot Studio, configure the SharePoint tool."
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **Enable the agent to answer questions about company policies** → **From Copilot Studio, add SharePoint as a knowledge source**\n• **Identify which departments and policies are connected** → **From Copilot Studio, configure the SharePoint tool.**",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 43,
+    "code_tag": "AB-100 #43",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "You are designing a low-code AI business solution by using Microsoft Copilot Studio. The solution must include an agent that automates tasks by simulating user interactions across third-party apps and websites, such as clicking buttons, entering text, and extracting information from screens. You need to recommend what to include in the agent. What should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Model Context Protocol (MCP)"
+      },
+      {
+        "id": "B",
+        "text": "a natural language understanding + (NLU+) model in Copilot Studio"
+      },
+      {
+        "id": "C",
+        "text": "Computer Use in Copilot Studio"
+      },
+      {
+        "id": "D",
+        "text": "Copilot skills"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Computer Use in Copilot Studio**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 44,
+    "code_tag": "AB-100 #44",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "You need to recommend a solution to integrate a Microsoft Copilot agent with a Microsoft Dynamics 365 Contact Center chat channel. The agent must respond to customer questions and hand off the conversation to a live customer service representative when the customer requests an escalation. What should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Build an agent flow."
+      },
+      {
+        "id": "B",
+        "text": "Configure the Conversation Start topic."
+      },
+      {
+        "id": "C",
+        "text": "Configure a skill."
+      },
+      {
+        "id": "D",
+        "text": "Call a Microsoft Power Automate connector."
+      },
+      {
+        "id": "E",
+        "text": "Configure the Escalate topic."
+      }
+    ],
+    "correct": [
+      "E"
+    ],
+    "explanation": "Verified Answer: **E. Configure the Escalate topic.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 45,
+    "code_tag": "AB-100 #45",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "A company has a customer order system that creates sales orders manually. You need to design an AI solution to automate the following tasks as part of the system: Save the order details to a database. Update the order status in the database. Extract the order details from an order file. Prepare and send a confirmation email to customers. The solution must minimize development effort and support intelligent automation and solution integration. What should you include in the design?",
+    "options": [
+      {
+        "id": "A",
+        "text": "a workflow in Azure Logic Apps"
+      },
+      {
+        "id": "B",
+        "text": "a multi-agent solution that uses the Semantic Kernel SDK"
+      },
+      {
+        "id": "C",
+        "text": "a multi-agent solution that uses Microsoft Foundry Agent Service"
+      },
+      {
+        "id": "D",
+        "text": "a Microsoft Copilot Studio agent that uses Microsoft Power Automate workflows"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. a Microsoft Copilot Studio agent that uses Microsoft Power Automate workflows**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 46,
+    "code_tag": "AB-100 #46",
+    "type": "hotspot",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "HOTSPOT - You are designing an AI strategy for Microsoft Dynamics 365 finance and operations apps. You are evaluating the use of Microsoft Copilot Studio to provide in-app help and guidance based on generative AI general knowledge. You need to recommend which knowledge sources to include in the generative help and guidance agent. The solution must minimize the risk of generating inaccurate responses. What should you recommend?",
+    "pool": null,
+    "slots": [
+      {
+        "label": "Custom knowledge sources",
+        "options": [
+          "Must be uploaded to the agent",
+          "Must be enabled for the agent",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview"
+        ],
+        "correct": "Must be uploaded to the agent"
+      },
+      {
+        "label": "AI general knowledge",
+        "options": [
+          "Must be uploaded to the agent",
+          "Must be enabled for the agent",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview"
+        ],
+        "correct": "Must be enabled for the agent"
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **Custom knowledge sources** → **Must be uploaded to the agent**\n• **AI general knowledge** → **Must be enabled for the agent**",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 47,
+    "code_tag": "AB-100 #47",
+    "type": "hotspot",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "HOTSPOT - You need to design a multi-agent solution that will include a custom agent. The solution must meet the following requirements: Define the rules and constraints that the agent must follow. Automate a backend process that involves data movement between services and runs independently of the agent's reasoning steps. What should you include in the design for each requirement?",
+    "pool": null,
+    "slots": [
+      {
+        "label": "Define rules and constraints",
+        "options": [
+          "Conversation topics",
+          "Microsoft Power Automate cloud flow",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview"
+        ],
+        "correct": "Conversation topics"
+      },
+      {
+        "label": "Automate a backend process",
+        "options": [
+          "Conversation topics",
+          "Microsoft Power Automate cloud flow",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview"
+        ],
+        "correct": "Microsoft Power Automate cloud flow"
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **Define rules and constraints** → **Conversation topics**\n• **Automate a backend process** → **Microsoft Power Automate cloud flow**",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 48,
+    "code_tag": "AB-100 #48",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "You need to design an application lifecycle management (ALM) process for a Microsoft Power Platform environment that contains a solution named Solution1. Solution1 must include a custom connector for Copilot in Microsoft Dynamics 365 Customer Service. Solution1 must meet the following requirements: • Ensure that the custom connector can be deployed consistently across environments as part of the ALM process. • Allow the custom connector to be edited only in the development environment. What should you include in the design?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add the custom connector to GitHub."
+      },
+      {
+        "id": "B",
+        "text": "Share the custom connector."
+      },
+      {
+        "id": "C",
+        "text": "Create the custom connector in the default solution."
+      },
+      {
+        "id": "D",
+        "text": "Add the custom connector to Solution1."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. Add the custom connector to Solution1.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 49,
+    "code_tag": "AB-100 #49",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "A company uses a Microsoft Copilot Studio agent to automate tasks in a web app. During testing, you discover that the automation sometimes fails because of frequent changes to the app's user interface. You need to recommend a solution to ensure that the agent successfully automates the tasks. The solution must minimize changes to the agent. What should you include in the recommendation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Computer Use in Copilot Studio"
+      },
+      {
+        "id": "B",
+        "text": "custom models in Azure AI Studio"
+      },
+      {
+        "id": "C",
+        "text": "conversation topics in Copilot Studio"
+      },
+      {
+        "id": "D",
+        "text": "an agent flow in Copilot Studio"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Computer Use in Copilot Studio**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 50,
+    "code_tag": "AB-100 #50",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "A company processes invoices stored across multiple systems in multiple formats. You need to implement an AI solution to automate the invoice processing. The solution must meet the following requirements: • Automate multi-step invoice processing tasks, including document analysis, data validation, and approval routing. • Enable users to interact directly via Microsoft Teams to review and approve invoices. • Minimize development efforts to define and customize approval workflows. What should you include in the solution?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Document Intelligence in Foundry Tools and Azure Logic Apps"
+      },
+      {
+        "id": "B",
+        "text": "a SharePoint agent"
+      },
+      {
+        "id": "C",
+        "text": "Microsoft Copilot Studio and AI Builder"
+      },
+      {
+        "id": "D",
+        "text": "Azure OpenAI and Azure Functions"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Microsoft Copilot Studio and AI Builder**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 51,
+    "code_tag": "AB-100 #51",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "You need to design a Microsoft Copilot Studio agent for customer support. The agent must securely retrieve product warranty data from a REST API. The solution must minimize development effort. What should you include in the design?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Export the agent as a managed solution and customize the agent in Power Apps."
+      },
+      {
+        "id": "B",
+        "text": "Create a custom connector in Copilot Studio and use the connector to call the API."
+      },
+      {
+        "id": "C",
+        "text": "Use a Microsoft Power Automate desktop flow to screen scrape the warranty data."
+      },
+      {
+        "id": "D",
+        "text": "Add the warranty data to the Fallback topic."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. Create a custom connector in Copilot Studio and use the connector to call the API.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 52,
+    "code_tag": "AB-100 #52",
+    "type": "drag_drop",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "DRAG DROP - A company has an ecommerce support portal that uses Microsoft Dataverse. You are designing a Microsoft Copilot Studio agent for the portal. The agent must meet the following requirements: • Respond with a default help message when the user input is unclear. • Initiate external processes, such as retrieving the order status, when users make specific requests. Generative orchestration will be enabled for the solution. You need to recommend a feature for each requirement. What should you recommend? A.) A tool (connector) B.) A trigger phrase C.) The Fallback topic D.) A skill E.) the Escalate topic 1.) Respond with a default help message when the user input is unclear 2.) Initiate external processes when requested",
+    "pool": [
+      ") A tool (connector)",
+      ") A trigger phrase",
+      ") The Fallback topic",
+      ") A skill",
+      ") the Escalate topic"
+    ],
+    "slots": [
+      {
+        "label": ") Respond with a default help message when the user input is unclear",
+        "options": [
+          ") A tool (connector)",
+          ") A trigger phrase",
+          ") The Fallback topic",
+          ") A skill",
+          ") the Escalate topic"
+        ],
+        "correct": ") The Fallback topic"
+      },
+      {
+        "label": ") Initiate external processes when requested",
+        "options": [
+          ") A tool (connector)",
+          ") A trigger phrase",
+          ") The Fallback topic",
+          ") A skill",
+          ") the Escalate topic"
+        ],
+        "correct": ") A tool (connector)"
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **) Respond with a default help message when the user input is unclear** → **) The Fallback topic**\n• **) Initiate external processes when requested** → **) A tool (connector)**",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 53,
+    "code_tag": "AB-100 #53",
+    "type": "multi_choice",
+    "domain": "Dynamics 365 & Dataverse AI Integration",
+    "stem": "A company uses Microsoft Dynamics 365 to manage service operations. Dispatchers coordinate service requests, and technicians perform scheduled on-site work. You need to design a solution that will use Microsoft Copilot to improve the efficiency of the service operations. The solution must meet the following requirements: • Provide AI-driven assistance to help staff organize and resolve work orders. • Deliver contextual AI support to frontline workers as they prepare for and complete customer appointments. Which two components should you include in the design? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Copilot Service workspace"
+      },
+      {
+        "id": "B",
+        "text": "Copilot in Outlook"
+      },
+      {
+        "id": "C",
+        "text": "Dynamics 365 Customer Service"
+      },
+      {
+        "id": "D",
+        "text": "Copilot in Customer Service"
+      },
+      {
+        "id": "E",
+        "text": "Copilot in Field Service"
+      },
+      {
+        "id": "F",
+        "text": "the Dynamics 365 Field Service mobile app"
+      }
+    ],
+    "correct": [
+      "E",
+      "F"
+    ],
+    "explanation": "F. the Dynamics 365 Field Service mobile app",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 54,
+    "code_tag": "AB-100 #54",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "A company uses Microsoft Foundry agents. You need to ensure that an agent can dynamically use external tools at runtime without updating the agent. What should you include in the solution?",
+    "options": [
+      {
+        "id": "A",
+        "text": "a Microsoft Foundry hub"
+      },
+      {
+        "id": "B",
+        "text": "a Model Context Protocol (MCP) server"
+      },
+      {
+        "id": "C",
+        "text": "Azure AI Search"
+      },
+      {
+        "id": "D",
+        "text": "Microsoft Copilot Studio"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. a Model Context Protocol (MCP) server**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 55,
+    "code_tag": "AB-100 #55",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "You are designing a Microsoft Copilot Studio agent that uses a custom Microsoft Foundry model to generate responses. You need to ensure that the agent can securely connect to and invoke the custom model during user interactions. What should you include in the design?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure the agent to use classic orchestration."
+      },
+      {
+        "id": "B",
+        "text": "Create a connection to Microsoft Foundry in the agent."
+      },
+      {
+        "id": "C",
+        "text": "Add the Microsoft Foundry model as a Copilot Studio skill."
+      },
+      {
+        "id": "D",
+        "text": "Create a custom engine agent"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. Create a connection to Microsoft Foundry in the agent.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 56,
+    "code_tag": "AB-100 #56",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "You are designing an AI business solution that contains the following components: A Microsoft Power Automate workflow A Microsoft Copilot Studio agent A Microsoft Dataverse database - A Microsoft Power Apps app - As part of the application lifecycle management (ALM) process, you plan to package the components, so that they can be deployed to other environments as a group. You need to recommend a solution that supports versioning, dependencies, and deployments. What should you include in the recommendation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "GitHub Actions"
+      },
+      {
+        "id": "B",
+        "text": "Azure DevOps"
+      },
+      {
+        "id": "C",
+        "text": "Microsoft Power Platform solutions"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Microsoft Power Platform solutions**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 57,
+    "code_tag": "AB-100 #57",
+    "type": "multi_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "A company has Microsoft 365 Copilot agents. You need to design a security solution for the agents. The solution must meet the following requirements: Identify and mitigate potential risks that relate to AI use. Protect AI apps and the sensitive data processed or generated by the agents. Support responsible AI governance by retaining and logging interactions, detecting policy violations, and investigating incidents. Which two components should you include in the design? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Purview"
+      },
+      {
+        "id": "B",
+        "text": "Azure AI Content Safety"
+      },
+      {
+        "id": "C",
+        "text": "role-based access control (RBAC) in Microsoft Foundry"
+      },
+      {
+        "id": "D",
+        "text": "Microsoft Defender"
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "explanation": "D. Microsoft Defender",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 58,
+    "code_tag": "AB-100 #58",
+    "type": "single_choice",
+    "domain": "Azure AI Foundry & Multi-Agent Architecture",
+    "stem": "You are creating validation criteria for a custom generative AI model that produces business reports based on internal enterprise data. You need to assess whether the model's outputs are appropriate and meaningful for the business reports. Which metric should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "the number of active users interacting with the model"
+      },
+      {
+        "id": "B",
+        "text": "alignment of the output to domain-specific tasks"
+      },
+      {
+        "id": "C",
+        "text": "the average system resource usage during inference"
+      },
+      {
+        "id": "D",
+        "text": "the model training duration"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. alignment of the output to domain-specific tasks**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 59,
+    "code_tag": "AB-100 #59",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "A company has a Microsoft Copilot Studio agent that uses custom connectors to interact with enterprise APIs. You need to recommend an application lifecycle management (ALM) process to ensure that the connectors are deployed consistently across development, test, and production environments and meet governance and traceability requirements. What should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Deploy the APIs as Azure Functions."
+      },
+      {
+        "id": "B",
+        "text": "Manage the connectors as solution components and deploy the components by using ALM pipelines."
+      },
+      {
+        "id": "C",
+        "text": "Maintain connector definitions in environment variables."
+      },
+      {
+        "id": "D",
+        "text": "Export and import the connectors between the environments as unmanaged solutions."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. Manage the connectors as solution components and deploy the components by using ALM pipelines.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 60,
+    "code_tag": "AB-100 #60",
+    "type": "hotspot",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "HOTSPOT - A company plans to implement an AI solution that will contain a Microsoft Copilot Studio agent and a Microsoft Foundry agent. The solution will be stored in a source code repository. You need to recommend a deployment method for each agent. The solution must meet the following requirements: A test environment must be used before a deployment to production. Production must be isolated from development and testing. The deployment must be repeatable and fully automated. The solution must NOT require manual intervention. Which deployment method should you recommend for each agent?",
+    "pool": null,
+    "slots": [
+      {
+        "label": "Copilot Studio",
+        "options": [
+          "Use a Microsoft Power Platform deployment pipeline",
+          "Use a Bicep file",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview"
+        ],
+        "correct": "Use a Microsoft Power Platform deployment pipeline"
+      },
+      {
+        "label": "Microsoft Foundry",
+        "options": [
+          "Use a Microsoft Power Platform deployment pipeline",
+          "Use a Bicep file",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview"
+        ],
+        "correct": "Use a Bicep file"
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **Copilot Studio** → **Use a Microsoft Power Platform deployment pipeline**\n• **Microsoft Foundry** → **Use a Bicep file**",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 61,
+    "code_tag": "AB-100 #61",
+    "type": "hotspot",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "HOTSPOT - A company has a Microsoft Copilot Studio prompt-and-response agent. You need to ensure that the agent meets the following requirements: Provides effective and relevant responses Provides conversational outcomes Which metric should you use for each requirement?",
+    "pool": null,
+    "slots": [
+      {
+        "label": "Provides effective and relevant responses",
+        "options": [
+          "Generated answer rate and quality",
+          "Satisfaction",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview"
+        ],
+        "correct": "Generated answer rate and quality"
+      },
+      {
+        "label": "Provides conversational outcomes",
+        "options": [
+          "Generated answer rate and quality",
+          "Satisfaction",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview"
+        ],
+        "correct": "Satisfaction"
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **Provides effective and relevant responses** → **Generated answer rate and quality**\n• **Provides conversational outcomes** → **Satisfaction**",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 62,
+    "code_tag": "AB-100 #62",
+    "type": "multi_choice",
+    "domain": "Dynamics 365 & Dataverse AI Integration",
+    "stem": "A company extends Copilot in Microsoft Dynamics 365 Customer Service. You need to recommend an automated application lifecycle management (ALM) process so that the Copilot components can be safely developed, tested, and promoted to production. Which two actions should you include in the ALM process? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use an unmanaged solution in production."
+      },
+      {
+        "id": "B",
+        "text": "Rebuild the agents in each environment."
+      },
+      {
+        "id": "C",
+        "text": "Use Microsoft Power Platform pipelines."
+      },
+      {
+        "id": "D",
+        "text": "Include the components in a solution."
+      },
+      {
+        "id": "E",
+        "text": "Store the agent transcripts in source control."
+      }
+    ],
+    "correct": [
+      "C",
+      "D"
+    ],
+    "explanation": "D. Include the components in a solution.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 63,
+    "code_tag": "AB-100 #63",
+    "type": "hotspot",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "HOTSPOT - You are designing a testing solution for a Microsoft Copilot Studio agent that integrates with Microsoft Dynamics 365 Customer Service and Dynamics 365 Sales. You need to design end-to-end scenarios to test the agent's ability to perform the following actions: Coordinate tasks and data interactions across both Dynamics 365 apps. Interpret user input and provide contextually relevant outputs. Which test scenario and metric should you include in the design?",
+    "pool": null,
+    "slots": [
+      {
+        "label": "Test scenario",
+        "options": [
+          "Run task-based scenarios that involve both apps.",
+          "Track the successful completion of cross-app tasks.",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview"
+        ],
+        "correct": "Run task-based scenarios that involve both apps."
+      },
+      {
+        "label": "Metric",
+        "options": [
+          "Run task-based scenarios that involve both apps.",
+          "Track the successful completion of cross-app tasks.",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview"
+        ],
+        "correct": "Track the successful completion of cross-app tasks."
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **Test scenario** → **Run task-based scenarios that involve both apps.**\n• **Metric** → **Track the successful completion of cross-app tasks.**",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 64,
+    "code_tag": "AB-100 #64",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "A company has multiple AI models that support generation of sales transactions. Each release of the models must be reviewed by a security and compliance team before being deployed to the production environment. The security and compliance team must have access to prior versions to properly determine potential exposures introduced. You need to recommend a solution to evaluate the impact of each deployment to production. The solution must enhance business continuity. What should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a central model registry that uses version history."
+      },
+      {
+        "id": "B",
+        "text": "Establish a promotion process by using a quality gate."
+      },
+      {
+        "id": "C",
+        "text": "Implement version control for all the AI system components."
+      },
+      {
+        "id": "D",
+        "text": "Track model retirement schedules to prevent service disruptions"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Create a central model registry that uses version history.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 65,
+    "code_tag": "AB-100 #65",
+    "type": "drag_drop",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "DRAG DROP - A company has an AI solution that uses a Microsoft Copilot Studio agent. You need to monitor the agent's performance. The solution must meet the following requirements: Monitor the agent's telemetry in near-real-time (NRT). Download transcripts of full conversations. Monitor the agent's usage and performance. What should you use for each requirement? A.) Application Insights B.) Copilot Studio C.) Log Analytics D.) Microsoft Power Apps 1.) Monitor the agent's telemetry in NRT 2.) Download transcripts of full conversations 3.) Monitor the agent's usage and performance",
+    "pool": [
+      ") Application Insights",
+      ") Copilot Studio",
+      ") Log Analytics",
+      ") Microsoft Power Apps"
+    ],
+    "slots": [
+      {
+        "label": ") Monitor the agent's telemetry in NRT",
+        "options": [
+          ") Application Insights",
+          ") Copilot Studio",
+          ") Log Analytics",
+          ") Microsoft Power Apps",
+          "Microsoft Copilot Studio"
+        ],
+        "correct": ") Application Insights"
+      },
+      {
+        "label": ") Download transcripts of full conversations",
+        "options": [
+          ") Application Insights",
+          ") Copilot Studio",
+          ") Log Analytics",
+          ") Microsoft Power Apps",
+          "Microsoft Copilot Studio"
+        ],
+        "correct": ") Microsoft Power Apps"
+      },
+      {
+        "label": ") Monitor the agent's usage and performance",
+        "options": [
+          ") Application Insights",
+          ") Copilot Studio",
+          ") Log Analytics",
+          ") Microsoft Power Apps",
+          "Microsoft Copilot Studio"
+        ],
+        "correct": ") Copilot Studio"
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **) Monitor the agent's telemetry in NRT** → **) Application Insights**\n• **) Download transcripts of full conversations** → **) Microsoft Power Apps**\n• **) Monitor the agent's usage and performance** → **) Copilot Studio**",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 66,
+    "code_tag": "AB-100 #66",
+    "type": "hotspot",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "HOTSPOT - A company deploys a Microsoft Copilot Studio agent that integrates with a Microsoft Power Automate desktop flow. You need to recommend a testing solution that meets the following requirements: Test cases must validate the most recent changes to the agent before the agent is released. The flow must be validated as part of the agent's orchestration. What should you recommend for each requirement?",
+    "pool": null,
+    "slots": [
+      {
+        "label": "Validate the most recent changes to the agent before release",
+        "options": [
+          "Run tests against the latest unpublished version of the agent",
+          "Use the Power Automate for desktop console",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview"
+        ],
+        "correct": "Run tests against the latest unpublished version of the agent"
+      },
+      {
+        "label": "Validate the flow as part of the agent's orchestration",
+        "options": [
+          "Run tests against the latest unpublished version of the agent",
+          "Use the Power Automate for desktop console",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview"
+        ],
+        "correct": "Use the Power Automate for desktop console"
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **Validate the most recent changes to the agent before release** → **Run tests against the latest unpublished version of the agent**\n• **Validate the flow as part of the agent's orchestration** → **Use the Power Automate for desktop console**",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 67,
+    "code_tag": "AB-100 #67",
+    "type": "multi_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "A company has a Microsoft Copilot Studio agent that provides answers based on a knowledge base for customer support. Users report that, occasionally, the agent provides inaccurate answers. You need to use metrics from the Analytics tab in Copilot Studio to identify the cause of the inaccuracies. Which two options should you use? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.",
+    "options": [
+      {
+        "id": "A",
+        "text": "survey results"
+      },
+      {
+        "id": "B",
+        "text": "session information and session outcomes"
+      },
+      {
+        "id": "C",
+        "text": "topic usage and topics with low resolution"
+      },
+      {
+        "id": "D",
+        "text": "engagement, resolution, and escalation rates"
+      },
+      {
+        "id": "E",
+        "text": "quality of generated answers"
+      }
+    ],
+    "correct": [
+      "C",
+      "E"
+    ],
+    "explanation": "E. quality of generated answers",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 68,
+    "code_tag": "AB-100 #68",
+    "type": "multi_choice",
+    "domain": "Azure AI Foundry & Multi-Agent Architecture",
+    "stem": "A company uses a fine-tuned Microsoft Foundry model that requires frequent updates as new customer feedback becomes available. You need to design an application lifecycle management (ALM) process that meets the following requirements: Data changes must be tracked and versioned. The model must be retrained consistently by using approved training data. Which two actions should you include in the design? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Associate the storage location to the fine-tuning job."
+      },
+      {
+        "id": "B",
+        "text": "Create a content filter."
+      },
+      {
+        "id": "C",
+        "text": "Store the training data in Azure Files."
+      },
+      {
+        "id": "D",
+        "text": "Upload the training data to Microsoft Foundry data files"
+      },
+      {
+        "id": "E",
+        "text": "Store the training data in Azure Blob Storage that has version control enabled."
+      }
+    ],
+    "correct": [
+      "D",
+      "E"
+    ],
+    "explanation": "E. Store the training data in Azure Blob Storage that has version control enabled.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 69,
+    "code_tag": "AB-100 #69",
+    "type": "hotspot",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "HOTSPOT - A company deploys agents that generate responses by using Azure OpenAI resources. The agents are deployed to both the United States and Europe. You need to recommend a governance solution that meets the following requirements: Enforces the deployment of the resources to only approved Azure regions Provides continuous compliance verification of the resources What should you include in the recommendation for each requirement?",
+    "pool": null,
+    "slots": [
+      {
+        "label": "Enforces the deployment of the resources to only approved regions",
+        "options": [
+          "Azure Policy",
+          "Microsoft Purview",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Azure AI Search"
+        ],
+        "correct": "Azure Policy"
+      },
+      {
+        "label": "Provides continuous compliance verification of the resources",
+        "options": [
+          "Azure Policy",
+          "Microsoft Purview",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Azure AI Search"
+        ],
+        "correct": "Microsoft Purview"
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **Enforces the deployment of the resources to only approved regions** → **Azure Policy**\n• **Provides continuous compliance verification of the resources** → **Microsoft Purview**",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 70,
+    "code_tag": "AB-100 #70",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "A company has an AI solution that uses Azure OpenAI models. You need to recommend a governance solution that monitors and audits changes to model configurations and data usage. The solution must minimize administrative effort. What should you include in the recommendation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure Monitor"
+      },
+      {
+        "id": "B",
+        "text": "Azure Stream Analytics"
+      },
+      {
+        "id": "C",
+        "text": "Azure API Management"
+      },
+      {
+        "id": "D",
+        "text": "Azure Policy"
+      },
+      {
+        "id": "E",
+        "text": "Microsoft Purview"
+      }
+    ],
+    "correct": [
+      "E"
+    ],
+    "explanation": "Verified Answer: **E. Microsoft Purview**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 71,
+    "code_tag": "AB-100 #71",
+    "type": "drag_drop",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "DRAG DROP - A company has a Microsoft Copilot Studio agent that has been in production for three months. The agent has received positive feedback from users. You need to identify the number of questions unanswered by the agent and the number of abandoned sessions between the users and the agent. Which Copilot Studio insights should you use? A.) Conversation outcomes B.) Generated answer rate and quality C.) Reactions D.) Survey results 1.) The number of unanswered questions 2.) The number of abandoned sessions",
+    "pool": [
+      ") Conversation outcomes",
+      ") Generated answer rate and quality",
+      ") Reactions",
+      ") Survey results"
+    ],
+    "slots": [
+      {
+        "label": ") The number of unanswered questions",
+        "options": [
+          ") Conversation outcomes",
+          ") Generated answer rate and quality",
+          ") Reactions",
+          ") Survey results",
+          "Microsoft Copilot Studio"
+        ],
+        "correct": ") Generated answer rate and quality"
+      },
+      {
+        "label": ") The number of abandoned sessions",
+        "options": [
+          ") Conversation outcomes",
+          ") Generated answer rate and quality",
+          ") Reactions",
+          ") Survey results",
+          "Microsoft Copilot Studio"
+        ],
+        "correct": ") Conversation outcomes"
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **) The number of unanswered questions** → **) Generated answer rate and quality**\n• **) The number of abandoned sessions** → **) Conversation outcomes**",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 72,
+    "code_tag": "AB-100 #72",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "You are evaluating a Microsoft Copilot Studio agent that supports Microsoft Dynamics 365 Customer Service representatives. You need to recommend a testing solution that meets the following requirements: Evaluates agent effectiveness during active sessions Validates whether the agent delivers accurate and helpful responses Provides measurable, actionable insights for continuous improvement What should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Track resolution, deflection, and accuracy by using dashboards and use scripts to ensure consistent responses."
+      },
+      {
+        "id": "B",
+        "text": "Perform load testing to validate how the agent scales under a high chat volume."
+      },
+      {
+        "id": "C",
+        "text": "Review historical tickets to find agents that have the shortest resolution times."
+      },
+      {
+        "id": "D",
+        "text": "Measure uptime and page load times."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Track resolution, deflection, and accuracy by using dashboards and use scripts to ensure consistent responses.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 73,
+    "code_tag": "AB-100 #73",
+    "type": "multi_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "A company has an AI solution built by using Microsoft Copilot Studio and Power Platform. The solution is used by the company's sales, marketing, and customer service teams. You are performing a return on AI investment (ROAI) analysis to evaluate the impact of the solution. You need to identify which measurable business drivers to include in the analysis. Which two business drivers should you identify? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.",
+    "options": [
+      {
+        "id": "A",
+        "text": "the reduced average case resolution time"
+      },
+      {
+        "id": "B",
+        "text": "market capitalization"
+      },
+      {
+        "id": "C",
+        "text": "economic market predictability"
+      },
+      {
+        "id": "D",
+        "text": "increased employee productivity"
+      },
+      {
+        "id": "E",
+        "text": "brand awareness"
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "explanation": "D. increased employee productivity",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 74,
+    "code_tag": "AB-100 #74",
+    "type": "single_choice",
+    "domain": "Azure AI Foundry & Multi-Agent Architecture",
+    "stem": "A company has a Microsoft Foundry agent that summarizes customer feedback and recommends products to customers. The agent references data from multiple knowledge sources. Users report that the agent response time is slow. Telemetry data shows that the agent frequently reaches its token usage limit. You need to recommend a solution to reduce token usage without degrading the quality of the generated responses. What should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Chunk documents during indexing."
+      },
+      {
+        "id": "B",
+        "text": "Reduce the number of knowledge sources used by the agent."
+      },
+      {
+        "id": "C",
+        "text": "Reconfigure the prompts to limit the amount of retrieved content from the knowledge sources."
+      },
+      {
+        "id": "D",
+        "text": "Lower the maximum token usage limit for the responses."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Chunk documents during indexing.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 75,
+    "code_tag": "AB-100 #75",
+    "type": "hotspot",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "HOTSPOT - A company has Microsoft Power Platform development, staging, and production environments. Each environment has its own Microsoft Dataverse tables and Azure AI Search index. You are designing an application lifecycle management (AIM) process to deploy a Microsoft Copilot Studio agent between the environments. The company has a Copilot Studio agent named Agent1 in development. Agent1 uses the following grounding data sources: • A Dataverse table named CustomerOrders • An Azure AI Search index named customer-knowledge You need to deploy Agent1 to production. The solution must ensure that the agent uses the production grounding data sources, minimizes downtime, and handles credentials and endpoints securely. What should you include in the deployment package solution, and what should you reconfigure after the deployment?",
+    "pool": null,
+    "slots": [
+      {
+        "label": "Include in the deployment package solution",
+        "options": [
+          "Agent1 and references to the data sources",
+          "The environment variables",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview"
+        ],
+        "correct": "Agent1 and references to the data sources"
+      },
+      {
+        "label": "Reconfigure after the deployment",
+        "options": [
+          "Agent1 and references to the data sources",
+          "The environment variables",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview"
+        ],
+        "correct": "The environment variables"
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **Include in the deployment package solution** → **Agent1 and references to the data sources**\n• **Reconfigure after the deployment** → **The environment variables**",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 76,
+    "code_tag": "AB-100 #76",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "A company has a Microsoft Copilot Studio agent that uses generative AI to assist Microsoft Dynamics 365 Customer Service representatives. The agent currently exhibits a low resolution rate and a high escalation rate. You need to identify the issue. What should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "the Agent dashboard of Dynamics 365 Customer Service historical analytics"
+      },
+      {
+        "id": "B",
+        "text": "the Insights tab from the Search & intelligence settings of the Microsoft 365 admin center"
+      },
+      {
+        "id": "C",
+        "text": "the Copilot hub in the Power Platform admin center"
+      },
+      {
+        "id": "D",
+        "text": "the Analytics tab in Copilot Studio"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. the Analytics tab in Copilot Studio**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 77,
+    "code_tag": "AB-100 #77",
+    "type": "single_choice",
+    "domain": "Azure AI Foundry & Multi-Agent Architecture",
+    "stem": "A company has a Microsoft Foundry generative AI model. You need to evaluate the model's output to measure the overall quality and coherence of generated responses. The evaluation must use GPT-4o as a judge and return a numeric score for each output. Which type of metric should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "AI quality (NLP)"
+      },
+      {
+        "id": "B",
+        "text": "risk and safety"
+      },
+      {
+        "id": "C",
+        "text": "Groundedness"
+      },
+      {
+        "id": "D",
+        "text": "AI quality (AI assisted)"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. AI quality (AI assisted)**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 78,
+    "code_tag": "AB-100 #78",
+    "type": "hotspot",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "HOTSPOT - You use Microsoft Copilot Studio analytics to analyze the performance of a deployed Copilot Studio agent. You need to identify which performance metrics to use to measure the following: • The percentage of engaged sessions that are escalated to a live customer service representative • The number of agent queries that cause a knowledge source error What should you identify for each requirement?",
+    "pool": null,
+    "slots": [
+      {
+        "label": "The % of engaged sessions that are escalated to a representative",
+        "options": [
+          "Escalation rate",
+          "Answer quality",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview"
+        ],
+        "correct": "Escalation rate"
+      },
+      {
+        "label": "The # of agent queries that cause a knowledge source error",
+        "options": [
+          "Escalation rate",
+          "Answer quality",
+          "Microsoft Copilot Studio",
+          "Microsoft Foundry",
+          "Microsoft Purview"
+        ],
+        "correct": "Answer quality"
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **The % of engaged sessions that are escalated to a representative** → **Escalation rate**\n• **The # of agent queries that cause a knowledge source error** → **Answer quality**",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 79,
+    "code_tag": "AB-100 #79",
+    "type": "single_choice",
+    "domain": "Azure AI Foundry & Multi-Agent Architecture",
+    "stem": "A company plans to deploy a Microsoft Foundry agent. You need to recommend an application lifecycle management (ALM) process to ensure that the agent evaluates against baseline accuracy metrics before being deployed. What should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure GitHub Actions for new agent versions."
+      },
+      {
+        "id": "B",
+        "text": "Deploy each new agent version directly to production."
+      },
+      {
+        "id": "C",
+        "text": "Use Observability in Foundry Control Plane with evaluation and drift monitoring."
+      },
+      {
+        "id": "D",
+        "text": "Enable Application Insights and use Azure Monitor."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Use Observability in Foundry Control Plane with evaluation and drift monitoring.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 80,
+    "code_tag": "AB-100 #80",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "You need to recommend a security solution for agents in a Microsoft Power Platform environment. The agents must use only approved connectors and services. The solution must prevent the agents from accessing sensitive data. What should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure Azure Monitor to capture connector activity logs."
+      },
+      {
+        "id": "B",
+        "text": "Enable a Microsoft Dataverse audit."
+      },
+      {
+        "id": "C",
+        "text": "Deploy data loss prevention (DLP) policies in Power Platform."
+      },
+      {
+        "id": "D",
+        "text": "Enable customer-managed keys in Microsoft Dataverse."
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Deploy data loss prevention (DLP) policies in Power Platform.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 81,
+    "code_tag": "AB-100 #81",
+    "type": "multi_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "A company has an AI business solution that uses Microsoft Copilot Studio agents. You need to recommend prompt best practices to improve the effectiveness of agent interactions. Which two actions should you include in the recommendation? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Track the duration of the average user session."
+      },
+      {
+        "id": "B",
+        "text": "Analyze the prompt length distribution."
+      },
+      {
+        "id": "C",
+        "text": "Regularly test and refine the prompts based on user input."
+      },
+      {
+        "id": "D",
+        "text": "Use clear and specific instructions in the prompts."
+      },
+      {
+        "id": "E",
+        "text": "Measure system resource usage during prompt processing."
+      }
+    ],
+    "correct": [
+      "C",
+      "D"
+    ],
+    "explanation": "D. Use clear and specific instructions in the prompts.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 82,
+    "code_tag": "AB-100 #82",
+    "type": "drag_drop",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "DRAG DROP - A company has a cloud-based AI solution that uses Azure OpenAI models. You need to design a monitoring solution that meets the following requirements: • Monitors performance metrics and operational health for the models • Monitors AI apps and agents for compliance • Uses Azure-native capabilities • Minimizes development effort What should you use for each requirement? A.) Azure API Management B.) Azure Policy C.) Microsoft Defender D.) Azure Monitor E.) Azure Stream Analytics F.) Microsoft Purview 1.) Monitors AI app and agents for compliance 2.) Monitors performance metrics and operational health",
+    "pool": [
+      ") Azure API Management",
+      ") Azure Policy",
+      ") Microsoft Defender",
+      ") Azure Monitor",
+      ") Azure Stream Analytics",
+      ") Microsoft Purview"
+    ],
+    "slots": [
+      {
+        "label": ") Monitors AI app and agents for compliance",
+        "options": [
+          ") Azure API Management",
+          ") Azure Policy",
+          ") Microsoft Defender",
+          ") Azure Monitor",
+          ") Azure Stream Analytics",
+          ") Microsoft Purview"
+        ],
+        "correct": ") Microsoft Purview"
+      },
+      {
+        "label": ") Monitors performance metrics and operational health",
+        "options": [
+          ") Azure API Management",
+          ") Azure Policy",
+          ") Microsoft Defender",
+          ") Azure Monitor",
+          ") Azure Stream Analytics",
+          ") Microsoft Purview"
+        ],
+        "correct": ") Azure Monitor"
+      }
+    ],
+    "explanation": "Verified Mapping:\n• **) Monitors AI app and agents for compliance** → **) Microsoft Purview**\n• **) Monitors performance metrics and operational health** → **) Azure Monitor**",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 83,
+    "code_tag": "AB-100 #83",
+    "type": "multi_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "A company has Microsoft Copilot Studio agents. The company plans to deploy custom connectors across development, test and production environments. You need to design an application lifecycle management (ALM) process to ensure consistency and prevent direct editing in production. Which two actions should you include in the design? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Deploy managed solutions to production."
+      },
+      {
+        "id": "B",
+        "text": "Deploy unmanaged solutions to production."
+      },
+      {
+        "id": "C",
+        "text": "Manually rebuild the agents in each environment."
+      },
+      {
+        "id": "D",
+        "text": "Move the agents between the environments by using data export and import."
+      },
+      {
+        "id": "E",
+        "text": "Include agents and connectors in a solution"
+      }
+    ],
+    "correct": [
+      "A",
+      "E"
+    ],
+    "explanation": "E. Include agents and connectors in a solution",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 84,
+    "code_tag": "AB-100 #84",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "A company has an AI solution named Solution1 that is deployed to the production environment. Solution1 uses an Azure OpenAI model to generate marketing emails for existing customers. During an internal review, you identify that Solution1 creates different emails depending on the customers' traits. You need to recommend a strategy to mitigate the bias. The strategy must adhere to Microsoft responsible AI principles. What should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Modify Solution1 to randomly generate emails for different traits."
+      },
+      {
+        "id": "B",
+        "text": "Modify the system instructions of Solution1."
+      },
+      {
+        "id": "C",
+        "text": "Retrain the model by using a larger dataset."
+      },
+      {
+        "id": "D",
+        "text": "Modify the contents of the training dataset."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Modify Solution1 to randomly generate emails for different traits.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 85,
+    "code_tag": "AB-100 #85",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "A company has a canvas app named App1 in a Microsoft Power Platform environment named Env1. Env1 uses a customer-managed key for data encryption. App1 connects to multiple data sources to retrieve and update customer and order information. You need to recommend a solution to add Microsoft Copilot components to App1. The solution must NOT modify the current security or encryption configurations of Env1. What should you include in the recommendation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Modify the data sources of App1 to make them compatible with Copilot."
+      },
+      {
+        "id": "B",
+        "text": "Duplicate App1 and republish the app in Env1."
+      },
+      {
+        "id": "C",
+        "text": "Enable Copilot features for Env1."
+      },
+      {
+        "id": "D",
+        "text": "Move App1 to a new environment that uses Microsoft-managed keys."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. Move App1 to a new environment that uses Microsoft-managed keys.**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 86,
+    "code_tag": "AB-100 #86",
+    "type": "single_choice",
+    "domain": "Azure AI Foundry & Multi-Agent Architecture",
+    "stem": "A company wants to automate repetitive support tasks using AI agents. Before implementing agents, you need to evaluate whether the company's data can properly ground AI responses. Which factor is most important to review first?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Data accuracy, relevance, and timeliness"
+      },
+      {
+        "id": "B",
+        "text": "Data visualization tools used by analysts"
+      },
+      {
+        "id": "C",
+        "text": "Storage location of the data center"
+      },
+      {
+        "id": "D",
+        "text": "Employee permissions in Teams"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Data accuracy, relevance, and timeliness**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 87,
+    "code_tag": "AB-100 #87",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "A business plans to deploy multiple AI agents for customer support, sales insights, and internal reporting. You must design an architecture where these agents collaborate. Which approach should you recommend?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Deploy each agent independently"
+      },
+      {
+        "id": "B",
+        "text": "Build a multi-agent solution using platforms such as Microsoft 365 Copilot, Copilot Studio, and Microsoft Foundry"
+      },
+      {
+        "id": "C",
+        "text": "Use only Dynamics 365 plugins"
+      },
+      {
+        "id": "D",
+        "text": "Deploy a single AI model for all tasks"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. Build a multi-agent solution using platforms such as Microsoft 365 Copilot, Copilot Studio, and Microsoft Foundry**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 88,
+    "code_tag": "AB-100 #88",
+    "type": "single_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "An organization is considering implementing AI-powered automation but wants to ensure the investment will deliver business value. Which metric should be used to evaluate the project?",
+    "options": [
+      {
+        "id": "A",
+        "text": "GPU training speed"
+      },
+      {
+        "id": "B",
+        "text": "Token consumption rate"
+      },
+      {
+        "id": "C",
+        "text": "Prompt complexity"
+      },
+      {
+        "id": "D",
+        "text": "Total cost of ownership (TCO) and ROI"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. Total cost of ownership (TCO) and ROI**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 89,
+    "code_tag": "AB-100 #89",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "Your team must validate that an AI-powered solution meets ethical standards and regulatory requirements. Which design step should be included?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Model compression"
+      },
+      {
+        "id": "B",
+        "text": "Responsible AI review and compliance validation"
+      },
+      {
+        "id": "C",
+        "text": "GPU acceleration"
+      },
+      {
+        "id": "D",
+        "text": "Data indexing"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. Responsible AI review and compliance validation**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 90,
+    "code_tag": "AB-100 #90",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "A company wants to implement Copilot in Dynamics 365 Customer Service to assist agents. Which component should be designed to ensure Copilot understands company-specific terminology?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Business terms for Copilot"
+      },
+      {
+        "id": "B",
+        "text": "Azure SQL indexing"
+      },
+      {
+        "id": "C",
+        "text": "SharePoint connectors"
+      },
+      {
+        "id": "D",
+        "text": "Model routers"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Business terms for Copilot**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 91,
+    "code_tag": "AB-100 #91",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "You are designing AI agents that automate tasks across internal applications and websites. Which Copilot Studio capability should be used?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Model tuning"
+      },
+      {
+        "id": "B",
+        "text": "Computer Use"
+      },
+      {
+        "id": "C",
+        "text": "Azure DevOps pipelines"
+      },
+      {
+        "id": "D",
+        "text": "Prompt libraries"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. Computer Use**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 92,
+    "code_tag": "AB-100 #92",
+    "type": "single_choice",
+    "domain": "Azure AI Foundry & Multi-Agent Architecture",
+    "stem": "A company wants to secure access to grounding data used by AI agents. Which control should be implemented?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Data caching"
+      },
+      {
+        "id": "B",
+        "text": "Access controls and role-based permissions"
+      },
+      {
+        "id": "C",
+        "text": "Prompt engineering"
+      },
+      {
+        "id": "D",
+        "text": "Model compression"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. Access controls and role-based permissions**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 93,
+    "code_tag": "AB-100 #93",
+    "type": "single_choice",
+    "domain": "Azure AI Foundry & Multi-Agent Architecture",
+    "stem": "You need to ensure AI agents in a solution can be extended with external systems and tools. Which protocol should you design for agent extensibility?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Model Context Protocol (MCP)"
+      },
+      {
+        "id": "B",
+        "text": "REST API"
+      },
+      {
+        "id": "C",
+        "text": "SOAP integration"
+      },
+      {
+        "id": "D",
+        "text": "OData feed"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Model Context Protocol (MCP)**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 94,
+    "code_tag": "AB-100 #94",
+    "type": "single_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "Your AI solution is deployed and agents are actively used. You must ensure the system performs well and continues to improve. Which action should you perform?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Increase token limits"
+      },
+      {
+        "id": "B",
+        "text": "Remove prompt history"
+      },
+      {
+        "id": "C",
+        "text": "Disable feedback collection"
+      },
+      {
+        "id": "D",
+        "text": "Monitor telemetry and agent performance metrics"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. Monitor telemetry and agent performance metrics**.",
+    "set": "AB-100: Architecture & Scenario Bank"
+  },
+  {
+    "id": 95,
+    "code_tag": "AB-900 #1",
+    "type": "hotspot",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "You want to view the administrative actions taken by a service administrator in Microsoft 365. For each of the following statements, select Yes if the statement is true. Otherwise, select No. You can use Search & intelligence in the Microsoft 365 admin center. * Yes or No You can use Audit in the Microsoft Defender portal. * Yes or No You can use Audit in the Microsoft Purview portal. * Yes or No",
+    "slots": [
+      {
+        "label": "You can use Search & intelligence in the Microsoft 365 admin center.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "Yes"
+      },
+      {
+        "label": "You can use Audit in the Microsoft Defender portal.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "Yes"
+      },
+      {
+        "label": "You can use Audit in the Microsoft Purview portal.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "Yes"
+      }
+    ],
+    "explanation": "Verified Statement Evaluation:\n• **You can use Search & intelligence in the Microsoft 365 admin center.** → **Yes**\n• **You can use Audit in the Microsoft Defender portal.** → **Yes**\n• **You can use Audit in the Microsoft Purview portal.** → **Yes**",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 96,
+    "code_tag": "AB-900 #2",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "Microsoft Entra Privileged Identity Management (PIM) provides __________.",
+    "options": [
+      {
+        "id": "A",
+        "text": "restricted access to Microsoft 365 services."
+      },
+      {
+        "id": "B",
+        "text": "the lifecycle management of users."
+      },
+      {
+        "id": "C",
+        "text": "the management of enterprise applications."
+      },
+      {
+        "id": "D",
+        "text": "time-bound role activation."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. time-bound role activation.**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 97,
+    "code_tag": "AB-900 #3",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "Your organization has a Microsoft 365 E5 subscription. You need to ensure that a third-party cloud service can authenticate to Microsoft Entra. What should you configure?",
+    "options": [
+      {
+        "id": "A",
+        "text": "a Microsoft 365 Copilot connector"
+      },
+      {
+        "id": "B",
+        "text": "multifactor authentication (MFA)"
+      },
+      {
+        "id": "C",
+        "text": "a Conditional Access policy"
+      },
+      {
+        "id": "D",
+        "text": "an app registration"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. an app registration**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 98,
+    "code_tag": "AB-900 #4",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "Select the answer that correctly completes the sentence. Conditional Access policies ______.",
+    "options": [
+      {
+        "id": "A",
+        "text": "are configured by using the Microsoft Defender portal"
+      },
+      {
+        "id": "B",
+        "text": "are applied only to on-premises resources"
+      },
+      {
+        "id": "C",
+        "text": "provide control over how users can access cloud apps"
+      },
+      {
+        "id": "D",
+        "text": "require a Microsoft Exchange mailbox"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. provide control over how users can access cloud apps**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 99,
+    "code_tag": "AB-900 #5",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "Select the answer that correctly completes the sentence. The Microsoft responsible AI principle of _______________ requires the oversight of AI systems to ensure that humans remain in control.",
+    "options": [
+      {
+        "id": "A",
+        "text": "accountability"
+      },
+      {
+        "id": "B",
+        "text": "inclusiveness"
+      },
+      {
+        "id": "C",
+        "text": "privacy and security"
+      },
+      {
+        "id": "D",
+        "text": "reliability and safety"
+      },
+      {
+        "id": "E",
+        "text": "transparency"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. accountability**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 100,
+    "code_tag": "AB-900 #6",
+    "type": "single_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "A user named User5 navigates to https://myapps.microsoft.com. After entering their username and password, User5 receives the following message on their mobile device. Use the drop-down menus to select the answer choice that completes the statement based on the information presented in the graphic. Users is using _____ for multifactor authentication (MFA).",
+    "options": [
+      {
+        "id": "A",
+        "text": "email OTP"
+      },
+      {
+        "id": "B",
+        "text": "the Microsoft Authenticator app"
+      },
+      {
+        "id": "C",
+        "text": "SMS"
+      },
+      {
+        "id": "D",
+        "text": "a Temporary Access Pass"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. the Microsoft Authenticator app**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 101,
+    "code_tag": "AB-900 #7",
+    "type": "multi_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "Your organization has a Microsoft 365 subscription. You need to evaluate your organization's Identity Secure Score. Which two factors affect the score? Each correct answer presents a complete the solution. Note: Each correct selection is worth one point.",
+    "options": [
+      {
+        "id": "A",
+        "text": "the SharePoint site permissions"
+      },
+      {
+        "id": "B",
+        "text": "the number of global administrators"
+      },
+      {
+        "id": "C",
+        "text": "passwords that are never expired"
+      },
+      {
+        "id": "D",
+        "text": "the location of the users"
+      }
+    ],
+    "correct": [
+      "B",
+      "C"
+    ],
+    "explanation": "C. passwords that are never expired",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 102,
+    "code_tag": "AB-900 #8",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "Your organization has a Microsoft 365 subscription. You need to review the impact of a recent phishing incident that targeted email users. What should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "the Microsoft Defender portal"
+      },
+      {
+        "id": "B",
+        "text": "the Microsoft 365 admin center"
+      },
+      {
+        "id": "C",
+        "text": "the Microsoft Entra admin center"
+      },
+      {
+        "id": "D",
+        "text": "the Microsoft Exchange admin center"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. the Microsoft Defender portal**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 103,
+    "code_tag": "AB-900 #9",
+    "type": "hotspot",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "For each of the following statements, select Yes if the statement is true. Otherwise, select No. Note: Each correct selection is worth one point. Microsoft Defender for Office 365 provides protection from phishing and malware attacks. * Yes or No Microsoft Defender for Identity monitor identities in Active Directory domains. * Yes or No Microsoft Defender for Vulnerability Management provides protection for software as a service (SaaS) applications. * Yes or No",
+    "slots": [
+      {
+        "label": "Microsoft Defender for Office 365 provides protection from phishing and malware attacks.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "Yes"
+      },
+      {
+        "label": "Microsoft Defender for Identity monitor identities in Active Directory domains.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "Yes"
+      },
+      {
+        "label": "Microsoft Defender for Vulnerability Management provides protection for software as a service (SaaS) applications.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "No"
+      }
+    ],
+    "explanation": "Verified Statement Evaluation:\n• **Microsoft Defender for Office 365 provides protection from phishing and malware attacks.** → **Yes**\n• **Microsoft Defender for Identity monitor identities in Active Directory domains.** → **Yes**\n• **Microsoft Defender for Vulnerability Management provides protection for software as a service (SaaS) applications.** → **No**",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 104,
+    "code_tag": "AB-900 #10",
+    "type": "single_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "Your organization has a Microsoft 365 subscription that contains a Microsoft SharePoint site named Site1. The permissions for Site1 are configured as shown in the following exhibit. You create a new user named User1 in the subscription. Use the drop-down menus to select the answer choice that completes the statement based on the information presented in the graphic. User1 is _____ Site1.",
+    "options": [
+      {
+        "id": "A",
+        "text": "a site visitor of"
+      },
+      {
+        "id": "B",
+        "text": "a site owner of"
+      },
+      {
+        "id": "C",
+        "text": "a site member of"
+      },
+      {
+        "id": "D",
+        "text": "prevented from accessing"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. a site member of**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 105,
+    "code_tag": "AB-900 #11",
+    "type": "multi_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "Your organization has a Microsoft 365 subscription. You create a security group named Group1 and assign a Microsoft 365 E3 license to the group. You discover that a user named User1 does NOT have access to the Microsoft 365 E3 features. You need to ensure that User1 can access all the Microsoft 365 E3 features. Which two actions can you perform? Each correct answer presents a complete solution.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Add User1 to Group1."
+      },
+      {
+        "id": "B",
+        "text": "Assign a Conditional Access policy to Group1."
+      },
+      {
+        "id": "C",
+        "text": "Assign a Conditional Access policy to User1."
+      },
+      {
+        "id": "D",
+        "text": "Assign a license to User1."
+      }
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "explanation": "D. Assign a license to User1.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 106,
+    "code_tag": "AB-900 #12",
+    "type": "single_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "Select the answer that correctly completes the sentence. From the SharePoint admin center, you can create a _____.",
+    "options": [
+      {
+        "id": "A",
+        "text": "server"
+      },
+      {
+        "id": "B",
+        "text": "user"
+      },
+      {
+        "id": "C",
+        "text": "site"
+      },
+      {
+        "id": "D",
+        "text": "role"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. site**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 107,
+    "code_tag": "AB-900 #13",
+    "type": "single_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "Select the answer that correctly completes the sentence. From the Microsoft Teams admin center, you can _____.",
+    "options": [
+      {
+        "id": "A",
+        "text": "assign a Teams license to a user"
+      },
+      {
+        "id": "B",
+        "text": "deploy the Teams client"
+      },
+      {
+        "id": "C",
+        "text": "manage a Teams Rooms device"
+      },
+      {
+        "id": "D",
+        "text": "prevent users from creating teams"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. manage a Teams Rooms device**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 108,
+    "code_tag": "AB-900 #14",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "Your organization has a Microsoft 365 subscription. You need to investigate security incidents and alerts raised from the Windows 11 devices in your organization. What should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Entra ID Protection"
+      },
+      {
+        "id": "B",
+        "text": "Microsoft Defender for Identity"
+      },
+      {
+        "id": "C",
+        "text": "Microsoft Purview Insider Risk Management"
+      },
+      {
+        "id": "D",
+        "text": "Microsoft Defender for Endpoint"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. Microsoft Defender for Endpoint**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 109,
+    "code_tag": "AB-900 #15",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "You have a Microsoft SharePoint site as shown in the following exhibit. You need to view the settings of SLabel1. What should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "the Microsoft Defender portal"
+      },
+      {
+        "id": "B",
+        "text": "the SharePoint admin center"
+      },
+      {
+        "id": "C",
+        "text": "the Microsoft 365 admin center"
+      },
+      {
+        "id": "D",
+        "text": "the Microsoft Purview portal"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. the Microsoft Purview portal**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 110,
+    "code_tag": "AB-900 #16",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "Your organization has a Microsoft 365 subscription. All users have Microsoft 365 Copilot licenses. You need to identify where sensitive content is being used during Copilot interactions, analyze the content usage patterns, and provide recommendations on applying the appropriate protections. What should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Viva Insights"
+      },
+      {
+        "id": "B",
+        "text": "the Microsoft Purview DSPM for AI solution"
+      },
+      {
+        "id": "C",
+        "text": "Microsoft Security Copilot"
+      },
+      {
+        "id": "D",
+        "text": "the Microsoft Purview Insider Risk Management solution"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. the Microsoft Purview DSPM for AI solution**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 111,
+    "code_tag": "AB-900 #17",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "Select the answer that correctly completes the sentence. You can use ___________ to review threat indicators correlated across email, identity, and device incidents in a single view.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Defender for Office 365"
+      },
+      {
+        "id": "B",
+        "text": "Microsoft Defender XDR"
+      },
+      {
+        "id": "C",
+        "text": "Microsoft Purview Compliance Manager"
+      },
+      {
+        "id": "D",
+        "text": "Microsoft Purview Data Loss Prevention"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. Microsoft Defender XDR**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 112,
+    "code_tag": "AB-900 #18",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "Your organization has a Microsoft 365 subscription that contains a user named User1. User1 plans to leave your company in two weeks. You need to capture the activity of User1 to identify whether the user is exfiltrating data. Which Microsoft Purview solution should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Communication Compliance"
+      },
+      {
+        "id": "B",
+        "text": "Data Security Posture Management"
+      },
+      {
+        "id": "C",
+        "text": "Insider Risk Management"
+      },
+      {
+        "id": "D",
+        "text": "Data Lifecycle Management"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Insider Risk Management**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 113,
+    "code_tag": "AB-900 #19",
+    "type": "hotspot",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "For each of the following statements, select Yes if the statement is true. Otherwise, select No. Microsoft Purview Compliance Manager provides a risk-based compliance score to help you understand your compliance posture. * Yes or No Microsoft Purview Compliance Manager provides step-by-step guidance to remediate compliance issues. * Yes or No Compliance Manager is part of Microsoft Defender. * Yes or No",
+    "slots": [
+      {
+        "label": "Microsoft Purview Compliance Manager provides a risk-based compliance score to help you understand your compliance posture.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "Yes"
+      },
+      {
+        "label": "Microsoft Purview Compliance Manager provides step-by-step guidance to remediate compliance issues.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "Yes"
+      },
+      {
+        "label": "Compliance Manager is part of Microsoft Defender.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "No"
+      }
+    ],
+    "explanation": "Verified Statement Evaluation:\n• **Microsoft Purview Compliance Manager provides a risk-based compliance score to help you understand your compliance posture.** → **Yes**\n• **Microsoft Purview Compliance Manager provides step-by-step guidance to remediate compliance issues.** → **Yes**\n• **Compliance Manager is part of Microsoft Defender.** → **No**",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 114,
+    "code_tag": "AB-900 #20",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "Your organization has a Microsoft 365 subscription. You discover that Microsoft SharePoint files are being shared to users outside your organization. You need to identify which files are being shared to the external users. Which report should you use in the SharePoint admin center? To answer, select the appropriate report in the answer area.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Agent insights"
+      },
+      {
+        "id": "B",
+        "text": "App insights"
+      },
+      {
+        "id": "C",
+        "text": "Change history"
+      },
+      {
+        "id": "D",
+        "text": "Data access governance"
+      },
+      {
+        "id": "E",
+        "text": "OneDrive accounts"
+      },
+      {
+        "id": "F",
+        "text": "Site policy comparison"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. Data access governance**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 115,
+    "code_tag": "AB-900 #21",
+    "type": "hotspot",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "For each of the following statements, select Yes if the statement is true. Otherwise, select No. For administrators to use SharePoint Advanced Management, all the users in your organization need a Microsoft Copilot license. * Yes or No SharePoint Advanced Management can help restrict Microsoft 365 Copilot from Accessing Microsoft SharePoint content. * Yes or No SharePoint Advanced Management is available as a standalone license for organizations without Microsoft 365 Copilot. * Yes or No",
+    "slots": [
+      {
+        "label": "For administrators to use SharePoint Advanced Management, all the users in your organization need a Microsoft Copilot license.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "No"
+      },
+      {
+        "label": "SharePoint Advanced Management can help restrict Microsoft 365 Copilot from Accessing Microsoft SharePoint content.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "Yes"
+      },
+      {
+        "label": "SharePoint Advanced Management is available as a standalone license for organizations without Microsoft 365 Copilot.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "Yes"
+      }
+    ],
+    "explanation": "Verified Statement Evaluation:\n• **For administrators to use SharePoint Advanced Management, all the users in your organization need a Microsoft Copilot license.** → **No**\n• **SharePoint Advanced Management can help restrict Microsoft 365 Copilot from Accessing Microsoft SharePoint content.** → **Yes**\n• **SharePoint Advanced Management is available as a standalone license for organizations without Microsoft 365 Copilot.** → **Yes**",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 116,
+    "code_tag": "AB-900 #24",
+    "type": "multi_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "Your organization has a Microsoft 365 subscription. You need to use Microsoft Purview to meet the following requirements: Prevent users from sharing files that contain Personally Identifiable Information (PII). Use machine learning to train a model that detects sensitive content. Which Microsoft Purview solution should you use for each requirement? To answer, select the appropriate options in the answer area. Prevent users from sharing PII: ______.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Communication Compliance"
+      },
+      {
+        "id": "B",
+        "text": "Data Loss Prevention"
+      },
+      {
+        "id": "C",
+        "text": "DSPM for Al"
+      },
+      {
+        "id": "D",
+        "text": "Information Protection"
+      },
+      {
+        "id": "E",
+        "text": "Insider Risk Management Use machine learning to train a model: ______."
+      },
+      {
+        "id": "A",
+        "text": "Communication Compliance"
+      },
+      {
+        "id": "B",
+        "text": "Data Loss Prevention"
+      },
+      {
+        "id": "C",
+        "text": "DSPM for Al"
+      },
+      {
+        "id": "D",
+        "text": "Information Protection"
+      },
+      {
+        "id": "E",
+        "text": "Insider Risk Management"
+      }
+    ],
+    "correct": [
+      "B",
+      "C"
+    ],
+    "explanation": "Prevent users from sharing PII: ______.\nB. Data Loss Prevention\n\nUse machine learning to train a model: ______.\nC. DSPM for Al",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 117,
+    "code_tag": "AB-900 #25",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "You use Microsoft 365 Copilot. What does Copilot use to generate responses based on corporate data stored in Microsoft SharePoint?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Intune"
+      },
+      {
+        "id": "B",
+        "text": "Microsoft Defender"
+      },
+      {
+        "id": "C",
+        "text": "Microsoft Graph"
+      },
+      {
+        "id": "D",
+        "text": "Microsoft Purview"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Microsoft Graph**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 118,
+    "code_tag": "AB-900 #26",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "You can use the ____________ Microsoft Purview solution to detect Microsoft 365 Copilot prompts that contain sensitive information.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Data Lifecycle Management"
+      },
+      {
+        "id": "B",
+        "text": "DSPM for Al"
+      },
+      {
+        "id": "C",
+        "text": "Information Barriers"
+      },
+      {
+        "id": "D",
+        "text": "Information Protection"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. DSPM for Al**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 119,
+    "code_tag": "AB-900 #27",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "Your organization has a Microsoft 365 subscription. All users are assigned Microsoft 365 Copilot licenses. Some users report receiving Copilot responses that contain information from a Microsoft SharePoint site named Finance. The users report that the information is commercially sensitive. You need to prevent Copilot from providing responses that contain information from the Finance site. What should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "From Microsoft Purview, create an Information Barrier (IB) policy."
+      },
+      {
+        "id": "B",
+        "text": "From Microsoft Defender, create a data connector."
+      },
+      {
+        "id": "C",
+        "text": "From Microsoft Entra, create a Conditional Access policy."
+      },
+      {
+        "id": "D",
+        "text": "From the Finance site, configure permissions."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. From Microsoft Purview, create an Information Barrier (IB) policy.**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 120,
+    "code_tag": "AB-900 #28",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "Your organization has a Microsoft 365 subscription that contains Microsoft SharePoint sites and Microsoft Teams teams. You discover that the sites and the teams are shared to users outside your organization. You need to identify which sites and teams were shared to the external users. What should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "the SharePoint admin center"
+      },
+      {
+        "id": "B",
+        "text": "the Microsoft Teams admin center"
+      },
+      {
+        "id": "C",
+        "text": "the Microsoft 365 admin center"
+      },
+      {
+        "id": "D",
+        "text": "the Microsoft Defender portal"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. the SharePoint admin center**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 121,
+    "code_tag": "AB-900 #29",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "Your company requires that all Microsoft SharePoint sites have a minimum of two owners. You need to ensure that sites that have less than two owners are marked as read-only if the sites are NOT remediated. What should you configure in the SharePoint admin center?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Site-level access restriction"
+      },
+      {
+        "id": "B",
+        "text": "Data access governance reports"
+      },
+      {
+        "id": "C",
+        "text": "Site lifecycle management"
+      },
+      {
+        "id": "D",
+        "text": "Block download policy for SharePoint and OneDrive"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Site-level access restriction**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 122,
+    "code_tag": "AB-900 #30",
+    "type": "hotspot",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "You are evaluating Microsoft Purview solutions. For each of the following statements, select Yes if the statement is true. Otherwise, select No. Note: Each correct selection is worth one point. A Communication Compliance policy can detect inappropriate text in Microsoft Teams messages. * Yes or No A Communication Compliance policy can detect offensive language in Microsoft 365 Copilot prompts. * Yes or No A Communication Compliance policy can be used to retain email messages for 10 years. * Yes or No",
+    "slots": [
+      {
+        "label": "A Communication Compliance policy can detect inappropriate text in Microsoft Teams messages.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "Yes"
+      },
+      {
+        "label": "A Communication Compliance policy can detect offensive language in Microsoft 365 Copilot prompts.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "Yes"
+      },
+      {
+        "label": "A Communication Compliance policy can be used to retain email messages for 10 years.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "No"
+      }
+    ],
+    "explanation": "Verified Statement Evaluation:\n• **A Communication Compliance policy can detect inappropriate text in Microsoft Teams messages.** → **Yes**\n• **A Communication Compliance policy can detect offensive language in Microsoft 365 Copilot prompts.** → **Yes**\n• **A Communication Compliance policy can be used to retain email messages for 10 years.** → **No**",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 123,
+    "code_tag": "AB-900 #31",
+    "type": "single_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "You need to create a Microsoft 365 Copilot agent that can create charts and visualizations based on a Microsoft Excel workbook. What should you configure for the agent?",
+    "options": [
+      {
+        "id": "A",
+        "text": "the image generator capability"
+      },
+      {
+        "id": "B",
+        "text": "the Scrum Assistant template"
+      },
+      {
+        "id": "C",
+        "text": "the Customer Insights Assistant template"
+      },
+      {
+        "id": "D",
+        "text": "the code interpreter capability"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. the code interpreter capability**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 124,
+    "code_tag": "AB-900 #32",
+    "type": "single_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "Your company is piloting the use of Microsoft 365 Copilot and has purchased 100 Microsoft 365 Copilot licenses. You need to view detailed reports about Copilot usage in Microsoft Teams, such as meeting hours summarized by Copilot and meeting actions taken by using Copilot. What should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "the Microsoft 365 Copilot readiness report in the Microsoft 365 admin center"
+      },
+      {
+        "id": "B",
+        "text": "the Microsoft 365 Copilot usage report in the Microsoft 365 admin center"
+      },
+      {
+        "id": "C",
+        "text": "the Microsoft 365 Copilot dashboard in Microsoft Viva Insights"
+      },
+      {
+        "id": "D",
+        "text": "the Microsoft 365 Apps usage report in the Microsoft 365 admin center"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. the Microsoft 365 Copilot dashboard in Microsoft Viva Insights**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 125,
+    "code_tag": "AB-900 #33",
+    "type": "single_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "A user named User1 creates a Microsoft 365 Copilot agent named Agent1 and shares the agent to a user named User2. What occurs if an admin blocks Agent1?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Agent1 is accessible to User1 and User2 until the users manually uninstall Agent. No other users can install Agent1."
+      },
+      {
+        "id": "B",
+        "text": "Agent1 is accessible to User1 and User2, and no other users can install Agent1."
+      },
+      {
+        "id": "C",
+        "text": "Agent1 is removed from User2, and User1 can continue to use Agent1."
+      },
+      {
+        "id": "D",
+        "text": "Agent1 is removed from User1 and User2, and no users can install Agent1."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. Agent1 is removed from User1 and User2, and no users can install Agent1.**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 126,
+    "code_tag": "AB-900 #34",
+    "type": "hotspot",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "For each of the following statements, select Yes if the statement is true. Otherwise, select No. The Microsoft 365 Copilot usage report can be used to view Copilot prompts submitted by users. * Yes or No The Microsoft 365 Copilot usage report shows the total number of unique users in your organization that are assigned Microsoft 365 Copilot licenses. * Yes or No The Microsoft 365 Copilot usage report shows the Copilot usage of each individual Microsoft 365 app. * Yes or No",
+    "slots": [
+      {
+        "label": "The Microsoft 365 Copilot usage report can be used to view Copilot prompts submitted by users.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "No"
+      },
+      {
+        "label": "The Microsoft 365 Copilot usage report shows the total number of unique users in your organization that are assigned Microsoft 365 Copilot licenses.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "Yes"
+      },
+      {
+        "label": "The Microsoft 365 Copilot usage report shows the Copilot usage of each individual Microsoft 365 app.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "Yes"
+      }
+    ],
+    "explanation": "Verified Statement Evaluation:\n• **The Microsoft 365 Copilot usage report can be used to view Copilot prompts submitted by users.** → **No**\n• **The Microsoft 365 Copilot usage report shows the total number of unique users in your organization that are assigned Microsoft 365 Copilot licenses.** → **Yes**\n• **The Microsoft 365 Copilot usage report shows the Copilot usage of each individual Microsoft 365 app.** → **Yes**",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 127,
+    "code_tag": "AB-900 #35",
+    "type": "hotspot",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "For each of the following statements, select Yes if the statement is true. Otherwise, select No. From the Copilot Prompt Gallery, you can modify a saved prompt. * Yes or No From the Copilot Prompt Gallery, you can share a save prompt to a Microsoft Team. * Yes or No You can create a shared link for a prompt that was not saved to the Copilot Prompt Gallery. * Yes or No",
+    "slots": [
+      {
+        "label": "From the Copilot Prompt Gallery, you can modify a saved prompt.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "Yes"
+      },
+      {
+        "label": "From the Copilot Prompt Gallery, you can share a save prompt to a Microsoft Team.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "Yes"
+      },
+      {
+        "label": "You can create a shared link for a prompt that was not saved to the Copilot Prompt Gallery.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "Yes"
+      }
+    ],
+    "explanation": "Verified Statement Evaluation:\n• **From the Copilot Prompt Gallery, you can modify a saved prompt.** → **Yes**\n• **From the Copilot Prompt Gallery, you can share a save prompt to a Microsoft Team.** → **Yes**\n• **You can create a shared link for a prompt that was not saved to the Copilot Prompt Gallery.** → **Yes**",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 128,
+    "code_tag": "AB-900 #36",
+    "type": "hotspot",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "For each of the following statements, select Yes if the statement is true. Otherwise, select No. Administrators can remove a specific Copilot agent from all users. * Yes or No From the Microsoft 365 admin center, administrators can configure the prompts of a Copilot agent. * Yes or No Administrators can deploy Copilot agent to specific users. * Yes or No",
+    "slots": [
+      {
+        "label": "Administrators can remove a specific Copilot agent from all users.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "Yes"
+      },
+      {
+        "label": "From the Microsoft 365 admin center, administrators can configure the prompts of a Copilot agent.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "No"
+      },
+      {
+        "label": "Administrators can deploy Copilot agent to specific users.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "Yes"
+      }
+    ],
+    "explanation": "Verified Statement Evaluation:\n• **Administrators can remove a specific Copilot agent from all users.** → **Yes**\n• **From the Microsoft 365 admin center, administrators can configure the prompts of a Copilot agent.** → **No**\n• **Administrators can deploy Copilot agent to specific users.** → **Yes**",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 129,
+    "code_tag": "AB-900 #37",
+    "type": "multi_choice",
+    "domain": "Azure AI Foundry & Multi-Agent Architecture",
+    "stem": "You plan to create an agent in the Microsoft 365 Copilot app to solve a business issue. What are two reasons to create the agent? Each correct answer presents a complete solution.",
+    "options": [
+      {
+        "id": "A",
+        "text": "You need to use a custom AI model."
+      },
+      {
+        "id": "B",
+        "text": "You need to use a custom set of instructions that differ from those of the chat experience."
+      },
+      {
+        "id": "C",
+        "text": "You need to reason over a specific website."
+      },
+      {
+        "id": "D",
+        "text": "You need to group related chats into a Copilot notebook."
+      }
+    ],
+    "correct": [
+      "B",
+      "C"
+    ],
+    "explanation": "C. You need to reason over a specific website.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 130,
+    "code_tag": "AB-900 #38",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "If a user shares a Microsoft 365 Copilot agent you can use __________ to block users from using the agent.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Foundry"
+      },
+      {
+        "id": "B",
+        "text": "Microsoft Copilot Studio"
+      },
+      {
+        "id": "C",
+        "text": "the Microsoft 365 admin center"
+      },
+      {
+        "id": "D",
+        "text": "the Power Apps portal"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. the Microsoft 365 admin center**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 131,
+    "code_tag": "AB-900 #39",
+    "type": "hotspot",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "For each of the following statements, select Yes if the statement is true. Otherwise, select No. To use Microsoft 365 Copilot Chat to reason over web data, you need a Microsoft 365 Copilot license. * Yes or No To use the Researcher agent in Microsoft 365 Copilot, you need a Microsoft 365 Copilot license. * Yes or No To add an agent in the Microsoft 365 Copilot app, you need a Microsoft 365 Copilot license. * Yes or No",
+    "slots": [
+      {
+        "label": "To use Microsoft 365 Copilot Chat to reason over web data, you need a Microsoft 365 Copilot license.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "No"
+      },
+      {
+        "label": "To use the Researcher agent in Microsoft 365 Copilot, you need a Microsoft 365 Copilot license.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "Yes"
+      },
+      {
+        "label": "To add an agent in the Microsoft 365 Copilot app, you need a Microsoft 365 Copilot license.",
+        "options": [
+          "Yes",
+          "No"
+        ],
+        "correct": "No"
+      }
+    ],
+    "explanation": "Verified Statement Evaluation:\n• **To use Microsoft 365 Copilot Chat to reason over web data, you need a Microsoft 365 Copilot license.** → **No**\n• **To use the Researcher agent in Microsoft 365 Copilot, you need a Microsoft 365 Copilot license.** → **Yes**\n• **To add an agent in the Microsoft 365 Copilot app, you need a Microsoft 365 Copilot license.** → **No**",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 132,
+    "code_tag": "AB-900 #41",
+    "type": "single_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "Select the answer that correctly completes the sentence. In Microsoft 365 Copilot, you use the ____________ to perform multi-step reasoning over unstructured data.",
+    "options": [
+      {
+        "id": "A",
+        "text": "a notebook"
+      },
+      {
+        "id": "B",
+        "text": "Chat"
+      },
+      {
+        "id": "C",
+        "text": "the Analyst agent"
+      },
+      {
+        "id": "D",
+        "text": "the Researcher agent"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. the Researcher agent**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 133,
+    "code_tag": "AB-900 #42",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "Your organization has a Microsoft 365 subscription. You need to assign a license to a user. What should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "the Microsoft Purview portal"
+      },
+      {
+        "id": "B",
+        "text": "the Microsoft 365 admin center"
+      },
+      {
+        "id": "C",
+        "text": "the Microsoft Teams admin center"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. the Microsoft 365 admin center**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 134,
+    "code_tag": "AB-900 #43",
+    "type": "single_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "Select the answer that correctly completes the sentence. Microsoft SharePoint files Microsoft 365 Copilot retrieves data from __________ by using Microsoft Graph.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Azure OpenAl"
+      },
+      {
+        "id": "B",
+        "text": "external users"
+      },
+      {
+        "id": "C",
+        "text": "Microsoft SharePoint files"
+      },
+      {
+        "id": "D",
+        "text": "web searchers"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Microsoft SharePoint files**.",
+    "set": "AB-900: Microsoft 365 & AI Security / Governance"
+  },
+  {
+    "id": 135,
+    "code_tag": "AB-650 #7",
+    "type": "single_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "You have a Microsoft 365 subscription. You need to report a Microsoft 365 Copilot service issue to Microsoft. Which two pages can you use? Each correct answer presents a complete solution. NOTE: Each correct selection is worth one point.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Service health in the Microsoft 365 admin center"
+      },
+      {
+        "id": "B",
+        "text": "Product feedback in the Microsoft 365 admin center"
+      },
+      {
+        "id": "C",
+        "text": "Health in the Copilot Control System"
+      },
+      {
+        "id": "D",
+        "text": "Usage in the Copilot Control System"
+      },
+      {
+        "id": "E",
+        "text": "Message center in the Microsoft 365 admin center"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Service health in the Microsoft 365 admin center**.",
+    "set": "AB-650: Administering Microsoft 365 & AI Services"
+  },
+  {
+    "id": 136,
+    "code_tag": "AB-650 #8",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "You have a Microsoft 365 subscription that uses Microsoft Agent 365. The subscription contains multiple agents that are discoverable in the agent registry. Your company is preparing for an internal AI governance audit. The audit team requires a formal assessment of AI regulatory controls for agents and recommended improvement actions. You need to recommend a solution that provides the required assessment. What should you include in the recommendation?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Microsoft Purview Compliance Manager"
+      },
+      {
+        "id": "B",
+        "text": "Microsoft Purview eDiscovery"
+      },
+      {
+        "id": "C",
+        "text": "Search in Microsoft Purview Audit"
+      },
+      {
+        "id": "D",
+        "text": "the Microsoft 365 Copilot Agent usage report"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Microsoft Purview Compliance Manager**.",
+    "set": "AB-650: Administering Microsoft 365 & AI Services"
+  },
+  {
+    "id": 137,
+    "code_tag": "AB-650 #9",
+    "type": "single_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "You have a Microsoft 365 subscription. All users are assigned Microsoft 365 Copilot licenses. You plan to deploy Microsoft 365 Apps for enterprise to user devices. You need to ensure that the users can use Microsoft 365 Copilot in Microsoft Word and Excel. The solution must minimize how often Microsoft 365 Apps receives feature updates. Which update channel should you use?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Monthly Enterprise Channel"
+      },
+      {
+        "id": "B",
+        "text": "Beta Channel"
+      },
+      {
+        "id": "C",
+        "text": "Targeted Release"
+      },
+      {
+        "id": "D",
+        "text": "Current Channel"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Monthly Enterprise Channel**.",
+    "set": "AB-650: Administering Microsoft 365 & AI Services"
+  },
+  {
+    "id": 138,
+    "code_tag": "AB-650 #10",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "You have a Microsoft 365 subscription. Several support engineers at your company require temporary access to Microsoft Entra administrator roles. You need to configure role access for the engineers. The solution must meet the following requirements: - The engineers must activate role access before role use. - Role access must expire automatically after activation. What should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create an administrative unit and assign the required roles to the engineers at the scope of the administrative unit."
+      },
+      {
+        "id": "B",
+        "text": "Assign the engineers as active members of a role-assignable group that has the required role assignments."
+      },
+      {
+        "id": "C",
+        "text": "Create an access package that includes the required administrative resources and assign the package to the engineers."
+      },
+      {
+        "id": "D",
+        "text": "Assign the engineers as eligible for the required roles by using Privileged Identity Management (PIM)."
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. Assign the engineers as eligible for the required roles by using Privileged Identity Management (PIM).**.",
+    "set": "AB-650: Administering Microsoft 365 & AI Services"
+  },
+  {
+    "id": 139,
+    "code_tag": "AB-650 #11",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "You have a Microsoft 365 subscription. You need to create a Conditional Access policy that blocks sign-ins for the following scenarios: - Activity from anonymous IP address. - Impossible travel between two geographical locations. Which condition should you configure for the policy?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Locations"
+      },
+      {
+        "id": "B",
+        "text": "Insider risk"
+      },
+      {
+        "id": "C",
+        "text": "User risk"
+      },
+      {
+        "id": "D",
+        "text": "Sign-in risk"
+      }
+    ],
+    "correct": [
+      "D"
+    ],
+    "explanation": "Verified Answer: **D. Sign-in risk**.",
+    "set": "AB-650: Administering Microsoft 365 & AI Services"
+  },
+  {
+    "id": 140,
+    "code_tag": "AB-650 #12",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "You have a Microsoft 365 E5 subscription that uses Microsoft Defender for Office 365. Strict protection is enabled for all recipients. The subscription contains a group named Group1 that contains all the mailboxes for your company's marketing department. Several marketing department mailboxes recently sent high volumes of external email after a credential was compromised. You need to enforce a lower external message limit for Group1. The solution must automatically restrict senders that reach the limit. What should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Create a custom anti-spam outbound policy."
+      },
+      {
+        "id": "B",
+        "text": "Modify the default anti-spam outbound policy."
+      },
+      {
+        "id": "C",
+        "text": "Modify the Strict protection settings."
+      },
+      {
+        "id": "D",
+        "text": "Configure the Standard preset security policy."
+      },
+      {
+        "id": "E",
+        "text": "Create a custom anti-spam inbound policy."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Create a custom anti-spam outbound policy.**.",
+    "set": "AB-650: Administering Microsoft 365 & AI Services"
+  },
+  {
+    "id": 141,
+    "code_tag": "AB-731 #5",
+    "type": "single_choice",
+    "domain": "Dynamics 365 & Dataverse AI Integration",
+    "stem": "A retail company wants to reduce customer support costs while improving response time. Which use case best demonstrates business value from generative AI?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Using AI to classify historical sales data"
+      },
+      {
+        "id": "B",
+        "text": "Deploying a chatbot that generates personalized customer responses"
+      },
+      {
+        "id": "C",
+        "text": "Running batch analytics on customer churn"
+      },
+      {
+        "id": "D",
+        "text": "Training a traditional ML model to predict inventory demand"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. Deploying a chatbot that generates personalized customer responses**.",
+    "set": "AB-731: Microsoft Certified AI Transformation Leader"
+  },
+  {
+    "id": 142,
+    "code_tag": "AB-731 #6",
+    "type": "single_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "What is the primary difference between generative AI and predictive machine learning?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Generative AI only works with images"
+      },
+      {
+        "id": "B",
+        "text": "Predictive ML creates new content"
+      },
+      {
+        "id": "C",
+        "text": "Generative AI produces new content, while predictive ML forecasts outcomes"
+      },
+      {
+        "id": "D",
+        "text": "Generative AI does not require data"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Generative AI produces new content, while predictive ML forecasts outcomes**.",
+    "set": "AB-731: Microsoft Certified AI Transformation Leader"
+  },
+  {
+    "id": 143,
+    "code_tag": "AB-731 #7",
+    "type": "single_choice",
+    "domain": "Azure AI Foundry & Multi-Agent Architecture",
+    "stem": "A legal firm wants to summarize large volumes of contracts and retrieve specific clauses. Which solution best meets this need?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Traditional keyword search"
+      },
+      {
+        "id": "B",
+        "text": "Azure AI Vision"
+      },
+      {
+        "id": "C",
+        "text": "Retrieval-Augmented Generation (RAG) with Azure AI Search"
+      },
+      {
+        "id": "D",
+        "text": "Time-series forecasting model"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Retrieval-Augmented Generation (RAG) with Azure AI Search**.",
+    "set": "AB-731: Microsoft Certified AI Transformation Leader"
+  },
+  {
+    "id": 144,
+    "code_tag": "AB-731 #8",
+    "type": "single_choice",
+    "domain": "Azure AI Foundry & Multi-Agent Architecture",
+    "stem": "Which factor most directly affects the cost of generative AI usage?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Number of users logged in"
+      },
+      {
+        "id": "B",
+        "text": "Token usage per request"
+      },
+      {
+        "id": "C",
+        "text": "Screen resolution"
+      },
+      {
+        "id": "D",
+        "text": "Model training time"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. Token usage per request**.",
+    "set": "AB-731: Microsoft Certified AI Transformation Leader"
+  },
+  {
+    "id": 145,
+    "code_tag": "AB-731 #9",
+    "type": "single_choice",
+    "domain": "Azure AI Foundry & Multi-Agent Architecture",
+    "stem": "What is a common challenge when deploying generative AI in business environments?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Lack of computing power"
+      },
+      {
+        "id": "B",
+        "text": "Model hallucinations and fabrications"
+      },
+      {
+        "id": "C",
+        "text": "Inability to scale"
+      },
+      {
+        "id": "D",
+        "text": "Lack of automation"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. Model hallucinations and fabrications**.",
+    "set": "AB-731: Microsoft Certified AI Transformation Leader"
+  },
+  {
+    "id": 146,
+    "code_tag": "AB-731 #10",
+    "type": "single_choice",
+    "domain": "AI Governance, Security & Responsible AI",
+    "stem": "How does effective prompt engineering improve business outcomes?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Reduces licensing requirements"
+      },
+      {
+        "id": "B",
+        "text": "Improves accuracy, relevance, and consistency of outputs"
+      },
+      {
+        "id": "C",
+        "text": "Eliminates the need for governance"
+      },
+      {
+        "id": "D",
+        "text": "Removes security risks"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. Improves accuracy, relevance, and consistency of outputs**.",
+    "set": "AB-731: Microsoft Certified AI Transformation Leader"
+  },
+  {
+    "id": 147,
+    "code_tag": "AB-731 #11",
+    "type": "single_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "Which principle best reflects secure AI practices?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Open access to all training data"
+      },
+      {
+        "id": "B",
+        "text": "No authentication required"
+      },
+      {
+        "id": "C",
+        "text": "Strong identity, access control, and data protection"
+      },
+      {
+        "id": "D",
+        "text": "Unlimited API usage"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Strong identity, access control, and data protection**.",
+    "set": "AB-731: Microsoft Certified AI Transformation Leader"
+  },
+  {
+    "id": 148,
+    "code_tag": "AB-731 #12",
+    "type": "single_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "When does traditional machine learning add the most value?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Generating creative marketing slogans"
+      },
+      {
+        "id": "B",
+        "text": "Translating languages"
+      },
+      {
+        "id": "C",
+        "text": "Predicting customer churn based on historical data"
+      },
+      {
+        "id": "D",
+        "text": "Writing policy documents"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Predicting customer churn based on historical data**.",
+    "set": "AB-731: Microsoft Certified AI Transformation Leader"
+  },
+  {
+    "id": 149,
+    "code_tag": "AB-731 #13",
+    "type": "single_choice",
+    "domain": "Azure AI Foundry & Multi-Agent Architecture",
+    "stem": "Which scenario best fits Microsoft 365 Copilot?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Training custom AI models"
+      },
+      {
+        "id": "B",
+        "text": "Writing code for cloud deployment"
+      },
+      {
+        "id": "C",
+        "text": "Drafting emails, summarizing meetings, and creating documents"
+      },
+      {
+        "id": "D",
+        "text": "Image recognition in manufacturing"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Drafting emails, summarizing meetings, and creating documents**.",
+    "set": "AB-731: Microsoft Certified AI Transformation Leader"
+  },
+  {
+    "id": 150,
+    "code_tag": "AB-731 #14",
+    "type": "single_choice",
+    "domain": "Microsoft Copilot Studio & Agent Design",
+    "stem": "When should an organization use Microsoft Copilot Studio?",
+    "options": [
+      {
+        "id": "A",
+        "text": "To replace Microsoft 365 Copilot"
+      },
+      {
+        "id": "B",
+        "text": "To build and customize copilots for specific business processes"
+      },
+      {
+        "id": "C",
+        "text": "To train foundation models"
+      },
+      {
+        "id": "D",
+        "text": "To manage Azure subscriptions"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. To build and customize copilots for specific business processes**.",
+    "set": "AB-731: Microsoft Certified AI Transformation Leader"
+  },
+  {
+    "id": 151,
+    "code_tag": "AB-250 #6",
+    "type": "single_choice",
+    "domain": "Dynamics 365 & Dataverse AI Integration",
+    "stem": "A company is implementing live chat on its customer support website by using Dynamics 365 Contact Center. The company has configured the environment and digital messaging capabilities. The chat solution must ensure that incoming customer messages are routed to customer service representatives and made available through the website. You need to complete the mandatory steps to set up and deploy the chat experience for the website. Which three actions should you perform? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Publish all customizations."
+      },
+      {
+        "id": "B",
+        "text": "Configure chat widget properties."
+      },
+      {
+        "id": "C",
+        "text": "Configure authentication settings."
+      },
+      {
+        "id": "D",
+        "text": "Create a chat workstream."
+      },
+      {
+        "id": "E",
+        "text": "Validate widget behavior in a test environment."
+      },
+      {
+        "id": "F",
+        "text": "Embed the widget script into the website."
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. Configure chat widget properties.**.",
+    "set": "AB-250: AI Contact Center in Dynamics 365"
+  },
+  {
+    "id": 152,
+    "code_tag": "AB-250 #7",
+    "type": "single_choice",
+    "domain": "Dynamics 365 & Dataverse AI Integration",
+    "stem": "A company runs outbound campaigns that have high call volume. The campaigns require efficient use of customer service representatives (CSRs) as well as minimizing idle time. The dialing method must ensure that calls are automatically initiated and connected only when CSRs are available. You need to configure the appropriate dialing method. What should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Use predictive dialing mode."
+      },
+      {
+        "id": "B",
+        "text": "Configure call recording."
+      },
+      {
+        "id": "C",
+        "text": "Enable outbound workstream throttling."
+      },
+      {
+        "id": "D",
+        "text": "Configure Copilot voice agent."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Use predictive dialing mode.**.",
+    "set": "AB-250: AI Contact Center in Dynamics 365"
+  },
+  {
+    "id": 153,
+    "code_tag": "AB-250 #8",
+    "type": "single_choice",
+    "domain": "Plan & Design Agentic AI Business Solutions",
+    "stem": "A company plans to launch an outbound campaign targeting customers based on predefined engagement conditions. The campaign must define how interactions are initiated, processed, and tracked. You need to configure the campaign structure. What should you configure?",
+    "options": [
+      {
+        "id": "A",
+        "text": "outbound dashboard metrics"
+      },
+      {
+        "id": "B",
+        "text": "proactive engagement"
+      },
+      {
+        "id": "C",
+        "text": "queue"
+      },
+      {
+        "id": "D",
+        "text": "routing ruleset"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. proactive engagement**.",
+    "set": "AB-250: AI Contact Center in Dynamics 365"
+  },
+  {
+    "id": 154,
+    "code_tag": "AB-250 #10",
+    "type": "single_choice",
+    "domain": "Dynamics 365 & Dataverse AI Integration",
+    "stem": "A company requires AI-driven optimization of service workflows. The system must recommend improvements based on performance data. You need to configure transformation analysis. Which two actions should you perform? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure real-time Dynamics 365 Contact Center dashboards"
+      },
+      {
+        "id": "B",
+        "text": "Use interaction data for analysis"
+      },
+      {
+        "id": "C",
+        "text": "Enable the relevant admin agent"
+      },
+      {
+        "id": "D",
+        "text": "Enable conversation diagnostics"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. Use interaction data for analysis**.",
+    "set": "AB-250: AI Contact Center in Dynamics 365"
+  },
+  {
+    "id": 155,
+    "code_tag": "AB-250 #11",
+    "type": "single_choice",
+    "domain": "Dynamics 365 & Dataverse AI Integration",
+    "stem": "A company uses Dynamics 365 Contact Center to handle customer requests through multiple queues. Customer service representatives (CSRs) are staffed during specific periods of the day only. Requests submitted outside staffed periods are still being placed into queues and assigned when CSRs become available. This leads to delays and poor customer experience. You need to ensure that queues process work during defined service periods only. What should you configure?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Dynamics 365 Customer Service calendar"
+      },
+      {
+        "id": "B",
+        "text": "CSR working hours"
+      },
+      {
+        "id": "C",
+        "text": "Queue operating hours"
+      },
+      {
+        "id": "D",
+        "text": "Channel operating hours"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Queue operating hours**.",
+    "set": "AB-250: AI Contact Center in Dynamics 365"
+  },
+  {
+    "id": 156,
+    "code_tag": "AB-250 #12",
+    "type": "single_choice",
+    "domain": "Dynamics 365 & Dataverse AI Integration",
+    "stem": "A company uses Dynamics 365 Contact Center. Customer service representatives (CSRs) in different departments experience inconsistent session handling while using the system. The company requires consistent session behavior across all CSRs. You need to standardize behavior across departments. What should you assign?",
+    "options": [
+      {
+        "id": "A",
+        "text": "session template"
+      },
+      {
+        "id": "B",
+        "text": "application tab template"
+      },
+      {
+        "id": "C",
+        "text": "capacity profile"
+      },
+      {
+        "id": "D",
+        "text": "experience profile"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. session template**.",
+    "set": "AB-250: AI Contact Center in Dynamics 365"
+  },
+  {
+    "id": 157,
+    "code_tag": "AB-250 #13",
+    "type": "single_choice",
+    "domain": "Dynamics 365 & Dataverse AI Integration",
+    "stem": "A company uses Dynamics 365 Contact Center to handle customer interactions across multiple channels. Supervisors are responsible for monitoring active conversations and intervening when issues occur. Supervisors report that they must switch between multiple pages to view conversations and take action, which delays response time. The company requires supervisors to monitor conversations and take action without leaving a single interface. You need to configure and monitor SLAs to support contact center operations. What should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Embed analytics reports into a dashboard"
+      },
+      {
+        "id": "B",
+        "text": "Configure the Supervisor experience"
+      },
+      {
+        "id": "C",
+        "text": "Customize dashboards"
+      },
+      {
+        "id": "D",
+        "text": "Enable the omnichannel historical analytics"
+      }
+    ],
+    "correct": [
+      "B"
+    ],
+    "explanation": "Verified Answer: **B. Configure the Supervisor experience**.",
+    "set": "AB-250: AI Contact Center in Dynamics 365"
+  },
+  {
+    "id": 158,
+    "code_tag": "AB-250 #14",
+    "type": "single_choice",
+    "domain": "Dynamics 365 & Dataverse AI Integration",
+    "stem": "A company uses Dynamics 365 Customer Service. The company has a custom table to track internal issues. Customer service representatives (CSRs) track cases separately. CSRs must be able to resolve issues faster and consistently. You need to ensure that knowledge articles are available during issue resolution. What should you do first?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Configure knowledge article relationships for activities"
+      },
+      {
+        "id": "B",
+        "text": "Enable knowledge search for the table"
+      },
+      {
+        "id": "C",
+        "text": "Enable knowledge articles for the table"
+      },
+      {
+        "id": "D",
+        "text": "Configure knowledge search providers for case resolution"
+      }
+    ],
+    "correct": [
+      "C"
+    ],
+    "explanation": "Verified Answer: **C. Enable knowledge articles for the table**.",
+    "set": "AB-250: AI Contact Center in Dynamics 365"
+  },
+  {
+    "id": 159,
+    "code_tag": "AB-250 #15",
+    "type": "single_choice",
+    "domain": "Dynamics 365 & Dataverse AI Integration",
+    "stem": "A company uses knowledge articles to support customer service representatives (CSRs). CSRs report that relevant articles are NOT returned when they search during case resolution. Search results must return relevant knowledge articles based on user queries. You need to improve the accuracy of knowledge search results. Which two actions should you perform? Each correct answer presents part of the solution. NOTE: Each correct selection is worth one point.",
+    "options": [
+      {
+        "id": "A",
+        "text": "Enable Dataverse relevance search for knowledge articles"
+      },
+      {
+        "id": "B",
+        "text": "Configure knowledge search filters for CSR views"
+      },
+      {
+        "id": "C",
+        "text": "Enable knowledge article versioning"
+      },
+      {
+        "id": "D",
+        "text": "Configure searchable columns in the knowledge article table"
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Enable Dataverse relevance search for knowledge articles**.",
+    "set": "AB-250: AI Contact Center in Dynamics 365"
+  },
+  {
+    "id": 160,
+    "code_tag": "AB-250 #16",
+    "type": "single_choice",
+    "domain": "Dynamics 365 & Dataverse AI Integration",
+    "stem": "A company uses Dynamics 365 Contact Center to handle incoming interactions. Customer service representatives (CSRs) report that when a new work item arrives, they cannot determine the type or context of the request until after accepting it. CSRs must be able to determine key details about work items before accepting them to decide how to handle the interactions. You need to configure how work items appear to CSRs. What should you do?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Select which data elements are displayed for incoming conversations."
+      },
+      {
+        "id": "B",
+        "text": "Configure how sessions are arranged in the workspace."
+      },
+      {
+        "id": "C",
+        "text": "Adjust the personal notification preferences."
+      },
+      {
+        "id": "D",
+        "text": "Define how CSR availability is updated during interactions."
+      }
+    ],
+    "correct": [
+      "A"
+    ],
+    "explanation": "Verified Answer: **A. Select which data elements are displayed for incoming conversations.**.",
+    "set": "AB-250: AI Contact Center in Dynamics 365"
+  }
+]

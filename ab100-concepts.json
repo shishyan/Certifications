@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "deck": "Set 1: Plan & Govern AI Business Solutions",
+    "term": "CFO Quarterly Custom AI Agent Review (Model Selection & Orchestration)",
+    "definition": "When a CFO evaluates custom AI agent designs in a quarterly financial/ROI analysis, the two primary architectural cost components are:\n• **GPT Models Used for the Agent**: Reasoning/flagship models (`gpt-4o`, `o1`) vs. mini models (`gpt-4o-mini`), and PTU vs. pay-as-you-go token pricing.\n• **Agent Orchestration Method**: Autonomous/Generative orchestration triggers multi-step reasoning turns and subagent tool invocations, multiplying message/token consumption compared to classic deterministic routing.",
+    "examTip": "Eliminate user-telemetry metrics like 'average characters in a chat message' or 'average session time per agent' when asked about **custom AI agent design components** for financial analysis."
+  },
+  {
+    "id": 2,
+    "deck": "Set 1: Plan & Govern AI Business Solutions",
+    "term": "Microsoft Purview vs. Defender vs. Azure Policy for Foundry Agents",
+    "definition": "• **Microsoft Purview**: Governs **data residency**, cross-region data movement compliance (e.g., US and Europe), sensitivity labels, DLP, and grounding data compliance for Microsoft Foundry agents.\n• **Microsoft Defender for Cloud**: Runtime AI threat protection, Prompt Shields, and security posture management.\n• **Azure Policy**: Resource deployment guardrails (allowed SKUs/regions at ARM level, not grounding data movement governance).",
+    "examTip": "Whenever an exam scenario mentions **data residency and movement regulations** for agents and their **grounding data**, select **Microsoft Purview**."
+  },
+  {
+    "id": 3,
+    "deck": "Set 1: Plan & Govern AI Business Solutions",
+    "term": "Microsoft Cloud Adoption Framework (CAF) vs. Power Platform Adoption",
+    "definition": "• **Microsoft Cloud Adoption Framework for Azure (CAF)**: Enterprise framework for infrastructure migration, landing zones, cloud governance, and AI workload readiness.\n• **Power Platform / Copilot Studio Adoption Framework**: Center of Excellence (CoE) starter kit, environment strategy, and citizen-developer governance.",
+    "examTip": "In the Fabrikam case study, use **Microsoft Cloud Adoption Framework for Azure** for the **infrastructure migration** requirement."
+  },
+  {
+    "id": 4,
+    "deck": "Set 1: Plan & Govern AI Business Solutions",
+    "term": "Microsoft Entra Privileged Identity Management (PIM) & Agent ID",
+    "definition": "• **Microsoft Entra PIM**: Provides **time-bound, just-in-time (JIT) role activation** with approval workflows and audit trails for privileged administrators.\n• **App Registrations & Entra Agent ID**: Enables third-party cloud services and autonomous AI agents to authenticate securely to Microsoft Entra with scoped permissions.",
+    "examTip": "Entra PIM = **time-bound role activation**. Conditional Access = **control over how users/agents access cloud apps**."
+  },
+  {
+    "id": 5,
+    "deck": "Set 2: Microsoft Copilot Studio & Agent Architecture",
+    "term": "Copilot Studio Templates (Voice vs. IT Helpdesk vs. Citizen Services)",
+    "definition": "• **Voice Template in Microsoft Copilot Studio**: Built-in DTMF, speech recognition, barge-in handling, and telephony handoff for hands-free field/sales executives and contact center callers.\n• **Fallback Topic**: Triggered automatically when an AI agent encounters unexpected user input or unrecognized actions that match no defined topic or knowledge source.",
+    "examTip": "In the Fabrikam case study, select **Voice in Microsoft Copilot Studio** for mobile/hands-free sales executives, and **a fallback topic** for handling unexpected AI agent actions."
+  },
+  {
+    "id": 6,
+    "deck": "Set 2: Microsoft Copilot Studio & Agent Architecture",
+    "term": "Extending Microsoft 365 Copilot to Azure Logic & External Systems",
+    "definition": "• **Copilot Studio Actions / API Plugins / Custom Connectors**: Allow Microsoft 365 Copilot to invoke external business logic hosted in Azure services (Azure Functions, Azure Logic Apps, Azure API Management, or Microsoft Foundry endpoints).\n• **Graph Connectors (Copilot Connectors)**: Ingest external unstructured content into the Microsoft Graph index for grounding.",
+    "examTip": "Use **Copilot Connectors (Graph Connectors)** for read-only knowledge indexing; use **Copilot Studio Actions / Custom Connectors / API Plugins** to invoke external logic in Azure."
+  },
+  {
+    "id": 7,
+    "deck": "Set 3: Dynamics 365 & Dataverse AI Solutions",
+    "term": "Dataverse Non-Standard Terminology & Custom Lead Columns",
+    "definition": "When a company stores records in a Microsoft Dataverse table (such as `Lead` in Dynamics 365 Sales) using non-standard terminology and custom column names, configure **synonyms, column descriptions, and glossary terms** in Copilot Studio / Dataverse knowledge settings so the AI agent accurately maps natural language queries to custom schema fields.",
+    "examTip": "Adding **synonyms and descriptions** to Dataverse table columns resolves natural-language-to-SQL/Dataverse mismatches without renaming underlying database columns."
+  },
+  {
+    "id": 8,
+    "deck": "Set 3: Dynamics 365 & Dataverse AI Solutions",
+    "term": "Dynamics 365 Sales Copilot Email Assist & Finance In-App Guidance",
+    "definition": "• **Copilot Email Assist (Dynamics 365 Sales)**: Generates contextual prospect communication emails using CRM lead/opportunity data.\n• **Dynamics 365 Finance & Operations Copilot In-App Help**: Uses Business Process Catalog / Task Recorder guides and organizational documentation to answer user workflow questions directly inside the app.",
+    "examTip": "For prospect communication requirements in Dynamics 365 Sales, select **Copilot email assist**."
+  }
+]
