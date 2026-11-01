@@ -1,0 +1,352 @@
+[
+  {
+    "id": 1,
+    "deck": "Set 1: Solution Design, Problem Framing & Architecture",
+    "term": "Four Evaluation Pillars (Efficiency, Transformation, Solution Cost, Performance SLA)",
+    "definition": "Anthropic architectural evaluation framework separating:\n• **Efficiency**: Doing existing tasks faster or with fewer manual hours.\n• **Transformation**: Enabling new capabilities or business workflows previously impossible.\n• **Solution Cost**: Total cost of ownership (input/output tokens, caching, retrieval, human review, infrastructure).\n• **Performance SLA**: Hard latency (TTFT, P95/P99 completion), availability, and accuracy targets.",
+    "examTip": "If an architecture fails a hard **Performance SLA** (e.g., clinical or regulatory latency bound), eliminate it first before comparing Efficiency and Solution Cost."
+  },
+  {
+    "id": 2,
+    "deck": "Set 1: Solution Design, Problem Framing & Architecture",
+    "term": "Deterministic Code vs. Claude Judgment Boundary",
+    "definition": "Claude should handle unstructured text interpretation, synthesis, classification, and ambiguous routing, while **deterministic application code** must own exact calculations (e.g., tax/pricing math), schema validation, state mutations, and access control.",
+    "examTip": "Never encode tax math, financial calculations, or hard eligibility rules purely inside a system prompt—delegate those to deterministic code or verified tools."
+  },
+  {
+    "id": 3,
+    "deck": "Set 1: Solution Design, Problem Framing & Architecture",
+    "term": "Audience-Specific Architecture Communication Packages",
+    "definition": "Tailor architecture artifacts to each stakeholder's decision rights:\n• **Security & Compliance**: Threat model, residual-risk register, control-mapping table.\n• **Product Manager**: Delivered capabilities, feature-level roadmap dependencies.\n• **Delivery / Engineering**: Component diagrams, interface contracts, configuration parameters, operational runbooks.\n• **Executive Sponsor**: Business outcome, ROI/cost, risk summary, and decision options.",
+    "examTip": "Avoid sending a single undifferentiated narrative to all audiences; match artifacts to each role's governance or implementation responsibilities."
+  },
+  {
+    "id": 4,
+    "deck": "Set 1: Solution Design, Problem Framing & Architecture",
+    "term": "Invoice & Document Pipeline Layering (Pre-Processing, Model Stage, Post-Processing)",
+    "definition": "• **Pre-Processing**: OCR on scanned images, authentication/authorization checks, and PII redaction prior to model invocation.\n• **Model Stage**: Claude-based classification of document type and structured field extraction.\n• **Post-Processing**: Deterministic JSON schema validation and persistence of validated records to the system of record.",
+    "examTip": "PII redaction and auth checks must execute in **Pre-Processing** before retrieval or model invocation; schema validation and DB persistence belong in **Post-Processing**."
+  },
+  {
+    "id": 5,
+    "deck": "Set 1: Solution Design, Problem Framing & Architecture",
+    "term": "Measured Bottleneck Alignment",
+    "definition": "Before introducing Claude, decompose end-to-end process latency. If 80% of delay comes from an overnight batch sync and 20% from manual note triage, fix the system sync in the platform and scope Claude specifically to note extraction—measuring both metrics independently.",
+    "examTip": "Never ask Claude to 'infer' missing system state to work around a broken database synchronization."
+  },
+  {
+    "id": 6,
+    "deck": "Set 2: Agentic Workflows & Multi-Agent Orchestration",
+    "term": "Prompt Chaining vs. Dynamic Orchestrator-Workers",
+    "definition": "• **Prompt Chaining (Fixed Pipeline)**: Best when steps are known in advance (e.g., Extract -> Validate -> Synthesize) with programmatic gates between stages.\n• **Orchestrator-Workers (Dynamic Decomposition)**: Best when subtasks depend on runtime discoveries (e.g., multi-file bug investigation), using bounded task contracts.",
+    "examTip": "Prefer the simplest deterministic workflow that meets the requirement; only use dynamic multi-agent orchestration when task topology cannot be known upfront."
+  },
+  {
+    "id": 7,
+    "deck": "Set 2: Agentic Workflows & Multi-Agent Orchestration",
+    "term": "Context-Isolated Subagents & Coordinator Pattern",
+    "definition": "Subagents run in isolated context windows and do **not** automatically inherit the parent coordinator's full conversation history. The coordinator dispatches bounded tasks with explicit input payloads and receives structured summary artifacts back.",
+    "examTip": "Use subagents to prevent context pollution when analyzing large independent partitions (e.g., separate hospital wards or annexes) in parallel."
+  },
+  {
+    "id": 8,
+    "deck": "Set 2: Agentic Workflows & Multi-Agent Orchestration",
+    "term": "Coupled State vs. Parallel Task Decomposition",
+    "definition": "Tasks with tightly coupled shared constraints (e.g., resource scheduling where every allocation immediately constrains all others) should remain with a **single context owner** rather than split across independent parallel agents that create conflicting allocations.",
+    "examTip": "Parallelize independent evidence-gathering or verification, but keep coupled constraint solving under one authoritative coordinator/context owner."
+  },
+  {
+    "id": 9,
+    "deck": "Set 2: Agentic Workflows & Multi-Agent Orchestration",
+    "term": "Handling `stop_reason`: `tool_use` vs. `pause_turn` vs. `max_tokens`",
+    "definition": "• **`tool_use`**: Execute the requested client tool(s) and return `tool_result` blocks in the next user message.\n• **`pause_turn`**: Server-side loop paused on a long turn; send the assistant content back with a continuation bound.\n• **`max_tokens`**: Output was truncated at the token ceiling; treat structured JSON as incomplete and segment or rerun.",
+    "examTip": "Never parse a `max_tokens`-truncated JSON payload as a complete business record, and never rely solely on natural-language wording when `stop_reason` provides explicit state."
+  },
+  {
+    "id": 10,
+    "deck": "Set 2: Agentic Workflows & Multi-Agent Orchestration",
+    "term": "Hypothesis-Evidence Graph in Root-Cause Investigations",
+    "definition": "When an agent investigates complex incidents across multiple telemetry tools, maintain a structured hypothesis-evidence graph, dispatch bounded probe tasks for unresolved claims, update state only from verified tool outputs, and stop when acceptance criteria are met.",
+    "examTip": "Avoid letting multiple agents vote on the full raw transcript without structured evidence linkage."
+  },
+  {
+    "id": 11,
+    "deck": "Set 3: Tool Design, Tool Search & Model Context Protocol (MCP)",
+    "term": "Tool Search (`tool_reference` & `defer_loading: true`)",
+    "definition": "When an agent connects to dozens or hundreds of tools across MCP servers, mark low-frequency tools with `defer_loading: true` and enable the Tool Search tool. Claude discovers relevant tools on demand via `tool_reference` without bloating every turn's input token prefix.",
+    "examTip": "Keep high-frequency core tools loaded in the static prefix and defer specialized/administrative tools via `defer_loading: true`."
+  },
+  {
+    "id": 12,
+    "deck": "Set 3: Tool Design, Tool Search & Model Context Protocol (MCP)",
+    "term": "Disambiguating Overlapping Tool Descriptions",
+    "definition": "When an agent misroutes calls across 30+ tools, the primary root cause is **overlapping tool descriptions and ambiguous input schemas**. Refactor tool names, descriptions, and boundaries—or split into domain-routed specialist toolsets.",
+    "examTip": "Adding more tools or speculative 'future' tools degrades tool-selection accuracy; keep an agent's active toolset scoped to its defined tasks and handoffs."
+  },
+  {
+    "id": 13,
+    "deck": "Set 3: Tool Design, Tool Search & Model Context Protocol (MCP)",
+    "term": "Structured Tool Error Contract (`is_error: true`)",
+    "definition": "When a tool invocation fails, return a structured `tool_result` with `is_error: true`, an explicit `errorCategory` (`transient`, `validation`, `permission`, `business_rule`), `isRetryable` boolean, and a safe actionable message.",
+    "examTip": "Never expose raw stack traces or fallback admin credentials in tool errors, and distinguish retryable transient timeouts from terminal permission/validation errors."
+  },
+  {
+    "id": 14,
+    "deck": "Set 3: Tool Design, Tool Search & Model Context Protocol (MCP)",
+    "term": "Forcing Deterministic Tool Execution (`tool_choice`)",
+    "definition": "• `tool_choice: {\"type\": \"auto\"}`: Model decides whether to call a tool.\n• `tool_choice: {\"type\": \"any\"}`: Model must call at least one tool from the provided list.\n• `tool_choice: {\"type\": \"tool\", \"name\": \"...\"}`: Forces the model to call a specific named tool (ideal for guaranteed structured extraction or first-step lookup).",
+    "examTip": "Note that Extended Thinking is not compatible with forced `tool_choice: {\"type\": \"any\"}` or `{\"type\": \"tool\"}`—use `auto` when Extended Thinking is active on that turn."
+  },
+  {
+    "id": 15,
+    "deck": "Set 3: Tool Design, Tool Search & Model Context Protocol (MCP)",
+    "term": "MCP Server Trust & `always_ask` Default",
+    "definition": "External or third-party MCP servers can introduce new tools or change tool behavior during upgrades. Default MCP tool permissions to `always_ask`, explicitly allowlist only vetted read-only tools, and gate destructive/write tools (`close_account`, `delete`) behind human approval.",
+    "examTip": "Never trust an MCP server's display name as proof that every tool it exposes in future versions is read-only."
+  },
+  {
+    "id": 16,
+    "deck": "Set 4: Prompt Engineering & Structured Outputs",
+    "term": "Concern Separation Across Focused Prompts",
+    "definition": "When adding few-shot examples for one concern (e.g., business logic bugs) measurably degrades recall on another concern (e.g., API design/security) in a single monolithic prompt, split the review into **separate focused prompts** with dedicated examples and consolidate findings.",
+    "examTip": "Upgrading to a larger model or adding a longer checklist does not fix attention competition inside a single overloaded prompt."
+  },
+  {
+    "id": 17,
+    "deck": "Set 4: Prompt Engineering & Structured Outputs",
+    "term": "Zero-Shot vs. Few-Shot vs. Chain-of-Thought",
+    "definition": "• **Zero-Shot**: Ideal starting point when categories, rules, and field contracts are clearly specified and already meet accuracy targets.\n• **Few-Shot**: Anchors exact output formatting, edge-case disambiguation, and boundary judgments.\n• **Chain-of-Thought / Thinking**: Reserved for multi-step reasoning, constraint satisfaction, and complex synthesis—not needed on simple deterministic extractions where it adds latency and output tokens.",
+    "examTip": "Do not enable Chain-of-Thought or Extended Thinking by default on every simple classification task where latency SLAs are tight."
+  },
+  {
+    "id": 18,
+    "deck": "Set 4: Prompt Engineering & Structured Outputs",
+    "term": "Collision-Safe Delimiters & `stop_sequences`",
+    "definition": "If user transcripts or code blocks naturally contain a configured `stop_sequence` delimiter (e.g., `---END---`), generation terminates prematurely with `stop_reason: \"stop_sequence\"`. Confirm the fired stop sequence, encode or replace colliding delimiters (e.g., XML tags), and verify schema completeness.",
+    "examTip": "Always inspect `stop_reason` and `stop_sequence` in telemetry when outputs unexpectedly truncate mid-document."
+  },
+  {
+    "id": 19,
+    "deck": "Set 4: Prompt Engineering & Structured Outputs",
+    "term": "Premise Verification & Abstention Design",
+    "definition": "Users frequently ask leading questions containing false premises (e.g., citing a non-existent certificate or policy clause). Prompt and pipeline design must verify premises against retrieved source evidence first, explicitly allow **abstention** when evidence is missing, and surface conflicting sources rather than guessing.",
+    "examTip": "When sources conflict, instruct Claude to produce an attributed brief preserving both conflicting claims with provenance rather than silently picking one."
+  },
+  {
+    "id": 20,
+    "deck": "Set 4: Prompt Engineering & Structured Outputs",
+    "term": "Nullable Schema Fields vs. Hallucinated Defaults",
+    "definition": "In structured JSON extraction schemas, make optional or frequently absent fields explicitly **nullable** (`null` or `not_found` enum) so Claude does not fabricate values to satisfy a required string/number constraint.",
+    "examTip": "Combine nullable schema fields with deterministic post-processing validation before writing to downstream databases."
+  },
+  {
+    "id": 21,
+    "deck": "Set 5: Prompt Caching, Extended Thinking & Token Economics",
+    "term": "Prompt Caching Prefix Ordering (`cache_control`)",
+    "definition": "Prompt caching matches exact prefixes in the order: **`tools` -> `system` -> `messages`**. Place stable, repeated content (tool definitions, system instructions, shared reference manuals, few-shot examples) at the very head of the prompt, and put per-request dynamic variables or user queries at the end.",
+    "examTip": "Injecting a changing timestamp, request UUID, or user-specific header at the top of the system prompt invalidates the entire downstream cache prefix!"
+  },
+  {
+    "id": 22,
+    "deck": "Set 5: Prompt Caching, Extended Thinking & Token Economics",
+    "term": "Top-Level Automatic Caching in Multi-Turn Sessions",
+    "definition": "In growing multi-turn conversations, advancing the cache breakpoint across turns allows prior conversation history and tool results to be read from cache (`cache_read_input_tokens`) rather than re-processed at full input price.",
+    "examTip": "Monitor both `cache_creation_input_tokens` (writes) and `cache_read_input_tokens` (hits) per workload slice to confirm positive cache ROI."
+  },
+  {
+    "id": 23,
+    "deck": "Set 5: Prompt Caching, Extended Thinking & Token Economics",
+    "term": "Extended Thinking & Adaptive Thinking (`budget_tokens` / `effort`)",
+    "definition": "Extended Thinking allocates an internal reasoning budget before emitting the final response. With **Adaptive Thinking**, you can tune the `effort` level (`low`, `medium`, `high`). If `medium` effort meets all quality/constraint gates while meeting P95 latency, adopt it over `high`.",
+    "examTip": "When continuing an active tool-use loop within the same turn, preserve the assistant's `thinking` blocks alongside `tool_use` blocks; do not copy prior clients' thinking blocks into a new client's session."
+  },
+  {
+    "id": 24,
+    "deck": "Set 5: Prompt Caching, Extended Thinking & Token Economics",
+    "term": "Streaming & Time To First Token (TTFT) vs. Full Completion SLA",
+    "definition": "**Streaming** dramatically reduces perceived latency (TTFT) for interactive human chat, but it does **not** reduce total token generation time. If a downstream machine pipeline requires the complete validated JSON within an 8-second SLA, streaming alone will not satisfy the full-completion SLA.",
+    "examTip": "To reduce full-completion time, shorten output token length, tune thinking effort, ensure high cache-hit rates, or route to a faster qualified model."
+  },
+  {
+    "id": 25,
+    "deck": "Set 5: Prompt Caching, Extended Thinking & Token Economics",
+    "term": "Tokenizer Differences Across Model Generations",
+    "definition": "Different model families/versions can tokenize the same text into different token counts. Never compare raw token counts as a model-independent efficiency score; use each target model's token-counting endpoint and compare **end-to-end cost and latency per accepted task**.",
+    "examTip": "Always normalize efficiency metrics to cost per accepted output and P95/P99 latency on the target model."
+  },
+  {
+    "id": 26,
+    "deck": "Set 6: RAG, Chunking, Retrieval & Citations",
+    "term": "Dense vs. Sparse vs. Hybrid vs. Structured Retrieval",
+    "definition": "• **Dense Vector Retrieval**: Captures paraphrased semantic intent over unstructured prose.\n• **Sparse Lexical Retrieval (BM25)**: Recovers exact identifiers, SKUs, error codes, and rare tokens.\n• **Hybrid Retrieval**: Combines dense + sparse with reciprocal rank fusion / reranking for superior recall.\n• **Structured Query (SQL/Metadata)**: Best for exact filter-and-aggregate queries over relational schemas.",
+    "examTip": "Never use a vector index as a replacement for relational filter/aggregate queries, and always pair dense vectors with sparse lexical search when exact product/clause IDs matter."
+  },
+  {
+    "id": 27,
+    "deck": "Set 6: RAG, Chunking, Retrieval & Citations",
+    "term": "Corpus-Aligned Chunking Strategies",
+    "definition": "• **Code or Hierarchical Specs**: Function-level, AST, or tree-aware chunking following specification hierarchy.\n• **Long Structured Documents**: Semantic chunking along clause/paragraph boundaries or hierarchical section-mirroring chunks.\n• **Heterogeneous Short Records**: Per-record chunking (1 record = 1 chunk) or fixed-size with overlap.",
+    "examTip": "When adding Contextual Retrieval prefixes to chunks, verify that `prefix + chunk` stays within the embedding model's token limit and rebuild both dense and sparse indexes from the same versioned chunk IDs."
+  },
+  {
+    "id": 28,
+    "deck": "Set 6: RAG, Chunking, Retrieval & Citations",
+    "term": "Pre-Retrieval Metadata Filtering & Tenant Isolation",
+    "definition": "Authentication and authorization must run **before** retrieval so the search query enforces hard metadata filters (`tenant_id`, `role`, `product_family`, `major_version`) in the retrieval engine prior to semantic ranking.",
+    "examTip": "Never retrieve across all tenants and rely on the prompt to tell Claude 'ignore documents belonging to other tenants'."
+  },
+  {
+    "id": 29,
+    "deck": "Set 6: RAG, Chunking, Retrieval & Citations",
+    "term": "Retrieval Evaluation (`Pass@k` & Golden Chunks) vs. Answer Evaluation",
+    "definition": "Separate RAG evaluation into two distinct stages:\n1. **Retrieval Eval**: Measure `Pass@k` / recall against golden source chunks before generation.\n2. **Generation Eval**: Measure groundedness, citation accuracy, and abstention on verified vs. unverified premises.",
+    "examTip": "A lucky end-to-end answer does not prove retrieval is healthy; always measure `Pass@k` on campus/year/version edge cases separately."
+  },
+  {
+    "id": 30,
+    "deck": "Set 6: RAG, Chunking, Retrieval & Citations",
+    "term": "Native Citations & Provenance Preservation",
+    "definition": "Enable document citations or structured provenance fields (`source_id`, `document_title`, `section`, `char_location`/`page_number`) so reviewers and downstream UIs can verify every factual claim directly against the authoritative passage.",
+    "examTip": "When compacting long multi-step research contexts, preserve structured file/citation pointers rather than summarizing away source identifiers."
+  },
+  {
+    "id": 31,
+    "deck": "Set 7: Evaluation, Graders & Experimentation",
+    "term": "Sample Size & Statistical Power in A/B Testing",
+    "definition": "Before running a prompt or model experiment, compute required sample size from the baseline rate, minimum detectable effect (MDE), significance level ($\\alpha$), and statistical power ($1-\\beta$). Do not stop an experiment early on a noisy 1-day dip or declare a winner when exposure logs have sample ratio mismatch.",
+    "examTip": "If a high-severity slice (e.g., wrongful cancellation) has only 2 events in online traffic, supplement the online A/B test with a dedicated high-volume **offline stratified evaluation set**."
+  },
+  {
+    "id": 32,
+    "deck": "Set 7: Evaluation, Graders & Experimentation",
+    "term": "Decomposing & Calibrating LLM-as-a-Judge Graders",
+    "definition": "If a single holistic LLM grader favors polite/empathetic tone over factual accuracy, split the rubric into **independent dimensions** (e.g., deterministic/code check for required clauses + calibrated rubric for factual support + separate tone score) and calibrate against human-adjudicated labels.",
+    "examTip": "Use deterministic code graders whenever outputs can be checked via exact schema, regex, or clause presence, and reserve calibrated model/human graders for semantic quality."
+  },
+  {
+    "id": 33,
+    "deck": "Set 7: Evaluation, Graders & Experimentation",
+    "term": "Regression Gates vs. Capability Benchmarks",
+    "definition": "• **Regression Gate**: High-pass threshold (near 100%) on mature, reliable production workflows that blocks any deployment regressing core behavior.\n• **Capability Evals**: Track progress on harder, actively improving workflows without masking regressions in stable slices.",
+    "examTip": "Never average 4 reliable workflows and 1 experimental workflow into a single combined score that hides regressions on the reliable paths."
+  },
+  {
+    "id": 34,
+    "deck": "Set 7: Evaluation, Graders & Experimentation",
+    "term": "Capturing Production Dispositions for Flywheel Curation",
+    "definition": "Log linked traces containing input reference, retrieved evidence, prompt/model version, generated output, and the human reviewer's disposition (`approved`, `edited`, `rejected` with reason). Curate verified failure patterns into versioned offline evaluation suites.",
+    "examTip": "Never auto-inject unverified raw user corrections directly into production prompts without review and versioned evaluation."
+  },
+  {
+    "id": 35,
+    "deck": "Set 7: Evaluation, Graders & Experimentation",
+    "term": "Staging vs. Production Parity Investigation",
+    "definition": "When staging evaluations pass but production grades drop, capture and compare the exact resolved model snapshot ID, provider/region routing, temperature/thinking settings, retrieval index freshness, and input traffic distribution across both environments.",
+    "examTip": "Never lower the production grader threshold just to make staging and production pass rates match."
+  },
+  {
+    "id": 36,
+    "deck": "Set 8: Batch API, Tiered Routing & Cost Operations",
+    "definition": "The **Message Batches API** processes asynchronous workloads (up to 24-hour window) at a 50% cost discount without consuming real-time interactive rate limits. Ideal for overnight document backfills, bulk evaluations, and non-urgent catalog enrichment.",
+    "term": "Message Batches API vs. Synchronous & Priority Tier",
+    "examTip": "Never use the 24-hour Batch API for synchronous user-blocking requests with strict seconds-level SLAs; use **Priority Tier** or provisioned capacity for critical low-latency spikes."
+  },
+  {
+    "id": 37,
+    "deck": "Set 8: Batch API, Tiered Routing & Cost Operations",
+    "term": "Handling Batch API Partial Failures & `custom_id`",
+    "definition": "Each item in a Message Batch carries a `custom_id`. Inspect each item's result status (`succeeded`, `errored`, `expired`, `canceled`) and `stop_reason` (including `refusal`). Re-submit only failed/expired `custom_id` items after fixing transient or token-limit issues.",
+    "examTip": "A batch job completing with HTTP 200 does not mean every item produced a usable business answer—always check per-item status and `stop_reason`."
+  },
+  {
+    "id": 38,
+    "deck": "Set 8: Batch API, Tiered Routing & Cost Operations",
+    "term": "Tiered Model Routing (Haiku / Sonnet / Opus)",
+    "definition": "Route high-volume routine classification or lookup planning to a fast, cost-efficient model (e.g., Claude Haiku/Sonnet) validated against the accuracy contract, and escalate only complex synthesis or low-confidence edge cases to a heavier capability-leading model (e.g., Opus).",
+    "examTip": "Evaluate each stage's accuracy contract and end-to-end P95 latency including escalation retries before promoting a tiered router."
+  },
+  {
+    "id": 39,
+    "deck": "Set 8: Batch API, Tiered Routing & Cost Operations",
+    "term": "End-to-End Tail Latency (P95/P99) Under Concurrency",
+    "definition": "Measure P95 and P99 latency from **request admission to the first valid business result** under representative peak concurrency, explicitly accounting for queue wait time, tool-call round-trips, and validation retries.",
+    "examTip": "First-attempt model latency is misleading if 15% of requests fail schema validation and trigger a second full generation retry."
+  },
+  {
+    "id": 40,
+    "deck": "Set 8: Batch API, Tiered Routing & Cost Operations",
+    "term": "Workspace Isolation, Usage API & Cost Attribution",
+    "definition": "Assign separate Anthropic Console **Workspaces** and service-specific API keys per business unit or workload. Reconcile near-real-time Usage buckets with finalized Cost API reports and application-level telemetry.",
+    "examTip": "Do not share a single API key across multiple departments and attempt to guess cost allocation from aggregate monthly invoices."
+  },
+  {
+    "id": 41,
+    "deck": "Set 9: Claude Code, CLAUDE.md, Skills & Dev Enablement",
+    "term": "Claude Code Configuration Scopes & Precedence",
+    "definition": "Claude Code settings and permissions follow a strict five-level hierarchy:\n**1. Managed (Enterprise policy) > 2. Command-line arguments > 3. Local (`.claude/settings.local.json`) > 4. Project (`.claude/settings.json` / `.mcp.json`) > 5. User (`~/.claude/settings.json`)**.",
+    "examTip": "**Managed** settings sit at the top of the precedence hierarchy and cannot be overridden by user, project, or local configurations. Use **Project scope** for shared team settings committed to git."
+  },
+  {
+    "id": 42,
+    "deck": "Set 9: Claude Code, CLAUDE.md, Skills & Dev Enablement",
+    "term": "`CLAUDE.md` Persistent Project Context & Modular Rules",
+    "definition": "Commit a concise `CLAUDE.md` at the repository root (and optional `.claude/rules/*.md` with path-scoped glob frontmatter) documenting build/test commands, architectural invariants, and coding conventions so every session loads project context automatically.",
+    "examTip": "Keep root `CLAUDE.md` focused and high-signal; move domain-specific instructions into path-scoped `.claude/rules/` files or on-demand Skills."
+  },
+  {
+    "id": 43,
+    "deck": "Set 9: Claude Code, CLAUDE.md, Skills & Dev Enablement",
+    "term": "Claude Code Hooks (`PreToolUse` / `PostToolUse`) vs. Prompt Rules",
+    "definition": "**Hooks** are deterministic shell/application callbacks that execute at lifecycle points (e.g., `PreToolUse` to block prohibited commands or sensitive paths; `PostToolUse` to run linters/formatters). Use hooks whenever 100% deterministic enforcement is required.",
+    "examTip": "Prompt instructions in `CLAUDE.md` are advisory; security-critical command blocking and mandatory formatting belong in deterministic **Hooks** and permission rules."
+  },
+  {
+    "id": 44,
+    "deck": "Set 9: Claude Code, CLAUDE.md, Skills & Dev Enablement",
+    "term": "Custom Skills Packaging (`SKILL.md` & Version Pinning)",
+    "definition": "Package reusable domain workflows and executable scripts as a **Skill** with a top-level `SKILL.md` (containing valid YAML frontmatter `name` and `description`). In production container requests, pin the exact `skill_id` and `version` rather than floating on 'latest'.",
+    "examTip": "Skills support progressive disclosure: Claude reads the concise frontmatter description first and loads the full `SKILL.md` and scripts only when relevant."
+  },
+  {
+    "id": 45,
+    "deck": "Set 9: Claude Code, CLAUDE.md, Skills & Dev Enablement",
+    "term": "Plan Mode vs. Direct Execution in Codebase Refactoring",
+    "definition": "Use **Plan Mode** first when a task spans multiple modules, requires architectural trade-offs, or has ambiguous scope—allowing the engineer to review and approve the migration plan before edits begin. Use direct execution for well-bounded, single-file fixes with clear test coverage.",
+    "examTip": "For large repository investigations, start with lightweight path/symbol search (`Grep`/`Glob`) before reading full files into context."
+  },
+  {
+    "id": 46,
+    "deck": "Set 10: Responsible AI, Security, Guardrails & Governance",
+    "term": "Defense-in-Depth Against Indirect Prompt Injection",
+    "definition": "Untrusted external content (emails, invoices, web pages, repo issues) can contain adversarial instructions. Defend with:\n1. Clear structural delimiters marking untrusted data.\n2. Runtime input/output classifiers.\n3. Least-privilege tool permissions that cannot be elevated by message content.\n4. Mandatory human confirmation (`always_ask`) before external sends or state mutations.",
+    "examTip": "Never grant users or untrusted documents a privilege level asserted inside natural-language message text."
+  },
+  {
+    "id": 47,
+    "deck": "Set 10: Responsible AI, Security, Guardrails & Governance",
+    "term": "Fairness Evaluation: Approval Rate Parity vs. Error Rate Parity",
+    "definition": "Equal approval rates across demographic or regional groups (**approval rate parity**) do **not** prove fairness if false-negative or false-positive error rates differ across groups (**error rate parity**) or if human baseline labels contain historical bias.",
+    "examTip": "Always evaluate disaggregated error severity, false-refusal/false-rejection rates, and abstention rates across protected groups and language queues."
+  },
+  {
+    "id": 48,
+    "deck": "Set 10: Responsible AI, Security, Guardrails & Governance",
+    "term": "Fallback Model Safety Invariants on Refusals",
+    "definition": "If a primary model stops with a safety `refusal`, do **not** blindly fail over to a less-restrictive model or stitch partial refused output together with a fallback completion. Discard partial output from refused attempts and enforce consistent safety policy across all serving models.",
+    "examTip": "Separate legitimate infrastructure failovers (5xx / network timeout) from policy refusals (`stop_reason: \"refusal\"`)."
+  },
+  {
+    "id": 49,
+    "deck": "Set 10: Responsible AI, Security, Guardrails & Governance",
+    "term": "Human-in-the-Loop (HITL) Reviewer Interface Design",
+    "definition": "To prevent automation bias (rubber-stamping), present human reviewers with **source facts and provenance**, extracted fields, explicitly **flagged policy gaps or conflicts**, and structured dispositions (`approve`, `edit`, `reject`)—rather than only showing a polished narrative.",
+    "examTip": "Audit a random stratified sample of **automatically accepted** cases too; measuring only analyst overturn rate on escalated cases misses false negatives that bypassed review."
+  },
+  {
+    "id": 50,
+    "deck": "Set 10: Responsible AI, Security, Guardrails & Governance",
+    "term": "Model Deprecation & Cohort Migration Runbooks",
+    "definition": "When a pinned production model version approaches retirement, inventory all dependent services and provider mappings, benchmark the candidate replacement on workload-specific quality/refusal/latency gates per region, and migrate in verified cohorts with rollback contingency prior to the sunset date.",
+    "examTip": "Pin explicit model snapshot IDs (e.g., `claude-sonnet-4-20250514`) in production and never cut over 100% of traffic on retirement day without prior cohort validation."
+  }
+]
