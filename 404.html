@@ -557,7 +557,7 @@
 
   <!-- ==================== SLIDE-OVER FILTERS & TIMED EXAM DRAWER ==================== -->
   <div id="menu-drawer-backdrop" onclick="toggleMenuDrawer()" class="fixed inset-0 bg-black/30 z-40 hidden"></div>
-  <aside id="menu-drawer" style="background: var(--shell-bg); border-color: var(--line-strong);" class="fixed top-0 left-[62px] h-full w-80 sm:w-96 border-r z-50 hidden flex-col justify-between p-6 overflow-y-auto shadow-2xl backdrop-blur-xl">
+  <aside id="menu-drawer" style="background: var(--shell-bg); border-color: var(--line-strong);" class="fixed top-0 left-[260px] h-full w-80 sm:w-96 border-r z-50 hidden flex-col justify-between p-6 overflow-y-auto shadow-2xl backdrop-blur-xl">
     <div class="space-y-5">
       <div class="flex items-center justify-between border-b pb-3" style="border-color: var(--line);">
         <div>
@@ -617,9 +617,25 @@
       </div>
     </div>
 
-    <div class="pt-4 border-t text-[11px] flex items-center justify-between" style="border-color: var(--line); color: var(--muted);">
-      <span>Cut Score: <strong id="drawer-pass-score">720/1000</strong></span>
-      <span>Flagged: <strong id="subbar-flagged">0</strong></span>
+    <div class="pt-4 border-t space-y-2 text-[11px]" style="border-color: var(--line); color: var(--muted);">
+      <div class="grid grid-cols-3 gap-1 text-center font-semibold">
+        <div class="bg-white/80 dark:bg-slate-800 p-1.5 rounded border border-slate-200 dark:border-slate-700">
+          <div class="text-[10px] text-slate-500">Mastered</div>
+          <div class="text-emerald-600 font-bold text-xs" id="subbar-mastered">0</div>
+        </div>
+        <div class="bg-white/80 dark:bg-slate-800 p-1.5 rounded border border-slate-200 dark:border-slate-700">
+          <div class="text-[10px] text-slate-500">Missed</div>
+          <div class="text-rose-600 font-bold text-xs" id="subbar-missed">0</div>
+        </div>
+        <div class="bg-white/80 dark:bg-slate-800 p-1.5 rounded border border-slate-200 dark:border-slate-700">
+          <div class="text-[10px] text-slate-500">Score</div>
+          <div class="text-teal-700 dark:text-teal-400 font-bold text-xs" id="subbar-score">0/1000</div>
+        </div>
+      </div>
+      <div class="flex items-center justify-between pt-1">
+        <span>Cut Score: <strong id="drawer-pass-score">720/1000</strong></span>
+        <span>Flagged: <strong id="subbar-flagged">0</strong></span>
+      </div>
     </div>
   </aside>
 
@@ -1138,8 +1154,9 @@
     }
 
     function onTopFilterChange() {
-      const val = document.getElementById('top-set-select').value;
-      document.getElementById('drawer-set-filter').value = val;
+      const sel = document.getElementById('top-set-select');
+      if (!sel) return;
+      document.getElementById('drawer-set-filter').value = sel.value;
       applyFiltersFromDrawer();
     }
 
@@ -1629,10 +1646,14 @@
       const attempted = mastered + missed;
       const scaled = attempted > 0 ? Math.round((mastered / attempted) * 1000) : 0;
 
-      document.getElementById('subbar-mastered').textContent = mastered;
-      document.getElementById('subbar-missed').textContent = missed;
-      document.getElementById('subbar-flagged').textContent = flagged;
-      document.getElementById('subbar-score').textContent = `${scaled}/1000`;
+      const elMast = document.getElementById('subbar-mastered');
+      if (elMast) elMast.textContent = mastered;
+      const elMiss = document.getElementById('subbar-missed');
+      if (elMiss) elMiss.textContent = missed;
+      const elFlag = document.getElementById('subbar-flagged');
+      if (elFlag) elFlag.textContent = flagged;
+      const elScore = document.getElementById('subbar-score');
+      if (elScore) elScore.textContent = `${scaled}/1000`;
 
       const cfg = getActiveConfig();
       const domBars = document.getElementById('drawer-domain-bars');
