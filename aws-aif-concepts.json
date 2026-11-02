@@ -1,0 +1,37 @@
+[
+  {
+    "id": "aws-c1",
+    "title": "Amazon Bedrock vs Amazon SageMaker AI",
+    "summary": "Bedrock provides serverless API access to leading foundation models (Anthropic Claude, Amazon Titan, Meta Llama, Cohere, AI21) with built-in Knowledge Bases (RAG), Agents, and Guardrails without managing infrastructure. SageMaker AI is a complete end-to-end ML platform for building, training, tuning, and deploying custom models, containers, and pipelines.",
+    "keyTakeaway": "Use Bedrock for fast, serverless GenAI integration and managed RAG; use SageMaker for custom model architectures, specialized container training, and ML lifecycle engineering.",
+    "examTip": "Exam questions asking for \"minimal operational overhead\" or \"serverless API to foundation models\" point to Amazon Bedrock."
+  },
+  {
+    "id": "aws-c2",
+    "title": "Bedrock Knowledge Bases & Vector Databases",
+    "summary": "Amazon Bedrock Knowledge Bases automates end-to-end RAG workflows: parsing documents in Amazon S3, generating embeddings via Titan Embeddings, storing vectors in Amazon OpenSearch Serverless, Pinecone, or Amazon Aurora PostgreSQL (pgvector), and executing semantic retrieval.",
+    "keyTakeaway": "Knowledge Bases handles chunking, vectorization, synchronization, and context retrieval fully managed.",
+    "examTip": "Look for OpenSearch Serverless as the default native vector storage option in Amazon Bedrock Knowledge Bases."
+  },
+  {
+    "id": "aws-c3",
+    "title": "Amazon Bedrock Guardrails & Responsible AI",
+    "summary": "Amazon Bedrock Guardrails enforces safety, privacy, and compliance across any foundation model on Bedrock or custom models. It supports content filtering (hate, insults, violence), denied topics, PII redaction/blocking, word filters, and automated Contextual Grounding checks to prevent hallucinations.",
+    "keyTakeaway": "Contextual Grounding score evaluates how factually grounded the model output is against the reference source documents.",
+    "examTip": "To detect and mitigate hallucinations and prevent PII leakage across foundation models, configure Bedrock Guardrails."
+  },
+  {
+    "id": "aws-c4",
+    "title": "Fine-Tuning vs RAG vs Prompt Engineering",
+    "summary": "Prompt Engineering requires zero training and modifies prompts at inference. RAG injects dynamic external data into prompts without retraining weights. Fine-tuning adjusts model weights using domain-specific labeled dataset pairs for consistent tone or proprietary syntax.",
+    "keyTakeaway": "RAG is optimal for fresh knowledge and preventing hallucination; Fine-Tuning is optimal for specialized formats, styles, or domain terminology where knowledge retrieval alone is insufficient.",
+    "examTip": "If the business requirement is access to real-time internal corporate documents, choose RAG. If requirement is domain tone/grammar, choose Fine-tuning."
+  },
+  {
+    "id": "aws-c5",
+    "title": "AWS Responsible AI Principles & Bias Detection",
+    "summary": "AWS adheres to 6 Responsible AI pillars: Fairness, Explainability, Robustness, Privacy & Security, Governance, and Transparency. SageMaker Clarify detects bias across pre-training and post-training data and provides model explainability (SHAP values). SageMaker Model Cards document model purpose and performance metrics.",
+    "keyTakeaway": "Use SageMaker Clarify for bias detection & explainability; SageMaker Model Cards for governance and audit documentation.",
+    "examTip": "When asked how to audit and document a model for regulatory and compliance review, use SageMaker Model Cards."
+  }
+]
