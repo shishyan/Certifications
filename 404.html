@@ -3,28 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Certification Exam Suite | Claude CCAR, Microsoft AB-100, AI-103, AI-900 & GCP GenAI</title>
+  <title>Lotus Naga Certifications | Shishyan AI Exam Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     :root {
-      --bg-main: #fafafa;
-      --text-main: #0f172a;
-      --text-muted: #475569;
-      --border-line: #e2e8f0;
-      --hover-tint: rgba(13, 148, 136, 0.05);
-      --selected-tint: rgba(8, 145, 178, 0.08);
-      --brand-gradient: linear-gradient(135deg, #10b981 0%, #0d9488 50%, #0284c7 100%);
-      --brand-teal: #0d9488;
-      --brand-blue: #0284c7;
+      --app-bg: #fafafa;
+      --shell-bg: rgba(255, 255, 255, 0.85);
+      --ink: #172033;
+      --ink-soft: #344054;
+      --muted: #667085;
+      --line: rgba(15, 23, 42, 0.08);
+      --line-strong: rgba(15, 23, 42, 0.15);
+      --accent: #0f9f8f;
+      --accent-hover: #0b8175;
+      --accent-soft: rgba(15, 159, 143, 0.08);
+      --community: #7c3aed;
+      --brand-gradient: linear-gradient(135deg, #0f9f8f 0%, #0d9488 45%, #7c3aed 100%);
+      --brand-banner: linear-gradient(135deg, #0f766e 0%, #0d9488 40%, #0284c7 80%, #7c3aed 100%);
+      --tone-1: #0f766e; --tone-1-soft: rgba(15, 118, 110, 0.08);
+      --tone-2: #7c3aed; --tone-2-soft: rgba(124, 58, 237, 0.08);
+      --tone-3: #ea580c; --tone-3-soft: rgba(234, 88, 12, 0.08);
+      --tone-4: #15803d; --tone-4-soft: rgba(21, 128, 61, 0.08);
+      --tone-5: #0284c7; --tone-5-soft: rgba(2, 132, 199, 0.08);
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05), 0 1px 4px rgba(15, 23, 42, 0.04);
+      --shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
     }
     html.dark {
-      --bg-main: #0b111a;
-      --text-main: #f1f5f9;
-      --text-muted: #94a3b8;
-      --border-line: #1e293b;
-      --hover-tint: rgba(20, 184, 166, 0.08);
-      --selected-tint: rgba(14, 165, 233, 0.14);
+      --app-bg: #0b111a;
+      --shell-bg: rgba(15, 23, 42, 0.85);
+      --ink: #f1f5f9;
+      --ink-soft: #cbd5e1;
+      --muted: #94a3b8;
+      --line: rgba(255, 255, 255, 0.08);
+      --line-strong: rgba(255, 255, 255, 0.16);
+      --accent-soft: rgba(20, 184, 166, 0.15);
     }
     * {
       box-sizing: border-box;
@@ -35,17 +51,107 @@
       width: 100vw;
       height: 100vh;
       overflow: hidden;
-      background: var(--bg-main);
-      color: var(--text-main);
-      font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      background-color: var(--app-bg);
+      background-image:
+        radial-gradient(circle 800px at 10% 10%, rgba(13, 148, 136, 0.035), transparent),
+        radial-gradient(circle 800px at 90% 20%, rgba(124, 58, 237, 0.035), transparent),
+        linear-gradient(rgba(15, 23, 42, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.015) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+      background-attachment: fixed;
+      color: var(--ink);
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
     }
     .brand-grad-bg {
-      background: var(--brand-gradient);
+      background: var(--brand-banner);
     }
     .brand-grad-text {
       background: var(--brand-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--community));
+      box-shadow: 0 4px 14px rgba(15, 159, 143, 0.3);
+      flex-shrink: 0;
+    }
+    .icon-btn {
+      width: 38px;
+      height: 38px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(8px);
+      color: var(--ink-soft);
+      transition: all 0.15s ease;
+    }
+    .icon-btn:hover {
+      background: #ffffff;
+      color: var(--accent);
+      border-color: var(--accent);
+      box-shadow: var(--shadow-sm);
+    }
+    .header-icon-link {
+      width: 36px;
+      height: 36px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      transition: all 0.15s ease;
+    }
+    .header-icon-link:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+    }
+    /* Left Shell Sidebar Buttons */
+    .shell-rail-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      color: var(--muted);
+      border: 1px solid transparent;
+      transition: all 0.15s ease;
+      position: relative;
+    }
+    .shell-rail-btn:hover {
+      color: var(--accent);
+      background: var(--accent-soft);
+      border-color: rgba(15, 159, 143, 0.2);
+    }
+    .shell-rail-btn.active {
+      background: #ffffff;
+      color: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(15, 159, 143, 0.18);
+      font-weight: 700;
+    }
+    .shell-rail-btn.active::before {
+      content: "";
+      position: absolute;
+      left: -9px;
+      width: 3px;
+      height: 22px;
+      border-radius: 0 4px 4px 0;
+      background: var(--accent);
     }
     .strike-option {
       text-decoration: line-through;
@@ -66,12 +172,12 @@
     ::-webkit-scrollbar-thumb:hover {
       background: rgba(13, 148, 136, 0.6);
     }
-    /* Draggable Center Divider */
+    /* Splitter */
     #pane-splitter {
       width: 5px;
       cursor: col-resize;
       background: transparent;
-      border-left: 1px solid var(--border-line);
+      border-left: 1px solid var(--line);
       position: relative;
       flex-shrink: 0;
       transition: background 0.15s;
@@ -80,110 +186,103 @@
       background: var(--brand-gradient);
       border-left-color: transparent;
     }
-    /* Left Rail Buttons on Gradient Sidebar */
-    .rail-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255, 255, 255, 0.75);
-      transition: all 0.15s ease;
-      position: relative;
-    }
-    .rail-btn:hover {
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.18);
-    }
-    .rail-btn.active {
-      background: rgba(255, 255, 255, 0.25);
-      color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    }
     @media (max-width: 1023px) {
       html, body {
         overflow: auto;
         height: auto;
       }
-      #pane-splitter {
-        display: none;
-      }
-      #left-pane, #right-pane {
-        width: 100% !important;
-        height: auto !important;
-        overflow: visible !important;
-      }
+      #pane-splitter { display: none; }
+      #left-pane, #right-pane { width: 100% !important; height: auto !important; }
     }
   </style>
 </head>
 <body class="flex w-screen h-screen overflow-hidden">
 
-  <!-- ==================== SHELL-LEVEL LEFT STRIP SIDEBAR (NAVIGATION RAIL WITH GRADIENT) ==================== -->
-  <aside class="w-14 h-full brand-grad-bg border-r border-teal-600/30 flex flex-col items-center justify-between py-3 select-none shrink-0 z-40 text-white shadow-md">
-    <!-- Top: Track Switcher Badge + Primary Views -->
-    <div class="flex flex-col items-center gap-2.5">
-      <!-- Track Switcher Icon -->
-      <button onclick="toggleCertTrack()" id="rail-track-btn" title="Cycle Certification Track (Claude / AB-100 / AI-103 / GCP GenAI / AI-900)" class="w-10 h-10 rounded-xl bg-white text-teal-800 font-extrabold text-xs tracking-tight flex items-center justify-center shadow-md hover:scale-105 transition">
+  <!-- ==================== SHISHYAN BRANDED SHELL SIDEBAR ==================== -->
+  <aside style="width: 62px; background: var(--shell-bg); border-color: var(--line);" class="h-full border-r flex flex-col items-center justify-between py-2.5 select-none shrink-0 z-40 shadow-sm backdrop-blur-md">
+    
+    <!-- Top: Shishyan Lotus Logo + Primary Tools -->
+    <div class="flex flex-col items-center gap-2 w-full px-2">
+      <!-- Lotus Naga Brand Mark (links to shishyan.in) -->
+      <a href="https://shishyan.in" target="_blank" rel="noopener" title="Lotus Naga Home (shishyan.in)" class="brand-mark group hover:scale-105 transition-transform" aria-label="Lotus Naga Home">
+        <i data-lucide="flower-2" class="w-5 h-5 text-white"></i>
+      </a>
+
+      <!-- Current Track Badge -->
+      <button onclick="toggleCertTrack()" id="rail-track-btn" title="Cycle Certification Track (Claude / AB-100 / AI-103 / GCP GenAI / AI-900)" class="w-10 h-7 rounded-md font-mono font-extrabold text-[11px] tracking-tight flex items-center justify-center border transition" style="border-color: var(--line-strong); background: var(--accent-soft); color: var(--accent);">
         CC
       </button>
 
-      <div class="w-6 h-[1px] my-0.5 bg-white/20"></div>
+      <div class="w-7 h-[1px] my-1" style="background: var(--line);"></div>
 
-      <!-- 1. Exam Workspace (Active 2-Column Split View) -->
-      <button onclick="closeAllModals()" id="rail-btn-exam" title="2-Column Exam Workspace" class="rail-btn active">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      <!-- 1. Exam Split Workspace -->
+      <button onclick="closeAllModals()" id="rail-btn-exam" title="2-Column Exam Workspace" class="shell-rail-btn active">
+        <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+        <span class="text-[9px] uppercase tracking-tighter">Exam</span>
       </button>
 
-      <!-- 2. Item Review Navigator Grid -->
-      <button onclick="openReviewGridModal()" id="rail-btn-grid" title="Question Navigator & Review Grid" class="rail-btn">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+      <!-- 2. Review Navigator Grid -->
+      <button onclick="openReviewGridModal()" id="rail-btn-grid" title="Question Navigator & Review Grid" class="shell-rail-btn">
+        <i data-lucide="grid" class="w-5 h-5"></i>
+        <span class="text-[9px] uppercase tracking-tighter">Grid</span>
       </button>
 
-      <!-- 3. Filters, Domains & Timed Mock Exam Drawer -->
-      <button onclick="toggleMenuDrawer()" id="rail-btn-filters" title="Filters, Domains & Timed Mock Exam" class="rail-btn">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>
+      <!-- 3. Filters & Timed Exam Drawer -->
+      <button onclick="toggleMenuDrawer()" id="rail-btn-filters" title="Filters, Domains & Timed Mock Exam" class="shell-rail-btn">
+        <i data-lucide="sliders-horizontal" class="w-5 h-5"></i>
+        <span class="text-[9px] uppercase tracking-tighter">Filter</span>
       </button>
 
       <!-- 4. Core Concepts Reference Cards -->
-      <button onclick="openConceptsModal()" id="rail-btn-concepts" title="Core Architecture Concepts" class="rail-btn">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+      <button onclick="openConceptsModal()" id="rail-btn-concepts" title="Core Architecture Concepts" class="shell-rail-btn">
+        <i data-lucide="book-open" class="w-5 h-5"></i>
+        <span class="text-[9px] uppercase tracking-tighter">Study</span>
       </button>
 
-      <!-- 5. Search Question Bank -->
-      <button onclick="openSearchModal()" id="rail-btn-search" title="Search All Questions & Explanations" class="rail-btn">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      <!-- 5. Search Bank -->
+      <button onclick="openSearchModal()" id="rail-btn-search" title="Search All Questions & Explanations" class="shell-rail-btn">
+        <i data-lucide="search" class="w-5 h-5"></i>
+        <span class="text-[9px] uppercase tracking-tighter">Search</span>
       </button>
     </div>
 
-    <!-- Bottom: Auto-Reveal Toggle, Shuffle, Theme -->
-    <div class="flex flex-col items-center gap-2">
-      <!-- Auto-Reveal Right Column Toggle -->
-      <button onclick="toggleAlwaysReveal()" id="rail-btn-autoreveal" title="Toggle Auto-Reveal Answer in Right Pane" class="rail-btn">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+    <!-- Bottom: Auto-Reveal, Shuffle, Theme -->
+    <div class="flex flex-col items-center gap-2 w-full px-2">
+      <!-- Auto-Reveal Toggle -->
+      <button onclick="toggleAlwaysReveal()" id="rail-btn-autoreveal" title="Toggle Auto-Reveal Answer in Right Column" class="shell-rail-btn">
+        <i data-lucide="eye" class="w-5 h-5"></i>
       </button>
 
-      <!-- Shuffle Current Set -->
-      <button onclick="shuffleCurrentPool()" title="Shuffle Current Question Pool" class="rail-btn">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+      <!-- Shuffle Pool -->
+      <button onclick="shuffleCurrentPool()" title="Shuffle Current Question Pool" class="shell-rail-btn">
+        <i data-lucide="shuffle" class="w-5 h-5"></i>
       </button>
 
-      <!-- Light/Dark Theme Toggle -->
-      <button onclick="toggleTheme()" title="Switch Light (#fafafa) / Dark Theme" class="rail-btn">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+      <!-- Theme Switcher -->
+      <button onclick="toggleTheme()" title="Switch Light (#fafafa) / Dark Theme" class="shell-rail-btn">
+        <i data-lucide="sun-moon" class="w-5 h-5"></i>
       </button>
     </div>
   </aside>
 
-  <!-- ==================== FULL-SCREEN EXAM SHELL AREA ==================== -->
-  <div class="flex-1 flex flex-col h-full min-w-0 overflow-hidden" style="background: var(--bg-main);">
+  <!-- ==================== MAIN APPLICATION CONTAINER ==================== -->
+  <div class="flex-1 flex flex-col h-full min-w-0 overflow-hidden" style="background: var(--app-bg);">
 
-    <!-- Gradient Top Status Header -->
-    <header class="h-12 px-5 brand-grad-bg border-b border-teal-700/30 flex items-center justify-between gap-4 shrink-0 select-none text-white shadow-sm">
-      <!-- Left: Track Selector + Set Selector + Domain Breadcrumb -->
+    <!-- ==================== SHISHYAN TOP APP BAR (WITH GRADIENT & ECOSYSTEM LINKS) ==================== -->
+    <header class="h-14 px-5 brand-grad-bg border-b border-teal-800/20 flex items-center justify-between gap-4 shrink-0 select-none text-white shadow-sm">
+      
+      <!-- Left: Shishyan Ecosystem Brand + Cert Track Selector -->
       <div class="flex items-center gap-3 min-w-0">
-        <select id="cert-track-select" onchange="switchCert(this.value)" class="bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm focus:outline-none cursor-pointer px-2.5 py-1 rounded-md border border-white/25">
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="font-extrabold text-sm sm:text-base tracking-tight text-white flex items-center gap-1.5">
+            <span class="opacity-80 font-normal hidden sm:inline">Shishyan /</span> Certifications
+          </span>
+        </div>
+
+        <span class="text-white/40">·</span>
+
+        <!-- Certification Track Dropdown -->
+        <select id="cert-track-select" onchange="switchCert(this.value)" class="bg-white/15 hover:bg-white/25 text-white font-bold text-xs sm:text-sm focus:outline-none cursor-pointer px-3 py-1 rounded-lg border border-white/25 transition">
           <option value="claude" class="text-slate-900">Claude Certified Architect CCAR-F &amp; CCAR-P (711 Qs)</option>
           <option value="ab100" class="text-slate-900">Microsoft AB-100 Agentic AI Architect (160 Qs)</option>
           <option value="ai103" class="text-slate-900">Microsoft AI-103 Azure AI Foundry (151 Qs)</option>
@@ -191,49 +290,59 @@
           <option value="ai900" class="text-slate-900">Microsoft Azure AI Fundamentals AI-900 (163 Qs)</option>
         </select>
 
-        <span class="text-white/40">/</span>
-
-        <select id="top-set-select" onchange="onTopFilterChange()" class="bg-white/10 hover:bg-white/20 text-white text-xs font-semibold focus:outline-none cursor-pointer px-2 py-1 rounded-md border border-white/20"></select>
-
-        <span class="hidden md:inline text-white/40">/</span>
-
-        <span id="subbar-domain" class="text-xs text-white/80 truncate hidden md:inline font-medium"></span>
+        <!-- Sub-Set Dropdown -->
+        <select id="top-set-select" onchange="onTopFilterChange()" class="hidden md:inline-block bg-white/10 hover:bg-white/20 text-white text-xs font-semibold focus:outline-none cursor-pointer px-2.5 py-1 rounded-lg border border-white/20 max-w-[200px] truncate"></select>
       </div>
 
-      <!-- Center: Item Progress & Mark for Review -->
-      <div class="flex items-center gap-4 shrink-0">
+      <!-- Center: Item Counter & Mark for Review -->
+      <div class="flex items-center gap-3 shrink-0">
         <div class="text-xs sm:text-sm font-bold tracking-tight text-white">
-          Item <span id="top-q-index" class="text-amber-300 font-extrabold">1</span> of <span id="top-q-total" class="text-white/90">711</span>
+          Item <span id="top-q-index" class="text-amber-300 font-extrabold text-sm sm:text-base">1</span> of <span id="top-q-total" class="text-white/90">711</span>
         </div>
 
-        <label class="flex items-center gap-1.5 text-xs font-semibold cursor-pointer text-white/90 hover:text-white transition bg-white/10 px-2 py-1 rounded border border-white/20">
-          <input type="checkbox" id="mark-review-checkbox" onchange="toggleBookmarkCurrent()" class="w-3.5 h-3.5 accent-amber-400 cursor-pointer" />
-          <span>Mark for Review</span>
+        <label class="flex items-center gap-1.5 text-xs font-semibold cursor-pointer text-white/95 hover:text-white transition bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-lg border border-white/20">
+          <input type="checkbox" id="mark-review-checkbox" onchange="toggleBookmarkCurrent()" class="w-3.5 h-3.5 accent-amber-400 cursor-pointer rounded" />
+          <span class="hidden sm:inline">Mark for Review</span>
         </label>
       </div>
 
-      <!-- Right: Live Score & Timer -->
-      <div class="hidden sm:flex items-center gap-3.5 text-xs shrink-0 text-white/90">
-        <span class="bg-black/15 px-2 py-0.5 rounded">Mastered <strong id="subbar-mastered" class="text-emerald-300 font-bold">0</strong></span>
-        <span class="bg-black/15 px-2 py-0.5 rounded">Missed <strong id="subbar-missed" class="text-rose-300 font-bold">0</strong></span>
-        <span class="bg-black/15 px-2 py-0.5 rounded">Score <strong id="subbar-score" class="text-amber-300 font-bold">0/1000</strong></span>
-        <button onclick="toggleTimerPause()" title="Click to Pause/Resume Timer" class="font-mono font-bold bg-white/20 hover:bg-white/30 text-white px-2.5 py-1 rounded border border-white/20 transition" id="top-timer-text">00:00</button>
+      <!-- Right: Shishyan Quick-Links (Guru, Games, Home) + Live Score -->
+      <div class="flex items-center gap-2.5 shrink-0">
+        <!-- Live Exam Score & Timer -->
+        <div class="hidden lg:flex items-center gap-2 text-xs text-white/90 mr-2">
+          <span class="bg-black/20 px-2.5 py-1 rounded-md">Mastered <strong id="subbar-mastered" class="text-emerald-300 font-bold">0</strong></span>
+          <span class="bg-black/20 px-2.5 py-1 rounded-md">Missed <strong id="subbar-missed" class="text-rose-300 font-bold">0</strong></span>
+          <span class="bg-black/20 px-2.5 py-1 rounded-md">Score <strong id="subbar-score" class="text-amber-300 font-bold">0/1000</strong></span>
+          <button onclick="toggleTimerPause()" title="Click to Pause/Resume Timer" class="font-mono font-bold bg-white/20 hover:bg-white/30 text-white px-2.5 py-1 rounded-md border border-white/20 transition" id="top-timer-text">00:00</button>
+        </div>
+
+        <!-- Shishyan Ecosystem Portal Links -->
+        <a href="https://guru.shishyan.in" target="_blank" rel="noopener" class="header-icon-link" title="Guru Kula Desam (guru.shishyan.in)" aria-label="Guru Kula Desam">
+          <i data-lucide="globe" class="w-4 h-4"></i>
+        </a>
+        <a href="https://games.shishyan.in" target="_blank" rel="noopener" class="header-icon-link" title="Play Games (games.shishyan.in)" aria-label="Play Games">
+          <i data-lucide="gamepad-2" class="w-4 h-4"></i>
+        </a>
+        <a href="https://shishyan.in" target="_blank" rel="noopener" class="header-icon-link" title="Lotus Naga Home (shishyan.in)" aria-label="Lotus Naga Home">
+          <i data-lucide="home" class="w-4 h-4"></i>
+        </a>
       </div>
     </header>
 
-    <!-- ==================== 2-COLUMN FULL-SCREEN SPLIT CONTAINER ==================== -->
-    <main id="split-container" class="flex-1 flex flex-col lg:flex-row overflow-hidden w-full" style="background: var(--bg-main);">
+    <!-- ==================== 2-COLUMN FULL-SCREEN EXAM SPLIT ==================== -->
+    <main id="split-container" class="flex-1 flex flex-col lg:flex-row overflow-hidden w-full" style="background: var(--app-bg);">
 
       <!-- COLUMN 1 (LEFT): QUESTION & OPTIONS -->
-      <section id="left-pane" style="width: 55%; background: var(--bg-main);" class="h-full overflow-y-auto px-6 sm:px-10 py-6 flex flex-col justify-between">
+      <section id="left-pane" style="width: 55%;" class="h-full overflow-y-auto px-6 sm:px-10 py-6 flex flex-col justify-between">
         <div class="space-y-5">
-          <!-- Question Tag & Format Header -->
-          <div class="flex items-center justify-between pb-2.5 border-b" style="border-color: var(--border-line);">
+          <!-- Question Tag, Domain & Format Header -->
+          <div class="flex items-center justify-between pb-2.5 border-b" style="border-color: var(--line);">
             <div class="flex items-center gap-2.5">
               <span id="subbar-code-tag" class="px-2.5 py-0.5 rounded-md brand-grad-bg text-white font-mono font-bold text-xs shadow-sm">CCAR-F #1</span>
-              <span id="subbar-format-badge" class="text-xs font-semibold" style="color: var(--text-muted);">Single-Choice</span>
+              <span id="subbar-format-badge" class="text-xs font-semibold text-teal-700 dark:text-teal-400 bg-teal-50 dark:bg-teal-950/40 px-2 py-0.5 rounded">Single-Choice</span>
+              <span id="subbar-domain" class="text-xs text-muted truncate hidden sm:inline" style="color: var(--muted);"></span>
             </div>
-            <span class="text-[11px]" style="color: var(--text-muted);">Right-click option to strike out</span>
+            <span class="text-[11px]" style="color: var(--muted);">Right-click to strike out</span>
           </div>
 
           <!-- Question Stem -->
@@ -243,10 +352,10 @@
           <div id="question-options-box" class="pt-1 space-y-2"></div>
         </div>
 
-        <!-- Clean Bottom Navigation Bar inside Left Column -->
-        <div class="pt-5 mt-8 border-t flex flex-wrap items-center justify-between gap-3 select-none" style="border-color: var(--border-line);">
+        <!-- Bottom Navigation Bar inside Left Column -->
+        <div class="pt-5 mt-8 border-t flex flex-wrap items-center justify-between gap-3 select-none" style="border-color: var(--line);">
           <div class="flex items-center gap-2">
-            <button onclick="prevQuestion()" class="px-3.5 py-1.5 rounded-lg border text-xs font-semibold hover:border-teal-500 transition" style="border-color: var(--border-line);">
+            <button onclick="prevQuestion()" class="px-3.5 py-1.5 rounded-lg border text-xs font-semibold hover:border-teal-500 transition" style="border-color: var(--line-strong);">
               &larr; Previous
             </button>
             <button onclick="nextQuestion()" class="px-4 py-1.5 rounded-lg brand-grad-bg text-white text-xs font-bold shadow-sm hover:opacity-95 transition">
@@ -255,7 +364,7 @@
           </div>
 
           <div class="flex items-center gap-2">
-            <button onclick="clearCurrentSelection()" class="px-3 py-1.5 rounded-lg border text-xs font-medium hover:opacity-80 transition" style="border-color: var(--border-line); color: var(--text-muted);">
+            <button onclick="clearCurrentSelection()" class="px-3 py-1.5 rounded-lg border text-xs font-medium hover:opacity-80 transition" style="border-color: var(--line-strong); color: var(--muted);">
               Reset
             </button>
             <button onclick="revealCurrentAnswer()" id="btn-reveal-answer" class="px-4 py-1.5 rounded-lg border border-teal-600/40 text-teal-700 dark:text-teal-300 text-xs font-bold hover:bg-teal-500/10 transition">
@@ -269,15 +378,15 @@
       <div id="pane-splitter" title="Drag to resize Question and Answer columns"></div>
 
       <!-- COLUMN 2 (RIGHT): VERIFIED ANSWER & ARCHITECTURAL EXPLANATION -->
-      <aside id="right-pane" style="width: 45%; background: var(--bg-main);" class="h-full overflow-y-auto px-6 sm:px-10 py-6 flex flex-col justify-between">
+      <aside id="right-pane" style="width: 45%;" class="h-full overflow-y-auto px-6 sm:px-10 py-6 flex flex-col justify-between">
         <div id="right-answer-content" class="space-y-5"></div>
 
-        <!-- Minimal Quick Item Strip at Bottom of Right Column -->
-        <div class="pt-4 mt-8 border-t space-y-2 select-none" style="border-color: var(--border-line);">
+        <!-- Quick Item Strip at Bottom of Right Column -->
+        <div class="pt-4 mt-8 border-t space-y-2 select-none" style="border-color: var(--line);">
           <div class="flex items-center justify-between text-xs">
-            <span class="font-semibold" style="color: var(--text-muted);">Item Strip (<span id="strip-total-count">711</span>)</span>
+            <span class="font-semibold" style="color: var(--muted);">Item Strip (<span id="strip-total-count">711</span>)</span>
             <div class="flex items-center gap-3">
-              <button onclick="toggleAlwaysReveal()" id="inline-autoreveal-label" class="text-xs font-semibold text-teal-600 dark:text-teal-400 hover:underline">
+              <button onclick="toggleAlwaysReveal()" id="inline-autoreveal-label" class="text-xs font-semibold text-teal-700 dark:text-teal-400 hover:underline">
                 Auto-Reveal: Off
               </button>
               <button onclick="openReviewGridModal()" class="text-xs font-bold brand-grad-text hover:underline">
@@ -292,37 +401,37 @@
     </main>
   </div>
 
-  <!-- ==================== SLIDE-OVER FILTERS & TIMED EXAM DRAWER (LEFT RAIL TRIGGERED) ==================== -->
+  <!-- ==================== SLIDE-OVER FILTERS & TIMED EXAM DRAWER ==================== -->
   <div id="menu-drawer-backdrop" onclick="toggleMenuDrawer()" class="fixed inset-0 bg-black/30 z-40 hidden"></div>
-  <aside id="menu-drawer" style="background: var(--bg-main); border-color: var(--border-line);" class="fixed top-0 left-14 h-full w-80 sm:w-96 border-r z-50 hidden flex-col justify-between p-6 overflow-y-auto shadow-xl">
+  <aside id="menu-drawer" style="background: var(--shell-bg); border-color: var(--line-strong);" class="fixed top-0 left-[62px] h-full w-80 sm:w-96 border-r z-50 hidden flex-col justify-between p-6 overflow-y-auto shadow-2xl backdrop-blur-xl">
     <div class="space-y-5">
-      <div class="flex items-center justify-between border-b pb-3" style="border-color: var(--border-line);">
+      <div class="flex items-center justify-between border-b pb-3" style="border-color: var(--line);">
         <div>
           <h3 class="font-bold text-base brand-grad-text">Filters &amp; Exam Configuration</h3>
-          <p class="text-xs" style="color: var(--text-muted);">Filter by set, domain, format, or status</p>
+          <p class="text-xs" style="color: var(--muted);">Filter by set, domain, format, or status</p>
         </div>
         <button onclick="toggleMenuDrawer()" class="p-1 rounded hover:opacity-75 text-sm">✕</button>
       </div>
 
       <div class="space-y-3">
         <div>
-          <label class="block text-[11px] font-bold uppercase mb-1" style="color: var(--text-muted);">Question Set</label>
-          <select id="drawer-set-filter" onchange="applyFiltersFromDrawer()" class="w-full rounded-lg border px-3 py-2 text-xs font-medium bg-transparent" style="border-color: var(--border-line); color: var(--text-main);"></select>
+          <label class="block text-[11px] font-bold uppercase mb-1" style="color: var(--muted);">Question Set</label>
+          <select id="drawer-set-filter" onchange="applyFiltersFromDrawer()" class="w-full rounded-lg border px-3 py-2 text-xs font-medium bg-transparent" style="border-color: var(--line-strong); color: var(--ink);"></select>
         </div>
 
         <div>
-          <label class="block text-[11px] font-bold uppercase mb-1" style="color: var(--text-muted);">Exam Domain</label>
-          <select id="drawer-domain-filter" onchange="applyFiltersFromDrawer()" class="w-full rounded-lg border px-3 py-2 text-xs font-medium bg-transparent" style="border-color: var(--border-line); color: var(--text-main);"></select>
+          <label class="block text-[11px] font-bold uppercase mb-1" style="color: var(--muted);">Exam Domain</label>
+          <select id="drawer-domain-filter" onchange="applyFiltersFromDrawer()" class="w-full rounded-lg border px-3 py-2 text-xs font-medium bg-transparent" style="border-color: var(--line-strong); color: var(--ink);"></select>
         </div>
 
         <div>
-          <label class="block text-[11px] font-bold uppercase mb-1" style="color: var(--text-muted);">Question Format</label>
-          <select id="drawer-type-filter" onchange="applyFiltersFromDrawer()" class="w-full rounded-lg border px-3 py-2 text-xs font-medium bg-transparent" style="border-color: var(--border-line); color: var(--text-main);"></select>
+          <label class="block text-[11px] font-bold uppercase mb-1" style="color: var(--muted);">Question Format</label>
+          <select id="drawer-type-filter" onchange="applyFiltersFromDrawer()" class="w-full rounded-lg border px-3 py-2 text-xs font-medium bg-transparent" style="border-color: var(--line-strong); color: var(--ink);"></select>
         </div>
 
         <div>
-          <label class="block text-[11px] font-bold uppercase mb-1" style="color: var(--text-muted);">Mastery Status</label>
-          <select id="drawer-status-filter" onchange="applyFiltersFromDrawer()" class="w-full rounded-lg border px-3 py-2 text-xs font-medium bg-transparent" style="border-color: var(--border-line); color: var(--text-main);">
+          <label class="block text-[11px] font-bold uppercase mb-1" style="color: var(--muted);">Mastery Status</label>
+          <select id="drawer-status-filter" onchange="applyFiltersFromDrawer()" class="w-full rounded-lg border px-3 py-2 text-xs font-medium bg-transparent" style="border-color: var(--line-strong); color: var(--ink);">
             <option value="all">All Questions</option>
             <option value="unanswered">Unanswered Only</option>
             <option value="missed">Missed / Needs Review</option>
@@ -333,10 +442,10 @@
       </div>
 
       <div class="grid grid-cols-2 gap-2 pt-1">
-        <button onclick="shuffleCurrentPool(); toggleMenuDrawer();" class="px-3 py-2 rounded-lg border text-xs font-semibold hover:border-teal-500 transition" style="border-color: var(--border-line);">
+        <button onclick="shuffleCurrentPool(); toggleMenuDrawer();" class="px-3 py-2 rounded-lg border text-xs font-semibold hover:border-teal-500 transition" style="border-color: var(--line-strong);">
           Shuffle Pool
         </button>
-        <button onclick="resetAllFilters(); toggleMenuDrawer();" class="px-3 py-2 rounded-lg border text-xs font-semibold hover:border-teal-500 transition" style="border-color: var(--border-line);">
+        <button onclick="resetAllFilters(); toggleMenuDrawer();" class="px-3 py-2 rounded-lg border text-xs font-semibold hover:border-teal-500 transition" style="border-color: var(--line-strong);">
           Reset Filters
         </button>
         <button onclick="startTimedMockPreset(60); toggleMenuDrawer();" class="col-span-2 py-2.5 rounded-lg brand-grad-bg text-white text-xs font-bold shadow-sm hover:opacity-95 transition">
@@ -345,16 +454,16 @@
       </div>
 
       <!-- Domain Competency Bars -->
-      <div class="pt-4 border-t space-y-2.5" style="border-color: var(--border-line);">
+      <div class="pt-4 border-t space-y-2.5" style="border-color: var(--line);">
         <div class="flex items-center justify-between">
-          <span class="text-[11px] font-bold uppercase" style="color: var(--text-muted);">Domain Competency</span>
+          <span class="text-[11px] font-bold uppercase" style="color: var(--muted);">Domain Competency</span>
           <button onclick="resetAllProgress()" class="text-[11px] text-rose-600 hover:underline font-semibold">Reset Progress</button>
         </div>
         <div id="drawer-domain-bars" class="space-y-2.5"></div>
       </div>
     </div>
 
-    <div class="pt-4 border-t text-[11px] flex items-center justify-between" style="border-color: var(--border-line); color: var(--text-muted);">
+    <div class="pt-4 border-t text-[11px] flex items-center justify-between" style="border-color: var(--line); color: var(--muted);">
       <span>Cut Score: <strong id="drawer-pass-score">720/1000</strong></span>
       <span>Flagged: <strong id="subbar-flagged">0</strong></span>
     </div>
@@ -362,14 +471,14 @@
 
   <!-- ==================== MODAL 1: ITEM REVIEW GRID ==================== -->
   <div id="modal-review-screen" class="fixed inset-0 bg-black/40 z-50 hidden flex items-center justify-center p-4">
-    <div style="background: var(--bg-main); border-color: var(--border-line);" class="w-full max-w-5xl max-h-[88vh] rounded-xl border shadow-2xl flex flex-col overflow-hidden">
-      <div class="h-1 w-full brand-grad-bg"></div>
-      <div class="px-6 py-4 border-b flex items-center justify-between" style="border-color: var(--border-line);">
+    <div style="background: var(--shell-bg); border-color: var(--line-strong);" class="w-full max-w-5xl max-h-[88vh] rounded-2xl border shadow-2xl flex flex-col overflow-hidden backdrop-blur-xl">
+      <div class="h-1.5 w-full brand-grad-bg"></div>
+      <div class="px-6 py-4 border-b flex items-center justify-between" style="border-color: var(--line);">
         <div>
           <h3 class="font-bold text-base">Item Review Grid</h3>
-          <p class="text-xs" style="color: var(--text-muted);">Click any item number to jump directly to it</p>
+          <p class="text-xs" style="color: var(--muted);">Click any item number to jump directly to it</p>
         </div>
-        <button onclick="closeReviewGridModal()" class="px-3 py-1 rounded-lg border text-xs font-semibold" style="border-color: var(--border-line);">Close (Esc)</button>
+        <button onclick="closeReviewGridModal()" class="px-3 py-1 rounded-lg border text-xs font-semibold hover:border-teal-500 transition" style="border-color: var(--line-strong);">Close (Esc)</button>
       </div>
       <div class="p-6 overflow-y-auto grid grid-cols-5 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-2" id="full-review-grid"></div>
     </div>
@@ -377,18 +486,18 @@
 
   <!-- ==================== MODAL 2: CORE CONCEPTS ==================== -->
   <div id="modal-concepts" class="fixed inset-0 bg-black/40 z-50 hidden flex items-center justify-center p-4">
-    <div style="background: var(--bg-main); border-color: var(--border-line);" class="w-full max-w-5xl max-h-[88vh] rounded-xl border shadow-2xl flex flex-col overflow-hidden">
-      <div class="h-1 w-full brand-grad-bg"></div>
-      <div class="px-6 py-4 border-b flex items-center justify-between gap-4" style="border-color: var(--border-line);">
+    <div style="background: var(--shell-bg); border-color: var(--line-strong);" class="w-full max-w-5xl max-h-[88vh] rounded-2xl border shadow-2xl flex flex-col overflow-hidden backdrop-blur-xl">
+      <div class="h-1.5 w-full brand-grad-bg"></div>
+      <div class="px-6 py-4 border-b flex items-center justify-between gap-4" style="border-color: var(--line);">
         <div>
           <h3 class="font-bold text-base">Core Concepts &amp; Architecture Reference</h3>
-          <p class="text-xs" style="color: var(--text-muted);">High-yield architectural patterns, trade-offs, and exam tips</p>
+          <p class="text-xs" style="color: var(--muted);">High-yield architectural patterns, trade-offs, and exam tips</p>
         </div>
-        <button onclick="closeConceptsModal()" class="px-3 py-1 rounded-lg border text-xs font-semibold shrink-0" style="border-color: var(--border-line);">Close (Esc)</button>
+        <button onclick="closeConceptsModal()" class="px-3 py-1 rounded-lg border text-xs font-semibold shrink-0 hover:border-teal-500 transition" style="border-color: var(--line-strong);">Close (Esc)</button>
       </div>
-      <div class="px-6 py-3 border-b flex flex-col sm:flex-row gap-3" style="border-color: var(--border-line);">
-        <input type="text" id="concepts-search-input" oninput="renderConceptsModal()" placeholder="Search concepts (e.g., Model Garden, Purview, MCP, CAF, Grounding)..." class="flex-1 rounded-lg border px-3 py-1.5 text-xs sm:text-sm bg-transparent" style="border-color: var(--border-line); color: var(--text-main);" />
-        <select id="concepts-deck-filter" onchange="renderConceptsModal()" class="rounded-lg border px-3 py-1.5 text-xs font-medium bg-transparent" style="border-color: var(--border-line); color: var(--text-main);"></select>
+      <div class="px-6 py-3 border-b flex flex-col sm:flex-row gap-3" style="border-color: var(--line);">
+        <input type="text" id="concepts-search-input" oninput="renderConceptsModal()" placeholder="Search concepts (e.g., Model Garden, Purview, MCP, CAF, Grounding)..." class="flex-1 rounded-lg border px-3 py-1.5 text-xs sm:text-sm bg-transparent" style="border-color: var(--line-strong); color: var(--ink);" />
+        <select id="concepts-deck-filter" onchange="renderConceptsModal()" class="rounded-lg border px-3 py-1.5 text-xs font-medium bg-transparent" style="border-color: var(--line-strong); color: var(--ink);"></select>
       </div>
       <div id="concepts-modal-list" class="p-6 overflow-y-auto grid grid-cols-1 md:grid-cols-2 gap-4"></div>
     </div>
@@ -396,17 +505,17 @@
 
   <!-- ==================== MODAL 3: FULL-TEXT SEARCH ==================== -->
   <div id="modal-search" class="fixed inset-0 bg-black/40 z-50 hidden flex items-center justify-center p-4">
-    <div style="background: var(--bg-main); border-color: var(--border-line);" class="w-full max-w-5xl max-h-[88vh] rounded-xl border shadow-2xl flex flex-col overflow-hidden">
-      <div class="h-1 w-full brand-grad-bg"></div>
-      <div class="px-6 py-4 border-b flex items-center justify-between gap-4" style="border-color: var(--border-line);">
+    <div style="background: var(--shell-bg); border-color: var(--line-strong);" class="w-full max-w-5xl max-h-[88vh] rounded-2xl border shadow-2xl flex flex-col overflow-hidden backdrop-blur-xl">
+      <div class="h-1.5 w-full brand-grad-bg"></div>
+      <div class="px-6 py-4 border-b flex items-center justify-between gap-4" style="border-color: var(--line);">
         <div>
           <h3 class="font-bold text-base">Search Question Bank</h3>
-          <p class="text-xs" style="color: var(--text-muted);">Instant full-text search across all stems, options, and explanations</p>
+          <p class="text-xs" style="color: var(--muted);">Instant full-text search across all stems, options, and explanations</p>
         </div>
-        <button onclick="closeSearchModal()" class="px-3 py-1 rounded-lg border text-xs font-semibold shrink-0" style="border-color: var(--border-line);">Close (Esc)</button>
+        <button onclick="closeSearchModal()" class="px-3 py-1 rounded-lg border text-xs font-semibold shrink-0 hover:border-teal-500 transition" style="border-color: var(--line-strong);">Close (Esc)</button>
       </div>
-      <div class="px-6 py-3 border-b" style="border-color: var(--border-line);">
-        <input type="text" id="bank-search-input" oninput="renderSearchModal()" placeholder="Type keyword (e.g., Purview, discriminative, Agentic Loop, CLAUDE.md, RAG, Speech)..." class="w-full rounded-lg border px-3 py-2 text-sm bg-transparent" style="border-color: var(--border-line); color: var(--text-main);" />
+      <div class="px-6 py-3 border-b" style="border-color: var(--line);">
+        <input type="text" id="bank-search-input" oninput="renderSearchModal()" placeholder="Type keyword (e.g., Purview, discriminative, Agentic Loop, CLAUDE.md, RAG, Speech)..." class="w-full rounded-lg border px-3 py-2 text-sm bg-transparent" style="border-color: var(--line-strong); color: var(--ink);" />
       </div>
       <div id="bank-search-results" class="p-6 overflow-y-auto space-y-3"></div>
     </div>
@@ -581,8 +690,8 @@
 
     function formatBoldMarkdown(text) {
       return escapeHtml(text)
-        .replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-teal-700 dark:text-teal-300">$1</strong>')
-        .replace(/`(.+?)`/g, '<code class="px-1.5 py-0.5 rounded border font-mono text-xs" style="border-color: var(--border-line);">$1</code>');
+        .replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-teal-700 dark:text-teal-400">$1</strong>')
+        .replace(/`(.+?)`/g, '<code class="px-1.5 py-0.5 rounded border font-mono text-xs" style="border-color: var(--line-strong);">$1</code>');
     }
 
     function formatStemHtml(stem) {
@@ -601,7 +710,7 @@
           html += `<li>${escapeHtml(trimmed.replace(/^[•·\-]\s*/, ''))}</li>`;
         } else if (trimmed.includes(' | ') && !trimmed.includes('[')) {
           if (inList) { html += '</ul>'; inList = false; }
-          const cells = trimmed.split('|').map(c => `<td class="border px-3 py-1.5 text-xs font-mono" style="border-color: var(--border-line);">${escapeHtml(c.trim())}</td>`).join('');
+          const cells = trimmed.split('|').map(c => `<td class="border px-3 py-1.5 text-xs font-mono" style="border-color: var(--line);">${escapeHtml(c.trim())}</td>`).join('');
           html += `<table class="w-full border-collapse my-1"><tr>${cells}</tr></table>`;
         } else {
           if (inList) { html += '</ul>'; inList = false; }
@@ -619,7 +728,7 @@
       }
       const map = {
         single_choice: 'Single-Choice',
-        hotspot: 'Statement Evaluation (Yes / No)',
+        hotspot: 'Statement Evaluation / Hotspot',
         drag_drop: 'Classification / Matching',
         code_completion: 'Code / YAML Completion'
       };
@@ -784,9 +893,9 @@
         document.getElementById('top-q-index').textContent = '0';
         document.getElementById('top-q-total').textContent = '0';
         document.getElementById('question-stem-box').innerHTML = `
-          <div class="py-12 text-center space-y-3 border-b" style="border-color: var(--border-line);">
+          <div class="py-12 text-center space-y-3 border-b" style="border-color: var(--line);">
             <div class="font-bold text-base">No questions match the current filter.</div>
-            <button onclick="resetAllFilters()" class="px-4 py-2 rounded-lg brand-grad-bg text-white text-xs font-bold">Show All ${QUESTION_BANK.length} Questions</button>
+            <button onclick="resetAllFilters()" class="px-4 py-2 rounded-lg brand-grad-bg text-white text-xs font-bold shadow-sm">Show All ${QUESTION_BANK.length} Questions</button>
           </div>
         `;
         document.getElementById('question-options-box').innerHTML = '';
@@ -825,7 +934,7 @@
         const selectedArr = Array.isArray(currentAns) ? currentAns : (currentAns ? [currentAns] : []);
 
         box.innerHTML = `
-          <div class="text-[11px] font-bold uppercase tracking-wider pb-1" style="color: var(--text-muted);">
+          <div class="text-[11px] font-bold uppercase tracking-wider pb-1" style="color: var(--muted);">
             ${isMulti ? `Choose ${reqCount} options:` : 'Choose one option:'}
           </div>
           ${q.options.map(opt => {
@@ -833,18 +942,18 @@
             const isCorrectOpt = q.correct.includes(opt.id);
             const isStruck = !!strikeouts[`${q.id}_${opt.id}`];
 
-            let rowStyle = 'border-color: var(--border-line); background: transparent;';
+            let rowStyle = 'border-color: var(--line-strong); background: rgba(255, 255, 255, 0.6);';
             let badgeHtml = '';
 
             if (isSelected) {
-              rowStyle = 'border-color: #0d9488; background: var(--selected-tint);';
+              rowStyle = 'border-color: var(--accent); background: var(--accent-soft);';
             }
             if (isRevealed) {
               if (isCorrectOpt) {
-                rowStyle = 'border-color: #10b981; background: rgba(16, 185, 129, 0.07);';
+                rowStyle = 'border-color: #10b981; background: rgba(16, 185, 129, 0.08);';
                 badgeHtml = '<span class="ml-auto pl-2 text-xs font-bold text-emerald-600 dark:text-emerald-400 shrink-0">✓ Correct</span>';
               } else if (isSelected && !isCorrectOpt) {
-                rowStyle = 'border-color: #f43f5e; background: rgba(244, 63, 94, 0.07);';
+                rowStyle = 'border-color: #f43f5e; background: rgba(244, 63, 94, 0.08);';
                 badgeHtml = '<span class="ml-auto pl-2 text-xs font-bold text-rose-600 dark:text-rose-400 shrink-0">✗ Incorrect</span>';
               }
             }
@@ -854,7 +963,7 @@
                 onclick="selectOption(${q.id}, '${opt.id}')"
                 oncontextmenu="event.preventDefault(); toggleStrike(${q.id}, '${opt.id}');"
                 style="${rowStyle}"
-                class="p-3 rounded-lg border cursor-pointer transition flex items-start gap-3 hover:border-teal-500"
+                class="p-3.5 rounded-xl border cursor-pointer transition flex items-start gap-3 hover:border-teal-500 shadow-sm"
               >
                 <input
                   type="${isMulti ? 'checkbox' : 'radio'}"
@@ -864,7 +973,7 @@
                   class="mt-1 w-4 h-4 accent-teal-600 cursor-pointer shrink-0"
                 />
                 <div class="flex-1 text-sm leading-relaxed ${isStruck ? 'strike-option' : ''}">
-                  <strong class="font-bold mr-1.5">${escapeHtml(opt.id)}.</strong>${escapeHtml(opt.text)}
+                  <strong class="font-bold mr-1.5 text-teal-800 dark:text-teal-300">${escapeHtml(opt.id)}.</strong>${escapeHtml(opt.text)}
                 </div>
                 ${badgeHtml}
               </div>
@@ -877,7 +986,7 @@
 
         if (q.type === 'code_completion' && q.code) {
           headerHtml = `
-            <div class="rounded-lg p-4 font-mono text-xs overflow-x-auto leading-relaxed mb-3 border" style="border-color: var(--border-line);">
+            <div class="rounded-xl p-4 font-mono text-xs overflow-x-auto leading-relaxed mb-3 border bg-white/70" style="border-color: var(--line-strong);">
               <pre>${escapeHtml(q.code)
                 .replace('[Blank 1]', '<span class="px-1.5 py-0.5 rounded text-teal-600 border border-teal-500 font-bold">[Blank 1]</span>')
                 .replace('[Blank 2]', '<span class="px-1.5 py-0.5 rounded text-sky-600 border border-sky-500 font-bold">[Blank 2]</span>')
@@ -886,10 +995,10 @@
           `;
         } else if (q.type === 'drag_drop' && q.pool) {
           headerHtml = `
-            <div class="pb-3 mb-2 border-b" style="border-color: var(--border-line);">
-              <div class="text-[11px] font-bold uppercase mb-1.5" style="color: var(--text-muted);">Available Target Categories:</div>
+            <div class="pb-3 mb-2 border-b" style="border-color: var(--line);">
+              <div class="text-[11px] font-bold uppercase mb-1.5" style="color: var(--muted);">Available Target Categories:</div>
               <div class="flex flex-wrap gap-1.5">
-                ${q.pool.map(item => `<span class="px-2.5 py-0.5 rounded border text-xs font-medium" style="border-color: var(--border-line);">${escapeHtml(item)}</span>`).join('')}
+                ${q.pool.map(item => `<span class="px-2.5 py-1 rounded-md border text-xs font-semibold bg-white/80" style="border-color: var(--line-strong);">${escapeHtml(item)}</span>`).join('')}
               </div>
             </div>
           `;
@@ -901,22 +1010,22 @@
             ${q.slots.map((slot, sIdx) => {
               const userVal = slotAnswers[sIdx] || '';
               const isSlotCorrect = userVal === slot.correct;
-              let borderStyle = 'border-color: var(--border-line);';
+              let borderStyle = 'border-color: var(--line-strong); background: rgba(255, 255, 255, 0.6);';
               if (isRevealed) {
-                borderStyle = isSlotCorrect ? 'border-color: #10b981;' : 'border-color: #f43f5e;';
+                borderStyle = isSlotCorrect ? 'border-color: #10b981; background: rgba(16, 185, 129, 0.05);' : 'border-color: #f43f5e; background: rgba(244, 63, 94, 0.05);';
               }
               return `
-                <div style="${borderStyle}" class="p-3 rounded-lg border space-y-1.5">
+                <div style="${borderStyle}" class="p-3.5 rounded-xl border space-y-1.5 shadow-sm">
                   <div class="flex items-center justify-between gap-2">
-                    <label class="text-xs sm:text-sm font-medium">${escapeHtml(slot.label)}</label>
+                    <label class="text-xs sm:text-sm font-semibold">${escapeHtml(slot.label)}</label>
                     ${isRevealed ? (isSlotCorrect
                       ? '<span class="text-xs font-bold text-emerald-600 shrink-0">✓ Correct</span>'
                       : `<span class="text-xs font-bold text-rose-600 shrink-0">✗ ${escapeHtml(slot.correct)}</span>`) : ''}
                   </div>
                   <select
                     onchange="selectSlot(${q.id}, ${sIdx}, this.value)"
-                    style="border-color: var(--border-line); color: var(--text-main);"
-                    class="w-full rounded border px-2.5 py-1.5 text-xs sm:text-sm bg-transparent focus:outline-none focus:border-teal-600"
+                    style="border-color: var(--line-strong); color: var(--ink);"
+                    class="w-full rounded-lg border px-3 py-1.5 text-xs sm:text-sm bg-white/80 focus:outline-none focus:border-teal-600"
                   >
                     <option value="">-- Select Answer --</option>
                     ${slot.options.map(opt => `<option value="${escapeHtml(opt)}" ${userVal === opt ? 'selected' : ''}>${escapeHtml(opt)}</option>`).join('')}
@@ -934,19 +1043,19 @@
 
       if (!isRevealed) {
         container.innerHTML = `
-          <div class="pb-2.5 border-b flex items-center justify-between" style="border-color: var(--border-line);">
-            <span class="text-xs font-bold uppercase tracking-wider brand-grad-text">Answer &amp; Rationale Pane</span>
-            <span class="text-[11px]" style="color: var(--text-muted);">Hidden until revealed</span>
+          <div class="pb-2.5 border-b flex items-center justify-between" style="border-color: var(--line);">
+            <span class="text-xs font-bold uppercase tracking-wider text-teal-800 dark:text-teal-300">Answer &amp; Rationale Pane</span>
+            <span class="text-[11px]" style="color: var(--muted);">Hidden until revealed</span>
           </div>
           <div class="py-16 flex flex-col items-start space-y-3">
-            <p class="text-sm leading-relaxed" style="color: var(--text-muted);">
-              Select an option on the left to automatically grade and reveal the verified answer here, or press <kbd class="px-1.5 py-0.5 border rounded text-xs">Enter</kbd>.
+            <p class="text-sm leading-relaxed" style="color: var(--muted);">
+              Select an option on the left to automatically grade and reveal the verified answer here, or press <kbd class="px-1.5 py-0.5 border rounded text-xs font-mono bg-white shadow-sm">Enter</kbd>.
             </p>
             <div class="flex items-center gap-2 pt-1">
-              <button onclick="revealCurrentAnswer()" class="px-4 py-1.5 rounded-lg brand-grad-bg text-white text-xs font-bold shadow-sm hover:opacity-95 transition">
+              <button onclick="revealCurrentAnswer()" class="px-4 py-2 rounded-lg brand-grad-bg text-white text-xs font-bold shadow-sm hover:opacity-95 transition">
                 Reveal Solution
               </button>
-              <button onclick="toggleAlwaysReveal()" class="px-3 py-1.5 rounded-lg border text-xs font-semibold hover:border-teal-500 transition" style="border-color: var(--border-line);">
+              <button onclick="toggleAlwaysReveal()" class="px-3 py-2 rounded-lg border text-xs font-semibold hover:border-teal-500 bg-white shadow-sm transition" style="border-color: var(--line-strong);">
                 Always Reveal Right Pane
               </button>
             </div>
@@ -972,17 +1081,17 @@
           const opt = q.options.find(o => o.id === cid);
           return `
             <div class="pl-3.5 border-l-4 border-teal-500 py-1 space-y-0.5">
-              <div class="text-[11px] font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">Correct Answer (${escapeHtml(cid)})</div>
-              <div class="text-sm sm:text-[15px] font-semibold leading-relaxed"><strong class="mr-1.5">${escapeHtml(cid)}.</strong>${escapeHtml(opt ? opt.text : '')}</div>
+              <div class="text-[11px] font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400">Correct Answer (${escapeHtml(cid)})</div>
+              <div class="text-sm sm:text-[15px] font-semibold leading-relaxed"><strong class="mr-1.5 text-teal-800 dark:text-teal-300">${escapeHtml(cid)}.</strong>${escapeHtml(opt ? opt.text : '')}</div>
             </div>
           `;
         }).join('');
       } else if (q.slots) {
         correctHtml = `
           <div class="pl-3.5 border-l-4 border-teal-500 py-1 space-y-1.5">
-            <div class="text-[11px] font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">Verified Mappings</div>
+            <div class="text-[11px] font-bold uppercase tracking-wider text-teal-700 dark:text-teal-400">Verified Mappings</div>
             ${q.slots.map(s => `
-              <div class="text-xs sm:text-sm flex items-baseline justify-between gap-3 py-1 border-b last:border-b-0" style="border-color: var(--border-line);">
+              <div class="text-xs sm:text-sm flex items-baseline justify-between gap-3 py-1 border-b last:border-b-0" style="border-color: var(--line);">
                 <span>${escapeHtml(s.label)}</span>
                 <strong class="font-bold text-teal-700 dark:text-teal-300 shrink-0">&rarr; ${escapeHtml(s.correct)}</strong>
               </div>
@@ -992,11 +1101,11 @@
       }
 
       container.innerHTML = `
-        <div class="pb-2.5 border-b flex items-center justify-between" style="border-color: var(--border-line);">
+        <div class="pb-2.5 border-b flex items-center justify-between" style="border-color: var(--line);">
           <span class="text-xs font-bold uppercase tracking-wider ${statusCls}">${statusText}</span>
           <div class="flex items-center gap-2 text-xs">
             <button onclick="setQuestionStatus(${q.id}, 'mastered')" class="text-emerald-600 hover:underline font-semibold">✓ Mastered</button>
-            <span style="color: var(--border-line);">|</span>
+            <span style="color: var(--line-strong);">|</span>
             <button onclick="setQuestionStatus(${q.id}, 'missed')" class="text-rose-600 hover:underline font-semibold">✗ Review</button>
           </div>
         </div>
@@ -1005,7 +1114,7 @@
           ${correctHtml}
         </div>
 
-        <div class="pt-3 border-t space-y-2" style="border-color: var(--border-line);">
+        <div class="pt-3 border-t space-y-2" style="border-color: var(--line);">
           <div class="text-xs font-bold uppercase tracking-wider brand-grad-text">
             Architectural Explanation
           </div>
@@ -1031,15 +1140,15 @@
         const bm = userState.bookmarks[item.id];
         const isCurr = idx === currentIndex;
 
-        let style = 'border-color: var(--border-line);';
-        let cls = 'border text-xs font-mono px-2 py-0.5 rounded transition shrink-0 relative ';
+        let style = 'border-color: var(--line-strong); background: rgba(255, 255, 255, 0.7);';
+        let cls = 'border text-xs font-mono px-2 py-0.5 rounded-md transition shrink-0 relative ';
         if (st === 'mastered') {
-          cls += 'text-emerald-700 dark:text-emerald-400 border-emerald-500/50 ';
+          cls += 'text-emerald-700 dark:text-emerald-400 border-emerald-500/50 bg-emerald-50 ';
         } else if (st === 'missed') {
-          cls += 'text-rose-600 dark:text-rose-400 border-rose-500/50 ';
+          cls += 'text-rose-600 dark:text-rose-400 border-rose-500/50 bg-rose-50 ';
         }
         if (isCurr) {
-          cls += 'brand-grad-bg text-white font-bold border-transparent ';
+          cls += 'brand-grad-bg text-white font-bold border-transparent shadow-sm ';
           style = '';
         }
 
@@ -1201,7 +1310,7 @@
                 <span class="truncate pr-2">${escapeHtml(d)}</span>
                 <span class="font-mono shrink-0">${m}/${items.length} (${pct}%)</span>
               </div>
-              <div class="w-full h-1.5 rounded-full overflow-hidden border" style="border-color: var(--border-line);">
+              <div class="w-full h-1.5 rounded-full overflow-hidden border" style="border-color: var(--line);">
                 <div class="brand-grad-bg h-full" style="width:${pct}%"></div>
               </div>
             </div>
@@ -1260,13 +1369,13 @@
         const st = userState.statusById[q.id];
         const bm = userState.bookmarks[q.id];
         const isCurr = idx === currentIndex;
-        let cls = 'p-2 rounded-lg border text-xs font-mono font-bold flex flex-col items-center gap-0.5 transition ';
-        let style = 'border-color: var(--border-line);';
+        let cls = 'p-2 rounded-xl border text-xs font-mono font-bold flex flex-col items-center gap-0.5 transition shadow-sm ';
+        let style = 'border-color: var(--line-strong); background: rgba(255, 255, 255, 0.7);';
         if (st === 'mastered') {
-          cls += 'text-emerald-700 dark:text-emerald-400 border-emerald-500/50';
+          cls += 'text-emerald-700 dark:text-emerald-400 border-emerald-500/50 bg-emerald-50';
           style = '';
         } else if (st === 'missed') {
-          cls += 'text-rose-600 dark:text-rose-400 border-rose-500/50';
+          cls += 'text-rose-600 dark:text-rose-400 border-rose-500/50 bg-rose-50';
           style = '';
         }
         if (isCurr) {
@@ -1307,17 +1416,17 @@
       });
 
       document.getElementById('concepts-modal-list').innerHTML = list.map(c => `
-        <div class="p-4 rounded-xl border space-y-2.5 flex flex-col justify-between" style="border-color: var(--border-line);">
+        <div class="p-4 rounded-2xl border space-y-2.5 flex flex-col justify-between shadow-sm bg-white/70" style="border-color: var(--line-strong);">
           <div class="space-y-1.5">
-            <div class="flex items-center justify-between text-[11px]" style="color: var(--text-muted);">
+            <div class="flex items-center justify-between text-[11px]" style="color: var(--muted);">
               <span class="font-mono font-bold text-teal-600 dark:text-teal-400">Concept #${c.id}</span>
               <span>${escapeHtml(c.deck)}</span>
             </div>
-            <h4 class="font-bold text-sm sm:text-base">${escapeHtml(c.term)}</h4>
+            <h4 class="font-bold text-sm sm:text-base text-teal-900 dark:text-teal-200">${escapeHtml(c.term)}</h4>
             <div class="text-xs sm:text-sm leading-relaxed whitespace-pre-line">${formatBoldMarkdown(c.definition)}</div>
           </div>
-          <div class="pt-2 border-t text-xs" style="border-color: var(--border-line);">
-            <strong class="text-teal-600 dark:text-teal-400 uppercase mr-1">Exam Tip:</strong>${formatBoldMarkdown(c.examTip)}
+          <div class="pt-2 border-t text-xs" style="border-color: var(--line);">
+            <strong class="text-teal-700 dark:text-teal-300 uppercase mr-1">Exam Tip:</strong>${formatBoldMarkdown(c.examTip)}
           </div>
         </div>
       `).join('');
@@ -1342,14 +1451,14 @@
       }).slice(0, 60);
 
       document.getElementById('bank-search-results').innerHTML = matched.map(q => `
-        <div class="p-4 rounded-lg border space-y-2" style="border-color: var(--border-line);">
+        <div class="p-4 rounded-xl border space-y-2 shadow-sm bg-white/70" style="border-color: var(--line-strong);">
           <div class="flex items-center justify-between gap-2">
             <div class="flex items-center gap-2 text-xs">
-              <span class="px-2 py-0.5 rounded brand-grad-bg text-white font-mono font-bold">Q${q.id}</span>
+              <span class="px-2 py-0.5 rounded-md brand-grad-bg text-white font-mono font-bold">Q${q.id}</span>
               <span class="font-mono font-semibold">${escapeHtml(q.code_tag || '')}</span>
-              <span style="color: var(--text-muted);">${escapeHtml(q.domain)}</span>
+              <span style="color: var(--muted);">${escapeHtml(q.domain)}</span>
             </div>
-            <button onclick="jumpToQuestionId(${q.id}); closeSearchModal();" class="px-3 py-1 rounded-lg brand-grad-bg text-white text-xs font-bold">
+            <button onclick="jumpToQuestionId(${q.id}); closeSearchModal();" class="px-3 py-1 rounded-lg brand-grad-bg text-white text-xs font-bold shadow-sm">
               Open &rarr;
             </button>
           </div>
@@ -1443,6 +1552,11 @@
         }
       }
     });
+
+    // Initialize Lucide Icons
+    if (window.lucide) {
+      lucide.createIcons();
+    }
 
     loadState();
     syncAlwaysRevealButton();
