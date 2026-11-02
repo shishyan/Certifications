@@ -117,6 +117,24 @@
       background: rgba(255, 255, 255, 0.3);
       transform: translateY(-1px);
     }
+    .header-icon-link-light {
+      width: 36px;
+      height: 36px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      color: #475569;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+      transition: all 0.15s ease;
+    }
+    .header-icon-link-light:hover {
+      background: #f8fafc;
+      color: #0f766e;
+      border-color: #0d9488;
+      transform: translateY(-1px);
+    }
     /* Left Shell Sidebar Buttons */
     .shell-rail-btn {
       width: 44px;
@@ -127,31 +145,31 @@
       align-items: center;
       justify-content: center;
       gap: 2px;
-      color: var(--muted);
+      color: rgba(255, 255, 255, 0.78);
       border: 1px solid transparent;
       transition: all 0.15s ease;
       position: relative;
     }
     .shell-rail-btn:hover {
-      color: var(--accent);
-      background: var(--accent-soft);
-      border-color: rgba(15, 159, 143, 0.2);
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.28);
     }
     .shell-rail-btn.active {
       background: #ffffff;
-      color: var(--accent);
-      border-color: var(--accent);
-      box-shadow: 0 4px 12px rgba(15, 159, 143, 0.18);
-      font-weight: 700;
+      color: #0f766e;
+      border-color: #ffffff;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+      font-weight: 800;
     }
     .shell-rail-btn.active::before {
       content: "";
       position: absolute;
       left: -9px;
-      width: 3px;
-      height: 22px;
+      width: 3.5px;
+      height: 24px;
       border-radius: 0 4px 4px 0;
-      background: var(--accent);
+      background: #ffffff;
     }
     .strike-option {
       text-decoration: line-through;
@@ -199,7 +217,7 @@
 <body class="flex w-screen h-screen overflow-hidden">
 
   <!-- ==================== SHISHYAN BRANDED SHELL SIDEBAR ==================== -->
-  <aside style="width: 62px; background: var(--shell-bg); border-color: var(--line);" class="h-full border-r flex flex-col items-center justify-between py-2.5 select-none shrink-0 z-40 shadow-sm backdrop-blur-md">
+  <aside style="width: 62px; background: var(--brand-banner); border-color: rgba(255, 255, 255, 0.15);" class="h-full border-r flex flex-col items-center justify-between py-2.5 select-none shrink-0 z-40 shadow-lg text-white">
     
     <!-- Top: Shishyan Lotus Logo + Primary Tools -->
     <div class="flex flex-col items-center gap-2 w-full px-2">
@@ -209,7 +227,7 @@
       </a>
 
       <!-- Current Track Badge -->
-      <button onclick="toggleCertTrack()" id="rail-track-btn" title="Cycle Certification Track (Claude / AB-100 / AI-103 / GCP GenAI / AI-900)" class="w-10 h-7 rounded-md font-mono font-extrabold text-[11px] tracking-tight flex items-center justify-center border transition" style="border-color: var(--line-strong); background: var(--accent-soft); color: var(--accent);">
+      <button onclick="toggleCertTrack()" id="rail-track-btn" title="Cycle Certification Track (Claude / AB-100 / AI-103 / GCP GenAI / AI-900)" class="w-10 h-7 rounded-md font-mono font-extrabold text-[11px] tracking-tight flex items-center justify-center border transition border-white/30 bg-white/20 text-white hover:bg-white/30 shadow-sm">
         CC
       </button>
 
@@ -268,40 +286,40 @@
   <!-- ==================== MAIN APPLICATION CONTAINER ==================== -->
   <div class="flex-1 flex flex-col h-full min-w-0 overflow-hidden" style="background: var(--app-bg);">
 
-    <!-- ==================== SHISHYAN TOP APP BAR (WITH GRADIENT & ECOSYSTEM LINKS) ==================== -->
-    <header class="h-14 px-5 brand-grad-bg border-b border-teal-800/20 flex items-center justify-between gap-4 shrink-0 select-none text-white shadow-sm">
+    <!-- ==================== SHISHYAN TOP APP BAR (FAFAFA, SHADOW, 2PX WHITE BORDER) ==================== -->
+    <header style="background-color: #fafafa; border: 2px solid #ffffff; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);" class="h-14 px-5 flex items-center justify-between gap-4 shrink-0 select-none text-slate-800 z-30">
       
       <!-- Left: Shishyan Ecosystem Brand + Cert Track Selector -->
       <div class="flex items-center gap-3 min-w-0">
         <div class="flex items-center gap-2 shrink-0">
-          <span class="font-extrabold text-sm sm:text-base tracking-tight text-white flex items-center gap-1.5">
-            <span class="opacity-80 font-normal hidden sm:inline">Shishyan /</span> Certifications
+          <span class="font-extrabold text-sm sm:text-base tracking-tight text-slate-900 flex items-center gap-1.5">
+            <span class="text-teal-700 font-semibold hidden sm:inline">Shishyan /</span> Certifications
           </span>
         </div>
 
-        <span class="text-white/40">·</span>
+        <span class="text-slate-300">·</span>
 
         <!-- Certification Track Dropdown -->
-        <select id="cert-track-select" onchange="switchCert(this.value)" class="bg-white/15 hover:bg-white/25 text-white font-bold text-xs sm:text-sm focus:outline-none cursor-pointer px-3 py-1 rounded-lg border border-white/25 transition">
-          <option value="claude" class="text-slate-900">Claude Certified Architect CCAR-F &amp; CCAR-P (711 Qs)</option>
-          <option value="ab100" class="text-slate-900">Microsoft AB-100 Agentic AI Architect (160 Qs)</option>
-          <option value="ai103" class="text-slate-900">Microsoft AI-103 Azure AI Foundry (151 Qs)</option>
-          <option value="gcp" class="text-slate-900">Google Cloud Generative AI Leader (109 Qs)</option>
-          <option value="ai900" class="text-slate-900">Microsoft Azure AI Fundamentals AI-900 (163 Qs)</option>
+        <select id="cert-track-select" onchange="switchCert(this.value)" class="bg-white hover:bg-slate-50 text-slate-800 font-bold text-xs sm:text-sm focus:outline-none cursor-pointer px-3 py-1 rounded-lg border border-slate-200 hover:border-teal-500 shadow-sm transition">
+          <option value="claude">Claude Certified Architect CCAR-F &amp; CCAR-P (711 Qs)</option>
+          <option value="ab100">Microsoft AB-100 Agentic AI Architect (160 Qs)</option>
+          <option value="ai103">Microsoft AI-103 Azure AI Foundry (151 Qs)</option>
+          <option value="gcp">Google Cloud Generative AI Leader (109 Qs)</option>
+          <option value="ai900">Microsoft Azure AI Fundamentals AI-900 (163 Qs)</option>
         </select>
 
         <!-- Sub-Set Dropdown -->
-        <select id="top-set-select" onchange="onTopFilterChange()" class="hidden md:inline-block bg-white/10 hover:bg-white/20 text-white text-xs font-semibold focus:outline-none cursor-pointer px-2.5 py-1 rounded-lg border border-white/20 max-w-[200px] truncate"></select>
+        <select id="top-set-select" onchange="onTopFilterChange()" class="hidden md:inline-block bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold focus:outline-none cursor-pointer px-2.5 py-1 rounded-lg border border-slate-200 hover:border-teal-500 shadow-sm max-w-[200px] truncate"></select>
       </div>
 
       <!-- Center: Item Counter & Mark for Review -->
       <div class="flex items-center gap-3 shrink-0">
-        <div class="text-xs sm:text-sm font-bold tracking-tight text-white">
-          Item <span id="top-q-index" class="text-amber-300 font-extrabold text-sm sm:text-base">1</span> of <span id="top-q-total" class="text-white/90">711</span>
+        <div class="text-xs sm:text-sm font-bold tracking-tight text-slate-800">
+          Item <span id="top-q-index" class="text-teal-700 font-extrabold text-sm sm:text-base">1</span> of <span id="top-q-total" class="text-slate-600">711</span>
         </div>
 
-        <label class="flex items-center gap-1.5 text-xs font-semibold cursor-pointer text-white/95 hover:text-white transition bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-lg border border-white/20">
-          <input type="checkbox" id="mark-review-checkbox" onchange="toggleBookmarkCurrent()" class="w-3.5 h-3.5 accent-amber-400 cursor-pointer rounded" />
+        <label class="flex items-center gap-1.5 text-xs font-semibold cursor-pointer text-slate-700 hover:text-teal-800 transition bg-white hover:bg-slate-50 px-2.5 py-1 rounded-lg border border-slate-200 shadow-sm">
+          <input type="checkbox" id="mark-review-checkbox" onchange="toggleBookmarkCurrent()" class="w-3.5 h-3.5 accent-teal-600 cursor-pointer rounded" />
           <span class="hidden sm:inline">Mark for Review</span>
         </label>
       </div>
@@ -309,21 +327,21 @@
       <!-- Right: Shishyan Quick-Links (Guru, Games, Home) + Live Score -->
       <div class="flex items-center gap-2.5 shrink-0">
         <!-- Live Exam Score & Timer -->
-        <div class="hidden lg:flex items-center gap-2 text-xs text-white/90 mr-2">
-          <span class="bg-black/20 px-2.5 py-1 rounded-md">Mastered <strong id="subbar-mastered" class="text-emerald-300 font-bold">0</strong></span>
-          <span class="bg-black/20 px-2.5 py-1 rounded-md">Missed <strong id="subbar-missed" class="text-rose-300 font-bold">0</strong></span>
-          <span class="bg-black/20 px-2.5 py-1 rounded-md">Score <strong id="subbar-score" class="text-amber-300 font-bold">0/1000</strong></span>
-          <button onclick="toggleTimerPause()" title="Click to Pause/Resume Timer" class="font-mono font-bold bg-white/20 hover:bg-white/30 text-white px-2.5 py-1 rounded-md border border-white/20 transition" id="top-timer-text">00:00</button>
+        <div class="hidden lg:flex items-center gap-2 text-xs text-slate-700 mr-2">
+          <span class="bg-white border border-slate-200 shadow-sm px-2.5 py-1 rounded-md">Mastered <strong id="subbar-mastered" class="text-emerald-700 font-bold">0</strong></span>
+          <span class="bg-white border border-slate-200 shadow-sm px-2.5 py-1 rounded-md">Missed <strong id="subbar-missed" class="text-rose-600 font-bold">0</strong></span>
+          <span class="bg-white border border-slate-200 shadow-sm px-2.5 py-1 rounded-md">Score <strong id="subbar-score" class="text-teal-800 font-bold">0/1000</strong></span>
+          <button onclick="toggleTimerPause()" title="Click to Pause/Resume Timer" class="font-mono font-bold bg-white hover:bg-slate-50 text-slate-800 px-2.5 py-1 rounded-md border border-slate-200 hover:border-teal-500 shadow-sm transition" id="top-timer-text">00:00</button>
         </div>
 
         <!-- Shishyan Ecosystem Portal Links -->
-        <a href="https://guru.shishyan.in" target="_blank" rel="noopener" class="header-icon-link" title="Guru Kula Desam (guru.shishyan.in)" aria-label="Guru Kula Desam">
+        <a href="https://guru.shishyan.in" target="_blank" rel="noopener" class="header-icon-link-light" title="Guru Kula Desam (guru.shishyan.in)" aria-label="Guru Kula Desam">
           <i data-lucide="globe" class="w-4 h-4"></i>
         </a>
-        <a href="https://games.shishyan.in" target="_blank" rel="noopener" class="header-icon-link" title="Play Games (games.shishyan.in)" aria-label="Play Games">
+        <a href="https://games.shishyan.in" target="_blank" rel="noopener" class="header-icon-link-light" title="Play Games (games.shishyan.in)" aria-label="Play Games">
           <i data-lucide="gamepad-2" class="w-4 h-4"></i>
         </a>
-        <a href="https://shishyan.in" target="_blank" rel="noopener" class="header-icon-link" title="Lotus Naga Home (shishyan.in)" aria-label="Lotus Naga Home">
+        <a href="https://shishyan.in" target="_blank" rel="noopener" class="header-icon-link-light" title="Lotus Naga Home (shishyan.in)" aria-label="Lotus Naga Home">
           <i data-lucide="home" class="w-4 h-4"></i>
         </a>
       </div>
