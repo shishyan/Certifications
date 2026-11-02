@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "deck": "Set 1: AI & Machine Learning Fundamentals",
+    "term": "Regression vs. Classification vs. Clustering",
+    "definition": "• **Regression**: Predicts a continuous numerical value (e.g., house price, sales totals, temperature).\n• **Classification**: Predicts a discrete categorical label (e.g., binary: spam/not spam, multiclass: penguin species).\n• **Clustering**: Unsupervised grouping of similar items without prior labels (e.g., customer segmentation).",
+    "examTip": "Predicting daily sales or weather temperature = **Regression**. Predicting whether a customer churns (Yes/No) = **Binary Classification**."
+  },
+  {
+    "id": 2,
+    "deck": "Set 2: Computer Vision & Document Intelligence",
+    "term": "Image Classification vs. Object Detection vs. OCR",
+    "definition": "• **Image Classification**: Evaluates the entire image and returns category tags with confidence scores.\n• **Object Detection**: Identifies multiple objects in an image AND provides their coordinates (bounding boxes).\n• **Optical Character Recognition (OCR / Read API)**: Extracts printed and handwritten text from images, receipts, and PDFs.",
+    "examTip": "If an answer requires locating where a vehicle is in an image, select **Object Detection** (bounding box coordinates)."
+  },
+  {
+    "id": 3,
+    "deck": "Set 3: Natural Language Processing & Speech",
+    "term": "Azure AI Language & Azure AI Speech",
+    "definition": "• **Azure AI Language**: Key phrase extraction, entity recognition (NER), sentiment analysis, conversational language understanding (CLU), and question answering.\n• **Azure AI Speech**: Speech-to-text (transcription), text-to-speech (custom neural voice), and real-time speech translation.",
+    "examTip": "To extract names of people, locations, and organizations from contracts, use **Named Entity Recognition (NER)** in Azure AI Language."
+  },
+  {
+    "id": 4,
+    "deck": "Set 4: Responsible AI Guiding Principles",
+    "term": "Microsoft's 6 Core Responsible AI Principles",
+    "definition": "• **Fairness**: AI systems should treat all people fairly.\n• **Reliability & Safety**: AI systems should perform reliably and safely under expected and unexpected conditions.\n• **Privacy & Security**: AI systems should be secure and respect data privacy.\n• **Inclusiveness**: AI systems should empower everyone and engage people.\n• **Transparency**: AI systems should be understandable (explainability).\n• **Accountability**: People must be accountable for how AI systems operate.",
+    "examTip": "Ensure a loan approval model does not discriminate based on race, gender, or age = **Fairness**. Providing audit logs and human oversight = **Accountability**."
+  }
+]

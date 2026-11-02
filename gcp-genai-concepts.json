@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "deck": "Set 1: Generative AI Fundamentals & Taxonomy",
+    "term": "AI Hierarchy: AI ⊃ ML ⊃ Deep Learning ⊃ Generative AI",
+    "definition": "• **Artificial Intelligence (AI)**: Broad field of computer science creating machines capable of intelligent behaviour.\n• **Machine Learning (ML)**: Systems that learn patterns from data without explicit rules.\n• **Deep Learning**: ML using multi-layered artificial neural networks (e.g., Transformers, CNNs, RNNs).\n• **Generative AI**: Deep learning models that generate novel text, code, audio, or images rather than solely predicting or classifying existing data.",
+    "examTip": "AGI (Artificial General Intelligence) is theoretical and commercially non-existent. On the exam, eliminate options claiming commercial AGI or that NLP is a subset of ML (NLP is an AI subfield alongside ML)."
+  },
+  {
+    "id": 2,
+    "deck": "Set 1: Generative AI Fundamentals & Taxonomy",
+    "term": "Discriminative (Predictive) AI vs. Generative AI",
+    "definition": "• **Discriminative / Predictive AI**: Models $P(Y|X)$ to classify inputs into known labels, assign probabilities, or predict continuous numbers (e.g., fraud anomaly detection, spam classification, sentiment tagging).\n• **Generative AI**: Models $P(X)$ or $P(X, Y)$ to synthesise new data distributions (drafting personalized emails, generating synthetic test datasets, summarizing reports).",
+    "examTip": "If an email system categorizes incoming complaints, that is **discriminative AI**. If it generates response drafts, that is **generative AI**."
+  },
+  {
+    "id": 3,
+    "deck": "Set 2: Google Cloud Generative AI Offerings",
+    "term": "Gemini Enterprise (formerly Google Agentspace) & Vertex AI Platform",
+    "definition": "• **Vertex AI (Gemini Enterprise Agent Platform)**: Enterprise end-to-end ML and agent platform for model discovery (Model Garden), tuning, grounding, and orchestration.\n• **Model Garden**: Enterprise catalog of first-party (Gemini, Imagen, Codey), open-source (Gemma, Llama, Mistral), and third-party models with one-click deployment.\n• **Vertex AI Search and Conversation**: Turnkey RAG and multi-turn conversational agents with Google-quality semantic indexing.",
+    "examTip": "Focus on the architectural capability rather than product renames: managed enterprise discovery and deployment happens in **Model Garden**; search over enterprise unstructured documents is powered by **Vertex AI Search**."
+  },
+  {
+    "id": 4,
+    "deck": "Set 3: Techniques to Improve Model Output",
+    "term": "Grounding, RAG, Prompt Design vs. Fine-Tuning",
+    "definition": "• **Prompt Engineering**: Zero-shot / few-shot prompting, chain-of-thought; fastest and lowest cost.\n• **Grounding with Google Search / Enterprise Data (RAG)**: Connects model to live internet data or corporate repositories to eliminate hallucinations and cite verifiable sources.\n• **Parameter-Efficient Fine-Tuning (PEFT / LoRA) & Full Tuning**: Adapts model weights for domain-specific style, tone, or proprietary terminology when few-shot prompting context is insufficient.",
+    "examTip": "When recent or real-time factual knowledge is required, choose **Grounding / RAG**, not fine-tuning (fine-tuning embeds knowledge statically and is expensive to refresh)."
+  },
+  {
+    "id": 5,
+    "deck": "Set 4: Business Strategy, Governance & Responsible AI",
+    "term": "Google's 7 Responsible AI Principles & Decision Matrix",
+    "definition": "• **7 Principles**: Be socially beneficial; avoid creating/reinforcing unfair bias; be built and tested for safety; be accountable to people; incorporate privacy design principles; uphold high scientific standards; be made available for uses that accord with these principles.\n• **Build vs. Buy Matrix**: High Impact + Low Complexity = Buy pre-built; High Impact + High Complexity = Custom build/tune justified; Low Impact + High Complexity = Avoid.",
+    "examTip": "Google will NOT design AI technologies for weapons, surveillance violating human rights, or technologies causing overall harm."
+  }
+]
